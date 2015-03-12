@@ -14,46 +14,46 @@ Features
 
 The project features code-level examples for the following items:
 
-Classes and Structures
-Protocols and delegates
-AirDrop
-AVFoundation (QRCode)
-QuartzCore (Animation with collision)
-Calendar
-Chat Peer to Peer
-CollectionView
-CoreAnimation (some examples)
-CoreData (some examples)
-CoreImage (CI Detector)
-CoreLocation
-DelegateWithNavigator
-EventKitUI
-Gesture (DoubleTap, Long Press, Pinch, Rotate, Swipe)
-HideKeyboard
-JSON Parse
-MapKit
-MediaPlayer
-NSBlockOperation
-NSFileManager
-NSNotification
-NSURLSession
-SQLite
-Segues (normal and custom segues)
-Show Local IP
-Show Remote IP
-SocialFramework (Twitter and Facebook)
-SpriteKit basic sample
-SwiftLoginScreen (working with php webservice and JSON)
-TabBarController
-TableView
-TableView with Property List
-UIImagePickerControllerCamera (photo and video)
-UILocalNotification
-XIB working with Storyboard
-XML (get data from XML)
-XML (get data from AppStore)
-iAdFramework (banner samples for your app)
-iCloud
++ Classes and Structures
++ Protocols and delegates
++ AirDrop
++ AVFoundation (QRCode)
++ QuartzCore (Animation with collision)
++ Calendar
++ Chat Peer to Peer
++ CollectionView
++ CoreAnimation (some examples)
++ CoreData (some examples)
++ CoreImage (CI Detector)
++ CoreLocation
++ DelegateWithNavigator
++ EventKitUI
++ Gesture (DoubleTap, Long Press, Pinch, Rotate, Swipe)
++ HideKeyboard
++ JSON Parse
++ MapKit
++ MediaPlayer
++ NSBlockOperation
++ NSFileManager
++ NSNotification
++ NSURLSession
++ SQLite
++ Segues (normal and custom segues)
++ Show Local IP
++ Show Remote IP
++ SocialFramework (Twitter and Facebook)
++ SpriteKit basic sample
++ SwiftLoginScreen (working with php webservice and JSON)
++ TabBarController
++ TableView
++ TableView with Property List
++ UIImagePickerControllerCamera (photo and video)
++ UILocalNotification
++ XIB working with Storyboard
++ XML (get data from XML)
++ XML (get data from AppStore)
++ iAdFramework (banner samples for your app)
++ iCloud
 
 
 I plan to write further additional examples and all developers are welcome to follow the project through Github. As a collaborative open-source effort, I also welcome feedback and contribution from others.
