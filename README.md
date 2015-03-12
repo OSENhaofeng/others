@@ -2,7 +2,7 @@
 Reusable Swift code 
 ====================
 
-This project provides some examples in language called Swift for iOS. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.
+This project provides some examples in Swift for iOS. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.
 
 Audience
 ---------------------
