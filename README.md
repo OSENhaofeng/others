@@ -68,7 +68,7 @@ Running Swift Structures requires Xcode 6.0 GM Seed or later.
 Usage
 ---------------------
 
-Individuals are welcome to use the code with commercial and open-source projects. As a courtesy, please provide attribution to waynewbishop.com. For more information, review the complete license agreement.
+Individuals are welcome to use the code with commercial and open-source projects. 
 
 
 Branches
