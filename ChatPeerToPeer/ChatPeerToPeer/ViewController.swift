@@ -3,7 +3,15 @@
 //  ChatPeerToPeer
 //
 //  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -44,23 +52,23 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
         // Dispose of any resources that can be recreated.
     }
     
-    func enviarMensaje(){
-        var mensaje:NSString = self.sendText.text
+    func sendMessage(){
+        var message:NSString = self.sendText.text
         self.sendText.text = ""
-        var data :NSData = mensaje.dataUsingEncoding(NSUTF8StringEncoding)!
+        var data :NSData = message.dataUsingEncoding(NSUTF8StringEncoding)!
         var error:NSError?
         self.session.sendData(data, toPeers:
             self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable, error: &error)
-        self.recepcionMensaje(mensaje, peer: self.peerID)
+        self.messageReception(message, peer: self.peerID)
     }
     
-    func recepcionMensaje(mensaje:NSString, peer:MCPeerID){
+    func messageReception(message:NSString, peer:MCPeerID){
         var finalText:NSString
         if(peer == self.peerID){
-            finalText = "\nYo: \(mensaje)"
+            finalText = "\nYo: \(message)"
         }
         else{
-            finalText = "\n\(peer.displayName): \(mensaje)"
+            finalText = "\n\(peer.displayName): \(message)"
         }
         self.textBox.text =
             self.textBox.text.stringByAppendingString(finalText)
@@ -68,7 +76,7 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool{
         textField.resignFirstResponder()
-        self.enviarMensaje()
+        self.sendMessage()
         return true
     }
     
@@ -77,10 +85,10 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     }
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!){
-        var mensaje = NSString(data: data, encoding:
+        var message = NSString(data: data, encoding:
             NSUTF8StringEncoding)
         dispatch_async(dispatch_get_main_queue(),
-            {self.recepcionMensaje(mensaje!, peer: peerID)})
+            {self.messageReception(message!, peer: peerID)})
     }
     
     func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID:MCPeerID!){

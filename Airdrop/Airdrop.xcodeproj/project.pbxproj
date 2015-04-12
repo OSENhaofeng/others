@@ -13,10 +13,10 @@
 		075FD3081A34AB1B00513A3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3071A34AB1B00513A3A /* Images.xcassets */; };
 		075FD30B1A34AB1B00513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3091A34AB1B00513A3A /* LaunchScreen.xib */; };
 		075FD3171A34AB1B00513A3A /* AirdropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD3161A34AB1B00513A3A /* AirdropTests.swift */; };
-		075FD3221A34B4C000513A3A /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD3201A34B4C000513A3A /* ImagenViewController.swift */; };
 		075FD3231A34B4C000513A3A /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD3211A34B4C000513A3A /* URLViewController.swift */; };
-		075FD3251A34B4CB00513A3A /* imagen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3241A34B4CB00513A3A /* imagen2.png */; };
+		075FD3251A34B4CB00513A3A /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3241A34B4CB00513A3A /* image.png */; };
 		075FD3271A34B54F00513A3A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075FD3261A34B54F00513A3A /* MediaPlayer.framework */; };
+		077CF9EF1ADACA5100D20B9B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CF9EE1ADACA5100D20B9B /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		075FD3101A34AB1B00513A3A /* AirdropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirdropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075FD3151A34AB1B00513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD3161A34AB1B00513A3A /* AirdropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirdropTests.swift; sourceTree = "<group>"; };
-		075FD3201A34B4C000513A3A /* ImagenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
 		075FD3211A34B4C000513A3A /* URLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
-		075FD3241A34B4CB00513A3A /* imagen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen2.png; sourceTree = "<group>"; };
+		075FD3241A34B4CB00513A3A /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		075FD3261A34B54F00513A3A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		077CF9EE1ADACA5100D20B9B /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +87,10 @@
 		075FD2FD1A34AB1B00513A3A /* Airdrop */ = {
 			isa = PBXGroup;
 			children = (
-				075FD3241A34B4CB00513A3A /* imagen2.png */,
+				075FD3241A34B4CB00513A3A /* image.png */,
 				075FD3001A34AB1B00513A3A /* AppDelegate.swift */,
 				075FD3021A34AB1B00513A3A /* ViewController.swift */,
-				075FD3201A34B4C000513A3A /* ImagenViewController.swift */,
+				077CF9EE1ADACA5100D20B9B /* ImageViewController.swift */,
 				075FD3211A34B4C000513A3A /* URLViewController.swift */,
 				075FD3041A34AB1B00513A3A /* Main.storyboard */,
 				075FD3071A34AB1B00513A3A /* Images.xcassets */,
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075FD3061A34AB1B00513A3A /* Main.storyboard in Resources */,
-				075FD3251A34B4CB00513A3A /* imagen2.png in Resources */,
+				075FD3251A34B4CB00513A3A /* image.png in Resources */,
 				075FD30B1A34AB1B00513A3A /* LaunchScreen.xib in Resources */,
 				075FD3081A34AB1B00513A3A /* Images.xcassets in Resources */,
 			);
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075FD3231A34B4C000513A3A /* URLViewController.swift in Sources */,
-				075FD3221A34B4C000513A3A /* ImagenViewController.swift in Sources */,
+				077CF9EF1ADACA5100D20B9B /* ImageViewController.swift in Sources */,
 				075FD3031A34AB1B00513A3A /* ViewController.swift in Sources */,
 				075FD3011A34AB1B00513A3A /* AppDelegate.swift in Sources */,
 			);
@@ -421,6 +421,7 @@
 				075FD31C1A34AB1B00513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD31D1A34AB1B00513A3A /* Build configuration list for PBXNativeTarget "AirdropTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +430,7 @@
 				075FD31F1A34AB1B00513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

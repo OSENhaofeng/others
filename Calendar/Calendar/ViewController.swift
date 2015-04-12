@@ -3,7 +3,15 @@
 //  Calendar
 //
 //  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -27,7 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var calendar = EKCalendar(eventStore: eventStore)
         eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {(granted,error) in
             if(granted == false){
-                println("Acceso no Permitido")
+                println("Access Denied")
             }
             else{
                 var auxiliar = self.eventStore.sources() as [EKSource]
@@ -44,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {(granted,error) in
             if(granted == false){
-                println("Acceso no Permitido")
+                println("Access Denied")
             }
             else{
                 var arrayCalendars = self.eventStore.calendarsForEntityType(EKEntityTypeEvent)
@@ -63,15 +71,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     event.calendar = theCalendar
                     var error:NSError?
                     if(self.eventStore.saveEvent(event, span: EKSpanThisEvent, error: &error)){
-                        var alert = UIAlertController(title: "Calendario", message: "Creado evento \(event.title) en \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: nil))
+                        var alert = UIAlertController(title: "Calendar", message: "Event created \(event.title) in \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default, handler: nil))
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.presentViewController(alert, animated: true, completion: nil)
                         })
                     }
                 }
                 else{
-                    println("No hay ningún calendario con ese nombre")
+                    println("No calendar with that name")
                 }
             }
         })

@@ -19,18 +19,18 @@ import UIKit
 class URLViewController: UIViewController, UIWebViewDelegate {
     
     
-    @IBOutlet weak var miURL: UITextField!
+    @IBOutlet weak var myURL: UITextField!
     @IBOutlet weak var webView: UIWebView!
     
 
     @IBAction func send(sender: UIButton) {
-        var url:NSURL = NSURL(string: miURL.text)!
+        var url:NSURL = NSURL(string: myURL.text)!
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func load(sender: UIButton) {
-        var request = NSURLRequest(URL: NSURL(string: miURL.text)!)
+        var request = NSURLRequest(URL: NSURL(string: myURL.text)!)
         self.webView.loadRequest(request)
     }
     
@@ -38,9 +38,9 @@ class URLViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        miURL.text = "http://carlosbutron.es/"
+        myURL.text = "http://carlosbutron.es/"
         webView.delegate = self
-        var request = NSURLRequest(URL: NSURL(string: miURL.text)!)
+        var request = NSURLRequest(URL: NSURL(string: myURL.text)!)
         self.webView.loadRequest(request)        // Do any additional setup after loading the view.
     }
 

@@ -1,4 +1,4 @@
-// Playground - noun: a place where people can play 
+// Playground - noun: a place where people can play
 
 import UIKit
 
@@ -32,15 +32,6 @@ class Bycicle: Vehicle {
 let abycicle = Bycicle()
 abycicle.description()
 
-struct​ Resolution​ {
-    ​    ​var​ width​ = ​0
-    ​    ​var​ height​ = ​0
-    ​}
-​class​ VideoMode​ {
-    ​    ​var​ resolution​ = ​Resolution​()
-    ​    ​var​ interlaced​ = ​false
-    ​    ​var​ frameRate​ = ​0.0
-    ​    ​var​ name​: ​String​?
-    ​}
+
 
 

@@ -3,7 +3,15 @@
 //  CollectionView
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -11,7 +19,7 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    var items : NSArray = [UIImage(named:"imagen1.jpg")!,UIImage(named:"imagen2.jpg")!,UIImage(named:"imagen3.jpg")!,UIImage(named:"imagen4.jpg")!,UIImage(named:"imagen5.jpg")!,UIImage(named:"imagen6.jpg")!,UIImage(named:"imagen7.jpg")!,UIImage(named:"imagen8.jpg")!,UIImage(named:"imagen9.jpg")!]
+    var items : NSArray = [UIImage(named:"image1.jpg")!,UIImage(named:"image2.jpg")!,UIImage(named:"image3.jpg")!,UIImage(named:"image4.jpg")!,UIImage(named:"image5.jpg")!,UIImage(named:"image6.jpg")!,UIImage(named:"image7.jpg")!,UIImage(named:"image8.jpg")!,UIImage(named:"image9.jpg")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()

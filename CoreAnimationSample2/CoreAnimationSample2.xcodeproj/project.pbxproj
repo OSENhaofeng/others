@@ -13,7 +13,7 @@
 		0770A8471A2D607600494953 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8461A2D607600494953 /* Images.xcassets */; };
 		0770A84A1A2D607600494953 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8481A2D607600494953 /* LaunchScreen.xib */; };
 		0770A8561A2D607600494953 /* CoreAnimationSample2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770A8551A2D607600494953 /* CoreAnimationSample2Tests.swift */; };
-		0770A8601A2D60D100494953 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770A85F1A2D60D100494953 /* imagen1.png */; };
+		0770A8601A2D60D100494953 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770A85F1A2D60D100494953 /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		0770A84F1A2D607600494953 /* CoreAnimationSample2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationSample2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0770A8541A2D607600494953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0770A8551A2D607600494953 /* CoreAnimationSample2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationSample2Tests.swift; sourceTree = "<group>"; };
-		0770A85F1A2D60D100494953 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0770A85F1A2D60D100494953 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		0770A83C1A2D607600494953 /* CoreAnimationSample2 */ = {
 			isa = PBXGroup;
 			children = (
-				0770A85F1A2D60D100494953 /* imagen1.png */,
+				0770A85F1A2D60D100494953 /* image.png */,
 				0770A83F1A2D607600494953 /* AppDelegate.swift */,
 				0770A8411A2D607600494953 /* ViewController.swift */,
 				0770A8431A2D607600494953 /* Main.storyboard */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0770A8601A2D60D100494953 /* imagen1.png in Resources */,
+				0770A8601A2D60D100494953 /* image.png in Resources */,
 				0770A8451A2D607600494953 /* Main.storyboard in Resources */,
 				0770A84A1A2D607600494953 /* LaunchScreen.xib in Resources */,
 				0770A8471A2D607600494953 /* Images.xcassets in Resources */,
@@ -409,6 +409,7 @@
 				0770A85B1A2D607600494953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0770A85C1A2D607600494953 /* Build configuration list for PBXNativeTarget "CoreAnimationSample2Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				0770A85E1A2D607600494953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

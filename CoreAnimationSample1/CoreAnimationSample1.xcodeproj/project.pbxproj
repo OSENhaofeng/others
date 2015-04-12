@@ -14,7 +14,7 @@
 		0770A8181A2D5FE400494953 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8161A2D5FE400494953 /* LaunchScreen.xib */; };
 		0770A8241A2D5FE400494953 /* CoreAnimationSample1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770A8231A2D5FE400494953 /* CoreAnimationSample1Tests.swift */; };
 		0770A82E1A2D5FFD00494953 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0770A82D1A2D5FFD00494953 /* QuartzCore.framework */; };
-		0770A8301A2D601800494953 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770A82F1A2D601800494953 /* imagen1.png */; };
+		0770A8301A2D601800494953 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770A82F1A2D601800494953 /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		0770A8221A2D5FE400494953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0770A8231A2D5FE400494953 /* CoreAnimationSample1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationSample1Tests.swift; sourceTree = "<group>"; };
 		0770A82D1A2D5FFD00494953 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0770A82F1A2D601800494953 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0770A82F1A2D601800494953 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		0770A80A1A2D5FE400494953 /* CoreAnimationSample1 */ = {
 			isa = PBXGroup;
 			children = (
-				0770A82F1A2D601800494953 /* imagen1.png */,
+				0770A82F1A2D601800494953 /* image1.png */,
 				0770A80D1A2D5FE400494953 /* AppDelegate.swift */,
 				0770A80F1A2D5FE400494953 /* ViewController.swift */,
 				0770A8111A2D5FE400494953 /* Main.storyboard */,
@@ -199,7 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0770A8301A2D601800494953 /* imagen1.png in Resources */,
+				0770A8301A2D601800494953 /* image1.png in Resources */,
 				0770A8131A2D5FE400494953 /* Main.storyboard in Resources */,
 				0770A8181A2D5FE400494953 /* LaunchScreen.xib in Resources */,
 				0770A8151A2D5FE400494953 /* Images.xcassets in Resources */,
@@ -413,6 +413,7 @@
 				0770A8291A2D5FE400494953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0770A82A1A2D5FE400494953 /* Build configuration list for PBXNativeTarget "CoreAnimationSample1Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				0770A82C1A2D5FE400494953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

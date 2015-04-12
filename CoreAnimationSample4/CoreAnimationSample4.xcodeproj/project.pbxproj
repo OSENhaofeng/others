@@ -13,7 +13,7 @@
 		0770A8A71A2D619F00494953 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8A61A2D619F00494953 /* Images.xcassets */; };
 		0770A8AA1A2D619F00494953 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8A81A2D619F00494953 /* LaunchScreen.xib */; };
 		0770A8B61A2D619F00494953 /* CoreAnimationSample4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770A8B51A2D619F00494953 /* CoreAnimationSample4Tests.swift */; };
-		0770A8C01A2D61BB00494953 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8BF1A2D61BB00494953 /* imagen1.png */; };
+		0770A8C01A2D61BB00494953 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0770A8BF1A2D61BB00494953 /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		0770A8AF1A2D619F00494953 /* CoreAnimationSample4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationSample4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0770A8B41A2D619F00494953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0770A8B51A2D619F00494953 /* CoreAnimationSample4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationSample4Tests.swift; sourceTree = "<group>"; };
-		0770A8BF1A2D61BB00494953 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0770A8BF1A2D61BB00494953 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		0770A89C1A2D619F00494953 /* CoreAnimationSample4 */ = {
 			isa = PBXGroup;
 			children = (
-				0770A8BF1A2D61BB00494953 /* imagen1.png */,
+				0770A8BF1A2D61BB00494953 /* image1.png */,
 				0770A89F1A2D619F00494953 /* AppDelegate.swift */,
 				0770A8A11A2D619F00494953 /* ViewController.swift */,
 				0770A8A31A2D619F00494953 /* Main.storyboard */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0770A8C01A2D61BB00494953 /* imagen1.png in Resources */,
+				0770A8C01A2D61BB00494953 /* image1.png in Resources */,
 				0770A8A51A2D619F00494953 /* Main.storyboard in Resources */,
 				0770A8AA1A2D619F00494953 /* LaunchScreen.xib in Resources */,
 				0770A8A71A2D619F00494953 /* Images.xcassets in Resources */,
@@ -409,6 +409,7 @@
 				0770A8BB1A2D619F00494953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0770A8BC1A2D619F00494953 /* Build configuration list for PBXNativeTarget "CoreAnimationSample4Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				0770A8BE1A2D619F00494953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
