@@ -1,9 +1,9 @@
 //
-//  DetailViewController.swift
-//  MasterDetailiPad
+//  ViewController.swift
+//  MultiTask
 //
-//  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron.
+//  Created by Carlos Butron on 13/04/15.
+//  Copyright (c) 2015 Carlos Butron.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
 //  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
@@ -16,40 +16,28 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-    @IBOutlet weak var detailImage: UIImageView!
-
-
-    var detailItem: List? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail: List = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.name
-                detailImage.image = UIImage (named: "\(detail.image)")
-            }
-        }
-    }
-
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var myNotification: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateInterface:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
     }
-
+    
+    func updateInterface (notification: NSNotification){
+        
+        myNotification.text = "Back to background with notification"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

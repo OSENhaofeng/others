@@ -16,10 +16,10 @@
 		075FD4251A34C25700513A3A /* summericons_100px_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4201A34C25700513A3A /* summericons_100px_03@2x.png */; };
 		075FD4261A34C25700513A3A /* summericons_100px_04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4211A34C25700513A3A /* summericons_100px_04@2x.png */; };
 		075FD4271A34C25700513A3A /* summericons_100px_05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4221A34C25700513A3A /* summericons_100px_05@2x.png */; };
-		075FD42B1A34C26600513A3A /* Listado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD4281A34C26600513A3A /* Listado.swift */; };
 		075FD42C1A34C26600513A3A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD4291A34C26600513A3A /* MasterViewController.swift */; };
 		075FD42D1A34C26600513A3A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD42A1A34C26600513A3A /* DetailViewController.swift */; };
 		075FD42F1A34C43F00513A3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD42E1A34C43F00513A3A /* AppDelegate.swift */; };
+		077CF9FB1ADB1F8800D20B9B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CF9FA1ADB1F8800D20B9B /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +46,10 @@
 		075FD4201A34C25700513A3A /* summericons_100px_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "summericons_100px_03@2x.png"; sourceTree = "<group>"; };
 		075FD4211A34C25700513A3A /* summericons_100px_04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "summericons_100px_04@2x.png"; sourceTree = "<group>"; };
 		075FD4221A34C25700513A3A /* summericons_100px_05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "summericons_100px_05@2x.png"; sourceTree = "<group>"; };
-		075FD4281A34C26600513A3A /* Listado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listado.swift; sourceTree = "<group>"; };
 		075FD4291A34C26600513A3A /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		075FD42A1A34C26600513A3A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		075FD42E1A34C43F00513A3A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		077CF9FA1ADB1F8800D20B9B /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				075FD4211A34C25700513A3A /* summericons_100px_04@2x.png */,
 				075FD4221A34C25700513A3A /* summericons_100px_05@2x.png */,
 				075FD42E1A34C43F00513A3A /* AppDelegate.swift */,
-				075FD4281A34C26600513A3A /* Listado.swift */,
+				077CF9FA1ADB1F8800D20B9B /* List.swift */,
 				075FD4291A34C26600513A3A /* MasterViewController.swift */,
 				075FD42A1A34C26600513A3A /* DetailViewController.swift */,
 				075FD4021A34C24800513A3A /* Main.storyboard */,
@@ -241,7 +241,7 @@
 				075FD42F1A34C43F00513A3A /* AppDelegate.swift in Sources */,
 				075FD42C1A34C26600513A3A /* MasterViewController.swift in Sources */,
 				075FD42D1A34C26600513A3A /* DetailViewController.swift in Sources */,
-				075FD42B1A34C26600513A3A /* Listado.swift in Sources */,
+				077CF9FB1ADB1F8800D20B9B /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +435,7 @@
 				075FD41A1A34C24800513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD41B1A34C24800513A3A /* Build configuration list for PBXNativeTarget "MasterDetailiPadTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +444,7 @@
 				075FD41D1A34C24800513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

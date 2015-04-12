@@ -1,15 +1,15 @@
 //
-//  MultiTareaTests.swift
-//  MultiTareaTests
+//  MultiTaskTests.swift
+//  MultiTaskTests
 //
-//  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Created by Carlos Butron on 13/04/15.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class MultiTareaTests: XCTestCase {
+class MultiTaskTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

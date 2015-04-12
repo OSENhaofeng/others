@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A7A91A2D5D5700494953"
-               BuildableName = "MultiTarea.app"
-               BlueprintName = "MultiTarea"
-               ReferencedContainer = "container:MultiTarea.xcodeproj">
+               BlueprintIdentifier = "077CFA041ADB279300D20B9B"
+               BuildableName = "MultiTask.app"
+               BlueprintName = "MultiTask"
+               ReferencedContainer = "container:MultiTask.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A7BE1A2D5D5800494953"
-               BuildableName = "MultiTareaTests.xctest"
-               BlueprintName = "MultiTareaTests"
-               ReferencedContainer = "container:MultiTarea.xcodeproj">
+               BlueprintIdentifier = "077CFA191ADB279300D20B9B"
+               BuildableName = "MultiTaskTests.xctest"
+               BlueprintName = "MultiTaskTests"
+               ReferencedContainer = "container:MultiTask.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A7BE1A2D5D5800494953"
-               BuildableName = "MultiTareaTests.xctest"
-               BlueprintName = "MultiTareaTests"
-               ReferencedContainer = "container:MultiTarea.xcodeproj">
+               BlueprintIdentifier = "077CFA191ADB279300D20B9B"
+               BuildableName = "MultiTaskTests.xctest"
+               BlueprintName = "MultiTaskTests"
+               ReferencedContainer = "container:MultiTask.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0770A7A91A2D5D5700494953"
-            BuildableName = "MultiTarea.app"
-            BlueprintName = "MultiTarea"
-            ReferencedContainer = "container:MultiTarea.xcodeproj">
+            BlueprintIdentifier = "077CFA041ADB279300D20B9B"
+            BuildableName = "MultiTask.app"
+            BlueprintName = "MultiTask"
+            ReferencedContainer = "container:MultiTask.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0770A7A91A2D5D5700494953"
-            BuildableName = "MultiTarea.app"
-            BlueprintName = "MultiTarea"
-            ReferencedContainer = "container:MultiTarea.xcodeproj">
+            BlueprintIdentifier = "077CFA041ADB279300D20B9B"
+            BuildableName = "MultiTask.app"
+            BlueprintName = "MultiTask"
+            ReferencedContainer = "container:MultiTask.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0770A7A91A2D5D5700494953"
-            BuildableName = "MultiTarea.app"
-            BlueprintName = "MultiTarea"
-            ReferencedContainer = "container:MultiTarea.xcodeproj">
+            BlueprintIdentifier = "077CFA041ADB279300D20B9B"
+            BuildableName = "MultiTask.app"
+            BlueprintName = "MultiTask"
+            ReferencedContainer = "container:MultiTask.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

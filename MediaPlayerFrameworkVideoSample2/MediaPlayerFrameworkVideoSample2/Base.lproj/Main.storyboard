@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QcQ-Ic-HoA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QcQ-Ic-HoA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="eMG-BD-dMf">
             <objects>
-                <viewController id="QcQ-Ic-HoA" customClass="ViewController" customModule="T10E1CarlosButron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QcQ-Ic-HoA" customClass="ViewController" customModule="MediaPlayerFrameworkVideoSample2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="40p-WN-Fga"/>
                         <viewControllerLayoutGuide type="bottom" id="o7z-S9-Kzs"/>

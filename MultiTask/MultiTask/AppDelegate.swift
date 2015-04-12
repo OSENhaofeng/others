@@ -1,9 +1,17 @@
 //
 //  AppDelegate.swift
-//  MultiTarea
+//  MultiTask
 //
-//  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Created by Carlos Butron on 13/04/15.
+//  Copyright (c) 2015 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -31,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         println("applicationDidEnterBackground")
-        NSLog("Aplicación en segundo plano!!")
+        NSLog("Aplication in background!!")
         
         for (var i=0; i<1000; i++){
             
@@ -44,8 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         println("applicationWillEnterForeground")
-        NSLog("Aplicación en primer plano!!")
-        (self.window?.rootViewController as ViewController).mensaje.text = "Estoy ACTIVO"
+        NSLog("Aplication active!!")
+        (self.window?.rootViewController as ViewController).message.text = "Im ACTIVE"
         
     }
     
@@ -53,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         println("applicationDidBecomeActive")
         
-        //(self.window?.rootViewController as ViewController).mensaje.text = "Estoy ACTIVO"
+        //(self.window?.rootViewController as ViewController).message.text = "Im ACTIVE"
         
         
     }
@@ -66,4 +74,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
-

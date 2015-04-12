@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  NavigationController
+//  List.swift
+//  MasterDetailiPad
 //
-//  Created by Carlos Butron on 02/12/14.
+//  Created by Carlos Butron on 12/04/15.
 //  Copyright (c) 2014 Carlos Butron.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
@@ -16,18 +16,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class List: NSObject {
+    
+    var name: String
+    var image: String
+    
+    
+    init (name: String, image: String){
+        
+        self.name = name
+        self.image = image
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    // let packItems = ["Sketch", "Esbozo", "Skizzen", "Schizzo ", "Schets"]
+    
+    
+    
 }
-
