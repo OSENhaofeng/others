@@ -3,7 +3,15 @@
 //  JSONParse
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -11,9 +19,9 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var imagen: UIImageView!
-    @IBOutlet weak var titulo: UILabel!
-    @IBOutlet weak var descripcion: UITextView!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var tittle: UILabel!
+    @IBOutlet weak var myDescription: UITextView!
     
     var dataJSON = NSMutableData()
     
@@ -21,19 +29,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         var stringURL:NSString = "https://itunes.apple.com/es/rss/topfreeapplications/limit=10/json"
-        //Construirmos el NSURL
+        //building NSURL
         var url = NSURL(string: stringURL)
-        //Construimos la petición NSURLRequest
+        //building NSURLRequest
         var request = NSURLRequest(URL: url!)
-        //Creamos la conexion
-        var conexion: NSURLConnection? = NSURLConnection(request: request, delegate: self)
+        //connection
+        var connection: NSURLConnection? = NSURLConnection(request: request, delegate: self)
         
-        if (conexion != nil){
-            println("Conectando...")
+        if (connection != nil){
+            println("Connecting...")
             dataJSON = NSMutableData()
         }
         else{
-            println("Imposible realizar la conexion")
+            println("Connection failed")
         }
         
         
@@ -51,7 +59,7 @@ class ViewController: UIViewController {
     
     func connection(connection: NSURLConnection!, didReceiveResponse response: NSURLResponse!){
         println("Received response: \(response)")
-        //Como puede ser llamado varias veces, reiniciamos los datos
+        //restore data
         dataJSON.length = 0
     }
     
@@ -68,12 +76,12 @@ class ViewController: UIViewController {
             var url = NSURL(string: imgJson.objectForKey("label") as String)
             var data = NSData(contentsOfURL: url!)
             var img = UIImage(data: data!)
-            imagen.image = img
-            //Obtenemos el título y la descripción
+            image.image = img
+            //get tittle and description
             var tit = (top1["title"] as NSDictionary) ["label"] as NSString
             var desc = (top1["summary"] as NSDictionary) ["label"] as NSString
-            titulo.text = tit
-            descripcion.text = desc
+            tittle.text = tit
+            myDescription.text = desc
         }
     }
     

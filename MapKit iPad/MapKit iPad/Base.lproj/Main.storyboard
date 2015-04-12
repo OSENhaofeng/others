@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0M0-qk-Ahg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0M0-qk-Ahg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -21,19 +21,19 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="add" id="CMI-Pe-tCJ">
                                         <connections>
-                                            <action selector="creaAnotacion:" destination="0M0-qk-Ahg" id="Ex2-GP-i6x"/>
+                                            <action selector="createAnotation:" destination="0M0-qk-Ahg" id="4i1-fB-z63"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="62" style="plain" systemItem="fixedSpace" id="pZC-IV-5G0"/>
                                     <barButtonItem style="plain" systemItem="trash" id="s3Y-Tq-CdU">
                                         <connections>
-                                            <action selector="borrarAnotacion:" destination="0M0-qk-Ahg" id="fjj-0T-tpY"/>
+                                            <action selector="deleteAnotation:" destination="0M0-qk-Ahg" id="NpD-zf-tR7"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="421" style="plain" systemItem="fixedSpace" id="qsU-7F-r2K"/>
                                     <barButtonItem style="plain" systemItem="refresh" id="FFY-bN-aaN">
                                         <connections>
-                                            <action selector="coordenadas:" destination="0M0-qk-Ahg" id="HEU-tt-F4b"/>
+                                            <action selector="coordinates:" destination="0M0-qk-Ahg" id="5kB-Mf-1yo"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -42,13 +42,13 @@
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tt-KP-s5Q">
                                 <rect key="frame" x="0.0" y="42" width="768" height="59"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitud:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZI-ai-J7K">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZI-ai-J7K">
                                         <rect key="frame" x="8" y="19" width="216" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitud:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SW-rc-fZr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SW-rc-fZr">
                                         <rect key="frame" x="334" y="18" width="231" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -64,9 +64,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="latitud" destination="4ZI-ai-J7K" id="uzY-Mm-rwt"/>
-                        <outlet property="longitud" destination="3SW-rc-fZr" id="JlL-eb-DWo"/>
-                        <outlet property="mapa" destination="xfj-Db-8Xn" id="rZb-2K-vVC"/>
+                        <outlet property="latitude" destination="4ZI-ai-J7K" id="Pzh-Ra-dvg"/>
+                        <outlet property="longitude" destination="3SW-rc-fZr" id="lh4-FE-kDm"/>
+                        <outlet property="myMap" destination="xfj-Db-8Xn" id="anu-3I-eGU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPZ-pW-nwd" sceneMemberID="firstResponder"/>

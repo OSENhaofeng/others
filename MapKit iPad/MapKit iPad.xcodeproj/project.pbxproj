@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077CF9F91ADAFD6400D20B9B /* MyAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CF9F81ADAFD6400D20B9B /* MyAnotation.swift */; };
 		078280F51A2D47FB00759CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078280F41A2D47FB00759CE8 /* AppDelegate.swift */; };
 		078280F71A2D47FB00759CE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078280F61A2D47FB00759CE8 /* ViewController.swift */; };
 		078280FA1A2D47FB00759CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078280F81A2D47FB00759CE8 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		078280FF1A2D47FB00759CE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078280FD1A2D47FB00759CE8 /* LaunchScreen.xib */; };
 		0782810B1A2D47FB00759CE8 /* MapKit_iPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782810A1A2D47FB00759CE8 /* MapKit_iPadTests.swift */; };
 		078281151A2D480600759CE8 /* mypin.png in Resources */ = {isa = PBXBuildFile; fileRef = 078281141A2D480600759CE8 /* mypin.png */; };
-		078281171A2D480E00759CE8 /* MiAnotacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078281161A2D480E00759CE8 /* MiAnotacion.swift */; };
 		078281191A2D482B00759CE8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078281181A2D482B00759CE8 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077CF9F81ADAFD6400D20B9B /* MyAnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAnotation.swift; path = ../MyAnotation.swift; sourceTree = "<group>"; };
 		078280EF1A2D47FB00759CE8 /* MapKit iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MapKit iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078280F31A2D47FB00759CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078280F41A2D47FB00759CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		078281091A2D47FB00759CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0782810A1A2D47FB00759CE8 /* MapKit_iPadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit_iPadTests.swift; sourceTree = "<group>"; };
 		078281141A2D480600759CE8 /* mypin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mypin.png; sourceTree = "<group>"; };
-		078281161A2D480E00759CE8 /* MiAnotacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiAnotacion.swift; sourceTree = "<group>"; };
 		078281181A2D482B00759CE8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 				078281141A2D480600759CE8 /* mypin.png */,
 				078280F41A2D47FB00759CE8 /* AppDelegate.swift */,
 				078280F61A2D47FB00759CE8 /* ViewController.swift */,
-				078281161A2D480E00759CE8 /* MiAnotacion.swift */,
+				077CF9F81ADAFD6400D20B9B /* MyAnotation.swift */,
 				078280F81A2D47FB00759CE8 /* Main.storyboard */,
 				078280FB1A2D47FB00759CE8 /* Images.xcassets */,
 				078280FD1A2D47FB00759CE8 /* LaunchScreen.xib */,
@@ -224,8 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				078280F71A2D47FB00759CE8 /* ViewController.swift in Sources */,
-				078281171A2D480E00759CE8 /* MiAnotacion.swift in Sources */,
 				078280F51A2D47FB00759CE8 /* AppDelegate.swift in Sources */,
+				077CF9F91ADAFD6400D20B9B /* MyAnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +419,7 @@
 				078281101A2D47FB00759CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		078281111A2D47FB00759CE8 /* Build configuration list for PBXNativeTarget "MapKit iPadTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +428,7 @@
 				078281131A2D47FB00759CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

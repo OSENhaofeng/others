@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ODE-g8-1zt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ODE-g8-1zt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="080-YP-Z8F">
             <objects>
-                <viewController id="ODE-g8-1zt" customClass="ViewController" customModule="T16E2CarlosButron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ODE-g8-1zt" customClass="ViewController" customModule="JSONParse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LN-Qm-ecs"/>
                         <viewControllerLayoutGuide type="bottom" id="TK8-DH-6tv"/>
@@ -61,9 +61,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="descripcion" destination="q2A-NK-hj1" id="r3I-Br-p7e"/>
-                        <outlet property="imagen" destination="NE6-gQ-cPT" id="fWe-YD-MJb"/>
-                        <outlet property="titulo" destination="g3s-sF-wbG" id="r0n-uc-6KN"/>
+                        <outlet property="image" destination="NE6-gQ-cPT" id="bBZ-xt-85p"/>
+                        <outlet property="myDescription" destination="q2A-NK-hj1" id="8oB-Lx-WhQ"/>
+                        <outlet property="tittle" destination="g3s-sF-wbG" id="Ta1-Qx-IbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfY-5E-9XQ" sceneMemberID="firstResponder"/>
