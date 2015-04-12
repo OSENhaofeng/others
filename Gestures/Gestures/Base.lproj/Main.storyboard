@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eFB-DU-Fkf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eFB-DU-Fkf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="4EJ-Fc-WxD">
             <objects>
-                <viewController id="eFB-DU-Fkf" customClass="ViewController" customModule="T8E3Ampliacion3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eFB-DU-Fkf" customClass="ViewController" customModule="Gestures" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nbh-vc-Hy3"/>
                         <viewControllerLayoutGuide type="bottom" id="WNU-bq-EZY"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagen1.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9R-S5-yMf">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9R-S5-yMf">
                                 <rect key="frame" x="16" y="92" width="288" height="269"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="FbQ-Ar-ZKH"/>
@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="image" destination="E9R-S5-yMf" id="hlY-bQ-0wP"/>
+                        <outlet property="image" destination="E9R-S5-yMf" id="tx8-WZ-XS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zF-c1-Bv8" sceneMemberID="firstResponder"/>
@@ -44,7 +44,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="imagen1.png" width="800" height="800"/>
+        <image name="image1.png" width="800" height="800"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

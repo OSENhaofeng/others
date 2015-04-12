@@ -13,7 +13,7 @@
 		0787D9821A2CD23000F22957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9811A2CD23000F22957 /* Images.xcassets */; };
 		0787D9851A2CD23000F22957 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9831A2CD23000F22957 /* LaunchScreen.xib */; };
 		0787D9911A2CD23000F22957 /* GestureDoubleTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787D9901A2CD23000F22957 /* GestureDoubleTabTests.swift */; };
-		0787D99B1A2CD27600F22957 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787D99A1A2CD27600F22957 /* imagen1.png */; };
+		0787D99B1A2CD27600F22957 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787D99A1A2CD27600F22957 /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		0787D98A1A2CD23000F22957 /* GestureDoubleTabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureDoubleTabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0787D98F1A2CD23000F22957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0787D9901A2CD23000F22957 /* GestureDoubleTabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureDoubleTabTests.swift; sourceTree = "<group>"; };
-		0787D99A1A2CD27600F22957 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0787D99A1A2CD27600F22957 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		0787D9771A2CD23000F22957 /* GestureDoubleTab */ = {
 			isa = PBXGroup;
 			children = (
-				0787D99A1A2CD27600F22957 /* imagen1.png */,
+				0787D99A1A2CD27600F22957 /* image1.png */,
 				0787D97A1A2CD23000F22957 /* AppDelegate.swift */,
 				0787D97C1A2CD23000F22957 /* ViewController.swift */,
 				0787D97E1A2CD23000F22957 /* Main.storyboard */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0787D99B1A2CD27600F22957 /* imagen1.png in Resources */,
+				0787D99B1A2CD27600F22957 /* image1.png in Resources */,
 				0787D9801A2CD23000F22957 /* Main.storyboard in Resources */,
 				0787D9851A2CD23000F22957 /* LaunchScreen.xib in Resources */,
 				0787D9821A2CD23000F22957 /* Images.xcassets in Resources */,
@@ -409,6 +409,7 @@
 				0787D9961A2CD23000F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0787D9971A2CD23000F22957 /* Build configuration list for PBXNativeTarget "GestureDoubleTabTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				0787D9991A2CD23000F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

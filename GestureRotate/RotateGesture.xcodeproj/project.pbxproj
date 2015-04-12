@@ -13,7 +13,7 @@
 		0787D9E21A2CD50400F22957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9E11A2CD50400F22957 /* Images.xcassets */; };
 		0787D9E51A2CD50400F22957 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9E31A2CD50400F22957 /* LaunchScreen.xib */; };
 		0787D9F11A2CD50400F22957 /* RotateGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787D9F01A2CD50400F22957 /* RotateGestureTests.swift */; };
-		0787DA2D1A2CD6BF00F22957 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA2C1A2CD6BF00F22957 /* imagen1.png */; };
+		0787DA2D1A2CD6BF00F22957 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA2C1A2CD6BF00F22957 /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		0787D9EA1A2CD50400F22957 /* RotateGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotateGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0787D9EF1A2CD50400F22957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0787D9F01A2CD50400F22957 /* RotateGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateGestureTests.swift; sourceTree = "<group>"; };
-		0787DA2C1A2CD6BF00F22957 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0787DA2C1A2CD6BF00F22957 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		0787D9D71A2CD50400F22957 /* RotateGesture */ = {
 			isa = PBXGroup;
 			children = (
-				0787DA2C1A2CD6BF00F22957 /* imagen1.png */,
+				0787DA2C1A2CD6BF00F22957 /* image1.png */,
 				0787D9DA1A2CD50400F22957 /* AppDelegate.swift */,
 				0787D9DC1A2CD50400F22957 /* ViewController.swift */,
 				0787D9DE1A2CD50400F22957 /* Main.storyboard */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0787DA2D1A2CD6BF00F22957 /* imagen1.png in Resources */,
+				0787DA2D1A2CD6BF00F22957 /* image1.png in Resources */,
 				0787D9E01A2CD50400F22957 /* Main.storyboard in Resources */,
 				0787D9E51A2CD50400F22957 /* LaunchScreen.xib in Resources */,
 				0787D9E21A2CD50400F22957 /* Images.xcassets in Resources */,

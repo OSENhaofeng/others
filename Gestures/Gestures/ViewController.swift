@@ -3,7 +3,15 @@
 //  Gestures
 //
 //  Created by Carlos Butron on 01/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -19,7 +27,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        //ROTACION
+        //ROTATION
         var rotateGesture = UIRotationGestureRecognizer(target: self, action: "rotateGesture:")
         image.addGestureRecognizer(rotateGesture)
         
@@ -54,7 +62,7 @@ class ViewController: UIViewController {
         
         
         super.viewDidLoad()
-        image.image = UIImage(named: "imagen1.png")
+        image.image = UIImage(named: "image1.png")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -63,7 +71,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //ROTACION
+    //ROTATION
     @IBAction func rotateGesture(sender : UIRotationGestureRecognizer) {
         var rotation:CGFloat = sender.rotation
         var transform:CGAffineTransform  =
@@ -108,7 +116,7 @@ class ViewController: UIViewController {
             
             var myAlertView = UIAlertView()
             
-            myAlertView.title = "Alerta"
+            myAlertView.title = "Alert"
             myAlertView.message = "Gesto Long Press"
             myAlertView.addButtonWithTitle("ok")
             
@@ -122,10 +130,10 @@ class ViewController: UIViewController {
     }
     
     func changeImage(){
-        if (image.image == UIImage(named: "imagen1.png")){
-            image.image = UIImage(named: "imagen2.png")}
+        if (image.image == UIImage(named: "image1.png")){
+            image.image = UIImage(named: "image2.png")}
         else{
-            image.image = UIImage(named: "imagen1.png")
+            image.image = UIImage(named: "image1.png")
         }
     }
     

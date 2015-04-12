@@ -13,8 +13,8 @@
 		0787DA741A2CDA4400F22957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA731A2CDA4400F22957 /* Images.xcassets */; };
 		0787DA771A2CDA4400F22957 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA751A2CDA4400F22957 /* LaunchScreen.xib */; };
 		0787DA831A2CDA4400F22957 /* GesturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787DA821A2CDA4400F22957 /* GesturesTests.swift */; };
-		0787DA8E1A2CDA6D00F22957 /* imagen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA8C1A2CDA6D00F22957 /* imagen2.png */; };
-		0787DA8F1A2CDA6D00F22957 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA8D1A2CDA6D00F22957 /* imagen1.png */; };
+		0787DA8E1A2CDA6D00F22957 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA8C1A2CDA6D00F22957 /* image2.png */; };
+		0787DA8F1A2CDA6D00F22957 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA8D1A2CDA6D00F22957 /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		0787DA7C1A2CDA4400F22957 /* GesturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GesturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0787DA811A2CDA4400F22957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0787DA821A2CDA4400F22957 /* GesturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesTests.swift; sourceTree = "<group>"; };
-		0787DA8C1A2CDA6D00F22957 /* imagen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen2.png; sourceTree = "<group>"; };
-		0787DA8D1A2CDA6D00F22957 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0787DA8C1A2CDA6D00F22957 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		0787DA8D1A2CDA6D00F22957 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,8 @@
 		0787DA691A2CDA4400F22957 /* Gestures */ = {
 			isa = PBXGroup;
 			children = (
-				0787DA8C1A2CDA6D00F22957 /* imagen2.png */,
-				0787DA8D1A2CDA6D00F22957 /* imagen1.png */,
+				0787DA8C1A2CDA6D00F22957 /* image2.png */,
+				0787DA8D1A2CDA6D00F22957 /* image1.png */,
 				0787DA6C1A2CDA4400F22957 /* AppDelegate.swift */,
 				0787DA6E1A2CDA4400F22957 /* ViewController.swift */,
 				0787DA701A2CDA4400F22957 /* Main.storyboard */,
@@ -198,9 +198,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0787DA8F1A2CDA6D00F22957 /* imagen1.png in Resources */,
+				0787DA8F1A2CDA6D00F22957 /* image1.png in Resources */,
 				0787DA721A2CDA4400F22957 /* Main.storyboard in Resources */,
-				0787DA8E1A2CDA6D00F22957 /* imagen2.png in Resources */,
+				0787DA8E1A2CDA6D00F22957 /* image2.png in Resources */,
 				0787DA771A2CDA4400F22957 /* LaunchScreen.xib in Resources */,
 				0787DA741A2CDA4400F22957 /* Images.xcassets in Resources */,
 			);
@@ -413,6 +413,7 @@
 				0787DA881A2CDA4400F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0787DA891A2CDA4400F22957 /* Build configuration list for PBXNativeTarget "GesturesTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				0787DA8B1A2CDA4400F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,7 +13,7 @@
 		0787D9B21A2CD3D100F22957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9B11A2CD3D100F22957 /* Images.xcassets */; };
 		0787D9B51A2CD3D100F22957 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9B31A2CD3D100F22957 /* LaunchScreen.xib */; };
 		0787D9C11A2CD3D100F22957 /* PinchGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787D9C01A2CD3D100F22957 /* PinchGestureTests.swift */; };
-		0787D9CB1A2CD3F800F22957 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9CA1A2CD3F700F22957 /* imagen1.png */; };
+		0787D9CB1A2CD3F800F22957 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787D9CA1A2CD3F700F22957 /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		0787D9BA1A2CD3D100F22957 /* PinchGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinchGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0787D9BF1A2CD3D100F22957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0787D9C01A2CD3D100F22957 /* PinchGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchGestureTests.swift; sourceTree = "<group>"; };
-		0787D9CA1A2CD3F700F22957 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0787D9CA1A2CD3F700F22957 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		0787D9A71A2CD3D100F22957 /* PinchGesture */ = {
 			isa = PBXGroup;
 			children = (
-				0787D9CA1A2CD3F700F22957 /* imagen1.png */,
+				0787D9CA1A2CD3F700F22957 /* image1.png */,
 				0787D9AA1A2CD3D100F22957 /* AppDelegate.swift */,
 				0787D9AC1A2CD3D100F22957 /* ViewController.swift */,
 				0787D9AE1A2CD3D100F22957 /* Main.storyboard */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0787D9CB1A2CD3F800F22957 /* imagen1.png in Resources */,
+				0787D9CB1A2CD3F800F22957 /* image1.png in Resources */,
 				0787D9B01A2CD3D100F22957 /* Main.storyboard in Resources */,
 				0787D9B51A2CD3D100F22957 /* LaunchScreen.xib in Resources */,
 				0787D9B21A2CD3D100F22957 /* Images.xcassets in Resources */,
@@ -409,6 +409,7 @@
 				0787D9C61A2CD3D100F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0787D9C71A2CD3D100F22957 /* Build configuration list for PBXNativeTarget "PinchGestureTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				0787D9C91A2CD3D100F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

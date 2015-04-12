@@ -13,7 +13,7 @@
 		0787DA101A2CD61900F22957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA0F1A2CD61900F22957 /* Images.xcassets */; };
 		0787DA131A2CD61900F22957 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA111A2CD61900F22957 /* LaunchScreen.xib */; };
 		0787DA1F1A2CD61900F22957 /* SwipeGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787DA1E1A2CD61900F22957 /* SwipeGestureTests.swift */; };
-		0787DA2A1A2CD62500F22957 /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA281A2CD62500F22957 /* imagen1.png */; };
+		0787DA2A1A2CD62500F22957 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA281A2CD62500F22957 /* image1.png */; };
 		0787DA2B1A2CD62500F22957 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 0787DA291A2CD62500F22957 /* apple.png */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		0787DA181A2CD61900F22957 /* SwipeGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0787DA1D1A2CD61900F22957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0787DA1E1A2CD61900F22957 /* SwipeGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureTests.swift; sourceTree = "<group>"; };
-		0787DA281A2CD62500F22957 /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		0787DA281A2CD62500F22957 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 		0787DA291A2CD62500F22957 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 		0787DA051A2CD61900F22957 /* SwipeGesture */ = {
 			isa = PBXGroup;
 			children = (
-				0787DA281A2CD62500F22957 /* imagen1.png */,
+				0787DA281A2CD62500F22957 /* image1.png */,
 				0787DA291A2CD62500F22957 /* apple.png */,
 				0787DA081A2CD61900F22957 /* AppDelegate.swift */,
 				0787DA0A1A2CD61900F22957 /* ViewController.swift */,
@@ -198,7 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0787DA2A1A2CD62500F22957 /* imagen1.png in Resources */,
+				0787DA2A1A2CD62500F22957 /* image1.png in Resources */,
 				0787DA0E1A2CD61900F22957 /* Main.storyboard in Resources */,
 				0787DA131A2CD61900F22957 /* LaunchScreen.xib in Resources */,
 				0787DA101A2CD61900F22957 /* Images.xcassets in Resources */,
@@ -413,6 +413,7 @@
 				0787DA241A2CD61900F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0787DA251A2CD61900F22957 /* Build configuration list for PBXNativeTarget "SwipeGestureTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				0787DA271A2CD61900F22957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

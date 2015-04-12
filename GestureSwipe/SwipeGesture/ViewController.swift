@@ -3,7 +3,15 @@
 //  SwipeGesture
 //
 //  Created by Carlos Butron on 01/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -11,7 +19,7 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var imagen2: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
     
     
     override func viewDidLoad() {
@@ -19,24 +27,24 @@ class ViewController: UIViewController {
         
         var swipeGestureRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
-        imagen2.addGestureRecognizer(swipeGestureRight)
+        image2.addGestureRecognizer(swipeGestureRight)
         
         var swipeGestureDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeGestureDown.direction = UISwipeGestureRecognizerDirection.Down
-        imagen2.addGestureRecognizer(swipeGestureDown)
+        image2.addGestureRecognizer(swipeGestureDown)
         
         var swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
-        imagen2.addGestureRecognizer(swipeGestureLeft)
+        image2.addGestureRecognizer(swipeGestureLeft)
         
         var swipeGestureUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
-        imagen2.addGestureRecognizer(swipeGestureUp)
+        image2.addGestureRecognizer(swipeGestureUp)
         
         
         super.viewDidLoad()
         
-        imagen2.image = UIImage(named: "apple.png")
+        image2.image = UIImage(named: "apple.png")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -66,10 +74,10 @@ class ViewController: UIViewController {
     }
     
     func changeImage(){
-        if (imagen2.image == UIImage(named: "apple.png")){
-            imagen2.image = UIImage(named: "imagen1.png")}
+        if (image2.image == UIImage(named: "apple.png")){
+            image2.image = UIImage(named: "image1.png")}
         else{
-            imagen2.image = UIImage(named: "apple.png")
+            image2.image = UIImage(named: "apple.png")
         }
     }
     
