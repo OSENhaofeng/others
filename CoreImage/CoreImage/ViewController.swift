@@ -3,7 +3,15 @@
 //  CoreImage
 //
 //  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -13,13 +21,13 @@ import CoreImage
 class ViewController: UIViewController {
     
     
-    //SLIDER APLICADA A LOS DOS PRIMEROS FILTROS
-    //el funcionamiento es el siguiente: al cambiar el slider cambia el valor
-    //una vez cambiado hay que volver a pulsar sobre el botón del filtro "sepia" o "vignette" para que se aplique
+    //SLIDER TO FIRST AND SECOND FILTER
+    //when you do slider value change
+    //then push in filter button  "sepia" or "vignette" to apply it
     
     var sliderValue: Float = 0.0
     
-    @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var myImage: UIImageView!
     
     @IBAction func sepia(sender: UIButton) {
         applyfilter(1);
@@ -66,54 +74,53 @@ class ViewController: UIViewController {
     
     func applyfilter(numberFilter: Int) {
         
-        let filePath : NSString = NSBundle.mainBundle().pathForResource("imagen", ofType: "jpg")!
+        let filePath : NSString = NSBundle.mainBundle().pathForResource("image", ofType: "jpg")!
         let fileUrl : NSURL = NSURL (fileURLWithPath: filePath)!
         let inputImage : CIImage = CIImage (contentsOfURL: fileUrl)
         
         switch numberFilter {
         case 1:
-            var filtro : CIFilter = CIFilter (name: "CISepiaTone")
-            filtro.setValue(inputImage, forKey: kCIInputImageKey)
-            //filtro.setValue(1.0, forKey: "InputIntensity")
-            filtro.setValue(sliderValue, forKey: "InputIntensity")
-            let outputImage : CIImage = filtro.valueForKey(kCIOutputImageKey) as CIImage
+            var filter : CIFilter = CIFilter (name: "CISepiaTone")
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
+            filter.setValue(sliderValue, forKey: "InputIntensity")
+            let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
             var img : UIImage = UIImage (CIImage: outputImage)!
-            imagen.image = img
+            myImage.image = img
         case 2:
-            var filtro : CIFilter = CIFilter (name: "CIVignette")
-            filtro.setValue(inputImage, forKey: kCIInputImageKey)
-            filtro.setValue(sliderValue, forKey: "InputRadius")
-            filtro.setValue(sliderValue, forKey: "InputIntensity")
-            let outputImage : CIImage = filtro.valueForKey(kCIOutputImageKey) as CIImage
+            var filter : CIFilter = CIFilter (name: "CIVignette")
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
+            filter.setValue(sliderValue, forKey: "InputRadius")
+            filter.setValue(sliderValue, forKey: "InputIntensity")
+            let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
             var img : UIImage = UIImage (CIImage: outputImage)!
-            imagen.image = img
+            myImage.image = img
         case 3:
-            var filtro : CIFilter = CIFilter (name: "CIColorInvert")
-            filtro.setValue(inputImage, forKey: kCIInputImageKey)
-            let outputImage : CIImage = filtro.valueForKey(kCIOutputImageKey) as CIImage
+            var filter : CIFilter = CIFilter (name: "CIColorInvert")
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
+            let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
             var img : UIImage = UIImage (CIImage: outputImage)!
-            imagen.image = img
+            myImage.image = img
         case 4:
-            var filtro : CIFilter = CIFilter (name: "CIPhotoEffectMono")
-            filtro.setValue(inputImage, forKey: kCIInputImageKey)
+            var filter : CIFilter = CIFilter (name: "CIPhotoEffectMono")
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
             
-            let outputImage : CIImage = filtro.valueForKey(kCIOutputImageKey) as CIImage
+            let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
             var img : UIImage = UIImage (CIImage: outputImage)!
-            imagen.image = img
+            myImage.image = img
         case 5:
-            var filtro : CIFilter = CIFilter (name: "CIPerspectiveTransform")
-            filtro.setValue(inputImage, forKey: kCIInputImageKey)
+            var filter : CIFilter = CIFilter (name: "CIPerspectiveTransform")
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
             
-            let outputImage : CIImage = filtro.valueForKey(kCIOutputImageKey) as CIImage
+            let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
             var img : UIImage = UIImage (CIImage: outputImage)!
-            imagen.image = img
+            myImage.image = img
         case 6:
-            var filtro : CIFilter = CIFilter (name: "CIGaussianBlur")
-            filtro.setValue(inputImage, forKey: kCIInputImageKey)
+            var filter : CIFilter = CIFilter (name: "CIGaussianBlur")
+            filter.setValue(inputImage, forKey: kCIInputImageKey)
             
-            let outputImage : CIImage = filtro.valueForKey(kCIOutputImageKey) as CIImage
+            let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
             var img : UIImage = UIImage (CIImage: outputImage)!
-            imagen.image = img
+            myImage.image = img
         default:
             println("test")
             

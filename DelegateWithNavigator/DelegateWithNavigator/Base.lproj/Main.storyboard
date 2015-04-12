@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ulU-xy-H1e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ulU-xy-H1e">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -38,11 +38,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="botonPrincipal:" destination="X5k-GY-6IC" eventType="touchUpInside" id="vgy-lU-bWq"/>
+                                    <action selector="mainButton:" destination="X5k-GY-6IC" eventType="touchUpInside" id="O83-lv-82u"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pulsa el botón!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPg-Zg-5ag">
-                                <rect key="frame" x="103" y="179" width="115" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Push the button!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPg-Zg-5ag">
+                                <rect key="frame" x="103" y="179" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,17 +53,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="LZP-gX-O8f"/>
                     <connections>
-                        <outlet property="labelPrincipal" destination="SPg-Zg-5ag" id="sCv-Hk-zSO"/>
+                        <outlet property="principalLabel" destination="SPg-Zg-5ag" id="C0P-ft-ZmD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NO-1u-6TC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="399"/>
         </scene>
-        <!--Segundo View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="6S3-mR-0Ks">
             <objects>
-                <viewController storyboardIdentifier="SegundoViewController" id="wv5-WS-YPJ" customClass="SegundoViewController" customModule="DelegateWithNavigator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="wv5-WS-YPJ" customClass="SecondViewController" customModule="DelegateWithNavigator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pkd-Vl-z40"/>
                         <viewControllerLayoutGuide type="bottom" id="70c-tg-pST"/>
@@ -78,10 +78,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="botonSegundo:" destination="wv5-WS-YPJ" eventType="touchUpInside" id="H6W-0P-gYQ"/>
+                                    <action selector="secondButton:" destination="wv5-WS-YPJ" eventType="touchUpInside" id="Sqq-NF-Gl8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valor inicial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVD-I8-d3T">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVD-I8-d3T">
                                 <rect key="frame" x="76" y="176" width="193" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -92,7 +92,7 @@
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="labelSegundo" destination="BVD-I8-d3T" id="4DO-Dl-h84"/>
+                        <outlet property="secondLabel" destination="BVD-I8-d3T" id="vG5-fl-1d5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X14-vf-fh3" userLabel="First Responder" sceneMemberID="firstResponder"/>

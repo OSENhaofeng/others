@@ -3,7 +3,15 @@
 //  CoreImageCIDetector
 //
 //  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -25,16 +33,16 @@ class ViewController: UIViewController {
         var imageView = UIImageView(image: UIImage(named: "emotions.jpg"))
         self.view.addSubview(imageView)
         
-        //Vista auxiliar que luego invertiremos.
+        //auxiliar view to invert.
         var vistAux = UIView(frame: imageView.frame)
         for faceFeature in features {
             
-            //Detección
+            //Detection
             var smile = faceFeature.hasSmile
             var rightEyeBlinking = faceFeature.rightEyeClosed
             var leftEyeBlinking = faceFeature.leftEyeClosed
             
-            //Localizar la cara
+            //Location face
             let faceRect = faceFeature.bounds
             var faceView = UIView(frame: faceRect)
             faceView.layer.borderWidth = 2
@@ -43,7 +51,7 @@ class ViewController: UIViewController {
             var faceHeight:CGFloat = faceRect.size.height
             vistAux.addSubview(faceView)
             
-            //Localizar sonrisa
+            //Location smile
             if (smile==true) {
                 var smileView = UIView(frame: CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.18, faceFeature.mouthPosition.y-faceHeight*0.1, faceWidth*0.4, faceHeight*0.2))
                 smileView.layer.cornerRadius = faceWidth*0.1
@@ -54,7 +62,7 @@ class ViewController: UIViewController {
                 vistAux.addSubview(smileView)
             }
             
-            //Localizar ojo derecho
+            //Location right eye
             
             var rightEyeView = UIView(frame: CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.2, faceFeature.rightEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             rightEyeView.layer.cornerRadius = faceWidth*0.2
@@ -69,7 +77,7 @@ class ViewController: UIViewController {
             vistAux.addSubview(rightEyeView)
             
             
-            //Localizar ojo izquierdo
+            //Location left eye
             
             var leftEyeView = UIView(frame: CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.2, faceFeature.leftEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             leftEyeView.layer.cornerRadius = faceWidth*0.2
@@ -90,7 +98,7 @@ class ViewController: UIViewController {
         
         self.view.addSubview(vistAux)
         
-        //Invertimos el Eje de Coordenadas
+        //Invert coords
         vistAux.transform = CGAffineTransformMakeScale(1, -1)
         
         super.viewDidLoad()

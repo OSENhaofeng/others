@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SegundoViewController.swift
 //  DelegateWithNavigator
 //
 //  Created by Carlos Butron on 02/12/14.
@@ -16,26 +16,27 @@
 
 import UIKit
 
-class ViewController: UIViewController, myDelegate {
+protocol myDelegate {
+    func writeDateInLabel(date:NSString)
+}
+
+class SecondViewController: UIViewController {
     
-    @IBOutlet weak var principalLabel: UILabel!
+    var data: NSString = ""
+    var delegate: myDelegate?
     
-    @IBAction func mainButton(sender: UIButton) {
-        
-        //we got it the final instance in storyboard
-        
-        var secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as SecondViewController
-        secondController.data = "Text from superclass"
-        //who is it delegate
-        secondController.delegate = self
-        //we do push to navigate
-        self.navigationController?.pushViewController(secondController,
-            animated: true)
+    @IBOutlet weak var secondLabel: UILabel!
+    
+    @IBAction func secondButton(sender: AnyObject) {
+        self.delegate?.writeDateInLabel("I got it!")
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Do any additional setup after loading the view.
+        secondLabel.text = data
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,10 +44,15 @@ class ViewController: UIViewController, myDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func writeDateInLabel(data:NSString){
-        self.principalLabel.text = data
-    }
     
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }
-

@@ -3,7 +3,15 @@
 //  CoreLocation
 //
 //  Created by Carlos Butron on 19/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -19,7 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var myLongitude: CLLocationDegrees!
     var finalLatitude: CLLocationDegrees!
     var finalLongitude: CLLocationDegrees!
-    var distancia: CLLocationDistance!
+    var distance: CLLocationDistance!
     
     
     
@@ -46,28 +54,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         var getLat: CLLocationDegrees = newCoord.latitude
         var getLon: CLLocationDegrees = newCoord.longitude
         
-        //convertimos los dos puntos a CLLocation para medir la distancia entre ellos con distanceFromLocation
+        //Convert to points to CLLocation. In this way we can measure distanceFromLocation
         var newCoord2: CLLocation = CLLocation(latitude: getLat, longitude: getLon)
         
         var newCoord3: CLLocation = CLLocation(latitude: myLatitude, longitude: myLongitude)
         
         finalLatitude = newCoord2.coordinate.latitude
         finalLongitude = newCoord2.coordinate.longitude
-        println("Latitud inicial: \(myLatitude)")
-        println("Longitud inicial: \(myLongitude)")
-        println("Latitud final: \(finalLatitude)")
-        println("Longitud final: \(finalLongitude)")
+        println("Original Latitude: \(myLatitude)")
+        println("Original Longitude: \(myLongitude)")
+        println("Final Latitude: \(finalLatitude)")
+        println("Final Longitude: \(finalLongitude)")
         
         
         
-        //distancia entre nuestra posicion y el nuevo punto creado
-        let distancia = newCoord2.distanceFromLocation(newCoord3)
-        println("Distancia entre puntos: \(distancia)")
-        //a
+        //distance between our position and the new point created
+        let distance = newCoord2.distanceFromLocation(newCoord3)
+        println("Distancia entre puntos: \(distance)")
+        
         
         var newAnnotation = MKPointAnnotation()
         newAnnotation.coordinate = newCoord
-        newAnnotation.title = "Mi objetivo"
+        newAnnotation.title = "My target"
         newAnnotation.subtitle = ""
         myMap.addAnnotation(newAnnotation)
         
@@ -128,7 +136,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         println("Error while updating location " + error.localizedDescription)
     }
     
-    //distancia entre puntos
+    //distance between two points
     
     func degreesToRadians(degrees: Double) -> Double { return degrees * M_PI / 180.0 }
     func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / M_PI }

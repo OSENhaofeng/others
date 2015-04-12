@@ -13,7 +13,7 @@
 		075FD4A61A34D3BA00513A3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4A51A34D3BA00513A3A /* Images.xcassets */; };
 		075FD4A91A34D3BA00513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4A71A34D3BA00513A3A /* LaunchScreen.xib */; };
 		075FD4B51A34D3BB00513A3A /* CoreImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD4B41A34D3BB00513A3A /* CoreImageTests.swift */; };
-		075FD4BF1A34D3EE00513A3A /* imagen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4BE1A34D3EE00513A3A /* imagen.jpg */; };
+		075FD4BF1A34D3EE00513A3A /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 075FD4BE1A34D3EE00513A3A /* image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		075FD4AE1A34D3BB00513A3A /* CoreImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075FD4B31A34D3BB00513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD4B41A34D3BB00513A3A /* CoreImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageTests.swift; sourceTree = "<group>"; };
-		075FD4BE1A34D3EE00513A3A /* imagen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imagen.jpg; sourceTree = "<group>"; };
+		075FD4BE1A34D3EE00513A3A /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		075FD49B1A34D3BA00513A3A /* CoreImage */ = {
 			isa = PBXGroup;
 			children = (
-				075FD4BE1A34D3EE00513A3A /* imagen.jpg */,
+				075FD4BE1A34D3EE00513A3A /* image.jpg */,
 				075FD49E1A34D3BA00513A3A /* AppDelegate.swift */,
 				075FD4A01A34D3BA00513A3A /* ViewController.swift */,
 				075FD4A21A34D3BA00513A3A /* Main.storyboard */,
@@ -197,7 +197,7 @@
 			files = (
 				075FD4A41A34D3BA00513A3A /* Main.storyboard in Resources */,
 				075FD4A91A34D3BA00513A3A /* LaunchScreen.xib in Resources */,
-				075FD4BF1A34D3EE00513A3A /* imagen.jpg in Resources */,
+				075FD4BF1A34D3EE00513A3A /* image.jpg in Resources */,
 				075FD4A61A34D3BA00513A3A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +409,7 @@
 				075FD4BA1A34D3BB00513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD4BB1A34D3BB00513A3A /* Build configuration list for PBXNativeTarget "CoreImageTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				075FD4BD1A34D3BB00513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
