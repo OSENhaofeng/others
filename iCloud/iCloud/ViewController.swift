@@ -3,7 +3,15 @@
 //  iCloud
 //
 //  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -19,32 +27,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func borrarFotos(sender: UIBarButtonItem) {
+    @IBAction func deletePhotos(sender: UIBarButtonItem) {
         
         removeImagesFromICloud()
     }
     
-    @IBAction func elegirFotos(sender: UIBarButtonItem) {
-        var action = UIAlertController (title: "Fotos", message: "¿De dónde quieres obtener las fotos?", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        action.addAction(UIAlertAction(title: "Cámara", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            println("Elegimos de la camara")
-            self.capturaFotos(true)
+    @IBAction func choosePhotos(sender: UIBarButtonItem) {
+        var action = UIAlertController (title: "Photos", message: "Select source", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        action.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            println("Choose camera")
+            self.getPhoto(true)
         }))
-        action.addAction(UIAlertAction(title: "Galería", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            println("Elegimos de la galería")
-            self.capturaFotos(false)
+        action.addAction(UIAlertAction(title: "Galery", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            println("Choose galery")
+            self.getPhoto(false)
         }))
         self.presentViewController(action, animated: true, completion: nil)
     }
     
-    func capturaFotos (camara: Bool){
+    func getPhoto (camera: Bool){
         let picker = UIImagePickerController()
         picker.delegate = self
-        if (camara){
+        if (camera){
             picker.sourceType = UIImagePickerControllerSourceType.Camera
         }else{
             picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            println("Elegimos de la galería2")
+            println("Choose from galery 2")
         }
         picker.allowsEditing = false
         self.presentViewController(picker, animated: true, completion: nil)
@@ -56,29 +64,29 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         self.dismissViewControllerAnimated(true, completion: nil)
         var fullImage = (info as NSDictionary)[UIImagePickerControllerOriginalImage] as UIImage
-        println("Elegimos de la galería3")
+        println("Choose from galery 3")
         savePhotoICloud(fullImage)
     }
     
     
     
     
-    func savePhotoICloud (imagen: UIImage){
-        var fecha = NSDate()
+    func savePhotoICloud (image: UIImage){
+        var date = NSDate()
         var df = NSDateFormatter()
         df.dateFormat = "dd_MM_yy_hh_mm_ss"
         
-        var photoName = NSString (format: "PHOTO_%@", df.stringFromDate(fecha))
+        var photoName = NSString (format: "PHOTO_%@", df.stringFromDate(date))
         
         if (container != nil){
             var fileURLiCloud = container!.URLByAppendingPathComponent("Documents").URLByAppendingPathComponent(photoName)
             var photo = DocumentPhoto (fileURL: fileURLiCloud)
-            photo.image = imagen
+            photo.image = image
             
             photo.saveToURL(fileURLiCloud, forSaveOperation: UIDocumentSaveOperation.ForCreating, completionHandler: { (success) -> Void
                 in
-                self.celdas.addObject(imagen)
-                println("Elegimos de la galería4")
+                self.celdas.addObject(image)
+                println("Choose from galery 4")
                 self.collectionView.reloadData()
             })
         }

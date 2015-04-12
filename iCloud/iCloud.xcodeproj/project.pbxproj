@@ -13,8 +13,8 @@
 		075FD2CF1A34858200513A3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2CE1A34858200513A3A /* Images.xcassets */; };
 		075FD2D21A34858200513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2D01A34858200513A3A /* LaunchScreen.xib */; };
 		075FD2DE1A34858200513A3A /* iCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD2DD1A34858200513A3A /* iCloudTests.swift */; };
-		075FD2E91A34859400513A3A /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2E71A34859400513A3A /* imagen1.png */; };
-		075FD2EA1A34859400513A3A /* fondo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2E81A34859400513A3A /* fondo1.jpg */; };
+		075FD2E91A34859400513A3A /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2E71A34859400513A3A /* image1.png */; };
+		075FD2EA1A34859400513A3A /* background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2E81A34859400513A3A /* background1.jpg */; };
 		075FD2EE1A3485A500513A3A /* DocumentPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD2ED1A3485A500513A3A /* DocumentPhoto.swift */; };
 		075FD2F11A34884F00513A3A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075FD2F01A34884F00513A3A /* CloudKit.framework */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,8 @@
 		075FD2D71A34858200513A3A /* iCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075FD2DC1A34858200513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD2DD1A34858200513A3A /* iCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudTests.swift; sourceTree = "<group>"; };
-		075FD2E71A34859400513A3A /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
-		075FD2E81A34859400513A3A /* fondo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondo1.jpg; sourceTree = "<group>"; };
+		075FD2E71A34859400513A3A /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		075FD2E81A34859400513A3A /* background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background1.jpg; sourceTree = "<group>"; };
 		075FD2ED1A3485A500513A3A /* DocumentPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPhoto.swift; sourceTree = "<group>"; };
 		075FD2EF1A3487C300513A3A /* iCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iCloud.entitlements; sourceTree = "<group>"; };
 		075FD2F01A34884F00513A3A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -89,8 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				075FD2EF1A3487C300513A3A /* iCloud.entitlements */,
-				075FD2E71A34859400513A3A /* imagen1.png */,
-				075FD2E81A34859400513A3A /* fondo1.jpg */,
+				075FD2E71A34859400513A3A /* image1.png */,
+				075FD2E81A34859400513A3A /* background1.jpg */,
 				075FD2C71A34858200513A3A /* AppDelegate.swift */,
 				075FD2C91A34858200513A3A /* ViewController.swift */,
 				075FD2ED1A3485A500513A3A /* DocumentPhoto.swift */,
@@ -213,11 +213,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075FD2E91A34859400513A3A /* imagen1.png in Resources */,
+				075FD2E91A34859400513A3A /* image1.png in Resources */,
 				075FD2CD1A34858200513A3A /* Main.storyboard in Resources */,
 				075FD2D21A34858200513A3A /* LaunchScreen.xib in Resources */,
 				075FD2CF1A34858200513A3A /* Images.xcassets in Resources */,
-				075FD2EA1A34859400513A3A /* fondo1.jpg in Resources */,
+				075FD2EA1A34859400513A3A /* background1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +437,7 @@
 				075FD2E31A34858200513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD2E41A34858200513A3A /* Build configuration list for PBXNativeTarget "iCloudTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +446,7 @@
 				075FD2E61A34858200513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

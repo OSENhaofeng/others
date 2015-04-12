@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dq7-5C-nYn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dq7-5C-nYn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,14 +25,14 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="8Zr-qa-Uzf">
-                                        <barButtonItem key="leftBarButtonItem" title="Borrar Fotos" id="fwu-jV-lUE">
+                                        <barButtonItem key="leftBarButtonItem" title="Delete photos" id="fwu-jV-lUE">
                                             <connections>
-                                                <action selector="borrarFotos:" destination="dq7-5C-nYn" id="Ylv-wx-kbF"/>
+                                                <action selector="deletePhotos:" destination="dq7-5C-nYn" id="ecc-i9-JoC"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Elegir Fotos" id="2pH-q3-ImO">
+                                        <barButtonItem key="rightBarButtonItem" title="Choose photo" id="2pH-q3-ImO">
                                             <connections>
-                                                <action selector="elegirFotos:" destination="dq7-5C-nYn" id="e1i-Z0-0pG"/>
+                                                <action selector="choosePhotos:" destination="dq7-5C-nYn" id="Rrz-JN-vfC"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
