@@ -1,6 +1,5 @@
 // Playground - noun: a place where people can play
 
-import UIKit
 
 class Vehicle {
     var wheelNumber: Int
