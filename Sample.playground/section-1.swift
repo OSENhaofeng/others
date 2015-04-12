@@ -50,6 +50,7 @@ example1(array3)
 
 
 
+
 //delete pair items from array
 func example3()  {
     
