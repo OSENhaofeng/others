@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
-//  SegueWithpresentViewController
+//  NewClassViewController.swift
+//  Segues
 //
-//  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron.
+//  Created by Carlos Butron on 12/04/15.
+//  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
 //  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
@@ -16,26 +16,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NewClassViewController: UIViewController {
     
-    @IBAction func buttonAction(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") as UIViewController
-        self.presentViewController(viewController, animated: true,
-            completion: nil)
-    }
+    var labelName: NSString!
     
-    
-    @IBAction func buttonAction2(sender: UIButton) {
-        
-        var newController = UIViewController (nibName: "NewClass", bundle: nil)
-        self.presentViewController(newController, animated: true,
-            completion: nil)
-    }
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        label.text = labelName
+        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,5 +34,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }

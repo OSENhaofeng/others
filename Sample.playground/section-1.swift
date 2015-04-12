@@ -2,7 +2,7 @@
 
 import UIKit
 
-var array = ["uno","dos","tres","cuatro"]for elemento in array {    println(elemento)
+var array = ["one","two","three","four"]for element in array {    println(element)
 }
 
 
@@ -10,15 +10,15 @@ var array2 = [1,2,3,4,5,6,7,8,9,10];
 
 
 
-func example1(enteros: NSArray) {
+func example1(integers: NSArray) {
     
-    var numero:NSInteger = 0
+    var number:NSInteger = 0
     
-    for elemento in enteros{
-    numero += (elemento as NSNumber).integerValue
+    for element in integers{
+    number += (element as NSNumber).integerValue
     }
     
-    println("La suma de los valores del array es: \(numero)")
+    println("Sum all array items: \(number)")
     
     
 }
@@ -45,12 +45,12 @@ func example2() -> NSMutableArray {
 
 
 var array3 = example2()
-//mostramos la suma de los valores del nsmutable array
+//show nsmutable array value sum
 example1(array3)
 
 
 
-//elimina elementos pares de un array
+//delete pair items from array
 func example3()  {
     
     var array = example2()
@@ -63,7 +63,7 @@ func example3()  {
         }
     }
     
-    //imprimo la suma de los elementos pares del array
+    //print pair items from array
     example1(array)
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mjU-KX-Xjd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mjU-KX-Xjd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -22,7 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QTY-xC-QQn" kind="custom" identifier="NuevaClase" customClass="NuevaClase" customModule="Segues" id="NWL-0V-CbK"/>
+                                    <segue destination="QTY-xC-QQn" kind="custom" identifier="NewClass" customClass="NewClass" customModule="Segues" id="NWL-0V-CbK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="162.66666666666666" y="366.36000000000001"/>
         </scene>
-        <!--Nueva Clase View Controller-->
+        <!--New Class View Controller-->
         <scene sceneID="Z1z-PG-I5u">
             <objects>
-                <viewController id="QTY-xC-QQn" customClass="NuevaClaseViewController" customModule="Segues" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QTY-xC-QQn" customClass="NewClassViewController" customModule="Segues" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rjz-rn-lPN"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ju-5j-xFB"/>
@@ -55,7 +55,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="etiqueta" destination="5yE-G6-0Xr" id="iE4-pZ-m4c"/>
+                        <outlet property="label" destination="5yE-G6-0Xr" id="nz4-iV-7BO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AE-MW-nL0" userLabel="First Responder" sceneMemberID="firstResponder"/>

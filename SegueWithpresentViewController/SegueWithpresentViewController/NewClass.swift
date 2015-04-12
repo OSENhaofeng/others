@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  NuevaClase.swift
 //  SegueWithpresentViewController
 //
-//  Created by Carlos Butron on 07/12/14.
+//  Created by Carlos Butron on 31/10/14.
 //  Copyright (c) 2014 Carlos Butron.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
@@ -16,26 +16,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBAction func buttonAction(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") as UIViewController
-        self.presentViewController(viewController, animated: true,
-            completion: nil)
-    }
-    
-    
-    @IBAction func buttonAction2(sender: UIButton) {
-        
-        var newController = UIViewController (nibName: "NewClass", bundle: nil)
-        self.presentViewController(newController, animated: true,
-            completion: nil)
-    }
+class NuevaClase: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,5 +29,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }
