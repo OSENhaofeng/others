@@ -3,7 +3,15 @@
 //  CoreDataSample1
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -22,21 +30,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         //INSERT
-        //        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as
-        //        AppDelegate
-        //        var context:NSManagedObjectContext = appDel.managedObjectContext!
-        //
-//                var celda = NSEntityDescription.insertNewObjectForEntityForName("Celda", inManagedObjectContext:  context) as NSManagedObject
-//                celda.setValue("Yoda Tux", forKey: "titulo")
-//                celda.setValue("Science Fiction", forKey: "subtitulo")
-//                celda.setValue("yodaTux.png", forKey: "imagen")
+        
+//                var celda = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext:  context) as NSManagedObject
+//                celda.setValue("Yoda Tux", forKey: "title")
+//                celda.setValue("Science Fiction", forKey: "subtitle")
+//                celda.setValue("yodaTux.png", forKey: "image")
 //                if(!context.save(nil)){
 //                    println("Error!")
 //                }
         
 
             
-            var request = NSFetchRequest (entityName: "Celda")
+            var request = NSFetchRequest (entityName: "Cell")
             request.returnsObjectsAsFaults = false
             
             results = context.executeFetchRequest(request, error: nil)
@@ -65,9 +70,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         
                         var aux = results![indexPath.row] as NSManagedObject
                         
-                        cell.textLabel.text = aux.valueForKey("titulo") as? String
-                        cell.detailTextLabel?.text = aux.valueForKey("subtitulo") as? String
-                        cell.imageView.image = UIImage(named: aux.valueForKey("imagen") as String)
+                        cell.textLabel.text = aux.valueForKey("title") as? String
+                        cell.detailTextLabel?.text = aux.valueForKey("subtitle") as? String
+                        cell.imageView.image = UIImage(named: aux.valueForKey("image") as String)
                         
                         return cell
     }

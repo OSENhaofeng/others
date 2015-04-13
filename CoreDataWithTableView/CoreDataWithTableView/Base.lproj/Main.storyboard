@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kOD-ha-lQh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kOD-ha-lQh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="3kS-c6-szU">
             <objects>
-                <viewController id="kOD-ha-lQh" customClass="ViewController" customModule="T17E2CarlosButron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kOD-ha-lQh" customClass="ViewController" customModule="CoreDataWithTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OIO-Ac-lZr"/>
                         <viewControllerLayoutGuide type="bottom" id="ffq-x8-iO3"/>
@@ -51,8 +51,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="director" destination="lbG-F6-GBC" id="HFf-ML-lq0"/>
-                                            <outlet property="imagen" destination="nmc-lz-Wf9" id="YF9-mL-dht"/>
-                                            <outlet property="titulo" destination="PYt-JH-DXg" id="itu-RY-GtK"/>
+                                            <outlet property="myImage" destination="nmc-lz-Wf9" id="z6G-Eq-tJQ"/>
+                                            <outlet property="title" destination="PYt-JH-DXg" id="MQJ-Y8-Lhr"/>
                                             <outlet property="year" destination="j9d-z1-z3U" id="Rdm-K3-aWM"/>
                                         </connections>
                                     </tableViewCell>
