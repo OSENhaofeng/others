@@ -13,8 +13,8 @@
 		075FD1BF1A337DB600513A3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075FD1BE1A337DB600513A3A /* Images.xcassets */; };
 		075FD1C21A337DB600513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD1C01A337DB600513A3A /* LaunchScreen.xib */; };
 		075FD1CE1A337DB600513A3A /* NSFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD1CD1A337DB600513A3A /* NSFileManagerTests.swift */; };
-		075FD1D91A337DD900513A3A /* directorio.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD1D71A337DD900513A3A /* directorio.png */; };
-		075FD1DA1A337DD900513A3A /* fichero.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD1D81A337DD900513A3A /* fichero.png */; };
+		075FD1D91A337DD900513A3A /* dir.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD1D71A337DD900513A3A /* dir.png */; };
+		075FD1DA1A337DD900513A3A /* file.png in Resources */ = {isa = PBXBuildFile; fileRef = 075FD1D81A337DD900513A3A /* file.png */; };
 		075FD1DD1A337DE200513A3A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD1DB1A337DE200513A3A /* SecondViewController.swift */; };
 		075FD1DE1A337DE200513A3A /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD1DC1A337DE200513A3A /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,8 @@
 		075FD1C71A337DB600513A3A /* NSFileManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSFileManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075FD1CC1A337DB600513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD1CD1A337DB600513A3A /* NSFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFileManagerTests.swift; sourceTree = "<group>"; };
-		075FD1D71A337DD900513A3A /* directorio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directorio.png; sourceTree = "<group>"; };
-		075FD1D81A337DD900513A3A /* fichero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fichero.png; sourceTree = "<group>"; };
+		075FD1D71A337DD900513A3A /* dir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dir.png; sourceTree = "<group>"; };
+		075FD1D81A337DD900513A3A /* file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file.png; sourceTree = "<group>"; };
 		075FD1DB1A337DE200513A3A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		075FD1DC1A337DE200513A3A /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,8 +85,8 @@
 		075FD1B41A337DB600513A3A /* NSFileManager */ = {
 			isa = PBXGroup;
 			children = (
-				075FD1D71A337DD900513A3A /* directorio.png */,
-				075FD1D81A337DD900513A3A /* fichero.png */,
+				075FD1D71A337DD900513A3A /* dir.png */,
+				075FD1D81A337DD900513A3A /* file.png */,
 				075FD1B71A337DB600513A3A /* AppDelegate.swift */,
 				075FD1B91A337DB600513A3A /* ViewController.swift */,
 				075FD1DB1A337DE200513A3A /* SecondViewController.swift */,
@@ -205,9 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				075FD1BD1A337DB600513A3A /* Main.storyboard in Resources */,
-				075FD1D91A337DD900513A3A /* directorio.png in Resources */,
+				075FD1D91A337DD900513A3A /* dir.png in Resources */,
 				075FD1C21A337DB600513A3A /* LaunchScreen.xib in Resources */,
-				075FD1DA1A337DD900513A3A /* fichero.png in Resources */,
+				075FD1DA1A337DD900513A3A /* file.png in Resources */,
 				075FD1BF1A337DB600513A3A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +421,7 @@
 				075FD1D31A337DB600513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD1D41A337DB600513A3A /* Build configuration list for PBXNativeTarget "NSFileManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +430,7 @@
 				075FD1D61A337DB600513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
