@@ -13,8 +13,8 @@
 		075FD3D41A34C11700513A3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3D31A34C11700513A3A /* Images.xcassets */; };
 		075FD3D71A34C11700513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3D51A34C11700513A3A /* LaunchScreen.xib */; };
 		075FD3E31A34C11700513A3A /* SegueWithpresentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD3E21A34C11700513A3A /* SegueWithpresentViewControllerTests.swift */; };
-		075FD3EE1A34C14600513A3A /* NuevaClase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD3EC1A34C14600513A3A /* NuevaClase.swift */; };
-		075FD3EF1A34C14600513A3A /* NuevaClase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3ED1A34C14600513A3A /* NuevaClase.xib */; };
+		075FD3EF1A34C14600513A3A /* NewClass.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD3ED1A34C14600513A3A /* NewClass.xib */; };
+		077CFA2F1ADB412300D20B9B /* NewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CFA2E1ADB412300D20B9B /* NewClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		075FD3DC1A34C11700513A3A /* SegueWithpresentViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegueWithpresentViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075FD3E11A34C11700513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD3E21A34C11700513A3A /* SegueWithpresentViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueWithpresentViewControllerTests.swift; sourceTree = "<group>"; };
-		075FD3EC1A34C14600513A3A /* NuevaClase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuevaClase.swift; sourceTree = "<group>"; };
-		075FD3ED1A34C14600513A3A /* NuevaClase.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NuevaClase.xib; sourceTree = "<group>"; };
+		075FD3ED1A34C14600513A3A /* NewClass.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewClass.xib; sourceTree = "<group>"; };
+		077CFA2E1ADB412300D20B9B /* NewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 				075FD3D01A34C11700513A3A /* Main.storyboard */,
 				075FD3D31A34C11700513A3A /* Images.xcassets */,
 				075FD3D51A34C11700513A3A /* LaunchScreen.xib */,
-				075FD3EC1A34C14600513A3A /* NuevaClase.swift */,
-				075FD3ED1A34C14600513A3A /* NuevaClase.xib */,
+				077CFA2E1ADB412300D20B9B /* NewClass.swift */,
+				075FD3ED1A34C14600513A3A /* NewClass.xib */,
 				075FD3CA1A34C11700513A3A /* Supporting Files */,
 			);
 			path = SegueWithpresentViewController;
@@ -200,7 +200,7 @@
 			files = (
 				075FD3D21A34C11700513A3A /* Main.storyboard in Resources */,
 				075FD3D71A34C11700513A3A /* LaunchScreen.xib in Resources */,
-				075FD3EF1A34C14600513A3A /* NuevaClase.xib in Resources */,
+				075FD3EF1A34C14600513A3A /* NewClass.xib in Resources */,
 				075FD3D41A34C11700513A3A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075FD3CF1A34C11700513A3A /* ViewController.swift in Sources */,
-				075FD3EE1A34C14600513A3A /* NuevaClase.swift in Sources */,
+				077CFA2F1ADB412300D20B9B /* NewClass.swift in Sources */,
 				075FD3CD1A34C11700513A3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +413,7 @@
 				075FD3E81A34C11700513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD3E91A34C11700513A3A /* Build configuration list for PBXNativeTarget "SegueWithpresentViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				075FD3EB1A34C11700513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
