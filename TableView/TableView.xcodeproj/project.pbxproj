@@ -13,7 +13,7 @@
 		07E35DC41A2E49F500CA606C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E35DC31A2E49F500CA606C /* Images.xcassets */; };
 		07E35DC71A2E49F500CA606C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E35DC51A2E49F500CA606C /* LaunchScreen.xib */; };
 		07E35DD31A2E49F500CA606C /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E35DD21A2E49F500CA606C /* TableViewTests.swift */; };
-		07E35DDD1A2E4A0900CA606C /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35DDC1A2E4A0900CA606C /* imagen1.png */; };
+		07E35DDD1A2E4A0900CA606C /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35DDC1A2E4A0900CA606C /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		07E35DCC1A2E49F500CA606C /* TableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E35DD11A2E49F500CA606C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E35DD21A2E49F500CA606C /* TableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewTests.swift; sourceTree = "<group>"; };
-		07E35DDC1A2E4A0900CA606C /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		07E35DDC1A2E4A0900CA606C /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		07E35DB91A2E49F500CA606C /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				07E35DDC1A2E4A0900CA606C /* imagen1.png */,
+				07E35DDC1A2E4A0900CA606C /* image1.png */,
 				07E35DBC1A2E49F500CA606C /* AppDelegate.swift */,
 				07E35DBE1A2E49F500CA606C /* ViewController.swift */,
 				07E35DC01A2E49F500CA606C /* Main.storyboard */,
@@ -195,7 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E35DDD1A2E4A0900CA606C /* imagen1.png in Resources */,
+				07E35DDD1A2E4A0900CA606C /* image1.png in Resources */,
 				07E35DC21A2E49F500CA606C /* Main.storyboard in Resources */,
 				07E35DC71A2E49F500CA606C /* LaunchScreen.xib in Resources */,
 				07E35DC41A2E49F500CA606C /* Images.xcassets in Resources */,
@@ -409,6 +409,7 @@
 				07E35DD81A2E49F500CA606C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07E35DD91A2E49F500CA606C /* Build configuration list for PBXNativeTarget "TableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				07E35DDB1A2E49F500CA606C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

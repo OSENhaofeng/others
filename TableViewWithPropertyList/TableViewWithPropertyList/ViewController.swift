@@ -3,14 +3,22 @@
 //  TableViewWithPropertyList
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var celdas : NSDictionary? //Variable Global
+    var cells : NSDictionary? // Global Variable
     
     
     override func viewDidLoad() {
@@ -18,28 +26,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let path = NSBundle.mainBundle().bundlePath
         let plistName:NSString = "Property List.plist"
         let finalPath:NSString = path.stringByAppendingPathComponent(plistName)
-        celdas = NSDictionary(contentsOfFile:finalPath)
+        cells = NSDictionary(contentsOfFile:finalPath)
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return celdas!.count
+        return cells!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
-        //let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
-        let cell:CeldaPersonalizada = tableView.dequeueReusableCellWithIdentifier("CeldaPersonalizada") as CeldaPersonalizada
+        let cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomCell
         
-        let celda: AnyObject = celdas!.objectForKey("celda\(indexPath.row)") as NSDictionary
+        let myCell: AnyObject = cells!.objectForKey("cell\(indexPath.row)") as NSDictionary
         
-        //cell.textLabel?.text = celda.objectForKey("titulo") as? String
-        //cell.detailTextLabel?.text = celda.objectForKey("subtitulo") as? String
-        //cell.imageView?.image = UIImage(named: celda.objectForKey("imagen") as String)
         
-        cell.titulo?.text = celda.objectForKey("titulo") as? String
-        cell.subtitulo?.text = celda.objectForKey("subtitulo") as? String
-        cell.imagen?.image = UIImage(named: celda.objectForKey("imagen") as String)
+        cell.myTitle?.text = myCell.objectForKey("title") as? String
+        cell.mySubtitle?.text = myCell.objectForKey("subtitle") as? String
+        cell.myImage?.image = UIImage(named: myCell.objectForKey("image") as String)
         
         return cell
     }
@@ -51,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, titleForFooterInSection section:Int) -> String {
         
-        return "Hazte con Todos"
+        return "Get all the Tux"
     }
     
     

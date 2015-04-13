@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077CFA2B1ADB31E800D20B9B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CFA2A1ADB31E800D20B9B /* CustomCell.swift */; };
 		07E35D6A1A2E470A00CA606C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E35D691A2E470A00CA606C /* AppDelegate.swift */; };
 		07E35D6C1A2E470A00CA606C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E35D6B1A2E470A00CA606C /* ViewController.swift */; };
 		07E35D6F1A2E470A00CA606C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E35D6D1A2E470A00CA606C /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		07E35D741A2E470A00CA606C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E35D721A2E470A00CA606C /* LaunchScreen.xib */; };
 		07E35D801A2E470A00CA606C /* TableViewWithPropertyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E35D7F1A2E470A00CA606C /* TableViewWithPropertyListTests.swift */; };
 		07E35D9A1A2E475200CA606C /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E35D991A2E475200CA606C /* Property List.plist */; };
-		07E35D9C1A2E475900CA606C /* CeldaPersonalizada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E35D9B1A2E475900CA606C /* CeldaPersonalizada.swift */; };
 		07E35DA51A2E47C800CA606C /* djTux.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35D9D1A2E47C800CA606C /* djTux.png */; };
 		07E35DA61A2E47C800CA606C /* einsteinTux.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35D9E1A2E47C800CA606C /* einsteinTux.png */; };
 		07E35DA71A2E47C800CA606C /* indianaTux.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35D9F1A2E47C800CA606C /* indianaTux.png */; };
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077CFA2A1ADB31E800D20B9B /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		07E35D641A2E470A00CA606C /* TableViewWithPropertyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewWithPropertyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E35D681A2E470A00CA606C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E35D691A2E470A00CA606C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		07E35D7E1A2E470A00CA606C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E35D7F1A2E470A00CA606C /* TableViewWithPropertyListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithPropertyListTests.swift; sourceTree = "<group>"; };
 		07E35D991A2E475200CA606C /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		07E35D9B1A2E475900CA606C /* CeldaPersonalizada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeldaPersonalizada.swift; sourceTree = "<group>"; };
 		07E35D9D1A2E47C800CA606C /* djTux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = djTux.png; sourceTree = "<group>"; };
 		07E35D9E1A2E47C800CA606C /* einsteinTux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = einsteinTux.png; sourceTree = "<group>"; };
 		07E35D9F1A2E47C800CA606C /* indianaTux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indianaTux.png; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				07E35D691A2E470A00CA606C /* AppDelegate.swift */,
 				07E35D6B1A2E470A00CA606C /* ViewController.swift */,
 				07E35D991A2E475200CA606C /* Property List.plist */,
-				07E35D9B1A2E475900CA606C /* CeldaPersonalizada.swift */,
+				077CFA2A1ADB31E800D20B9B /* CustomCell.swift */,
 				07E35D6D1A2E470A00CA606C /* Main.storyboard */,
 				07E35D701A2E470A00CA606C /* Images.xcassets */,
 				07E35D721A2E470A00CA606C /* LaunchScreen.xib */,
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E35D6C1A2E470A00CA606C /* ViewController.swift in Sources */,
-				07E35D9C1A2E475900CA606C /* CeldaPersonalizada.swift in Sources */,
+				077CFA2B1ADB31E800D20B9B /* CustomCell.swift in Sources */,
 				07E35D6A1A2E470A00CA606C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +453,7 @@
 				07E35D851A2E470A00CA606C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07E35D861A2E470A00CA606C /* Build configuration list for PBXNativeTarget "TableViewWithPropertyListTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +462,7 @@
 				07E35D881A2E470A00CA606C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

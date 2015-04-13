@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  TabBarController
+//  CustomCell.swift
+//  TableViewWithPropertyList
 //
-//  Created by Carlos Butron on 02/12/14.
+//  Created by Carlos Butron on 13/04/15.
 //  Copyright (c) 2014 Carlos Butron.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
@@ -16,18 +16,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class CustomCell: UITableViewCell {
+    
+    @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var myTitle: UILabel!
+    @IBOutlet weak var mySubtitle: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
     }
-
-
+    
 }
-
