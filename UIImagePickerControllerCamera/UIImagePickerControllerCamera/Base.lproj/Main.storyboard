@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c8a-e7-RnT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c8a-e7-RnT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="j4S-k8-74V">
             <objects>
-                <viewController id="c8a-e7-RnT" customClass="ViewController" customModule="T10E3CarlosButron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c8a-e7-RnT" customClass="ViewController" customModule="UIImagePickerControllerCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MF7-0Q-dIp"/>
                         <viewControllerLayoutGuide type="bottom" id="AOU-RN-6T6"/>
@@ -32,7 +32,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imagen" destination="E0B-Ke-AzH" id="tDd-SK-s3l"/>
+                        <outlet property="myImage" destination="E0B-Ke-AzH" id="ujV-H6-h3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4j-of-gJx" sceneMemberID="firstResponder"/>

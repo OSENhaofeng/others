@@ -3,7 +3,15 @@
 //  UIImagePickerControllerCamera
 //
 //  Created by Carlos Butron on 08/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -14,13 +22,13 @@ import MobileCoreServices
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var myImage: UIImageView!
     @IBAction func useCamera(sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         
-        //para seleccionar solo los controles de camara y no de video
+        //to select only camera controls, not video
         imagePicker.mediaTypes = [kUTTypeImage]
         imagePicker.showsCameraControls = true
         //imagePicker.allowsEditing = true
@@ -41,15 +49,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let image = info[UIImagePickerControllerOriginalImage] as UIImage
         let imageData = UIImagePNGRepresentation(image) as NSData
         
-        //guarda en album de fotos
+        //save in photo album
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
         
-        //guarda en documents
+        //save in documents
         let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as NSString
         let filePath = documentsPath.stringByAppendingPathComponent("pic.png")
         imageData.writeToFile(filePath, atomically: true)
         
-        imagen.image = image
+        myImage.image = image
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nQH-pJ-ncN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nQH-pJ-ncN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="Gnr-XE-HyE">
             <objects>
-                <viewController id="nQH-pJ-ncN" customClass="ViewController" customModule="T10E3CarlosButron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nQH-pJ-ncN" customClass="ViewController" customModule="UIImagePickerControllerCameraEditImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JCA-Ne-Pg3"/>
                         <viewControllerLayoutGuide type="bottom" id="xdH-M2-5dR"/>
@@ -35,8 +35,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imagen" destination="PpZ-2d-lHf" id="lmI-z1-XJo"/>
-                        <outlet property="imagenRecortada" destination="PBS-qe-S2N" id="njt-zr-qS3"/>
+                        <outlet property="cutImage" destination="PBS-qe-S2N" id="oa5-kX-8zK"/>
+                        <outlet property="myImage" destination="PpZ-2d-lHf" id="pRl-7k-6zZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aja-US-X0M" sceneMemberID="firstResponder"/>

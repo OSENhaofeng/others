@@ -3,7 +3,15 @@
 //  XML
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -21,7 +29,7 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
         super.viewDidLoad()
 
 
-            println("Primera Ejecución")
+            println("First Ejecution")
             var url = NSURL(string: "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=10/xml")
             var request = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 30)
             self.xmlData = NSMutableData()
@@ -50,8 +58,8 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("celda") as UITableViewCell
         var elem = songs[indexPath.row] as Song
-        println("AAAAAA \(elem.titulo)")
-        cell.textLabel.text = (elem.titulo) as String
+        println("AAAAAA \(elem.myTitle)")
+        cell.textLabel.text = (elem.myTitle) as String
 
         return cell
     }
@@ -104,7 +112,7 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     
     
     func connection(connection: NSURLConnection!, didFailWithError error: NSError!){
-        println("Error al acceder a la URL")
+        println("URL access error")
     self.xmlData = nil
     }
     
@@ -114,14 +122,14 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     
     func connectionDidFinishLoading(connection: NSURLConnection!){
         var xmlCheck = NSString(data: self.xmlData!, encoding: NSUTF8StringEncoding)
-        //println("El xml recibido es \(xmlCheck)")
+        //println("XML recived: \(xmlCheck)")
         var parser:NSXMLParser =  NSXMLParser(data: self.xmlData)
         parser.delegate = self
         parser.shouldResolveExternalEntities = true
         parser.parse()
             for(var i=0; i<songs.count;i++){
                 var elem = songs[i] as Song
-                println(elem.titulo)
+                println(elem.myTitle)
             }
         self.tableView.reloadData()
     }
@@ -129,13 +137,13 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!){
     
         if(elementName == "feed") {
-            //feed es la etiqueta principal. Inicializamos el array para contener las canciones.
+            //init array
             songs = NSMutableArray()
             return
         }
     
         if(elementName == "entry") {
-            //Hemos encontrado una nueva canción. Creamos un objeto de la clase Song con su información.
+            //Find new song. Create object of song class.
             song = Song(title: "")
             return
         }
@@ -148,8 +156,7 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     
     func parser(parser: NSXMLParser!, foundCharacters string: String!) {
         if(currentStringValue != nil) {
-            //El parametro siguiente es un NSMutableString donde vamos almacenando
-            //los caracteres del elemento actual.
+            //NSMutableString where we save characters of actual item
             currentStringValue = NSMutableString(capacity: 50)
         }
         currentStringValue?.appendString(string)
@@ -157,16 +164,13 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!){
             if(elementName == "entry"){
-                //Al encontrar el fin de los datos de una canción
-                //la agregamos al array
+                //add song to array
                 songs.addObject(song)
             }
         
             if(elementName == "title"){
-                //Si encontramos la etiqueta title, almacenamos
-                //en el objeto el NSString donde estabamos guardando
-                //los caracteres.
-                song.titulo = currentStringValue!
+                //if we find a title save it in nsstring characters
+                song.myTitle = currentStringValue!
             }
     }
     
