@@ -3,7 +3,15 @@
 //  NSURLSession
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -11,15 +19,15 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var ciudad: UILabel!
-    @IBOutlet weak var temperaturaCelsius: UITextField!
-    @IBOutlet weak var temperaturaCelsiusMax: UITextField!
-    @IBOutlet weak var temperaturaCelsiusMin: UITextField!
-    @IBOutlet weak var temperaturaKelvin: UITextField!
-    @IBOutlet weak var temperaturaKelvinMax: UITextField!
-    @IBOutlet weak var temperaturaKelvinMin: UITextField!
-    @IBOutlet weak var humedad: UITextField!
-    @IBOutlet weak var viento: UITextField!
+    @IBOutlet weak var city: UILabel!
+    @IBOutlet weak var temperatureCelsius: UITextField!
+    @IBOutlet weak var temperatureCelsiusMax: UITextField!
+    @IBOutlet weak var temperatureCelsiusMin: UITextField!
+    @IBOutlet weak var temperatureKelvin: UITextField!
+    @IBOutlet weak var temperatureKelvinMax: UITextField!
+    @IBOutlet weak var temperatureKelvinMin: UITextField!
+    @IBOutlet weak var humidity: UITextField!
+    @IBOutlet weak var wind: UITextField!
     
     
     
@@ -29,41 +37,41 @@ class ViewController: UIViewController {
         
         var sessionConfig: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfig.allowsCellularAccess = false
-        //Solo acepta respuestas en JSON
+        //only accept JSON answer
         sessionConfig.HTTPAdditionalHeaders = ["Accept":"application/json"]
-        //timeouts y conexiones permitidas
+        //timeouts and connections allowed
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 60.0
         sessionConfig.HTTPMaximumConnectionsPerHost = 1
-        //Creamos la sesión, asignándole una configuración
+        //create session, assign configuration
         var session = NSURLSession(configuration: sessionConfig)
         session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Madrid,es")!, completionHandler: {(data, response, error) in
             var dic:NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(0), error: nil) as NSDictionary
             
             println(dic)
             
-            var ciudad: NSString = (dic["name"] as NSString)
+            var city: NSString = (dic["name"] as NSString)
             var kelvin: AnyObject! = (dic["main"] as NSDictionary) ["temp"]
             var kelvin_min: AnyObject! = (dic["main"] as NSDictionary) ["temp_min"]
             var kelvin_max: AnyObject! = (dic["main"] as NSDictionary) ["temp_max"]
             var celsius = kelvin as Float - 274.15 as Float
             var celsius_min = kelvin_min as Float - 274.15 as Float
             var celsius_max = kelvin_max as Float - 274.15 as Float
-            var humedad: AnyObject! = (dic ["main"] as NSDictionary) ["humidity"]
-            var viento: AnyObject! = (dic ["wind"] as NSDictionary) ["speed"]
+            var humidity: AnyObject! = (dic ["main"] as NSDictionary) ["humidity"]
+            var wind: AnyObject! = (dic ["wind"] as NSDictionary) ["speed"]
             
             
-            //Forzamos ejecución en hilo principal
+            //original thread
             dispatch_async(dispatch_get_main_queue(), { () in
-                self.ciudad.text = "\(ciudad)"
-                self.temperaturaCelsius.text = "\(celsius)"
-                self.temperaturaCelsiusMax.text = "\(celsius_max)"
-                self.temperaturaCelsiusMin.text = "\(celsius_min)"
-                self.temperaturaKelvin.text = "\(kelvin)"
-                self.temperaturaKelvinMax.text = "\(kelvin_max)"
-                self.temperaturaKelvinMin.text = "\(kelvin_min)"
-                self.humedad.text = "\(humedad)"
-                self.viento.text = "\(viento)"
+                self.city.text = "\(city)"
+                self.temperatureCelsius.text = "\(celsius)"
+                self.temperatureCelsiusMax.text = "\(celsius_max)"
+                self.temperatureCelsiusMin.text = "\(celsius_min)"
+                self.temperatureKelvin.text = "\(kelvin)"
+                self.temperatureKelvinMax.text = "\(kelvin_max)"
+                self.temperatureKelvinMin.text = "\(kelvin_min)"
+                self.humidity.text = "\(humidity)"
+                self.wind.text = "\(wind)"
             })
             
         }).resume()
