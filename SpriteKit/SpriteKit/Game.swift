@@ -1,18 +1,26 @@
 //
-//  Videojuego.swift
+//  Game.swift
 //  SpriteKit
 //
-//  Created by Carlos Butron on 07/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Created by Carlos Butron on 13/04/15.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
 import SpriteKit
 
-class Videojuego: SKScene, SKPhysicsContactDelegate {
+class Game: SKScene, SKPhysicsContactDelegate {
     
     let score = SKLabelNode(fontNamed:"Chalkduster")
-    var puntos = 0
+    var points = 0
     enum ColliderType: UInt32 {
         case Player = 1
         case Target = 2
@@ -25,12 +33,12 @@ class Videojuego: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         
-        //Definimos la Física a utilizar
+        //define physics
         self.physicsWorld.contactDelegate = self
         var size2 = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height)
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect:size2)
         
-        //Definimos el Personaje
+        //define the player
         var player = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(50, 50))
         player.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(50, 50))
         player.position = CGPointMake(200,25)
@@ -40,7 +48,7 @@ class Videojuego: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.contactTestBitMask = ColliderType.Target.rawValue
         self.addChild(player)
         
-        //Definimos el Objetivo
+        //define target
         target = SKSpriteNode(color: UIColor.greenColor(), size: CGSizeMake(20, 20))
         target.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(50, 50))
         target.physicsBody?.dynamic = false
@@ -51,28 +59,28 @@ class Videojuego: SKScene, SKPhysicsContactDelegate {
         target.physicsBody?.contactTestBitMask = ColliderType.Player.rawValue
         self.addChild(target)
         
-        //Secuencia que formará la acción de moverse
-        var movimiento = SKAction.sequence([SKAction.moveTo(CGPointMake(0, 530), duration: 2.0),SKAction.moveTo(CGPointMake(320, 530), duration: 2.0)])
-        var movimientoConstante = SKAction.repeatActionForever(movimiento)
-        target.runAction(movimientoConstante)
+        //to move
+        var move = SKAction.sequence([SKAction.moveTo(CGPointMake(0, 530), duration: 2.0),SKAction.moveTo(CGPointMake(320, 530), duration: 2.0)])
+        var moveConstant = SKAction.repeatActionForever(move)
+        target.runAction(moveConstant)
         
-        //Slider utilizado para apuntar
+        //Slider
         var slider = UISlider(frame: CGRectMake(0, 0, 325, 100))
-        slider.addTarget(self, action: "manejarSlider:", forControlEvents: UIControlEvents.ValueChanged)
+        slider.addTarget(self, action: "controlSlider:", forControlEvents: UIControlEvents.ValueChanged)
         slider.minimumValue = -50
         slider.maximumValue = 50
         view.addSubview(slider)
         
-        //Mostrar la puntuación actual por pantalla
-        score.text = "Puntuación: \(puntos)";
-        score.name = "Puntos"
+        //actual score
+        score.text = "Score: \(points)";
+        score.name = "Points"
         score.fontSize = 15;
         score.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         self.addChild(score)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        //Al tocar la pantalla disparamos el personaje
+        //on touch shoot
         var operation:CGFloat = 250.0
         operation *= (CGFloat)(self.value)
         self.childNodeWithName("Player")?.physicsBody?.applyForce(CGVectorMake (operation, 20000))
@@ -83,35 +91,36 @@ class Videojuego: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBeginContact(contact: SKPhysicsContact!){
-            //Calcular si los cuerpos han impactado
-            var firstBody:SKPhysicsBody
-            var secondBody:SKPhysicsBody
-            if(contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask){
+        //if bodys impact
+        var firstBody:SKPhysicsBody
+        var secondBody:SKPhysicsBody
+        if(contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask){
             firstBody = contact.bodyA
             secondBody = contact.bodyB
-            }
-            else{
+        }
+        else{
             firstBody = contact.bodyB
             secondBody = contact.bodyA
-            }
-            if(firstBody.categoryBitMask == 1 && secondBody.categoryBitMask == 2){
-            //En caso de impacto:
-            //Actualizamos los puntos (borrar y añadir label)
-            puntos++
-            self.childNodeWithName("Puntos")?.removeFromParent()
-            score.text = "Puntuación: \(puntos)"
+        }
+        if(firstBody.categoryBitMask == 1 && secondBody.categoryBitMask == 2){
+            //if impact:
+            //update score (delete and add label)
+            points++
+            self.childNodeWithName("Points")?.removeFromParent()
+            score.text = "Score: \(points)"
             self.addChild(score)
-            //Eliminar objetivo
+            //delete object
             secondBody.node?.removeFromParent()
-            //Esperar un segundo y hacerlo reaparecer
+            //wait a second and show object
             var delay = SKAction.waitForDuration(1)
             var generar = SKAction.runBlock({
-            self.addChild(self.target)
+                self.addChild(self.target)
             })
-            var secuencia = SKAction.sequence([delay,generar])
-            self.runAction(secuencia)
-            }
+            var secuency = SKAction.sequence([delay,generar])
+            self.runAction(secuency)
+        }
     }
     
-   
+    
 }
+

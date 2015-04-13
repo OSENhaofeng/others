@@ -15,7 +15,7 @@
 		075FD5231A34DC2B00513A3A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 075FD5221A34DC2B00513A3A /* GameScene.sks */; };
 		075FD5271A34DC6E00513A3A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD5241A34DC6E00513A3A /* GameScene.swift */; };
 		075FD5281A34DC6E00513A3A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD5251A34DC6E00513A3A /* GameViewController.swift */; };
-		075FD5291A34DC6E00513A3A /* Videojuego.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD5261A34DC6E00513A3A /* Videojuego.swift */; };
+		07C9F3FD1ADBD19600452040 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9F3FC1ADBD19600452040 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 		075FD5221A34DC2B00513A3A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		075FD5241A34DC6E00513A3A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		075FD5251A34DC6E00513A3A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		075FD5261A34DC6E00513A3A /* Videojuego.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Videojuego.swift; sourceTree = "<group>"; };
+		07C9F3FC1ADBD19600452040 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				075FD5221A34DC2B00513A3A /* GameScene.sks */,
 				075FD5241A34DC6E00513A3A /* GameScene.swift */,
 				075FD5251A34DC6E00513A3A /* GameViewController.swift */,
-				075FD5261A34DC6E00513A3A /* Videojuego.swift */,
+				07C9F3FC1ADBD19600452040 /* Game.swift */,
 				075FD5061A34DA8100513A3A /* Main.storyboard */,
 				075FD5091A34DA8100513A3A /* Images.xcassets */,
 				075FD50B1A34DA8100513A3A /* LaunchScreen.xib */,
@@ -222,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075FD5291A34DC6E00513A3A /* Videojuego.swift in Sources */,
+				07C9F3FD1ADBD19600452040 /* Game.swift in Sources */,
 				075FD5271A34DC6E00513A3A /* GameScene.swift in Sources */,
 				075FD5281A34DC6E00513A3A /* GameViewController.swift in Sources */,
 				075FD5011A34DA8000513A3A /* AppDelegate.swift in Sources */,
@@ -417,6 +417,7 @@
 				075FD51E1A34DA8100513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD51F1A34DA8100513A3A /* Build configuration list for PBXNativeTarget "SpriteKitTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +426,7 @@
 				075FD5211A34DA8100513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

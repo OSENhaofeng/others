@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZR7-Pf-PSz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZR7-Pf-PSz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="hPa-Wb-5Re">
             <objects>
-                <viewController id="ZR7-Pf-PSz" customClass="ViewController" customModule="T17E3CarlosButron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZR7-Pf-PSz" customClass="ViewController" customModule="SQLite" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eYP-aW-4ML"/>
                         <viewControllerLayoutGuide type="bottom" id="jzE-Gr-IQ3"/>
@@ -51,8 +51,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="director" destination="rbj-3s-DIH" id="bju-WL-yKn"/>
-                                            <outlet property="imagen" destination="47r-d8-0Te" id="Pnc-vM-l1b"/>
-                                            <outlet property="titulo" destination="7a8-xT-t0v" id="hsB-g5-gTu"/>
+                                            <outlet property="myImage" destination="47r-d8-0Te" id="wTJ-dF-eHa"/>
+                                            <outlet property="title" destination="7a8-xT-t0v" id="c3A-04-DND"/>
                                             <outlet property="year" destination="xrp-Ta-OLu" id="pew-ZN-VHd"/>
                                         </connections>
                                     </tableViewCell>

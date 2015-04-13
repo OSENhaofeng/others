@@ -21,7 +21,7 @@
 		072E23FE1A2EA1EB004EB68C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E23FD1A2EA1EB004EB68C /* QuartzCore.framework */; };
 		072E24001A2EA1F5004EB68C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E23FF1A2EA1F5004EB68C /* Accounts.framework */; };
 		072E24021A2EA1FC004EB68C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E24011A2EA1FC004EB68C /* Social.framework */; };
-		072E24041A2EA7E9004EB68C /* imagen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 072E24031A2EA7E9004EB68C /* imagen1.png */; };
+		072E24041A2EA7E9004EB68C /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 072E24031A2EA7E9004EB68C /* image1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		072E23FD1A2EA1EB004EB68C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		072E23FF1A2EA1F5004EB68C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		072E24011A2EA1FC004EB68C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		072E24031A2EA7E9004EB68C /* imagen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen1.png; sourceTree = "<group>"; };
+		072E24031A2EA7E9004EB68C /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 		072E23CE1A2EA163004EB68C /* SocialFrameworkTwitter */ = {
 			isa = PBXGroup;
 			children = (
-				072E24031A2EA7E9004EB68C /* imagen1.png */,
+				072E24031A2EA7E9004EB68C /* image1.png */,
 				072E23D11A2EA163004EB68C /* AppDelegate.swift */,
 				072E23F11A2EA1A7004EB68C /* FirstViewController.swift */,
 				072E23F21A2EA1A7004EB68C /* SecondViewController.swift */,
@@ -225,7 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072E24041A2EA7E9004EB68C /* imagen1.png in Resources */,
+				072E24041A2EA7E9004EB68C /* image1.png in Resources */,
 				072E23D71A2EA163004EB68C /* Main.storyboard in Resources */,
 				072E23DC1A2EA163004EB68C /* LaunchScreen.xib in Resources */,
 				072E23D91A2EA163004EB68C /* Images.xcassets in Resources */,
@@ -441,6 +441,7 @@
 				072E23ED1A2EA163004EB68C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		072E23EE1A2EA163004EB68C /* Build configuration list for PBXNativeTarget "SocialFrameworkTwitterTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +450,7 @@
 				072E23F01A2EA163004EB68C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

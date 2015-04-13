@@ -2,7 +2,15 @@
 //  FirstViewController.swift
 //
 //  Created by Carlos Butron on 11/11/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -22,28 +30,28 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func update(sender: UIButton) {
         if(labelUserName.text != ""){
-            checkUser() //Método implementado posteriormente
+            checkUser() //method implemented after
         }
             else{
-            println("Debes introducir un nombre!")
+            println("Introduce a name!")
         }
         
     }
     
     @IBAction func sendTweet(sender: UIButton) {
         var twitterController = SLComposeViewController(forServiceType:SLServiceTypeTwitter)
-        var imageToTweet = UIImage(named:"imagen1.png")
+        var imageToTweet = UIImage(named:"image1.png")
         twitterController.setInitialText("Test from Xcode")
         twitterController.addImage(imageToTweet)
         var completionHandler:SLComposeViewControllerCompletionHandler = {(result) in
         twitterController.dismissViewControllerAnimated(true, completion: nil)
             switch(result) {
             case SLComposeViewControllerResult.Cancelled:
-            println("El Usuario ha cancelado")
+            println("Canceled")
             case SLComposeViewControllerResult.Done:
-            println("El Usuario ha twitteado")
+            println("User tweeted")
             default:
-            println("El Usuario ha cancelado")
+            println("Canceled")
             } }
             twitterController.completionHandler = completionHandler
             self.presentViewController(twitterController, animated: true, completion: nil)
@@ -82,20 +90,20 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                 twitterInfoRequest.performRequestWithHandler({(responseData,urlResponse,error) in
                 dispatch_async(dispatch_get_main_queue(), {()
                 in
-                //Comprobar si el acceso fue rechazado
+                //check access
                 if(urlResponse.statusCode == 429){
                 println("Rate limit reached")
                 return
                 }
-                //Comprobar si existe algun error
+                //check error
                 if((error) != nil){
                 println("Error \(error.localizedDescription)")
                 }
                 if(responseData != nil){
-                //Si hemos recibido datos TO DO
+                //if dta received TO DO
                 var error: NSError?
                 var TWData = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableLeaves, error: &error) as NSDictionary
-                //Obtenemos los datos necesarios
+                //getting data
                 var followers = TWData.objectForKey("followers_count")!.integerValue
                 var following = TWData.objectForKey("friends_count")!.integerValue!
                 var description = TWData.objectForKey("description") as NSString

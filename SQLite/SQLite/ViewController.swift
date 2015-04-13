@@ -3,7 +3,15 @@
 //  SQLite
 //
 //  Created by Carlos Butron on 06/12/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -37,10 +45,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var db = COpaquePointer()
         var status = sqlite3_open(db_path!, &db)
         if(status == SQLITE_OK){
-            //Base de Datos abierta correctamente
+            //bbdd open
         }
         else{
-            //ERROR en la apertura
+            //bbdd error
         }
         
         var query_stmt = "SELECT * FROM pelicula"
@@ -65,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 Dictionary.setObject(buf_year!, forKey: "year")
                 
                 data.addObject(Dictionary)
-                //Procesamos los datos como creamos conveniente
+                //process data
                 
             }
             sqlite3_finalize(statement)
@@ -89,11 +97,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var table_director = aux["director"]
         cell.director.text = table_director as? String
         var aux1: AnyObject = data[indexPath.row]
-        var table_imagen = aux["imagen"]
-        cell.imagen.image = UIImage(named:table_imagen as String)
+        var table_image = aux["imagen"]
+        cell.myImage.image = UIImage(named:table_image as String)
         var aux3: AnyObject = data[indexPath.row]
-        var table_titulo = aux["titulo"]
-        cell.titulo.text = table_titulo as? String
+        var table_title = aux["titulo"]
+        cell.title.text = table_title as? String
         
         var aux4: AnyObject = data[indexPath.row]
         var table_year = aux3["year"]

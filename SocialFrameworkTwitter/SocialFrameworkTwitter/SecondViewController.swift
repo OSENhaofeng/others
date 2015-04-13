@@ -2,7 +2,15 @@
 //  SecondViewController.swift
 //
 //  Created by Carlos Butron on 11/11/14.
-//  Copyright (c) 2014 Carlos Butron. All rights reserved.
+//  Copyright (c) 2014 Carlos Butron.
+//
+//  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+//  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
+//  version.
+//  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+//  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//  You should have received a copy of the GNU General Public License along with this program. If not, see
+//  http:/www.gnu.org/licenses/.
 //
 
 import UIKit
@@ -46,7 +54,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             tweetRequest.account = tempAccount
             tweetRequest.performRequestWithHandler({(responseData,urlResponse,error) in
             if(error == nil){
-                /*Obtenemos los tweets*/
+                /*get tweets*/
                 var jsonError:NSError?
                 var responseJSON = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments, error: &jsonError) as NSArray
                 if(jsonError != nil) {
@@ -58,11 +66,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                     dispatch_async(dispatch_get_main_queue(),
                     {self.table.reloadData()})
                 }}
-            else{ /*Error al acceder*/ }
+            else{ /*access Error*/ }
             })
             } })
         }
-            else { /*Error: se requiere cuenta de Twitter*/ }
+            else { /*Error: you need Twitter account*/ }
             refreshControl.endRefreshing()
     }
     

@@ -13,7 +13,7 @@
 		07E35BA71A2DF81D00CA606C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E35BA61A2DF81D00CA606C /* Images.xcassets */; };
 		07E35BAA1A2DF81D00CA606C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E35BA81A2DF81D00CA606C /* LaunchScreen.xib */; };
 		07E35BB61A2DF81D00CA606C /* SocialFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E35BB51A2DF81D00CA606C /* SocialFrameworkTests.swift */; };
-		07E35BC01A2DF82700CA606C /* imagen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35BBF1A2DF82700CA606C /* imagen2.png */; };
+		07E35BC01A2DF82700CA606C /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E35BBF1A2DF82700CA606C /* image2.png */; };
 		07E35BC21A2DF83000CA606C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E35BC11A2DF83000CA606C /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		07E35BAF1A2DF81D00CA606C /* SocialFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E35BB41A2DF81D00CA606C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E35BB51A2DF81D00CA606C /* SocialFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFrameworkTests.swift; sourceTree = "<group>"; };
-		07E35BBF1A2DF82700CA606C /* imagen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen2.png; sourceTree = "<group>"; };
+		07E35BBF1A2DF82700CA606C /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 		07E35BC11A2DF83000CA606C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 		07E35B9C1A2DF81D00CA606C /* SocialFramework */ = {
 			isa = PBXGroup;
 			children = (
-				07E35BBF1A2DF82700CA606C /* imagen2.png */,
+				07E35BBF1A2DF82700CA606C /* image2.png */,
 				07E35B9F1A2DF81D00CA606C /* AppDelegate.swift */,
 				07E35BA11A2DF81D00CA606C /* ViewController.swift */,
 				07E35BA31A2DF81D00CA606C /* Main.storyboard */,
@@ -200,7 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E35BA51A2DF81D00CA606C /* Main.storyboard in Resources */,
-				07E35BC01A2DF82700CA606C /* imagen2.png in Resources */,
+				07E35BC01A2DF82700CA606C /* image2.png in Resources */,
 				07E35BAA1A2DF81D00CA606C /* LaunchScreen.xib in Resources */,
 				07E35BA71A2DF81D00CA606C /* Images.xcassets in Resources */,
 			);
@@ -413,6 +413,7 @@
 				07E35BBB1A2DF81D00CA606C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07E35BBC1A2DF81D00CA606C /* Build configuration list for PBXNativeTarget "SocialFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				07E35BBE1A2DF81D00CA606C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
