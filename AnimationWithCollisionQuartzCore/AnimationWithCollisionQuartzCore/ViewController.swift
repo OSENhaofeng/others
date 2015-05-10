@@ -23,12 +23,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     @IBOutlet weak var push: UIButton!
     @IBOutlet weak var attachment: UIButton!
     
+    //AMPLIACION
     var collision: UICollisionBehavior!
     
     
     @IBAction func gravity(sender: UIButton) {
         animator.removeAllBehaviors()
-        //gravity, push and attachment are the selected IBOutlets
+        //gravity, push y attachment son los IBOutlets correspondientes
         var gravity = UIGravityBehavior(items: [self.gravity,self.push,self.attachment])
         animator.addBehavior(gravity)
         
@@ -100,6 +101,5 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     
 }
-
 
 
