@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDel = UIApplication.sharedApplication().delegate as AppDelegate
+        appDel = UIApplication.sharedApplication().delegate as! AppDelegate
         context = appDel.managedObjectContext!
         
         //Codigo para añadir una pelicula
@@ -70,13 +70,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as MyTableViewCell
+        var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
         
-        var aux = results[indexPath.row] as NSManagedObject
+        var aux = results[indexPath.row] as! NSManagedObject
         cell.title.text = aux.valueForKey("titulo") as? String
         cell.director.text = aux.valueForKey("director") as? String
         cell.year.text = aux.valueForKey("year") as? String
-        cell.myImage.image = UIImage(named:aux.valueForKey("imagen") as String)
+        cell.myImage.image = UIImage(named:aux.valueForKey("imagen") as! String)
         
         return cell
         

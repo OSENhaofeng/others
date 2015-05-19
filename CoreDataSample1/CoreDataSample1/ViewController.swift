@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
             super.viewDidLoad()
         
-        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var context : NSManagedObjectContext = appDel.managedObjectContext!
         
         
@@ -68,11 +68,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         
                         var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
                         
-                        var aux = results![indexPath.row] as NSManagedObject
+                        var aux = results![indexPath.row] as! NSManagedObject
                         
-                        cell.textLabel.text = aux.valueForKey("title") as? String
+                        cell.textLabel!.text = aux.valueForKey("title") as? String
                         cell.detailTextLabel?.text = aux.valueForKey("subtitle") as? String
-                        cell.imageView.image = UIImage(named: aux.valueForKey("image") as String)
+                        cell.imageView!.image = UIImage(named: aux.valueForKey("image") as! String)
                         
                         return cell
     }
@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             return results!.count
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int)-> String  {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int)-> String?  {
         return "TuxMania"
     }
     

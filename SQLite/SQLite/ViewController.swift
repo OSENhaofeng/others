@@ -91,14 +91,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as MyTableViewCell
+        var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
         
         var aux: AnyObject = data[indexPath.row]
         var table_director = aux["director"]
         cell.director.text = table_director as? String
         var aux1: AnyObject = data[indexPath.row]
         var table_image = aux["imagen"]
-        cell.myImage.image = UIImage(named:table_image as String)
+        cell.myImage.image = UIImage(named:table_image as! String)
         var aux3: AnyObject = data[indexPath.row]
         var table_title = aux["titulo"]
         cell.title.text = table_title as? String

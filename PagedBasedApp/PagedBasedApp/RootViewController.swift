@@ -30,7 +30,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
         let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
         let viewControllers: NSArray = [startingViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: {done in })
+        self.pageViewController!.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: false, completion: {done in })
 
         self.pageViewController!.dataSource = self.modelController
 
@@ -67,9 +67,9 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
         // Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to true, so set it to false here.
-        let currentViewController = self.pageViewController!.viewControllers[0] as UIViewController
+        let currentViewController = self.pageViewController!.viewControllers[0] as! UIViewController
         let viewControllers: NSArray = [currentViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
+        self.pageViewController!.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: true, completion: {done in })
 
         self.pageViewController!.doubleSided = false
         return .Min

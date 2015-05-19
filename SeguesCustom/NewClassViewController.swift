@@ -18,7 +18,7 @@ import UIKit
 
 class NewClassViewController: UIViewController {
     
-    var labelName: NSString!
+    var labelName: String!
     
     @IBOutlet weak var label: UILabel!
     

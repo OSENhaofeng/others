@@ -24,10 +24,10 @@ class ViewController: UIViewController {
         var queue = NSOperationQueue()
         
         let operation1 : NSBlockOperation = NSBlockOperation (
-            {
+            block: {
                 self.getWebs()
                 
-                let operation2 : NSBlockOperation = NSBlockOperation({
+                let operation2 : NSBlockOperation = NSBlockOperation(block: {
                     self.loadWebs()
                 })
                 queue.addOperation(operation2)
@@ -46,9 +46,9 @@ class ViewController: UIViewController {
     
     func loadWebs(){
         let urls : NSMutableArray = NSMutableArray (objects:NSURL(string:"http://www.google.es")!, NSURL(string: "http://www.apple.com")!,NSURL(string: "http://carlosbutron.es")!, NSURL(string: "http://www.bing.com")!,NSURL(string: "http://www.yahoo.com")!)
-        urls.addObjectsFromArray(googlewebs)
+        urls.addObjectsFromArray(googlewebs as [AnyObject])
         for iterator:AnyObject in urls{
-            NSData(contentsOfURL:iterator as NSURL)
+            NSData(contentsOfURL:iterator as! NSURL)
             println("Downloaded \(iterator)")
         }
     }
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         var languageWebs = NSMutableArray()
         for(var i=0;i < languages.count; i++){
             var webString: NSString = "http://www.google.\(languages[i])"
-            languageWebs.addObject(NSURL(fileURLWithPath: webString)!)
+            languageWebs.addObject(NSURL(fileURLWithPath: webString as String)!)
         }
         googlewebs = languageWebs
     }

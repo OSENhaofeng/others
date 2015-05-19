@@ -39,19 +39,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         NSIndexPath) -> UITableViewCell{
             var cell:UITableViewCell = UITableViewCell(style:
                 UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
-            cell.textLabel.text = "Cell text"
+            cell.textLabel!.text = "Cell text"
             cell.detailTextLabel?.text = "Cell Subtitle"
-            cell.imageView.image = UIImage(named:"image1.png")
+            cell.imageView!.image = UIImage(named:"image1.png")
             return cell
     }
     //Title
     func tableView(tableView: UITableView, titleForHeaderInSection section:
-        Int) -> String{
+        Int) -> String?{
             return "Head"
     }
     //Foot Subtitle
     func tableView(tableView: UITableView, titleForFooterInSection section:
-        Int) -> String{
+        Int) -> String?{
             return "Foot"
     }
     

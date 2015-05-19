@@ -46,19 +46,24 @@ class ViewController: UIViewController {
         //create session, assign configuration
         var session = NSURLSession(configuration: sessionConfig)
         session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Madrid,es")!, completionHandler: {(data, response, error) in
-            var dic:NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(0), error: nil) as NSDictionary
+            var dic:NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(0), error: nil) as? NSDictionary ?? [String:String]()
+            
+            
+            if dic.count == 0 {
+                return
+            }
             
             println(dic)
             
-            var city: NSString = (dic["name"] as NSString)
-            var kelvin: AnyObject! = (dic["main"] as NSDictionary) ["temp"]
-            var kelvin_min: AnyObject! = (dic["main"] as NSDictionary) ["temp_min"]
-            var kelvin_max: AnyObject! = (dic["main"] as NSDictionary) ["temp_max"]
-            var celsius = kelvin as Float - 274.15 as Float
-            var celsius_min = kelvin_min as Float - 274.15 as Float
-            var celsius_max = kelvin_max as Float - 274.15 as Float
-            var humidity: AnyObject! = (dic ["main"] as NSDictionary) ["humidity"]
-            var wind: AnyObject! = (dic ["wind"] as NSDictionary) ["speed"]
+            var city: NSString = (dic["name"] as! NSString)
+            var kelvin: AnyObject! = (dic["main"] as! NSDictionary) ["temp"]
+            var kelvin_min: AnyObject! = (dic["main"] as! NSDictionary) ["temp_min"]
+            var kelvin_max: AnyObject! = (dic["main"] as! NSDictionary) ["temp_max"]
+            var celsius = kelvin as! Float - 274.15 as Float
+            var celsius_min = kelvin_min as! Float - 274.15 as Float
+            var celsius_max = kelvin_max as! Float - 274.15 as Float
+            var humidity: AnyObject! = (dic ["main"] as! NSDictionary) ["humidity"]
+            var wind: AnyObject! = (dic ["wind"] as! NSDictionary) ["speed"]
             
             
             //original thread

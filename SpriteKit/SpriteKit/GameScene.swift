@@ -32,12 +32,14 @@ class GameScene: SKScene {
         myLabel2.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 100);
         self.addChild(myLabel2)
     }
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+   
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         //on touch change scene
         var myTransition = SKTransition.doorsOpenVerticalWithDuration(1.0)
         var game = Game(size: self.size)
         self.scene?.view?.presentScene(game, transition: myTransition)
     }
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }

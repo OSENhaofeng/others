@@ -24,7 +24,7 @@ class ViewController: UIViewController, myDelegate {
         
         //we got it the final instance in storyboard
         
-        var secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as SecondViewController
+        var secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
         secondController.data = "Text from superclass"
         //who is it delegate
         secondController.delegate = self
@@ -44,7 +44,7 @@ class ViewController: UIViewController, myDelegate {
     }
     
     func writeDateInLabel(data:NSString){
-        self.principalLabel.text = data
+        self.principalLabel.text = data as String
     }
     
     

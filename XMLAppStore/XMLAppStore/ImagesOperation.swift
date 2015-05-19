@@ -39,7 +39,7 @@ class ImagesOperation: NSOperation, NSURLConnectionDelegate {
         self.currentData.appendData(data)
     }
     
-    func connection(connection: NSURLConnection!, didFailWithError error: NSError!){
+    func connection(connection: NSURLConnection, didFailWithError error: NSError){
         self.currentData = nil
     }
     

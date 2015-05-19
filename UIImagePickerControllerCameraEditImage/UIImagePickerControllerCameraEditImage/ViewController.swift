@@ -45,17 +45,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Dispose of any resources that can be recreated.
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         
-        let image = info[UIImagePickerControllerOriginalImage] as UIImage
-        let imageEdited = info[UIImagePickerControllerEditedImage] as UIImage
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let imageEdited = info[UIImagePickerControllerEditedImage] as! UIImage
         let imageData = UIImagePNGRepresentation(image) as NSData
         
         //guarda en album de fotos
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
         
         //guarda en documents
-        let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as NSString
+        let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as! NSString
         let filePath = documentsPath.stringByAppendingPathComponent("pic.png")
         imageData.writeToFile(filePath, atomically: true)
         
@@ -75,7 +75,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController!){
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

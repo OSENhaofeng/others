@@ -54,10 +54,10 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
         let contact = contactArray[indexPath.row]
-        cell.textLabel.text = contact.name + " " + contact.surname
+        cell.textLabel!.text = contact.name + " " + contact.surname
         cell.tag = indexPath.row
         println("Cell number: \(indexPath.row)")
         return cell
@@ -105,13 +105,13 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToDetailFromListado" {
-            var detailViewController = segue.destinationViewController as DetailViewController
-            var cell = sender as UITableViewCell
+            var detailViewController = segue.destinationViewController as! DetailViewController
+            var cell = sender as! UITableViewCell
             
             detailViewController.contact = contactArray[cell.tag]
         } else if segue.identifier == "goToNewContactFromListado" {
-            var navigationController = segue.destinationViewController as UINavigationController
-            var newContactViewController = navigationController.viewControllers[0] as NewContactViewController
+            var navigationController = segue.destinationViewController as! UINavigationController
+            var newContactViewController = navigationController.viewControllers[0] as! NewContactViewController
             newContactViewController.delegate = self
             
         }

@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var files: NSMutableArray = []
     var fileManager:NSFileManager!
-    var documentsPath: NSString!
+    var documentsPath: String!
     var filelist:NSArray!
     
     @IBOutlet weak var tabla: UITableView!
@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         files = []
         fileManager = NSFileManager.defaultManager()
-        documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as NSString)
+        documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as! String)
         filelist = fileManager.contentsOfDirectoryAtPath(documentsPath,error: nil)!
         
         println("documentspath:  \(documentsPath)")
@@ -65,17 +65,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var identifier:NSString = "CollectionCell"
-        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
+        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier as String, forIndexPath: indexPath) as! UITableViewCell
         
         
-        cell.textLabel.text = files.objectAtIndex(indexPath.row).description
+        cell.textLabel!.text = files.objectAtIndex(indexPath.row).description
         
         var isDir: ObjCBool = ObjCBool(false)
-        if(fileManager.fileExistsAtPath(documentsPath.stringByAppendingPathComponent(files[indexPath.row] as String), isDirectory: &isDir)){
+        if(fileManager.fileExistsAtPath(documentsPath.stringByAppendingPathComponent(files[indexPath.row] as! String), isDirectory: &isDir)){
             if(isDir){
-                cell.imageView.image = UIImage(named: "dir.png")
+                cell.imageView!.image = UIImage(named: "dir.png")
             } else{
-                cell.imageView.image = UIImage(named: "file.png")
+                cell.imageView!.image = UIImage(named: "file.png")
             }
         }
         

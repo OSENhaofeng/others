@@ -15,7 +15,7 @@ func example1(integers: NSArray) {
     var number:NSInteger = 0
     
     for element in integers{
-    number += (element as NSNumber).integerValue
+    number += (element as! NSNumber).integerValue
     }
     
     println("Sum all array items: \(number)")
@@ -59,7 +59,7 @@ func example3()  {
     
     
     for var i = 0; i<array.count; i++ {
-        if ((array.objectAtIndex(i) as Int % 2) == 0){
+        if ((array.objectAtIndex(i) as! Int % 2) == 0){
         array.removeObjectAtIndex(i)
         }
     }

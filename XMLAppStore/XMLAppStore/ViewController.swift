@@ -55,7 +55,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
         var queue = NSOperationQueue()
         for it in apps{
             var imagesOperation = ImagesOperation()
-            imagesOperation.app = it as AppInfo
+            imagesOperation.app = it as! AppInfo
             imagesOperation.delegate = self
             queue.addOperation(imagesOperation)
             
@@ -67,7 +67,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
         // Dispose of any resources that can be recreated.
     }
     
-    func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!){
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]){
         
         let elementsToParse = NSArray(objects: "id","im:name","im:image")
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
     }
     
     
-    func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!){
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
         if(self.currentApp != nil){
             //if(shouldParse || elementName == "entry"){
             var trimmedString = currentString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
@@ -105,10 +105,10 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
     }
     
     
-    func parser(parser: NSXMLParser!, foundCharacters string: String!)
+    func parser(parser: NSXMLParser, foundCharacters string: String?)
     {
         if((shouldParse) != nil){
-            currentString.appendString(string)
+            currentString.appendString(string!)
         }
     }
     
@@ -120,11 +120,11 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell = tabla.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-        var label: UILabel = cell.viewWithTag(101) as UILabel
-        var app = apps.objectAtIndex(indexPath.row) as AppInfo
+        var cell = tabla.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        var label: UILabel = cell.viewWithTag(101) as! UILabel
+        var app = apps.objectAtIndex(indexPath.row) as! AppInfo
         label.text = app.name
-        var imageView = cell.viewWithTag(100) as UIImageView
+        var imageView = cell.viewWithTag(100) as! UIImageView
         imageView.image = app.image
         
         return cell
@@ -132,11 +132,11 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
     
     func imageOperation(imagesOperation:ImagesOperation, app:AppInfo){
         var visibleCells = tabla.visibleCells()
-        var firstIndex = tabla.indexPathForCell(visibleCells[0] as UITableViewCell)?.row
-        var lastIndex = tabla.indexPathForCell(visibleCells.last as UITableViewCell)?.row
+        var firstIndex = tabla.indexPathForCell(visibleCells[0] as! UITableViewCell)?.row
+        var lastIndex = tabla.indexPathForCell(visibleCells.last as! UITableViewCell)?.row
         if(app.index >= firstIndex && app.index <= lastIndex){
             var cell = tabla.cellForRowAtIndexPath(NSIndexPath(forRow: app.index, inSection: 0))
-            var imageView = cell?.viewWithTag(100) as UIImageView
+            var imageView = cell?.viewWithTag(100) as! UIImageView
             imageView.image = app.image
         }
     }

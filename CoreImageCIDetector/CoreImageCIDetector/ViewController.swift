@@ -24,11 +24,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         filePath = NSBundle.mainBundle().pathForResource("emotions", ofType: "jpg")!
-        fileNameAndPath = NSURL.fileURLWithPath(filePath)!
+        fileNameAndPath = NSURL.fileURLWithPath(filePath as String)!
         image = CIImage(contentsOfURL:fileNameAndPath)
         var context = CIContext(options: nil)
         var options = NSDictionary(object: CIDetectorAccuracyHigh, forKey: CIDetectorAccuracy)
-        var detector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options)
+        var detector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options as [NSObject : AnyObject])
         var features: NSArray = detector.featuresInImage(image, options: [CIDetectorSmile:true,CIDetectorEyeBlink:true])
         var imageView = UIImageView(image: UIImage(named: "emotions.jpg"))
         self.view.addSubview(imageView)

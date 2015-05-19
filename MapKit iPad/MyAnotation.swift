@@ -19,8 +19,8 @@ import MapKit
 
 class MyAnotation: NSObject, MKAnnotation {
     
-    var title: NSString
-    var subtitle: NSString
+    var title: String
+    var subtitle: String
     var coordinate: CLLocationCoordinate2D
     func getTitle() -> NSString{
         return self.title
@@ -28,7 +28,7 @@ class MyAnotation: NSObject, MKAnnotation {
     func getSubTitle() -> NSString {
         return self.subtitle
     }
-    init(c:CLLocationCoordinate2D, t:NSString, st: NSString){
+    init(c:CLLocationCoordinate2D, t:String, st: String){
         coordinate = c
         title = t
         subtitle = st
