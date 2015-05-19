@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAction(sender: UIButton) {
         var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") as UIViewController
+        var viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") as! UIViewController
         self.presentViewController(viewController, animated: true,
             completion: nil)
     }

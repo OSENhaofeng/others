@@ -56,10 +56,10 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("celda") as UITableViewCell
-        var elem = songs[indexPath.row] as Song
+        var cell = tableView.dequeueReusableCellWithIdentifier("celda") as! UITableViewCell
+        var elem = songs[indexPath.row] as! Song
         println("AAAAAA \(elem.myTitle)")
-        cell.textLabel.text = (elem.myTitle) as String
+        cell.textLabel!.text = (elem.myTitle) as? String
 
         return cell
     }
@@ -111,7 +111,7 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     */
     
     
-    func connection(connection: NSURLConnection!, didFailWithError error: NSError!){
+    func connection(connection: NSURLConnection, didFailWithError error: NSError){
         println("URL access error")
     self.xmlData = nil
     }
@@ -123,18 +123,18 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     func connectionDidFinishLoading(connection: NSURLConnection!){
         var xmlCheck = NSString(data: self.xmlData!, encoding: NSUTF8StringEncoding)
         //println("XML recived: \(xmlCheck)")
-        var parser:NSXMLParser =  NSXMLParser(data: self.xmlData)
+        var parser:NSXMLParser =  NSXMLParser(data: self.xmlData!)
         parser.delegate = self
         parser.shouldResolveExternalEntities = true
         parser.parse()
             for(var i=0; i<songs.count;i++){
-                var elem = songs[i] as Song
+                var elem = songs[i] as! Song
                 println(elem.myTitle)
             }
         self.tableView.reloadData()
     }
     
-    func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!){
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]){
     
         if(elementName == "feed") {
             //init array
@@ -154,15 +154,15 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     }
     
     
-    func parser(parser: NSXMLParser!, foundCharacters string: String!) {
+    func parser(parser: NSXMLParser, foundCharacters string: String?) {
         if(currentStringValue != nil) {
             //NSMutableString where we save characters of actual item
             currentStringValue = NSMutableString(capacity: 50)
         }
-        currentStringValue?.appendString(string)
+        currentStringValue?.appendString(string!)
     }
     
-    func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!){
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
             if(elementName == "entry"){
                 //add song to array
                 songs.addObject(song)

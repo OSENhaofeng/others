@@ -61,9 +61,9 @@ class ImageViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         
-        let imagePickerc = info[UIImagePickerControllerOriginalImage] as UIImage
+        let imagePickerc = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         image.image = imagePickerc
         
@@ -80,7 +80,7 @@ class ImageViewController: UIViewController, UINavigationControllerDelegate, UII
     
     
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController!){
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

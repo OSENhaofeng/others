@@ -25,9 +25,9 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     
     @IBAction func cargar(sender: UIButton) {
         
-        var imageUrl: NSString = "http://carlosbutron.es/wp-content/uploads/2014/11/logo-carlosbutrondev.jpg"
+        var imageUrl: NSString = "http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409235fa14adf9158d109b2de4942.jpg"
         var getImageTask: NSURLSessionDownloadTask =
-        session.downloadTaskWithURL(NSURL(string: imageUrl)!)
+        session.downloadTaskWithURL(NSURL(string: imageUrl as String)!)
         getImageTask.resume()
         
     }

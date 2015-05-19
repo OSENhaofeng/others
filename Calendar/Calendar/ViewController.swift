@@ -32,13 +32,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var date = datePicker.date
         var name = textField.text
         var localSource: EKSource
-        var calendar = EKCalendar(eventStore: eventStore)
+//        var calendar = EKCalendar(eventStore: eventStore)
+        var calendar = EKCalendar(forEntityType: EKEntityTypeEvent, eventStore: eventStore)
         eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {(granted,error) in
             if(granted == false){
                 println("Access Denied")
             }
             else{
-                var auxiliar = self.eventStore.sources() as [EKSource]
+                var auxiliar = self.eventStore.sources() as! [EKSource]
                 calendar.source = auxiliar[0]
                 calendar.title = self.textField.text
                 println(calendar.title)
@@ -59,7 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 var theCalendar: EKCalendar!
                 for calendario in arrayCalendars{
                     if(calendario.title == self.eventCalendario.text){
-                        theCalendar = calendario as EKCalendar
+                        theCalendar = calendario as! EKCalendar
                         println(theCalendar.title)
                     }
                 }
@@ -106,14 +107,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.textField.resignFirstResponder()
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;
     }
     
     //called when users tap out of textfield
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     

@@ -36,7 +36,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        secondLabel.text = data
+        secondLabel.text = data as String
     }
     
     override func didReceiveMemoryWarning() {

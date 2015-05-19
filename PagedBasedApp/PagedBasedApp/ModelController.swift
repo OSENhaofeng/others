@@ -43,7 +43,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
             return nil
         }
         var viewControllerId: NSString = "DataViewController\(index+1)"
-        var dataViewController = storyboard.instantiateViewControllerWithIdentifier(viewControllerId) as DataViewController
+        var dataViewController = storyboard.instantiateViewControllerWithIdentifier(viewControllerId as String) as! DataViewController
         dataViewController.dataObject = self.pageData.objectAtIndex(index)
         return dataViewController
     }
@@ -61,7 +61,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     // MARK: - Page View Controller Data Source
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as DataViewController)
+        var index = self.indexOfViewController(viewController as! DataViewController)
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
@@ -71,7 +71,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as DataViewController)
+        var index = self.indexOfViewController(viewController as! DataViewController)
         if index == NSNotFound {
             return nil
         }

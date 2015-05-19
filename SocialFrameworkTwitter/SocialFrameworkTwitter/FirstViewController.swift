@@ -70,7 +70,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;
@@ -84,8 +84,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                 if(granted == true) {
                 var accounts = accountStore.accountsWithAccountType(accountType)
                 if(accounts.count>0){
-                var twitterAccount = accounts[0] as ACAccount
-                var twitterInfoRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/users/show.json"), parameters: NSDictionary(object: self.labelUserName.text, forKey: "screen_name"))
+                var twitterAccount = accounts[0] as! ACAccount
+                var twitterInfoRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/users/show.json"), parameters: NSDictionary(object: self.labelUserName.text, forKey: "screen_name") as [NSObject : AnyObject])
                 twitterInfoRequest.account = twitterAccount
                 twitterInfoRequest.performRequestWithHandler({(responseData,urlResponse,error) in
                 dispatch_async(dispatch_get_main_queue(), {()
@@ -102,18 +102,18 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                 if(responseData != nil){
                 //if dta received TO DO
                 var error: NSError?
-                var TWData = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableLeaves, error: &error) as NSDictionary
+                var TWData = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableLeaves, error: &error) as! NSDictionary
                 //getting data
                 var followers = TWData.objectForKey("followers_count")!.integerValue
                 var following = TWData.objectForKey("friends_count")!.integerValue!
-                var description = TWData.objectForKey("description") as NSString
+                var description = TWData.objectForKey("description") as! NSString
                 self.labelFollowers.text = "\(followers)"
                 self.labelFollowing.text = "\(following)"
-                self.textViewDescription.text = description
+                self.textViewDescription.text = description as String
                 
-                var profileImageStringURL = TWData.objectForKey("profile_image_url_https") as NSString
+                var profileImageStringURL = TWData.objectForKey("profile_image_url_https") as! NSString
                 profileImageStringURL = profileImageStringURL.stringByReplacingOccurrencesOfString("_normal", withString: "")
-                var url = NSURL(string: profileImageStringURL)
+                var url = NSURL(string: profileImageStringURL as String)
                 var data = NSData(contentsOfURL: url!)
                 self.imageViewPhoto.image = UIImage(data: data!)
                 

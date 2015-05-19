@@ -36,14 +36,14 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @IBAction func createDirectory(sender: UIButton) {
             
         var newDirectory:NSString = documentsPath.stringByAppendingPathComponent(nameDirectory.text)
-        if(fileManager.createDirectoryAtPath(newDirectory, withIntermediateDirectories: true, attributes: nil, error: nil) == true){
+        if(fileManager.createDirectoryAtPath(newDirectory as String, withIntermediateDirectories: true, attributes: nil, error: nil) == true){
             println("created")
         }
             
     }
     
     var fileManager = NSFileManager.defaultManager()
-    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as NSString)
+    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as! NSString)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,13 +59,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     

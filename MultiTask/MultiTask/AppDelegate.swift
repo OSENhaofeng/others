@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         println("applicationWillEnterForeground")
         NSLog("Aplication active!!")
-        (self.window?.rootViewController as ViewController).message.text = "Im ACTIVE"
+        (self.window?.rootViewController as! ViewController).message.text = "Im ACTIVE"
         
     }
     

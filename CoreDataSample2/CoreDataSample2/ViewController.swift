@@ -26,9 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var table: UITableView!
     @IBAction func save(sender: UIButton) {
         
-        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var context: NSManagedObjectContext = appDel.managedObjectContext!
-        var cell = NSEntityDescription.insertNewObjectForEntityForName("Form", inManagedObjectContext:  context) as NSManagedObject
+        var cell = NSEntityDescription.insertNewObjectForEntityForName("Form", inManagedObjectContext:  context) as! NSManagedObject
         cell.setValue(name.text, forKey: "name")
         cell.setValue(surname.text, forKey: "surname")
         
@@ -55,9 +55,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell : UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
-        var aux = results![indexPath.row] as NSManagedObject
-        cell.textLabel.text = aux.valueForKey("name") as NSString
-        cell.detailTextLabel?.text = aux.valueForKey("surname") as NSString
+        var aux = results![indexPath.row] as! NSManagedObject
+        cell.textLabel!.text = aux.valueForKey("name") as? String
+        cell.detailTextLabel!.text = aux.valueForKey("surname") as? String
         
         return cell
         
@@ -68,12 +68,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String  {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
         return "Contacts"
     }
     
     func loadTable(){
-        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var context:NSManagedObjectContext = appDel.managedObjectContext!
         var request = NSFetchRequest(entityName: "Form")
         request.returnsObjectsAsFaults = false

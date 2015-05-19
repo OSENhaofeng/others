@@ -61,7 +61,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         
         ////loop all events in events and delete it
         for i in events{
-            self.store.removeEvent(i as EKEvent, span: EKSpanThisEvent, commit: true, error: nil)
+            self.store.removeEvent(i as! EKEvent, span: EKSpanThisEvent, commit: true, error: nil)
             //println(i)
         }
         
@@ -87,7 +87,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         
         //loop all events in events and add alarm to all
         for i in events{
-            let eventWithAlarm = i as EKEvent
+            let eventWithAlarm = i as! EKEvent
             let alarm = EKAlarm(relativeOffset: -2.0)
             eventWithAlarm.addAlarm(alarm)
             self.store.saveEvent(eventWithAlarm, span: EKSpanThisEvent, error: nil)

@@ -71,10 +71,10 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
             finalText = "\n\(peer.displayName): \(message)"
         }
         self.textBox.text =
-            self.textBox.text.stringByAppendingString(finalText)
+            self.textBox.text.stringByAppendingString(finalText as String)
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool{
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         self.sendMessage()
         return true

@@ -25,8 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         let path = NSBundle.mainBundle().bundlePath
         let plistName:NSString = "Property List.plist"
-        let finalPath:NSString = path.stringByAppendingPathComponent(plistName)
-        cells = NSDictionary(contentsOfFile:finalPath)
+        let finalPath:NSString = path.stringByAppendingPathComponent(plistName as String)
+        cells = NSDictionary(contentsOfFile:finalPath as String)
     }
     
     
@@ -36,24 +36,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
-        let cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomCell
+        let cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as! CustomCell
         
-        let myCell: AnyObject = cells!.objectForKey("cell\(indexPath.row)") as NSDictionary
+        let myCell: AnyObject = cells!.objectForKey("cell\(indexPath.row)") as! NSDictionary
         
         
         cell.myTitle?.text = myCell.objectForKey("title") as? String
         cell.mySubtitle?.text = myCell.objectForKey("subtitle") as? String
-        cell.myImage?.image = UIImage(named: myCell.objectForKey("image") as String)
+        cell.myImage?.image = UIImage(named: myCell.objectForKey("image") as! String)
         
         return cell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section:Int) -> String  {
+    func tableView(tableView: UITableView, titleForHeaderInSection section:Int) -> String?  {
         
         return "TuxMania"
     }
     
-    func tableView(tableView: UITableView, titleForFooterInSection section:Int) -> String {
+    func tableView(tableView: UITableView, titleForFooterInSection section:Int) -> String? {
         
         return "Get all the Tux"
     }

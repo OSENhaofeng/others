@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.identifier=="NewClass"){
-            let myDestVC = segue.destinationViewController as NewClassViewController
+            let myDestVC = segue.destinationViewController as! NewClassViewController
             
             myDestVC.labelName = "text"
             

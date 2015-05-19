@@ -63,7 +63,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        var fullImage = (info as NSDictionary)[UIImagePickerControllerOriginalImage] as UIImage
+        var fullImage = (info as NSDictionary)[UIImagePickerControllerOriginalImage] as! UIImage
         println("Choose from galery 3")
         savePhotoICloud(fullImage)
     }
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         var photoName = NSString (format: "PHOTO_%@", df.stringFromDate(date))
         
         if (container != nil){
-            var fileURLiCloud = container!.URLByAppendingPathComponent("Documents").URLByAppendingPathComponent(photoName)
+            var fileURLiCloud = container!.URLByAppendingPathComponent("Documents").URLByAppendingPathComponent(photoName as String)
             var photo = DocumentPhoto (fileURL: fileURLiCloud)
             photo.image = image
             
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func removeImagesFromICloud (){
         if (container != nil){
             self.metadataQuery = NSMetadataQuery()
-            self.metadataQuery.searchScopes = NSArray (object: NSMetadataQueryUbiquitousDocumentsScope)
+            self.metadataQuery.searchScopes = NSArray (object: NSMetadataQueryUbiquitousDocumentsScope) as [AnyObject]
             
             var predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
@@ -111,7 +111,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func loadImagesFromICloud (){
         if (container != nil){
             self.metadataQuery = NSMetadataQuery()
-            self.metadataQuery.searchScopes = NSArray (object: NSMetadataQueryUbiquitousDocumentsScope)
+            self.metadataQuery.searchScopes = NSArray (object: NSMetadataQueryUbiquitousDocumentsScope) as [AnyObject]
             
             var predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
@@ -124,14 +124,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func queryFinished(notification: NSNotification){
-        var mq = notification.object as NSMetadataQuery
+        var mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
         mq.stopQuery()
         celdas.removeAllObjects()
         for (var i = 0; i<mq.resultCount;i++){
-            var result = mq.resultAtIndex(i) as NSMetadataItem
-            var nombre = result.valueForAttribute(NSMetadataItemFSNameKey) as NSString
-            var url = result.valueForAttribute(NSMetadataItemURLKey) as NSURL
+            var result = mq.resultAtIndex(i) as! NSMetadataItem
+            var nombre = result.valueForAttribute(NSMetadataItemFSNameKey) as! NSString
+            var url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
             var document : DocumentPhoto! = DocumentPhoto(fileURL: url)
             
             
@@ -146,14 +146,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     func queryDeleted(notification: NSNotification){
-        var mq = notification.object as NSMetadataQuery
+        var mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
         mq.stopQuery()
         celdas.removeAllObjects()
         for (var i = 0; i<mq.resultCount;i++){
-            var result = mq.resultAtIndex(i) as NSMetadataItem
-            var nombre = result.valueForAttribute(NSMetadataItemFSNameKey) as NSString
-            var url = result.valueForAttribute(NSMetadataItemURLKey) as NSURL
+            var result = mq.resultAtIndex(i) as! NSMetadataItem
+            var nombre = result.valueForAttribute(NSMetadataItemFSNameKey) as! NSString
+            var url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
             var document : DocumentPhoto! = DocumentPhoto(fileURL: url)
             
             
@@ -190,11 +190,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var identifier:NSString = "CollectionCell"
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as UICollectionViewCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier as String, forIndexPath: indexPath) as! UICollectionViewCell
         
         
         
-        var imageView:UIImageView = cell.viewWithTag(1) as UIImageView
+        var imageView:UIImageView = cell.viewWithTag(1) as! UIImageView
         imageView.image = celdas.objectAtIndex(indexPath.row) as? UIImage
         // imageView.image = UIImage(named: "imagen1.png")
         

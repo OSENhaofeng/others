@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         
         var stringURL:NSString = "https://itunes.apple.com/es/rss/topfreeapplications/limit=10/json"
         //building NSURL
-        var url = NSURL(string: stringURL)
+        var url = NSURL(string: stringURL as String)
         //building NSURLRequest
         var request = NSURLRequest(URL: url!)
         //connection
@@ -71,17 +71,17 @@ class ViewController: UIViewController {
         var error: NSError?
         if var dic = NSJSONSerialization.JSONObjectWithData(dataJSON, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary{
             //A partir del JSON obtenemos la primera entrada
-            var top1: AnyObject = ((dic["feed"] as NSDictionary) ["entry"]! as NSArray) [2]
-            var imgJson: AnyObject = (top1["im:image"] as NSArray) [2]
-            var url = NSURL(string: imgJson.objectForKey("label") as String)
+            var top1: AnyObject = ((dic["feed"] as! NSDictionary) ["entry"]! as! NSArray) [2]
+            var imgJson: AnyObject = (top1["im:image"] as! NSArray) [2]
+            var url = NSURL(string: imgJson.objectForKey("label") as! String)
             var data = NSData(contentsOfURL: url!)
             var img = UIImage(data: data!)
             image.image = img
             //get tittle and description
-            var tit = (top1["title"] as NSDictionary) ["label"] as NSString
-            var desc = (top1["summary"] as NSDictionary) ["label"] as NSString
-            tittle.text = tit
-            myDescription.text = desc
+            var tit = (top1["title"] as! NSDictionary) ["label"] as! NSString
+            var desc = (top1["summary"] as! NSDictionary) ["label"] as! NSString
+            tittle.text = tit as String
+            myDescription.text = desc as String
         }
     }
     
