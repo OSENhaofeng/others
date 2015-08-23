@@ -76,7 +76,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             println("No camera on this device")
         }
         captureSession = AVCaptureSession()
-        videoInput = AVCaptureDeviceInput.deviceInputWithDevice(videoDevice, error: nil) as AVCaptureDeviceInput
+        videoInput = AVCaptureDeviceInput.deviceInputWithDevice(videoDevice, error: nil) as! AVCaptureDeviceInput
         
         if(captureSession.canAddInput(videoInput)){
             captureSession.addInput(videoInput)
