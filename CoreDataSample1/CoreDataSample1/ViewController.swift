@@ -29,15 +29,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var context : NSManagedObjectContext = appDel.managedObjectContext!
         
         
-        //INSERT
+       // INSERT
         
-//                var celda = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext:  context) as NSManagedObject
-//                celda.setValue("Yoda Tux", forKey: "title")
-//                celda.setValue("Science Fiction", forKey: "subtitle")
-//                celda.setValue("yodaTux.png", forKey: "image")
-//                if(!context.save(nil)){
-//                    println("Error!")
-//                }
+                var celda = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext:  context) as! NSManagedObject
+                celda.setValue("Yoda Tux", forKey: "title")
+                celda.setValue("Science Fiction", forKey: "subtitle")
+                celda.setValue("yodaTux.png", forKey: "image")
+                if(!context.save(nil)){
+                    println("Error!")
+                }
         
 
             
