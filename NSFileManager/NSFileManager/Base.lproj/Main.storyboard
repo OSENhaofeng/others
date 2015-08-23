@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="IsP-n4-47W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="IsP-n4-47W">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Lectura-->
+        <!--read-->
         <scene sceneID="QbS-x4-G8U">
             <objects>
                 <viewController id="X2c-Ef-zqB" customClass="ThirdViewController" customModule="NSFileManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,8 +22,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-Q6-iUs">
-                                <rect key="frame" x="137" y="121" width="33" height="30"/>
-                                <state key="normal" title="Abrir">
+                                <rect key="frame" x="137" y="121" width="38" height="30"/>
+                                <state key="normal" title="Open">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -40,7 +40,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lectura" id="DWb-tH-jWV"/>
+                    <tabBarItem key="tabBarItem" title="read" id="DWb-tH-jWV"/>
                     <connections>
                         <outlet property="name" destination="aNH-ON-GXl" id="c9F-Nt-G5G"/>
                         <outlet property="txtBox" destination="WfS-QU-iN4" id="Hb4-0U-AOE"/>
@@ -50,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="-24" y="1145"/>
         </scene>
-        <!--Fichero-->
+        <!--file-->
         <scene sceneID="cGg-Ms-lRt">
             <objects>
                 <viewController id="1os-2b-kQA" customClass="SecondViewController" customModule="NSFileManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="miFichero" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzC-Qn-lgS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="myFile" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzC-Qn-lgS">
                                 <rect key="frame" x="42" y="28" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -73,8 +73,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cm-Ma-r6g">
-                                <rect key="frame" x="105" y="347" width="111" height="30"/>
-                                <state key="normal" title="Generar Fichero">
+                                <rect key="frame" x="105" y="347" width="85" height="30"/>
+                                <state key="normal" title="generate file">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -82,15 +82,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qix-BF-xBy">
-                                <rect key="frame" x="97" y="451" width="126" height="30"/>
-                                <state key="normal" title="Generar Directorio">
+                                <rect key="frame" x="97" y="451" width="125" height="30"/>
+                                <state key="normal" title="generate directory">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="createDirectory:" destination="1os-2b-kQA" eventType="touchUpInside" id="CDw-BB-hZI"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Esto es el contenido que quiero incluir en mi fichero" translatesAutoresizingMaskIntoConstraints="NO" id="XIY-54-y37">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This text below to myFile" translatesAutoresizingMaskIntoConstraints="NO" id="XIY-54-y37">
                                 <rect key="frame" x="42" y="80" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -99,7 +99,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fichero" id="lYb-Eu-B4z"/>
+                    <tabBarItem key="tabBarItem" title="file" id="lYb-Eu-B4z"/>
                     <connections>
                         <outlet property="name" destination="gzC-Qn-lgS" id="vuF-eT-ix1"/>
                         <outlet property="nameDirectory" destination="frL-0I-MFS" id="Qj1-bb-I2o"/>
@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="399" y="688"/>
         </scene>
-        <!--Listar-->
+        <!--list-->
         <scene sceneID="awS-sO-G9w">
             <objects>
                 <viewController id="USM-Xo-I0l" customClass="ViewController" customModule="NSFileManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Listar" id="gGt-i8-kgE"/>
+                    <tabBarItem key="tabBarItem" title="list" id="gGt-i8-kgE"/>
                     <connections>
                         <outlet property="tabla" destination="y4D-Zn-6aw" id="mss-qx-k7f"/>
                     </connections>
