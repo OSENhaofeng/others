@@ -64,12 +64,6 @@ class Game: SKScene, SKPhysicsContactDelegate {
         var moveConstant = SKAction.repeatActionForever(move)
         target.runAction(moveConstant)
         
-        //Slider
-        var slider = UISlider(frame: CGRectMake(0, 0, 325, 100))
-        slider.addTarget(self, action: "controlSlider:", forControlEvents: UIControlEvents.ValueChanged)
-        slider.minimumValue = -50
-        slider.maximumValue = 50
-        view.addSubview(slider)
         
         //actual score
         score.text = "Score: \(points)";
