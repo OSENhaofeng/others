@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             var rightEyeBlinking = faceFeature.rightEyeClosed
             var leftEyeBlinking = faceFeature.leftEyeClosed
             
-            //Location face
+            //Face location
             let faceRect = faceFeature.bounds
             var faceView = UIView(frame: faceRect)
             faceView.layer.borderWidth = 2
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             var faceHeight:CGFloat = faceRect.size.height
             vistAux.addSubview(faceView)
             
-            //Location smile
+            //Smile location
             if (smile==true) {
                 var smileView = UIView(frame: CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.18, faceFeature.mouthPosition.y-faceHeight*0.1, faceWidth*0.4, faceHeight*0.2))
                 smileView.layer.cornerRadius = faceWidth*0.1
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 vistAux.addSubview(smileView)
             }
             
-            //Location right eye
+            //Right eye location
             
             var rightEyeView = UIView(frame: CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.2, faceFeature.rightEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             rightEyeView.layer.cornerRadius = faceWidth*0.2
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
             vistAux.addSubview(rightEyeView)
             
             
-            //Location left eye
+            //Left eye location
             
             var leftEyeView = UIView(frame: CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.2, faceFeature.leftEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             leftEyeView.layer.cornerRadius = faceWidth*0.2
