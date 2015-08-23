@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="d0W-xP-1gi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="d0W-xP-1gi">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,17 +20,9 @@
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pUn-L9-g0s">
                                 <rect key="frame" x="85" y="445" width="150" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="7DJ-k6-AUN"/>
-                                    <constraint firstAttribute="height" constant="2" id="BUC-MM-1t7"/>
-                                </constraints>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-Y6-WHQ">
-                                <rect key="frame" x="137" y="371" width="35" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4KU-nz-CdV"/>
-                                    <constraint firstAttribute="width" constant="47" id="OcF-fL-Uo0"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-Y6-WHQ">
+                                <rect key="frame" x="137" y="371" width="47" height="30"/>
                                 <state key="normal" title="Load">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -40,23 +33,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wMF-JG-Jgn">
                                 <rect key="frame" x="25" y="116" width="270" height="152"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="270" id="Va3-PW-R6k"/>
-                                    <constraint firstAttribute="height" constant="152" id="seF-tQ-VLO"/>
+                                    <constraint firstAttribute="width" secondItem="wMF-JG-Jgn" secondAttribute="height" multiplier="135:76" id="GiM-uy-lBB"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V6q-Y6-WHQ" firstAttribute="leading" secondItem="ND1-Q4-MHw" secondAttribute="leadingMargin" constant="121" id="NJB-Nb-YV8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V6q-Y6-WHQ" secondAttribute="trailing" constant="120" id="NWO-G0-TQP"/>
-                            <constraint firstItem="pUn-L9-g0s" firstAttribute="top" secondItem="V6q-Y6-WHQ" secondAttribute="bottom" constant="44" id="OOj-ho-WVq"/>
-                            <constraint firstItem="pUn-L9-g0s" firstAttribute="leading" secondItem="ND1-Q4-MHw" secondAttribute="leadingMargin" constant="69" id="Pak-BX-KTr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pUn-L9-g0s" secondAttribute="trailing" constant="69" id="cfK-gJ-HfT"/>
-                            <constraint firstItem="V6q-Y6-WHQ" firstAttribute="top" secondItem="wMF-JG-Jgn" secondAttribute="bottom" constant="103" id="dJ6-Cx-eow"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wMF-JG-Jgn" secondAttribute="trailing" constant="9" id="fmR-af-DYo"/>
-                            <constraint firstItem="pUn-L9-g0s" firstAttribute="top" secondItem="V6q-Y6-WHQ" secondAttribute="bottom" constant="44" id="ots-6C-Xj0"/>
-                            <constraint firstItem="wMF-JG-Jgn" firstAttribute="leading" secondItem="ND1-Q4-MHw" secondAttribute="leadingMargin" constant="9" id="yJT-b5-Z9G"/>
-                            <constraint firstItem="wMF-JG-Jgn" firstAttribute="top" secondItem="Gfq-rM-dcm" secondAttribute="bottom" constant="96" id="zX8-xC-PvE"/>
+                            <constraint firstItem="wMF-JG-Jgn" firstAttribute="top" secondItem="Gfq-rM-dcm" secondAttribute="bottom" constant="96" id="2Xl-m6-jUJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pUn-L9-g0s" secondAttribute="trailing" constant="69" id="QJ9-dQ-jFG"/>
+                            <constraint firstItem="V6q-Y6-WHQ" firstAttribute="leading" secondItem="ND1-Q4-MHw" secondAttribute="leadingMargin" constant="121" id="XqW-ql-yif"/>
+                            <constraint firstItem="pUn-L9-g0s" firstAttribute="leading" secondItem="ND1-Q4-MHw" secondAttribute="leadingMargin" constant="69" id="dY2-i9-GlK"/>
+                            <constraint firstItem="V6q-Y6-WHQ" firstAttribute="top" secondItem="wMF-JG-Jgn" secondAttribute="bottom" constant="103" id="eyS-Mn-djE"/>
+                            <constraint firstItem="pUn-L9-g0s" firstAttribute="top" secondItem="V6q-Y6-WHQ" secondAttribute="bottom" constant="44" id="jdA-Wp-EW6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wMF-JG-Jgn" secondAttribute="trailing" constant="9" id="lb4-aB-LMx"/>
+                            <constraint firstItem="wMF-JG-Jgn" firstAttribute="leading" secondItem="ND1-Q4-MHw" secondAttribute="leadingMargin" constant="9" id="pnv-kd-wwI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V6q-Y6-WHQ" secondAttribute="trailing" constant="120" id="qRg-bz-tCJ"/>
                         </constraints>
                     </view>
                     <connections>
