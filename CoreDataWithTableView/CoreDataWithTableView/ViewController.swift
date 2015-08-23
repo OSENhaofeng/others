@@ -31,19 +31,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         appDel = UIApplication.sharedApplication().delegate as! AppDelegate
         context = appDel.managedObjectContext!
         
-        //Codigo para añadir una pelicula
-//                var pelicula = NSEntityDescription.insertNewObjectForEntityForName("Pelicula", inManagedObjectContext:  context) as NSManagedObject
-//                pelicula.setValue("El Hobbit: Un viaje inesperado", forKey: "titulo")
-//                pelicula.setValue("2013", forKey: "year")
-//                pelicula.setValue("Peter Jackson", forKey: "director")
-//                pelicula.setValue("hobbit.jpg", forKey: "imagen")
-//                    if(!context.save(nil)){
-//                    println("Error!")
-//                }
+        //Code to add a movie
+                var movie = NSEntityDescription.insertNewObjectForEntityForName("Movie", inManagedObjectContext:  context) as! NSManagedObject
+                movie.setValue("El Hobbit: Un viaje inesperado", forKey: "title")
+                movie.setValue("2013", forKey: "year")
+                movie.setValue("Peter Jackson", forKey: "director")
+                movie.setValue("hobbit.jpg", forKey: "image")
+                    if(!context.save(nil)){
+                    println("Error!")
+                }
 
         
         
-        loadTabla()
+        loadTable()
     }
     
     
@@ -55,8 +55,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    func loadTabla(){
-        var request = NSFetchRequest(entityName: "Pelicula")
+    func loadTable(){
+        var request = NSFetchRequest(entityName: "Movie")
         request.returnsObjectsAsFaults = false
         results = context.executeFetchRequest(request, error: nil)!
         
@@ -73,10 +73,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
         
         var aux = results[indexPath.row] as! NSManagedObject
-        cell.title.text = aux.valueForKey("titulo") as? String
+        cell.title.text = aux.valueForKey("title") as? String
         cell.director.text = aux.valueForKey("director") as? String
         cell.year.text = aux.valueForKey("year") as? String
-        cell.myImage.image = UIImage(named:aux.valueForKey("imagen") as! String)
+        cell.myImage.image = UIImage(named:aux.valueForKey("image") as! String)
         
         return cell
         
