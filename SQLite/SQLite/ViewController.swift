@@ -40,18 +40,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func loadTabla(){
         
-        var db_path = NSBundle.mainBundle().pathForResource("filmoteca", ofType: "sqlite")
+        var db_path = NSBundle.mainBundle().pathForResource("FilmCollection", ofType: "sqlite")
         println(NSBundle.mainBundle())
         var db = COpaquePointer()
         var status = sqlite3_open(db_path!, &db)
         if(status == SQLITE_OK){
             //bbdd open
+            println("open")
         }
         else{
             //bbdd error
+            println("open error")
         }
         
-        var query_stmt = "SELECT * FROM pelicula"
+        var query_stmt = "select * from film"
         
         if(sqlite3_prepare_v2(db, query_stmt, -1, &statement, nil) == SQLITE_OK){
             data.removeAllObjects()
@@ -60,16 +62,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 let director = sqlite3_column_text(statement, 1)
                 let buf_director = String.fromCString(UnsafePointer<CChar>(director))
-                let imagen = sqlite3_column_text(statement, 2)
-                let buf_imagen = String.fromCString(UnsafePointer<CChar>(imagen))
-                let titulo = sqlite3_column_text(statement, 3)
-                let buf_titulo = String.fromCString(UnsafePointer<CChar>(titulo))
+                let image = sqlite3_column_text(statement, 2)
+                let buf_image = String.fromCString(UnsafePointer<CChar>(image))
+                let title = sqlite3_column_text(statement, 3)
+                let buf_title = String.fromCString(UnsafePointer<CChar>(title))
                 let year = sqlite3_column_text(statement, 4)
                 let buf_year = String.fromCString(UnsafePointer<CChar>(year))
                 
                 Dictionary.setObject(buf_director!, forKey:"director")
-                Dictionary.setObject(buf_imagen!, forKey: "imagen")
-                Dictionary.setObject(buf_titulo!, forKey: "titulo")
+                Dictionary.setObject(buf_image!, forKey: "image")
+                Dictionary.setObject(buf_title!, forKey: "title")
                 Dictionary.setObject(buf_year!, forKey: "year")
                 
                 data.addObject(Dictionary)
@@ -97,10 +99,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var table_director = aux["director"]
         cell.director.text = table_director as? String
         var aux1: AnyObject = data[indexPath.row]
-        var table_image = aux["imagen"]
+        var table_image = aux["image"]
         cell.myImage.image = UIImage(named:table_image as! String)
         var aux3: AnyObject = data[indexPath.row]
-        var table_title = aux["titulo"]
+        var table_title = aux["title"]
         cell.title.text = table_title as? String
         
         var aux4: AnyObject = data[indexPath.row]

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075B05E81B8A2895004385A8 /* FilmCollection.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 075B05E71B8A2895004385A8 /* FilmCollection.sqlite */; };
 		075FD2571A33933B00513A3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD2561A33933B00513A3A /* AppDelegate.swift */; };
 		075FD2591A33933B00513A3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD2581A33933B00513A3A /* ViewController.swift */; };
 		075FD25C1A33933B00513A3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075FD25A1A33933B00513A3A /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		075FD27E1A33937400513A3A /* godzilla.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 075FD27A1A33937400513A3A /* godzilla.jpg */; };
 		075FD27F1A33937400513A3A /* alien.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 075FD27B1A33937400513A3A /* alien.jpg */; };
 		075FD2821A33939100513A3A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 075FD2811A33939100513A3A /* libsqlite3.dylib */; };
-		075FD2881A3396E400513A3A /* filmoteca.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 075FD2871A3396E400513A3A /* filmoteca.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075B05E71B8A2895004385A8 /* FilmCollection.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FilmCollection.sqlite; sourceTree = "<group>"; };
 		075FD2511A33933B00513A3A /* SQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075FD2551A33933B00513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD2561A33933B00513A3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		075FD27B1A33937400513A3A /* alien.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alien.jpg; sourceTree = "<group>"; };
 		075FD2811A33939100513A3A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		075FD2831A3393D300513A3A /* SQLite-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		075FD2871A3396E400513A3A /* filmoteca.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = filmoteca.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 		075FD2531A33933B00513A3A /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				075FD2871A3396E400513A3A /* filmoteca.sqlite */,
+				075B05E71B8A2895004385A8 /* FilmCollection.sqlite */,
 				075FD2781A33937400513A3A /* jpark.jpg */,
 				075FD2791A33937400513A3A /* hobbit.jpg */,
 				075FD27A1A33937400513A3A /* godzilla.jpg */,
@@ -216,11 +216,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075B05E81B8A2895004385A8 /* FilmCollection.sqlite in Resources */,
 				075FD27C1A33937400513A3A /* jpark.jpg in Resources */,
 				075FD27E1A33937400513A3A /* godzilla.jpg in Resources */,
 				075FD25C1A33933B00513A3A /* Main.storyboard in Resources */,
 				075FD2611A33933B00513A3A /* LaunchScreen.xib in Resources */,
-				075FD2881A3396E400513A3A /* filmoteca.sqlite in Resources */,
 				075FD27F1A33937400513A3A /* alien.jpg in Resources */,
 				075FD25E1A33933B00513A3A /* Images.xcassets in Resources */,
 				075FD27D1A33937400513A3A /* hobbit.jpg in Resources */,
@@ -368,6 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SQLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SQLite-Bridging-Header.h";
@@ -381,6 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SQLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SQLite-Bridging-Header.h";
@@ -440,6 +442,7 @@
 				075FD2721A33933B00513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075FD2731A33933B00513A3A /* Build configuration list for PBXNativeTarget "SQLiteTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +451,7 @@
 				075FD2751A33933B00513A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
