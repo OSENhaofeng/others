@@ -62,7 +62,7 @@ I plan to write further additional examples and all developers are welcome to fo
 Getting Started
 ---------------------
 
-Running Swift Structures requires Xcode 6.0 GM Seed or later.
+Running in Xcode 6.4 and iOS 8.4
 
 
 Usage
