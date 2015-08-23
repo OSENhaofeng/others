@@ -70,7 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         //distance between our position and the new point created
         let distance = newCoord2.distanceFromLocation(newCoord3)
-        println("Distancia entre puntos: \(distance)")
+        println("Distance between two points: \(distance)")
         
         
         var newAnnotation = MKPointAnnotation()
@@ -149,10 +149,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let lat2 = degreesToRadians(point2.coordinate.latitude);
         let lon2 = degreesToRadians(point2.coordinate.longitude);
         
-        println("Latitud inicial: \(point1.coordinate.latitude)")
-        println("Longitud inicial: \(point1.coordinate.longitude)")
-        println("Latitud final: \(point2.coordinate.latitude)")
-        println("Longitud final: \(point2.coordinate.longitude)")
+        println("Start latitude: \(point1.coordinate.latitude)")
+        println("Start longitude: \(point1.coordinate.longitude)")
+        println("Final latitude: \(point2.coordinate.latitude)")
+        println("Final longitude: \(point2.coordinate.longitude)")
         
         let dLon = lon2 - lon1;
         
