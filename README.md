@@ -81,4 +81,4 @@ develop - The active development branch. Pull requests should be directed to thi
 Questions
 ---------------------
 
-Have a question? Feel free to contact me on <a href="http://www.twitter.com/carlosbutrondev" target="_blank">Twitter</a> or <a href="http://www.carlosbutron.es" target="_blank">in my website</a>.
+Have a question? Feel free to contact me on <a href="http://www.twitter.com/carlbutron" target="_blank">Twitter</a> or <a href="http://www.carlosbutron.es" target="_blank">in my website</a>.
