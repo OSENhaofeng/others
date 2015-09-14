@@ -7,7 +7,7 @@ This project provides some examples in Swift for iOS. With Swift now officially 
 Audience
 ---------------------
 
-As a developer, you should already be familiar with this pieces of code. This code is Open Source. It's Reusable. Use it for your apps.
+As a developer, you should already be familiar with this pieces of code. This code is Open Source. It's Reusable. Use it in your apps.
 
 Features
 ---------------------
