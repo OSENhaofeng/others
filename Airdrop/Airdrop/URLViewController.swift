@@ -24,13 +24,13 @@ class URLViewController: UIViewController, UIWebViewDelegate {
     
 
     @IBAction func send(sender: UIButton) {
-        var url:NSURL = NSURL(string: myURL.text)!
+        let url:NSURL = NSURL(string: myURL.text!)!
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func load(sender: UIButton) {
-        var request = NSURLRequest(URL: NSURL(string: myURL.text)!)
+        let request = NSURLRequest(URL: NSURL(string: myURL.text!)!)
         self.webView.loadRequest(request)
     }
     
@@ -40,7 +40,7 @@ class URLViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         myURL.text = "http://carlosbutron.es/"
         webView.delegate = self
-        var request = NSURLRequest(URL: NSURL(string: myURL.text)!)
+        let request = NSURLRequest(URL: NSURL(string: myURL.text!)!)
         self.webView.loadRequest(request)        // Do any additional setup after loading the view.
     }
 

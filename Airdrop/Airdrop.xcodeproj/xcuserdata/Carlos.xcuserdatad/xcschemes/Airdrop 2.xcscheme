@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Airdrop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD30F1A34AB1B00513A3A"
-               BuildableName = "AirdropTests.xctest"
-               BlueprintName = "AirdropTests"
-               ReferencedContainer = "container:Airdrop.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD30F1A34AB1B00513A3A"
-               BuildableName = "AirdropTests.xctest"
-               BlueprintName = "AirdropTests"
-               ReferencedContainer = "container:Airdrop.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

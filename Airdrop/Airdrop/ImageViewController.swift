@@ -43,7 +43,7 @@ class ImageViewController: UIViewController, UINavigationControllerDelegate, UII
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         
         //to select only camera controls, not video controls
-        imagePicker.mediaTypes = [kUTTypeImage]
+        imagePicker.mediaTypes = [kUTTypeImage as String]
         imagePicker.showsCameraControls = true
         //imagePicker.allowsEditing = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -61,7 +61,7 @@ class ImageViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         
         let imagePickerc = info[UIImagePickerControllerOriginalImage] as! UIImage
         
@@ -74,7 +74,7 @@ class ImageViewController: UIViewController, UINavigationControllerDelegate, UII
     
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<()>){
         if(error != nil){
-            println("ERROR IMAGE \(error.debugDescription)")
+            print("ERROR IMAGE \(error.debugDescription)")
         }
     }
     
