@@ -62,7 +62,7 @@ I plan to write further additional examples and all developers are welcome to fo
 Getting Started
 ---------------------
 
-Running in Xcode 6.4 and iOS 8.4
+Running in Xcode 7.0 and iOS 9.0
 
 
 Usage
