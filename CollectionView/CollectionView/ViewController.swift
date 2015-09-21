@@ -45,10 +45,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var identifier: String = "CollectionCell"
-        var cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! UICollectionViewCell
+        let identifier: String = "CollectionCell"
+        let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) 
         
-        var imageView = cell.viewWithTag(1) as! UIImageView
+        let imageView = cell.viewWithTag(1) as! UIImageView
         imageView.image = items.objectAtIndex(indexPath.row%9) as? UIImage
         return cell
     }
