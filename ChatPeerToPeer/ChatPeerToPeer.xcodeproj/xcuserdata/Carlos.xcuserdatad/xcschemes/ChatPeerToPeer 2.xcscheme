@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD2911A34842E00513A3A"
-               BuildableName = "Calendar.app"
-               BlueprintName = "Calendar"
-               ReferencedContainer = "container:Calendar.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD2A61A34842E00513A3A"
-               BuildableName = "CalendarTests.xctest"
-               BlueprintName = "CalendarTests"
-               ReferencedContainer = "container:Calendar.xcodeproj">
+               BlueprintIdentifier = "075FD3301A34B69500513A3A"
+               BuildableName = "ChatPeerToPeer.app"
+               BlueprintName = "ChatPeerToPeer"
+               ReferencedContainer = "container:ChatPeerToPeer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD2A61A34842E00513A3A"
-               BuildableName = "CalendarTests.xctest"
-               BlueprintName = "CalendarTests"
-               ReferencedContainer = "container:Calendar.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "075FD2911A34842E00513A3A"
-            BuildableName = "Calendar.app"
-            BlueprintName = "Calendar"
-            ReferencedContainer = "container:Calendar.xcodeproj">
+            BlueprintIdentifier = "075FD3301A34B69500513A3A"
+            BuildableName = "ChatPeerToPeer.app"
+            BlueprintName = "ChatPeerToPeer"
+            ReferencedContainer = "container:ChatPeerToPeer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "075FD2911A34842E00513A3A"
-            BuildableName = "Calendar.app"
-            BlueprintName = "Calendar"
-            ReferencedContainer = "container:Calendar.xcodeproj">
+            BlueprintIdentifier = "075FD3301A34B69500513A3A"
+            BuildableName = "ChatPeerToPeer.app"
+            BlueprintName = "ChatPeerToPeer"
+            ReferencedContainer = "container:ChatPeerToPeer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "075FD2911A34842E00513A3A"
-            BuildableName = "Calendar.app"
-            BlueprintName = "Calendar"
-            ReferencedContainer = "container:Calendar.xcodeproj">
+            BlueprintIdentifier = "075FD3301A34B69500513A3A"
+            BuildableName = "ChatPeerToPeer.app"
+            BlueprintName = "ChatPeerToPeer"
+            ReferencedContainer = "container:ChatPeerToPeer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -53,12 +53,17 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     }
     
     func sendMessage(){
-        var message:NSString = self.sendText.text
+        let message:NSString = self.sendText.text!
         self.sendText.text = ""
-        var data :NSData = message.dataUsingEncoding(NSUTF8StringEncoding)!
+        let data :NSData = message.dataUsingEncoding(NSUTF8StringEncoding)!
         var error:NSError?
-        self.session.sendData(data, toPeers:
-            self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable, error: &error)
+        do {
+            try self.session.sendData(data, toPeers:
+                self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        } catch let error1 as NSError {
+            error = error1
+        }
+        NSLog("%@", error!)
         self.messageReception(message, peer: self.peerID)
     }
     
@@ -81,29 +86,29 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     }
     
     
-    func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState){
+    func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState){
     }
     
-    func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!){
-        var message = NSString(data: data, encoding:
+    func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID){
+        let message = NSString(data: data, encoding:
             NSUTF8StringEncoding)
         dispatch_async(dispatch_get_main_queue(),
             {self.messageReception(message!, peer: peerID)})
     }
     
-    func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID:MCPeerID!){
+    func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID:MCPeerID){
     }
-    func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!){
+    func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress){
     }
-    func session(session: MCSession!, didFinishReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, atURL localURL: NSURL!, withError error: NSError!){
+    func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?){
     }
     
     func browserViewControllerDidFinish(browserViewController:
-        MCBrowserViewController!){
+        MCBrowserViewController){
             self.dismissBrowserVC()
     }
     // Notifies delegate that the user taps the cancel button.
-    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController!){
+    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController){
         self.dismissBrowserVC()
     }
     func showBrowserVC(){
