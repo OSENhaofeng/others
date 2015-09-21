@@ -20,20 +20,6 @@
                ReferencedContainer = "container:AnimationWithCollisionQuartzCore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A7EC1A2D5EAD00494953"
-               BuildableName = "AnimationWithCollisionQuartzCoreTests.xctest"
-               BlueprintName = "AnimationWithCollisionQuartzCoreTests"
-               ReferencedContainer = "container:AnimationWithCollisionQuartzCore.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A7EC1A2D5EAD00494953"
-               BuildableName = "AnimationWithCollisionQuartzCoreTests.xctest"
-               BlueprintName = "AnimationWithCollisionQuartzCoreTests"
-               ReferencedContainer = "container:AnimationWithCollisionQuartzCore.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
