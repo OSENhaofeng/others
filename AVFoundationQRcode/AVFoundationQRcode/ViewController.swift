@@ -73,10 +73,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         videoDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
         if(videoDevice == nil){
-            println("No camera on this device")
+            print("No camera on this device")
         }
         captureSession = AVCaptureSession()
-        videoInput = AVCaptureDeviceInput.deviceInputWithDevice(videoDevice, error: nil) as! AVCaptureDeviceInput
+        videoInput = (try! AVCaptureDeviceInput(device: videoDevice) as AVCaptureDeviceInput)
+        
         
         if(captureSession.canAddInput(videoInput)){
             captureSession.addInput(videoInput)
@@ -84,7 +85,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         metadataOutput = AVCaptureMetadataOutput()
-        var metadataQueue = dispatch_queue_create("com.example.QRCode.metadata", nil)
+        let metadataQueue = dispatch_queue_create("com.example.QRCode.metadata", nil)
         metadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
         
         if(captureSession.canAddOutput(metadataOutput)){
@@ -94,10 +95,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(captureOutput: AVCaptureOutput!,
         didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection
         connection: AVCaptureConnection!) {
-            var elemento = metadataObjects.first as?
+            let elemento = metadataObjects.first as?
             AVMetadataMachineReadableCodeObject
             if(elemento != nil){
-                println(elemento!.stringValue)
+                print(elemento!.stringValue)
                 sendURL = elemento!.stringValue
 
             }
