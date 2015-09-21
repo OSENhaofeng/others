@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBAction func animate(sender: UIButton) {
         
-        var animation:CABasicAnimation = CABasicAnimation(keyPath: "position")
+        let animation:CABasicAnimation = CABasicAnimation(keyPath: "position")
         animation.fromValue = NSValue(CGPoint:CGPointMake(image.frame.midX, image.frame.midY))
         animation.toValue = NSValue(CGPoint:CGPointMake(image.frame.midX, 340))
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
