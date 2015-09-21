@@ -31,12 +31,12 @@ class NewContactViewController: UIViewController {
     
     @IBAction func savePushButton(sender: AnyObject) {
         
-        var contact = Contact()
+        let contact = Contact()
         
-        contact.name = nameTextField.text
-        contact.surname = surnameTextField.text
-        contact.phone = phoneTextField.text
-        contact.email = emailTextField.text
+        contact.name = nameTextField.text!
+        contact.surname = surnameTextField.text!
+        contact.phone = phoneTextField.text!
+        contact.email = emailTextField.text!
         
         delegate?.newContact(contact)
         
