@@ -24,36 +24,36 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         filePath = NSBundle.mainBundle().pathForResource("emotions", ofType: "jpg")!
-        fileNameAndPath = NSURL.fileURLWithPath(filePath as String)!
-        image = CIImage(contentsOfURL:fileNameAndPath)
-        var context = CIContext(options: nil)
-        var options = NSDictionary(object: CIDetectorAccuracyHigh, forKey: CIDetectorAccuracy)
-        var detector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options as [NSObject : AnyObject])
-        var features: NSArray = detector.featuresInImage(image, options: [CIDetectorSmile:true,CIDetectorEyeBlink:true])
-        var imageView = UIImageView(image: UIImage(named: "emotions.jpg"))
+        fileNameAndPath = NSURL.fileURLWithPath(filePath as String)
+        image = CIImage(contentsOfURL:fileNameAndPath)!
+        let context = CIContext(options: nil)
+        let options = NSDictionary(object: CIDetectorAccuracyHigh, forKey: CIDetectorAccuracy)
+        let detector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options as? [String : AnyObject] )
+        let features: NSArray = detector.featuresInImage(image, options: [CIDetectorSmile:true,CIDetectorEyeBlink:true])
+        let imageView = UIImageView(image: UIImage(named: "emotions.jpg"))
         self.view.addSubview(imageView)
         
         //auxiliar view to invert.
-        var vistAux = UIView(frame: imageView.frame)
+        let vistAux = UIView(frame: imageView.frame)
         for faceFeature in features {
             
             //Detection
-            var smile = faceFeature.hasSmile
-            var rightEyeBlinking = faceFeature.rightEyeClosed
-            var leftEyeBlinking = faceFeature.leftEyeClosed
+            let smile = faceFeature.hasSmile
+            let rightEyeBlinking = faceFeature.rightEyeClosed
+            let leftEyeBlinking = faceFeature.leftEyeClosed
             
             //Face location
             let faceRect = faceFeature.bounds
-            var faceView = UIView(frame: faceRect)
+            let faceView = UIView(frame: faceRect)
             faceView.layer.borderWidth = 2
             faceView.layer.borderColor = UIColor.redColor().CGColor
-            var faceWidth:CGFloat = faceRect.size.width
-            var faceHeight:CGFloat = faceRect.size.height
+            let faceWidth:CGFloat = faceRect.size.width
+            let faceHeight:CGFloat = faceRect.size.height
             vistAux.addSubview(faceView)
             
             //Smile location
             if (smile==true) {
-                var smileView = UIView(frame: CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.18, faceFeature.mouthPosition.y-faceHeight*0.1, faceWidth*0.4, faceHeight*0.2))
+                let smileView = UIView(frame: CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.18, faceFeature.mouthPosition.y-faceHeight*0.1, faceWidth*0.4, faceHeight*0.2))
                 smileView.layer.cornerRadius = faceWidth*0.1
                 smileView.layer.borderWidth = 2
                 smileView.layer.borderColor = UIColor.greenColor().CGColor
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
             
             //Right eye location
             
-            var rightEyeView = UIView(frame: CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.2, faceFeature.rightEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
+            let rightEyeView = UIView(frame: CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.2, faceFeature.rightEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             rightEyeView.layer.cornerRadius = faceWidth*0.2
             rightEyeView.layer.borderWidth = 2
             rightEyeView.layer.borderColor = UIColor.redColor().CGColor
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             
             //Left eye location
             
-            var leftEyeView = UIView(frame: CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.2, faceFeature.leftEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
+            let leftEyeView = UIView(frame: CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.2, faceFeature.leftEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             leftEyeView.layer.cornerRadius = faceWidth*0.2
             leftEyeView.layer.borderWidth = 2
             leftEyeView.layer.borderColor = UIColor.blueColor().CGColor
