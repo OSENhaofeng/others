@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         if (position){  //SAMPLE2
             
-            var animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
+            let animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
             
             
             animation.toValue = NSValue(CGPoint:CGPointMake(160, 200))
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             animation.removedOnCompletion = false
             
             
-            var resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
+            let resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
             resizeAnimation.toValue = NSValue(CGSize:CGSizeMake(240, 60))
             
             
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         }
         else{
             
-            var animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
+            let animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
             
             animation.fromValue = NSValue(CGPoint:CGPointMake(160, 200))
             
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             animation.fillMode = kCAFillModeForwards
             animation.removedOnCompletion = false
             
-            var resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
+            let resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
             resizeAnimation.fromValue = NSValue(CGSize:CGSizeMake(240, 60))
             
             //SAMPLE2
