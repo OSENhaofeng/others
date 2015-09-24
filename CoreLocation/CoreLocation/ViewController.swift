@@ -61,16 +61,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         finalLatitude = newCoord2.coordinate.latitude
         finalLongitude = newCoord2.coordinate.longitude
-        println("Original Latitude: \(myLatitude)")
-        println("Original Longitude: \(myLongitude)")
-        println("Final Latitude: \(finalLatitude)")
-        println("Final Longitude: \(finalLongitude)")
+        print("Original Latitude: \(myLatitude)")
+        print("Original Longitude: \(myLongitude)")
+        print("Final Latitude: \(finalLatitude)")
+        print("Final Longitude: \(finalLongitude)")
         
         
         
         //distance between our position and the new point created
         let distance = newCoord2.distanceFromLocation(newCoord3)
-        println("Distance between two points: \(distance)")
+        print("Distance between two points: \(distance)")
         
         
         var newAnnotation = MKPointAnnotation()
@@ -82,11 +82,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
             
             if (error != nil) {
-                println("Reverse geocoder failed with error" + error.localizedDescription)
+                print("Reverse geocoder failed with error" + error.localizedDescription)
                 return
             }
             
@@ -94,7 +94,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 let pm = placemarks[0] as! CLPlacemark
                 self.displayLocationInfo(pm)
             } else {
-                println("Problem with the data received from geocoder")
+                print("Problem with the data received from geocoder")
             }
         })
     }
@@ -114,12 +114,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             
             
             // testing show data
-            println("Locality: \(locality)")
-            println("PostalCode: \(postalCode)")
-            println("Area: \(administrativeArea)")
-            println("Country: \(country)")
-            println(myLatitude)
-            println(myLongitude)
+            print("Locality: \(locality)")
+            print("PostalCode: \(postalCode)")
+            print("Area: \(administrativeArea)")
+            print("Country: \(country)")
+            print(myLatitude)
+            print(myLongitude)
             
             //update map with my location
             let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(0.1 , 0.1)
@@ -132,8 +132,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error while updating location " + error.localizedDescription)
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location " + error.localizedDescription)
     }
     
     //distance between two points
@@ -149,10 +149,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let lat2 = degreesToRadians(point2.coordinate.latitude);
         let lon2 = degreesToRadians(point2.coordinate.longitude);
         
-        println("Start latitude: \(point1.coordinate.latitude)")
-        println("Start longitude: \(point1.coordinate.longitude)")
-        println("Final latitude: \(point2.coordinate.latitude)")
-        println("Final longitude: \(point2.coordinate.longitude)")
+        print("Start latitude: \(point1.coordinate.latitude)")
+        print("Start longitude: \(point1.coordinate.longitude)")
+        print("Final latitude: \(point2.coordinate.latitude)")
+        print("Final longitude: \(point2.coordinate.longitude)")
         
         let dLon = lon2 - lon1;
         

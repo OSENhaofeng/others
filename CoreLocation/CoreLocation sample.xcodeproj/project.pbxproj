@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077FC23F1BB468CF00425068 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0783DB3D1A43B174002C4A7D /* CoreLocation.framework */; };
 		0783DB1C1A43B145002C4A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783DB1B1A43B145002C4A7D /* AppDelegate.swift */; };
 		0783DB1E1A43B145002C4A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783DB1D1A43B145002C4A7D /* ViewController.swift */; };
 		0783DB211A43B145002C4A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0783DB1F1A43B145002C4A7D /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		0783DB261A43B145002C4A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0783DB241A43B145002C4A7D /* LaunchScreen.xib */; };
 		0783DB321A43B145002C4A7D /* CoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783DB311A43B145002C4A7D /* CoreLocationTests.swift */; };
 		0783DB3C1A43B169002C4A7D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0783DB3B1A43B169002C4A7D /* MapKit.framework */; };
-		0783DB3E1A43B174002C4A7D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0783DB3D1A43B174002C4A7D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0783DB161A43B145002C4A7D /* CoreLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0783DB161A43B145002C4A7D /* CoreLocation sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreLocation sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0783DB1A1A43B145002C4A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0783DB1B1A43B145002C4A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0783DB1D1A43B145002C4A7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0783DB201A43B145002C4A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0783DB221A43B145002C4A7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0783DB251A43B145002C4A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0783DB2B1A43B145002C4A7D /* CoreLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0783DB2B1A43B145002C4A7D /* CoreLocation sample.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreLocation sample.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0783DB301A43B145002C4A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0783DB311A43B145002C4A7D /* CoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTests.swift; sourceTree = "<group>"; };
 		0783DB3B1A43B169002C4A7D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0783DB3E1A43B174002C4A7D /* CoreLocation.framework in Frameworks */,
+				077FC23F1BB468CF00425068 /* CoreLocation.framework in Frameworks */,
 				0783DB3C1A43B169002C4A7D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,8 +76,8 @@
 		0783DB171A43B145002C4A7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0783DB161A43B145002C4A7D /* CoreLocation.app */,
-				0783DB2B1A43B145002C4A7D /* CoreLocationTests.xctest */,
+				0783DB161A43B145002C4A7D /* CoreLocation sample.app */,
+				0783DB2B1A43B145002C4A7D /* CoreLocation sample.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,9 +123,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0783DB151A43B145002C4A7D /* CoreLocation */ = {
+		0783DB151A43B145002C4A7D /* CoreLocation sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0783DB351A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocation" */;
+			buildConfigurationList = 0783DB351A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocation sample" */;
 			buildPhases = (
 				0783DB121A43B145002C4A7D /* Sources */,
 				0783DB131A43B145002C4A7D /* Frameworks */,
@@ -135,14 +135,14 @@
 			);
 			dependencies = (
 			);
-			name = CoreLocation;
+			name = "CoreLocation sample";
 			productName = CoreLocation;
-			productReference = 0783DB161A43B145002C4A7D /* CoreLocation.app */;
+			productReference = 0783DB161A43B145002C4A7D /* CoreLocation sample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0783DB2A1A43B145002C4A7D /* CoreLocationTests */ = {
+		0783DB2A1A43B145002C4A7D /* CoreLocation sampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0783DB381A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocationTests" */;
+			buildConfigurationList = 0783DB381A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocation sampleTests" */;
 			buildPhases = (
 				0783DB271A43B145002C4A7D /* Sources */,
 				0783DB281A43B145002C4A7D /* Frameworks */,
@@ -153,9 +153,9 @@
 			dependencies = (
 				0783DB2D1A43B145002C4A7D /* PBXTargetDependency */,
 			);
-			name = CoreLocationTests;
+			name = "CoreLocation sampleTests";
 			productName = CoreLocationTests;
-			productReference = 0783DB2B1A43B145002C4A7D /* CoreLocationTests.xctest */;
+			productReference = 0783DB2B1A43B145002C4A7D /* CoreLocation sample.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -164,7 +164,9 @@
 		0783DB0E1A43B145002C4A7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Carlos Butron";
 				TargetAttributes = {
 					0783DB151A43B145002C4A7D = {
@@ -181,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0783DB111A43B145002C4A7D /* Build configuration list for PBXProject "CoreLocation" */;
+			buildConfigurationList = 0783DB111A43B145002C4A7D /* Build configuration list for PBXProject "CoreLocation sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -194,8 +196,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0783DB151A43B145002C4A7D /* CoreLocation */,
-				0783DB2A1A43B145002C4A7D /* CoreLocationTests */,
+				0783DB151A43B145002C4A7D /* CoreLocation sample */,
+				0783DB2A1A43B145002C4A7D /* CoreLocation sampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,7 +245,7 @@
 /* Begin PBXTargetDependency section */
 		0783DB2D1A43B145002C4A7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0783DB151A43B145002C4A7D /* CoreLocation */;
+			target = 0783DB151A43B145002C4A7D /* CoreLocation sample */;
 			targetProxy = 0783DB2C1A43B145002C4A7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -288,6 +290,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -302,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -338,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -352,7 +355,8 @@
 				INFOPLIST_FILE = CoreLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "CoreLocation sample";
 			};
 			name = Debug;
 		};
@@ -363,7 +367,8 @@
 				INFOPLIST_FILE = CoreLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "CoreLocation sample";
 			};
 			name = Release;
 		};
@@ -382,8 +387,9 @@
 				INFOPLIST_FILE = CoreLocationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreLocation.app/CoreLocation";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "CoreLocation sample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreLocation sample.app/CoreLocation sample";
 			};
 			name = Debug;
 		};
@@ -398,15 +404,16 @@
 				INFOPLIST_FILE = CoreLocationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreLocation.app/CoreLocation";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "CoreLocation sample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreLocation sample.app/CoreLocation sample";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0783DB111A43B145002C4A7D /* Build configuration list for PBXProject "CoreLocation" */ = {
+		0783DB111A43B145002C4A7D /* Build configuration list for PBXProject "CoreLocation sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0783DB331A43B146002C4A7D /* Debug */,
@@ -415,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0783DB351A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocation" */ = {
+		0783DB351A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocation sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0783DB361A43B146002C4A7D /* Debug */,
@@ -424,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0783DB381A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocationTests" */ = {
+		0783DB381A43B146002C4A7D /* Build configuration list for PBXNativeTarget "CoreLocation sampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0783DB391A43B146002C4A7D /* Debug */,
