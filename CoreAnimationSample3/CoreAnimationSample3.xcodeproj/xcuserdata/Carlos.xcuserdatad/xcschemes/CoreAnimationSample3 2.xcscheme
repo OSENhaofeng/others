@@ -20,20 +20,6 @@
                ReferencedContainer = "container:CoreAnimationSample3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A87E1A2D613A00494953"
-               BuildableName = "CoreAnimationSample3Tests.xctest"
-               BlueprintName = "CoreAnimationSample3Tests"
-               ReferencedContainer = "container:CoreAnimationSample3.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0770A87E1A2D613A00494953"
-               BuildableName = "CoreAnimationSample3Tests.xctest"
-               BlueprintName = "CoreAnimationSample3Tests"
-               ReferencedContainer = "container:CoreAnimationSample3.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
