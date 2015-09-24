@@ -20,20 +20,6 @@
                ReferencedContainer = "container:CoreDataWithTableView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD22D1A33918000513A3A"
-               BuildableName = "CoreDataWithTableViewTests.xctest"
-               BlueprintName = "CoreDataWithTableViewTests"
-               ReferencedContainer = "container:CoreDataWithTableView.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075FD22D1A33918000513A3A"
-               BuildableName = "CoreDataWithTableViewTests.xctest"
-               BlueprintName = "CoreDataWithTableViewTests"
-               ReferencedContainer = "container:CoreDataWithTableView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

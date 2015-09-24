@@ -29,17 +29,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         appDel = UIApplication.sharedApplication().delegate as! AppDelegate
-        context = appDel.managedObjectContext!
+        context = appDel.managedObjectContext
         
         //Code to add a movie
-                var movie = NSEntityDescription.insertNewObjectForEntityForName("Movie", inManagedObjectContext:  context) as! NSManagedObject
+                let movie = NSEntityDescription.insertNewObjectForEntityForName("Movie", inManagedObjectContext:  context) 
                 movie.setValue("El Hobbit: Un viaje inesperado", forKey: "title")
                 movie.setValue("2013", forKey: "year")
                 movie.setValue("Peter Jackson", forKey: "director")
                 movie.setValue("hobbit.jpg", forKey: "image")
-                    if(!context.save(nil)){
-                    println("Error!")
-                }
+        
+        do {try context.save()}
+        catch {
+            print("Error!")
+        }
 
         
         
@@ -56,9 +58,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func loadTable(){
-        var request = NSFetchRequest(entityName: "Movie")
+        let request = NSFetchRequest(entityName: "Movie")
         request.returnsObjectsAsFaults = false
-        results = context.executeFetchRequest(request, error: nil)!
+        results = try! context.executeFetchRequest(request)
         
     }
     
@@ -70,9 +72,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
+        let cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
         
-        var aux = results[indexPath.row] as! NSManagedObject
+        let aux = results[indexPath.row] as! NSManagedObject
         cell.title.text = aux.valueForKey("title") as? String
         cell.director.text = aux.valueForKey("director") as? String
         cell.year.text = aux.valueForKey("year") as? String
