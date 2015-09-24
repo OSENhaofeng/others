@@ -48,16 +48,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func action(gestureRecognizer:UIGestureRecognizer) {
-        var touchPoint = gestureRecognizer.locationInView(self.myMap)
-        var newCoord:CLLocationCoordinate2D = myMap.convertPoint(touchPoint, toCoordinateFromView: self.myMap)
+        let touchPoint = gestureRecognizer.locationInView(self.myMap)
+        let newCoord:CLLocationCoordinate2D = myMap.convertPoint(touchPoint, toCoordinateFromView: self.myMap)
         
-        var getLat: CLLocationDegrees = newCoord.latitude
-        var getLon: CLLocationDegrees = newCoord.longitude
+        let getLat: CLLocationDegrees = newCoord.latitude
+        let getLon: CLLocationDegrees = newCoord.longitude
         
         //Convert to points to CLLocation. In this way we can measure distanceFromLocation
-        var newCoord2: CLLocation = CLLocation(latitude: getLat, longitude: getLon)
+        let newCoord2: CLLocation = CLLocation(latitude: getLat, longitude: getLon)
         
-        var newCoord3: CLLocation = CLLocation(latitude: myLatitude, longitude: myLongitude)
+        let newCoord3: CLLocation = CLLocation(latitude: myLatitude, longitude: myLongitude)
         
         finalLatitude = newCoord2.coordinate.latitude
         finalLongitude = newCoord2.coordinate.longitude
@@ -73,7 +73,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("Distance between two points: \(distance)")
         
         
-        var newAnnotation = MKPointAnnotation()
+        let newAnnotation = MKPointAnnotation()
         newAnnotation.coordinate = newCoord
         newAnnotation.title = "My target"
         newAnnotation.subtitle = ""
@@ -83,15 +83,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
             
             if (error != nil) {
-                print("Reverse geocoder failed with error" + error.localizedDescription)
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
                 return
             }
             
-            if placemarks.count > 0 {
-                let pm = placemarks[0] as! CLPlacemark
+            if placemarks!.count > 0 {
+                let pm = placemarks![0] as CLPlacemark
                 self.displayLocationInfo(pm)
             } else {
                 print("Problem with the data received from geocoder")
@@ -109,8 +109,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
             let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
             let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
-            myLongitude = (containsPlacemark.location.coordinate.longitude)
-            myLatitude = (containsPlacemark.location.coordinate.latitude)
+            myLongitude = (containsPlacemark.location!.coordinate.longitude)
+            myLatitude = (containsPlacemark.location!.coordinate.latitude)
             
             
             // testing show data
