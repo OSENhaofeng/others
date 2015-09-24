@@ -31,19 +31,19 @@ class ViewController: UIViewController {
             
             //SAMPLE 3
             
-            var subLayer : CALayer = self.image.layer
-            var thePath : CGMutablePathRef = CGPathCreateMutable();
+            let subLayer : CALayer = self.image.layer
+            let thePath : CGMutablePathRef = CGPathCreateMutable();
             CGPathMoveToPoint(thePath, nil, 160.0, 200.0);
             CGPathAddCurveToPoint(thePath, nil, 83.0, 50.0, 100.0, 100.0, 160.0, 200.0);
             //CGPathAddCurveToPoint(thePath, nil, 320.0, 500.0, 566.0, 500.0, 566.0, 74.0);
-            var theAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath:"position")
+            let theAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath:"position")
             theAnimation.path = thePath
             theAnimation.duration = 5.0
             
             theAnimation.fillMode = kCAFillModeForwards
             theAnimation.removedOnCompletion = false
             
-            var resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
+            let resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
             resizeAnimation.toValue = NSValue(CGSize:CGSizeMake(240, 60))
             
             //SAMPLE 2
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         }
         else{
             
-            var animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
+            let animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
             
             animation.fromValue = NSValue(CGPoint:CGPointMake(160, 200))
             
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             animation.fillMode = kCAFillModeForwards
             animation.removedOnCompletion = false
             
-            var resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
+            let resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
             resizeAnimation.fromValue = NSValue(CGSize:CGSizeMake(240, 60))
             
             //SAMPLE 2
