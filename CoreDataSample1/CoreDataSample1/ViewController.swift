@@ -25,31 +25,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
             super.viewDidLoad()
         
-        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var context : NSManagedObjectContext = appDel.managedObjectContext!
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDel.managedObjectContext!
         
         
        // INSERT
         
-                var celda = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext:  context) as! NSManagedObject
+                let celda = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext:  context) 
                 celda.setValue("Yoda Tux", forKey: "title")
                 celda.setValue("Science Fiction", forKey: "subtitle")
                 celda.setValue("yodaTux.png", forKey: "image")
-                if(!context.save(nil)){
-                    println("Error!")
+        
+                do {try context.save()}
+                catch {
+                    print("Error!")
                 }
         
 
             
-            var request = NSFetchRequest (entityName: "Cell")
+            let request = NSFetchRequest (entityName: "Cell")
             request.returnsObjectsAsFaults = false
             
-            results = context.executeFetchRequest(request, error: nil)
+            results = try? context.executeFetchRequest(request)
             
             if (results!.count>0){
                 
                 for res in results! {
-                println(res)
+                print(res)
                 }
                 
             }
@@ -66,9 +68,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
                         
-                        var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
+                        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
                         
-                        var aux = results![indexPath.row] as! NSManagedObject
+                        let aux = results![indexPath.row] as! NSManagedObject
                         
                         cell.textLabel!.text = aux.valueForKey("title") as? String
                         cell.detailTextLabel?.text = aux.valueForKey("subtitle") as? String

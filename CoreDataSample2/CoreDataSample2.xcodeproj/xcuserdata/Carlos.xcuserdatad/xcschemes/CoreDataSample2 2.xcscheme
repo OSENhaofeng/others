@@ -20,20 +20,6 @@
                ReferencedContainer = "container:CoreDataSample2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07E35CDF1A2E334F00CA606C"
-               BuildableName = "CoreDataSample2Tests.xctest"
-               BlueprintName = "CoreDataSample2Tests"
-               ReferencedContainer = "container:CoreDataSample2.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07E35CDF1A2E334F00CA606C"
-               BuildableName = "CoreDataSample2Tests.xctest"
-               BlueprintName = "CoreDataSample2Tests"
-               ReferencedContainer = "container:CoreDataSample2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

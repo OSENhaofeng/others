@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07E35CC71A2E334F00CA606C"
-               BuildableName = "CoreDataSample2.app"
-               BlueprintName = "CoreDataSample2"
-               ReferencedContainer = "container:CoreDataSample2.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07E35CDF1A2E334F00CA606C"
-               BuildableName = "CoreDataSample2Tests.xctest"
-               BlueprintName = "CoreDataSample2Tests"
-               ReferencedContainer = "container:CoreDataSample2.xcodeproj">
+               BlueprintIdentifier = "07E35C831A2E2CA500CA606C"
+               BuildableName = "CoreDataSample1.app"
+               BlueprintName = "CoreDataSample1"
+               ReferencedContainer = "container:CoreDataSample1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07E35CDF1A2E334F00CA606C"
-               BuildableName = "CoreDataSample2Tests.xctest"
-               BlueprintName = "CoreDataSample2Tests"
-               ReferencedContainer = "container:CoreDataSample2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07E35CC71A2E334F00CA606C"
-            BuildableName = "CoreDataSample2.app"
-            BlueprintName = "CoreDataSample2"
-            ReferencedContainer = "container:CoreDataSample2.xcodeproj">
+            BlueprintIdentifier = "07E35C831A2E2CA500CA606C"
+            BuildableName = "CoreDataSample1.app"
+            BlueprintName = "CoreDataSample1"
+            ReferencedContainer = "container:CoreDataSample1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07E35CC71A2E334F00CA606C"
-            BuildableName = "CoreDataSample2.app"
-            BlueprintName = "CoreDataSample2"
-            ReferencedContainer = "container:CoreDataSample2.xcodeproj">
+            BlueprintIdentifier = "07E35C831A2E2CA500CA606C"
+            BuildableName = "CoreDataSample1.app"
+            BlueprintName = "CoreDataSample1"
+            ReferencedContainer = "container:CoreDataSample1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07E35CC71A2E334F00CA606C"
-            BuildableName = "CoreDataSample2.app"
-            BlueprintName = "CoreDataSample2"
-            ReferencedContainer = "container:CoreDataSample2.xcodeproj">
+            BlueprintIdentifier = "07E35C831A2E2CA500CA606C"
+            BuildableName = "CoreDataSample1.app"
+            BlueprintName = "CoreDataSample1"
+            ReferencedContainer = "container:CoreDataSample1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

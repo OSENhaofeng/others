@@ -26,17 +26,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var table: UITableView!
     @IBAction func save(sender: UIButton) {
         
-        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var context: NSManagedObjectContext = appDel.managedObjectContext!
-        var cell = NSEntityDescription.insertNewObjectForEntityForName("Form", inManagedObjectContext:  context) as! NSManagedObject
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        let cell = NSEntityDescription.insertNewObjectForEntityForName("Form", inManagedObjectContext:  context) 
         cell.setValue(name.text, forKey: "name")
         cell.setValue(surname.text, forKey: "surname")
         
-        context.save(nil)
-        
-        if(!context.save(nil)){
-            println("Error!")
+        // Save the context.
+        do {
+            try context.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            //print("Unresolved error \(error), \(error.userInfo)")
         }
+        
         
         
         self.loadTable()
@@ -54,8 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
-        var aux = results![indexPath.row] as! NSManagedObject
+        let cell : UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
+        let aux = results![indexPath.row] as! NSManagedObject
         cell.textLabel!.text = aux.valueForKey("name") as? String
         cell.detailTextLabel!.text = aux.valueForKey("surname") as? String
         
@@ -73,11 +77,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadTable(){
-        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
-        var request = NSFetchRequest(entityName: "Form")
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let request = NSFetchRequest(entityName: "Form")
         request.returnsObjectsAsFaults = false
-        results = context.executeFetchRequest(request, error: nil)
+        results = try? context.executeFetchRequest(request)
     }
     
     
