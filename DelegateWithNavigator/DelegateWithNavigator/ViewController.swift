@@ -24,7 +24,7 @@ class ViewController: UIViewController, myDelegate {
         
         //we got it the final instance in storyboard
         
-        var secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
+        let secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
         secondController.data = "Text from superclass"
         //who is it delegate
         secondController.delegate = self
