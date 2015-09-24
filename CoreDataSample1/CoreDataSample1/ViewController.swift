@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             super.viewDidLoad()
         
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context : NSManagedObjectContext = appDel.managedObjectContext!
+        let context : NSManagedObjectContext = appDel.managedObjectContext
         
         
        // INSERT
