@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        var longPressGesture = UILongPressGestureRecognizer(target: self, action: "action:")
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "action:")
         
         longPressGesture.minimumPressDuration = 2.0;
         
@@ -43,13 +43,11 @@ class ViewController: UIViewController {
         if (gestureRecognizer.state == UIGestureRecognizerState.Began){
             
             
-            var myAlertView = UIAlertView()
+            let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .Alert)
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+            alertController.addAction(OKAction)
+            self.presentViewController(alertController, animated: true) { }
             
-            myAlertView.title = "Alert"
-            myAlertView.message = "Long Press gesture"
-            myAlertView.addButtonWithTitle("ok")
-            
-            myAlertView.show()
             
             
         }
