@@ -20,20 +20,6 @@
                ReferencedContainer = "container:SwipeGesture.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0787DA171A2CD61900F22957"
-               BuildableName = "SwipeGestureTests.xctest"
-               BlueprintName = "SwipeGestureTests"
-               ReferencedContainer = "container:SwipeGesture.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0787DA171A2CD61900F22957"
-               BuildableName = "SwipeGestureTests.xctest"
-               BlueprintName = "SwipeGestureTests"
-               ReferencedContainer = "container:SwipeGesture.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
