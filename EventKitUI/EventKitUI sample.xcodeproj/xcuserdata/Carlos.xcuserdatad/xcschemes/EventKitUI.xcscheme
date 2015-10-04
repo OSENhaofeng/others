@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "070F86DA1A82A3CF00BB861E"
-               BuildableName = "showip.app"
-               BlueprintName = "showip"
-               ReferencedContainer = "container:showip.xcodeproj">
+               BlueprintIdentifier = "07E35B691A2DF63400CA606C"
+               BuildableName = "EventKitUI sample.app"
+               BlueprintName = "EventKitUI sample"
+               ReferencedContainer = "container:EventKitUI sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "070F86EF1A82A3CF00BB861E"
-               BuildableName = "showipTests.xctest"
-               BlueprintName = "showipTests"
-               ReferencedContainer = "container:showip.xcodeproj">
+               BlueprintIdentifier = "07E35B7E1A2DF63400CA606C"
+               BuildableName = "EventKitUI sample.xctest"
+               BlueprintName = "EventKitUI sampleTests"
+               ReferencedContainer = "container:EventKitUI sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "070F86EF1A82A3CF00BB861E"
-               BuildableName = "showipTests.xctest"
-               BlueprintName = "showipTests"
-               ReferencedContainer = "container:showip.xcodeproj">
+               BlueprintIdentifier = "07E35B7E1A2DF63400CA606C"
+               BuildableName = "EventKitUI sample.xctest"
+               BlueprintName = "EventKitUI sampleTests"
+               ReferencedContainer = "container:EventKitUI sample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "070F86DA1A82A3CF00BB861E"
-            BuildableName = "showip.app"
-            BlueprintName = "showip"
-            ReferencedContainer = "container:showip.xcodeproj">
+            BlueprintIdentifier = "07E35B691A2DF63400CA606C"
+            BuildableName = "EventKitUI sample.app"
+            BlueprintName = "EventKitUI sample"
+            ReferencedContainer = "container:EventKitUI sample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "070F86DA1A82A3CF00BB861E"
-            BuildableName = "showip.app"
-            BlueprintName = "showip"
-            ReferencedContainer = "container:showip.xcodeproj">
+            BlueprintIdentifier = "07E35B691A2DF63400CA606C"
+            BuildableName = "EventKitUI sample.app"
+            BlueprintName = "EventKitUI sample"
+            ReferencedContainer = "container:EventKitUI sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,10 +98,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "070F86DA1A82A3CF00BB861E"
-            BuildableName = "showip.app"
-            BlueprintName = "showip"
-            ReferencedContainer = "container:showip.xcodeproj">
+            BlueprintIdentifier = "07E35B691A2DF63400CA606C"
+            BuildableName = "EventKitUI sample.app"
+            BlueprintName = "EventKitUI sample"
+            ReferencedContainer = "container:EventKitUI sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

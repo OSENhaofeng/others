@@ -24,17 +24,17 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     @IBAction func calendar(sender: UIButton) {
         
         
-        store.requestAccessToEntityType(EKEntityTypeEvent, completion: { (granted, error) -> Void in
+        store.requestAccessToEntityType(EKEntityType.Event, completion: { (granted, error) -> Void in
             if (granted) {
-                println("Access granted")
+                print("Access granted")
                 
                 
-                var controller = EKEventEditViewController()
+                let controller = EKEventEditViewController()
                 controller.eventStore = self.store
                 controller.editViewDelegate = self
                 self.presentViewController(controller, animated: true, completion: nil)
             }else{
-                println("Access denied")
+                print("Access denied")
             }
         })
         
@@ -43,14 +43,14 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     
     @IBAction func deleteEvents(sender: UIButton) {
         //get calendar
-        var calendar = NSCalendar.currentCalendar()
+        let calendar = NSCalendar.currentCalendar()
         //get start and end date
         let aDayBeforeComponents = NSDateComponents()
         aDayBeforeComponents.day = -1
-        let aDayBefore : NSDate = calendar.dateByAddingComponents(aDayBeforeComponents, toDate: NSDate(), options: NSCalendarOptions(0))!
+        let aDayBefore : NSDate = calendar.dateByAddingComponents(aDayBeforeComponents, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
         let yearAfterComponents = NSDateComponents()
         yearAfterComponents.year = 1
-        let yearAfter : NSDate = calendar.dateByAddingComponents(yearAfterComponents, toDate: NSDate(), options: NSCalendarOptions(0))!
+        let yearAfter : NSDate = calendar.dateByAddingComponents(yearAfterComponents, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
         //create predicate
         let predicate : NSPredicate = self.store.predicateForEventsWithStartDate(aDayBefore, endDate: yearAfter, calendars: nil)
         //get related events
@@ -61,7 +61,10 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         
         ////loop all events in events and delete it
         for i in events{
-            self.store.removeEvent(i as! EKEvent, span: EKSpanThisEvent, commit: true, error: nil)
+            do {
+                try self.store.removeEvent(i as! EKEvent, span: .ThisEvent, commit: true)
+            } catch _ {
+            }
             //println(i)
         }
         
@@ -71,14 +74,14 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     @IBAction func setAlarm(sender: UIButton) {
         
         //get calendar
-        var calendar = NSCalendar.currentCalendar()
+        let calendar = NSCalendar.currentCalendar()
         //get start and end date
         let aDayBeforeComponents = NSDateComponents()
         aDayBeforeComponents.day = -1
-        let aDayBefore : NSDate = calendar.dateByAddingComponents(aDayBeforeComponents, toDate: NSDate(), options: NSCalendarOptions(0))!
+        let aDayBefore : NSDate = calendar.dateByAddingComponents(aDayBeforeComponents, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
         let yearAfterComponents = NSDateComponents()
         yearAfterComponents.year = 1
-        let yearAfter : NSDate = calendar.dateByAddingComponents(yearAfterComponents, toDate: NSDate(), options: NSCalendarOptions(0))!
+        let yearAfter : NSDate = calendar.dateByAddingComponents(yearAfterComponents, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
         //create predicate
         let predicate : NSPredicate = self.store.predicateForEventsWithStartDate(aDayBefore, endDate: yearAfter, calendars: nil)
         //get related events
@@ -90,7 +93,10 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
             let eventWithAlarm = i as! EKEvent
             let alarm = EKAlarm(relativeOffset: -2.0)
             eventWithAlarm.addAlarm(alarm)
-            self.store.saveEvent(eventWithAlarm, span: EKSpanThisEvent, error: nil)
+            do {
+                try self.store.saveEvent(eventWithAlarm, span: .ThisEvent)
+            } catch _ {
+            }
         }
     }
     
@@ -108,7 +114,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     //
     //    }
     
-    func eventEditViewController(controller: EKEventEditViewController!, didCompleteWithAction action: EKEventEditViewAction) {
+    func eventEditViewController(controller: EKEventEditViewController, didCompleteWithAction action: EKEventEditViewAction) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

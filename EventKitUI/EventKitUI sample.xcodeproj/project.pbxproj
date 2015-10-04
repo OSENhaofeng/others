@@ -27,14 +27,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07E35B6A1A2DF63400CA606C /* EventKitUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventKitUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E35B6A1A2DF63400CA606C /* EventKitUI sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EventKitUI sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E35B6E1A2DF63400CA606C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E35B6F1A2DF63400CA606C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E35B711A2DF63400CA606C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07E35B741A2DF63400CA606C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07E35B761A2DF63400CA606C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07E35B791A2DF63400CA606C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		07E35B7F1A2DF63400CA606C /* EventKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E35B7F1A2DF63400CA606C /* EventKitUI sample.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EventKitUI sample.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E35B841A2DF63400CA606C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E35B851A2DF63400CA606C /* EventKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKitUITests.swift; sourceTree = "<group>"; };
 		07E35B8F1A2DF64F00CA606C /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -72,8 +72,8 @@
 		07E35B6B1A2DF63400CA606C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07E35B6A1A2DF63400CA606C /* EventKitUI.app */,
-				07E35B7F1A2DF63400CA606C /* EventKitUITests.xctest */,
+				07E35B6A1A2DF63400CA606C /* EventKitUI sample.app */,
+				07E35B7F1A2DF63400CA606C /* EventKitUI sample.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		07E35B691A2DF63400CA606C /* EventKitUI */ = {
+		07E35B691A2DF63400CA606C /* EventKitUI sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07E35B891A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUI" */;
+			buildConfigurationList = 07E35B891A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUI sample" */;
 			buildPhases = (
 				07E35B661A2DF63400CA606C /* Sources */,
 				07E35B671A2DF63400CA606C /* Frameworks */,
@@ -131,14 +131,14 @@
 			);
 			dependencies = (
 			);
-			name = EventKitUI;
+			name = "EventKitUI sample";
 			productName = EventKitUI;
-			productReference = 07E35B6A1A2DF63400CA606C /* EventKitUI.app */;
+			productReference = 07E35B6A1A2DF63400CA606C /* EventKitUI sample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		07E35B7E1A2DF63400CA606C /* EventKitUITests */ = {
+		07E35B7E1A2DF63400CA606C /* EventKitUI sampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07E35B8C1A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUITests" */;
+			buildConfigurationList = 07E35B8C1A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUI sampleTests" */;
 			buildPhases = (
 				07E35B7B1A2DF63400CA606C /* Sources */,
 				07E35B7C1A2DF63400CA606C /* Frameworks */,
@@ -149,9 +149,9 @@
 			dependencies = (
 				07E35B811A2DF63400CA606C /* PBXTargetDependency */,
 			);
-			name = EventKitUITests;
+			name = "EventKitUI sampleTests";
 			productName = EventKitUITests;
-			productReference = 07E35B7F1A2DF63400CA606C /* EventKitUITests.xctest */;
+			productReference = 07E35B7F1A2DF63400CA606C /* EventKitUI sample.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,9 @@
 		07E35B621A2DF63400CA606C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Carlos Butron";
 				TargetAttributes = {
 					07E35B691A2DF63400CA606C = {
@@ -172,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07E35B651A2DF63400CA606C /* Build configuration list for PBXProject "EventKitUI" */;
+			buildConfigurationList = 07E35B651A2DF63400CA606C /* Build configuration list for PBXProject "EventKitUI sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,8 +187,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07E35B691A2DF63400CA606C /* EventKitUI */,
-				07E35B7E1A2DF63400CA606C /* EventKitUITests */,
+				07E35B691A2DF63400CA606C /* EventKitUI sample */,
+				07E35B7E1A2DF63400CA606C /* EventKitUI sampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,7 +236,7 @@
 /* Begin PBXTargetDependency section */
 		07E35B811A2DF63400CA606C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07E35B691A2DF63400CA606C /* EventKitUI */;
+			target = 07E35B691A2DF63400CA606C /* EventKitUI sample */;
 			targetProxy = 07E35B801A2DF63400CA606C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -279,6 +281,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -343,7 +346,8 @@
 				INFOPLIST_FILE = EventKitUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "EventKitUI sample";
 			};
 			name = Debug;
 		};
@@ -354,7 +358,8 @@
 				INFOPLIST_FILE = EventKitUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "EventKitUI sample";
 			};
 			name = Release;
 		};
@@ -372,8 +377,9 @@
 				);
 				INFOPLIST_FILE = EventKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventKitUI.app/EventKitUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "EventKitUI sample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventKitUI sample.app/EventKitUI sample";
 			};
 			name = Debug;
 		};
@@ -387,15 +393,16 @@
 				);
 				INFOPLIST_FILE = EventKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventKitUI.app/EventKitUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "EventKitUI sample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventKitUI sample.app/EventKitUI sample";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07E35B651A2DF63400CA606C /* Build configuration list for PBXProject "EventKitUI" */ = {
+		07E35B651A2DF63400CA606C /* Build configuration list for PBXProject "EventKitUI sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07E35B871A2DF63400CA606C /* Debug */,
@@ -404,7 +411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07E35B891A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUI" */ = {
+		07E35B891A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUI sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07E35B8A1A2DF63400CA606C /* Debug */,
@@ -413,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07E35B8C1A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUITests" */ = {
+		07E35B8C1A2DF63400CA606C /* Build configuration list for PBXNativeTarget "EventKitUI sampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07E35B8D1A2DF63400CA606C /* Debug */,

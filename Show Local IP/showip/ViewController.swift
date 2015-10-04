@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             }
             freeifaddrs(ifaddr)
         }
-        println("Local IP \(addresses)")
+        print("Local IP \(addresses)")
         return addresses
     }
 
