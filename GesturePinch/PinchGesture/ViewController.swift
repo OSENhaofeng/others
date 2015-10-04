@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func pinchGesture(sender : UIPinchGestureRecognizer) {
-        var factor = sender.scale
+        let factor = sender.scale
         if (factor > 1) {
             //aumentamos el zoom
             sender.view?.transform = CGAffineTransformMakeScale(
