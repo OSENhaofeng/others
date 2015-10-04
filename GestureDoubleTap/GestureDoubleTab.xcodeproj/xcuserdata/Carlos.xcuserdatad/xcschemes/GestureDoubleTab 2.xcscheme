@@ -20,20 +20,6 @@
                ReferencedContainer = "container:GestureDoubleTab.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0787D9891A2CD23000F22957"
-               BuildableName = "GestureDoubleTabTests.xctest"
-               BlueprintName = "GestureDoubleTabTests"
-               ReferencedContainer = "container:GestureDoubleTab.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0787D9891A2CD23000F22957"
-               BuildableName = "GestureDoubleTabTests.xctest"
-               BlueprintName = "GestureDoubleTabTests"
-               ReferencedContainer = "container:GestureDoubleTab.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

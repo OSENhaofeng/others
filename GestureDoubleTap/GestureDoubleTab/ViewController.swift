@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             sender.view?.contentMode = UIViewContentMode.ScaleAspectFit
         } }
     override func viewDidLoad() {
-        var tapGesture = UITapGestureRecognizer(target: self, action:
+        let tapGesture = UITapGestureRecognizer(target: self, action:
             "handleTap:")
         tapGesture.numberOfTapsRequired = 2;
         image.addGestureRecognizer(tapGesture)
