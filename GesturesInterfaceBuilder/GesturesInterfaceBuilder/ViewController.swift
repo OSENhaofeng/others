@@ -56,13 +56,10 @@ class ViewController: UIViewController {
     
     func alert(myString: String){
         
-        var myAlertView = UIAlertView()
-        
-        myAlertView.title = "Alert"
-        myAlertView.message = myString
-        myAlertView.addButtonWithTitle("OK")
-        
-        myAlertView.show()
+        let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+        alertController.addAction(OKAction)
+        self.presentViewController(alertController, animated: true) { }
         
     }
     

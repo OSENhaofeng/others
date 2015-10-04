@@ -20,20 +20,6 @@
                ReferencedContainer = "container:GesturesInterfaceBuilder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075B41B51A2D0DCD008A64BB"
-               BuildableName = "GesturesInterfaceBuilderTests.xctest"
-               BlueprintName = "GesturesInterfaceBuilderTests"
-               ReferencedContainer = "container:GesturesInterfaceBuilder.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "075B41B51A2D0DCD008A64BB"
-               BuildableName = "GesturesInterfaceBuilderTests.xctest"
-               BlueprintName = "GesturesInterfaceBuilderTests"
-               ReferencedContainer = "container:GesturesInterfaceBuilder.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
