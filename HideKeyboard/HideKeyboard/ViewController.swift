@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //called when users tap out of textfield
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
          self.view.endEditing(true)
     }
 
