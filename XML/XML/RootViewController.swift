@@ -29,11 +29,16 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
         super.viewDidLoad()
 
 
-            println("First Ejecution")
-            var url = NSURL(string: "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=10/xml")
-            var request = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 30)
+            print("First Ejecution")
+            let url = NSURL(string: "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=10/xml")
+            let request = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 30)
             self.xmlData = NSMutableData()
             NSURLConnection(request: request, delegate: self)
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,17 +54,19 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("AAAAAA \(songs.count)")
+        print("AAAAAA \(songs.count)")
         return songs.count
 
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("celda") as! UITableViewCell
-        var elem = songs[indexPath.row] as! Song
-        println("AAAAAA \(elem.myTitle)")
-        cell.textLabel!.text = (elem.myTitle) as? String
+        let cell = tableView.dequeueReusableCellWithIdentifier("celda", forIndexPath: indexPath) as UITableViewCell
+        let elem = songs[indexPath.row] as! Song
+        print("AAAAAA \(elem.myTitle)")
+        cell.textLabel!.text = (elem.myTitle) as String
+        
+        
 
         return cell
     }
@@ -112,7 +119,7 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     
     
     func connection(connection: NSURLConnection, didFailWithError error: NSError){
-        println("URL access error")
+        print("URL access error")
     self.xmlData = nil
     }
     
@@ -121,20 +128,19 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection!){
-        var xmlCheck = NSString(data: self.xmlData!, encoding: NSUTF8StringEncoding)
         //println("XML recived: \(xmlCheck)")
-        var parser:NSXMLParser =  NSXMLParser(data: self.xmlData!)
+        let parser:NSXMLParser =  NSXMLParser(data: self.xmlData!)
         parser.delegate = self
         parser.shouldResolveExternalEntities = true
         parser.parse()
             for(var i=0; i<songs.count;i++){
-                var elem = songs[i] as! Song
-                println(elem.myTitle)
+                let elem = songs[i] as! Song
+                print(elem.myTitle)
             }
         self.tableView.reloadData()
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]){
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]){
     
         if(elementName == "feed") {
             //init array
@@ -154,12 +160,12 @@ class RootViewController: UITableViewController, NSURLConnectionDelegate, NSXMLP
     }
     
     
-    func parser(parser: NSXMLParser, foundCharacters string: String?) {
+    func parser(parser: NSXMLParser, foundCharacters string: String) {
         if(currentStringValue != nil) {
             //NSMutableString where we save characters of actual item
             currentStringValue = NSMutableString(capacity: 50)
         }
-        currentStringValue?.appendString(string!)
+        currentStringValue?.appendString(string)
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
