@@ -22,19 +22,19 @@ class ViewController: UIViewController {
     
     @IBAction func facebook(sender: UIButton) {
         
-        var url: NSURL = NSURL(string: "http://www.google.es")!
+        let url: NSURL = NSURL(string: "http://www.google.es")!
         
-        var fbController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        let fbController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
         fbController.setInitialText("")
         fbController.addURL(url)
         
-        var completionHandler = {(result:SLComposeViewControllerResult) -> () in
+        let completionHandler = {(result:SLComposeViewControllerResult) -> () in
             fbController.dismissViewControllerAnimated(true, completion:nil)
             switch(result){
             case SLComposeViewControllerResult.Cancelled:
-                println("User canceled")
+                print("User canceled")
             case SLComposeViewControllerResult.Done:
-                println("User posted")
+                print("User posted")
             default:
                 break
             }
@@ -47,19 +47,19 @@ class ViewController: UIViewController {
     
     @IBAction func twitter(sender: UIButton) {
         
-        var image: UIImage = UIImage(named: "image2.png")!
+        let image: UIImage = UIImage(named: "image2.png")!
         
-        var twitterController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        let twitterController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
         twitterController.setInitialText("")
         twitterController.addImage(image)
         
-        var completionHandler = {(result:SLComposeViewControllerResult) -> () in
+        let completionHandler = {(result:SLComposeViewControllerResult) -> () in
             twitterController.dismissViewControllerAnimated(true, completion: nil)
             switch(result){
             case SLComposeViewControllerResult.Cancelled:
-                println("User canceled")
+                print("User canceled")
             case SLComposeViewControllerResult.Done:
-                println("User tweeted")
+                print("User tweeted")
             default:
                 break
             }
