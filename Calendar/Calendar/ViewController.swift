@@ -33,16 +33,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var name = textField.text
         var localSource: EKSource
 //        var calendar = EKCalendar(eventStore: eventStore)
-        var calendar = EKCalendar(forEntityType: EKEntityTypeEvent, eventStore: eventStore)
-        eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {(granted,error) in
+        var calendar = EKCalendar(forEntityType: EKEntityType.Event, eventStore: eventStore)
+        eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {(granted,error) in
             if(granted == false){
-                println("Access Denied")
+                print("Access Denied")
             }
             else{
-                var auxiliar = self.eventStore.sources() as! [EKSource]
+                var auxiliar = self.eventStore.sources 
                 calendar.source = auxiliar[0]
-                calendar.title = self.textField.text
-                println(calendar.title)
+                calendar.title = self.textField.text!
+                print(calendar.title)
                 var error:NSError?
                 self.eventStore.saveCalendar(calendar, commit: true, error: &error)
             }
@@ -51,27 +51,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveEvent(sender: UIButton) {
         
-        eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {(granted,error) in
+        eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {(granted,error) in
             if(granted == false){
-                println("Access Denied")
+                print("Access Denied")
             }
             else{
-                var arrayCalendars = self.eventStore.calendarsForEntityType(EKEntityTypeEvent)
+                var arrayCalendars = self.eventStore.calendarsForEntityType(EKEntityType.Event)
                 var theCalendar: EKCalendar!
                 for calendario in arrayCalendars{
                     if(calendario.title == self.eventCalendario.text){
-                        theCalendar = calendario as! EKCalendar
-                        println(theCalendar.title)
+                        theCalendar = calendario 
+                        print(theCalendar.title)
                     }
                 }
                 if(theCalendar != nil){
                     var event = EKEvent(eventStore: self.eventStore)
-                    event.title = self.titleEvent.text
+                    event.title = self.titleEvent.text!
                     event.startDate = self.datePicker.date
                     event.endDate = self.datePicker.date.dateByAddingTimeInterval(3600)
                     event.calendar = theCalendar
                     var error:NSError?
-                    if(self.eventStore.saveEvent(event, span: EKSpanThisEvent, error: &error)){
+                    if(self.eventStore.saveEvent(event, span: .ThisEvent, error: &error)){
                         var alert = UIAlertController(title: "Calendar", message: "Event created \(event.title) in \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default, handler: nil))
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 else{
-                    println("No calendar with that name")
+                    print("No calendar with that name")
                 }
             }
         })
