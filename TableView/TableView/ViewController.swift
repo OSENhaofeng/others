@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //DetailCells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         NSIndexPath) -> UITableViewCell{
-            var cell:UITableViewCell = UITableViewCell(style:
+            let cell:UITableViewCell = UITableViewCell(style:
                 UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
             cell.textLabel!.text = "Cell text"
             cell.detailTextLabel?.text = "Cell Subtitle"
