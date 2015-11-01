@@ -16,7 +16,9 @@ The project features code-level examples for the following items:
 
 + Classes and Structures
 + Protocols and delegates
++ ActionSheet
 + AirDrop
++ AlertViewController
 + AVFoundation (QRCode)
 + QuartzCore (Animation with collision)
 + Calendar
@@ -37,6 +39,7 @@ The project features code-level examples for the following items:
 + NSFileManager
 + NSNotification
 + NSURLSession
++ NSUserDefault
 + SQLite
 + Segues (normal and custom segues)
 + Show Local IP
