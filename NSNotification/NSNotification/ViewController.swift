@@ -40,11 +40,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } }
     
     func keyboardWillAppear(notification: NSNotification) {
-        println("Show Keyboard")
+        print("Show Keyboard")
     }
     
     func keyboardWillDisappear(notification:NSNotification){
-        println("Hide Keyboard")
+        print("Hide Keyboard")
     }
     
     
