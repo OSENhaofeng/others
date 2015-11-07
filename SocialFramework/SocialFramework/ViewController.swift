@@ -3,7 +3,6 @@
 //  SocialFramework
 //
 //  Created by Carlos Butron on 02/12/14.
-//  Copyright (c) 2014 Carlos Butron.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
 //  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
@@ -32,11 +31,10 @@ class ViewController: UIViewController {
             fbController.dismissViewControllerAnimated(true, completion:nil)
             switch(result){
             case SLComposeViewControllerResult.Cancelled:
-                print("User canceled")
+                print("User canceled", terminator: "")
             case SLComposeViewControllerResult.Done:
-                print("User posted")
-            default:
-                break
+                print("User posted", terminator: "")
+
             }
         }
         
@@ -57,11 +55,10 @@ class ViewController: UIViewController {
             twitterController.dismissViewControllerAnimated(true, completion: nil)
             switch(result){
             case SLComposeViewControllerResult.Cancelled:
-                print("User canceled")
+                print("User canceled", terminator: "")
             case SLComposeViewControllerResult.Done:
-                print("User tweeted")
-            default:
-                break
+                print("User tweeted", terminator: "")
+
             }
         }
         
