@@ -30,7 +30,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         
         //to select only camera control, not video
-        imagePicker.mediaTypes = [kUTTypeImage]
+        imagePicker.mediaTypes = [kUTTypeImage as String]
         imagePicker.showsCameraControls = true
         imagePicker.allowsEditing = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -45,18 +45,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Dispose of any resources that can be recreated.
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         let imageEdited = info[UIImagePickerControllerEditedImage] as! UIImage
-        let imageData = UIImagePNGRepresentation(image) as NSData
+        let imageData = UIImagePNGRepresentation(image)! as NSData
         
-        //guarda en album de fotos
+        //save in photo album
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
         
-        //guarda en documents
-        let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as! NSString
-        let filePath = documentsPath.stringByAppendingPathComponent("pic.png")
+        //save in documents
+        let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last
+        
+        
+        let filePath = (documentsPath! as NSString).stringByAppendingPathComponent("pic.png")
         imageData.writeToFile(filePath, atomically: true)
         
         myImage.image = image
@@ -69,7 +71,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<()>){
         if(error != nil){
-            println("ERROR IMAGE \(error.debugDescription)")
+            print("ERROR IMAGE \(error.debugDescription)")
         }
     }
     
