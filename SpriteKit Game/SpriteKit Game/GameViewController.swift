@@ -22,15 +22,15 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Configurar la vista
+        // Configure the View
         let skView = self.view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true
         
-        /* Sprite Kit optimiza el Renderizado */
+        /* Sprite Kit optimize the render */
         skView.ignoresSiblingOrder = true
         
-        /* Ajustar la escena GameScene al dispositivo */
+        /* Adjust the scene view to device */
         let scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .AspectFill
         skView.presentScene(scene)
