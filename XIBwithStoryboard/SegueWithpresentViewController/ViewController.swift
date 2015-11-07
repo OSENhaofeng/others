@@ -19,8 +19,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBAction func buttonAction(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") as! UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") 
         self.presentViewController(viewController, animated: true,
             completion: nil)
     }
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAction2(sender: UIButton) {
         
-        var newControlador = UIViewController (nibName: "NewClass", bundle: nil)
+        let newControlador = UIViewController (nibName: "NewClass", bundle: nil)
         self.presentViewController(newControlador, animated: true,
             completion: nil)
     }
