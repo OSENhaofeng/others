@@ -33,7 +33,7 @@ class GameScene: SKScene {
         self.addChild(myLabel2)
     }
    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //on touch change scene
         var myTransition = SKTransition.doorsOpenVerticalWithDuration(1.0)
         var game = Game(size: self.size)

@@ -73,7 +73,7 @@ class Game: SKScene, SKPhysicsContactDelegate {
         self.addChild(score)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //on touch shoot
         var operation:CGFloat = 250.0
         operation *= (CGFloat)(self.value)
