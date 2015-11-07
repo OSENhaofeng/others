@@ -26,24 +26,31 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func createFile(sender: UIButton) {
         
-        var content = text.text.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        let content = text.text.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         if(fileManager.createFileAtPath(documentsPath.stringByAppendingPathComponent("\(name.text).txt"), contents: content, attributes: nil)){
-            println("created")
+            print("created")
         }
         
     }
     
     @IBAction func createDirectory(sender: UIButton) {
             
-        var newDirectory:NSString = documentsPath.stringByAppendingPathComponent(nameDirectory.text)
-        if(fileManager.createDirectoryAtPath(newDirectory as String, withIntermediateDirectories: true, attributes: nil, error: nil) == true){
-            println("created")
-        }
-            
+        let newDirectory:NSString = documentsPath.stringByAppendingPathComponent(nameDirectory.text!)
+        
+        let fileManager = NSFileManager.defaultManager()
+        
+        _ = try? fileManager.createDirectoryAtPath( newDirectory as String,
+            withIntermediateDirectories: true,
+            attributes: nil )
+        
+//        if(fileManager.createDirectoryAtPath(newDirectory as String, withIntermediateDirectories: true, attributes: nil)){
+//            print("created")
+//        }
+        
     }
     
     var fileManager = NSFileManager.defaultManager()
-    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as! NSString)
+    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first! as NSString)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +72,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     

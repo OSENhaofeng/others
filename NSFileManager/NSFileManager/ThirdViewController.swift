@@ -19,7 +19,7 @@ import UIKit
 class ThirdViewController: UIViewController {
     
     var fileManager = NSFileManager.defaultManager()
-    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as! String)
+    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first! as String)
 
     @IBOutlet weak var name: UITextField!
     
@@ -28,8 +28,8 @@ class ThirdViewController: UIViewController {
     
     @IBAction func open(sender: UIButton) {
     
-    if(fileManager.fileExistsAtPath(documentsPath.stringByAppendingPathComponent("\(name.text).txt"))){
-        var contenido = NSString(data: fileManager.contentsAtPath(documentsPath.stringByAppendingPathComponent("\(name.text).txt"))!, encoding: NSUTF8StringEncoding)
+    if(fileManager.fileExistsAtPath((documentsPath as NSString).stringByAppendingPathComponent("\(name.text).txt"))){
+        let contenido = NSString(data: fileManager.contentsAtPath((documentsPath as NSString).stringByAppendingPathComponent("\(name.text).txt"))!, encoding: NSUTF8StringEncoding)
         txtBox.text = contenido as! String
     }
     

@@ -30,11 +30,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         files = []
         fileManager = NSFileManager.defaultManager()
-        documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as! String)
-        filelist = fileManager.contentsOfDirectoryAtPath(documentsPath,error: nil)!
+        documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first! as String)
+        filelist = try! fileManager.contentsOfDirectoryAtPath(documentsPath)
         
-        println("documentspath:  \(documentsPath)")
-        println(files.count)
+        print("documentspath:  \(documentsPath)")
+        print(files.count)
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,11 +46,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(animated: Bool) {
-        filelist = fileManager.contentsOfDirectoryAtPath(documentsPath, error: nil)!
+        filelist = try! fileManager.contentsOfDirectoryAtPath(documentsPath)
         files = []
         for file in filelist {
             files.addObject(file)
-            println("file:  \(file)")
+            print("file:  \(file)")
         }
         tabla.reloadData()
         
@@ -64,14 +64,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var identifier:NSString = "CollectionCell"
-        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier as String, forIndexPath: indexPath) as! UITableViewCell
+        let identifier:NSString = "CollectionCell"
+        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier as String, forIndexPath: indexPath) 
         
         
         cell.textLabel!.text = files.objectAtIndex(indexPath.row).description
         
         var isDir: ObjCBool = ObjCBool(false)
-        if(fileManager.fileExistsAtPath(documentsPath.stringByAppendingPathComponent(files[indexPath.row] as! String), isDirectory: &isDir)){
+        if(fileManager.fileExistsAtPath((documentsPath as NSString).stringByAppendingPathComponent(files[indexPath.row] as! String), isDirectory: &isDir)){
             if(isDir){
                 cell.imageView!.image = UIImage(named: "dir.png")
             } else{
