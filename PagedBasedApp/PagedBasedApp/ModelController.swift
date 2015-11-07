@@ -42,8 +42,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if (self.pageData.count == 0 || (index >= self.pageData.count)){
             return nil
         }
-        var viewControllerId: NSString = "DataViewController\(index+1)"
-        var dataViewController = storyboard.instantiateViewControllerWithIdentifier(viewControllerId as String) as! DataViewController
+        let viewControllerId: NSString = "DataViewController\(index+1)"
+        let dataViewController = storyboard.instantiateViewControllerWithIdentifier(viewControllerId as String) as! DataViewController
         dataViewController.dataObject = self.pageData.objectAtIndex(index)
         return dataViewController
     }
