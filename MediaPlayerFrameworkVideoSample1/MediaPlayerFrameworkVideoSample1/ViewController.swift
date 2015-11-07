@@ -24,10 +24,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var bundle = NSBundle.mainBundle()
+        let bundle = NSBundle.mainBundle()
         //our video is 02.mov
-        var moviePath = bundle.pathForResource("02", ofType: "mov")
-        var url = NSURL(fileURLWithPath: moviePath!)
+        let moviePath = bundle.pathForResource("02", ofType: "mov")
+        let url = NSURL(fileURLWithPath: moviePath!)
         theMovie = MPMoviePlayerController(contentURL: url)
         theMovie.view.frame = CGRectMake(25.0, 20.0, 270, 270);
         self.view.addSubview(theMovie.view)
