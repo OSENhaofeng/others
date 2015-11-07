@@ -45,12 +45,12 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     */
     
     @IBAction func signinTapped(sender : UIButton) {
-        var username:NSString = txtUsername.text
-        var password:NSString = txtPassword.text
+        let username:NSString = txtUsername.text!
+        let password:NSString = txtPassword.text!
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
-            var alertView:UIAlertView = UIAlertView()
+            let alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign in Failed!"
             alertView.message = "Please enter Username and Password"
             alertView.delegate = self
@@ -58,17 +58,17 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             alertView.show()
         } else {
             
-            var post:NSString = "username=\(username)&password=\(password)"
+            let post:NSString = "username=\(username)&password=\(password)"
             
             NSLog("PostData: %@",post);
             
-            var url:NSURL = NSURL(string:"http://carlosbutron.es/iOS/jsonlogin2.php")!
+            let url:NSURL = NSURL(string:"http://carlosbutron.es/iOS/jsonlogin2.php")!
             
-            var postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
+            let postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
             
-            var postLength:NSString = String( postData.length )
+            let postLength:NSString = String( postData.length )
             
-            var request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+            let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
             request.HTTPMethod = "POST"
             request.HTTPBody = postData
             request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
@@ -79,7 +79,13 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             var reponseError: NSError?
             var response: NSURLResponse?
             
-            var urlData: NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse:&response, error:&reponseError)
+            var urlData: NSData?
+            do {
+                urlData = try NSURLConnection.sendSynchronousRequest(request, returningResponse:&response)
+            } catch let error as NSError {
+                reponseError = error
+                urlData = nil
+            }
             
             if ( urlData != nil ) {
                 let res = response as! NSHTTPURLResponse!;
@@ -88,13 +94,12 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                 
                 if (res.statusCode >= 200 && res.statusCode < 300)
                 {
-                    var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
+                    let responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
                     
                     NSLog("Response ==> %@", responseData);
                     
-                    var error: NSError?
                     
-                    let jsonData:NSDictionary = NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers , error: &error) as! NSDictionary
+                    let jsonData:NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers )) as! NSDictionary
                     
                     
                     let success:NSInteger = jsonData.valueForKey("success") as! NSInteger
@@ -107,7 +112,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                     {
                         NSLog("Login SUCCESS");
                         
-                        var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                         prefs.setObject(username, forKey: "USERNAME")
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
                         prefs.synchronize()
@@ -121,7 +126,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                         } else {
                             error_msg = "Unknown Error"
                         }
-                        var alertView:UIAlertView = UIAlertView()
+                        let alertView:UIAlertView = UIAlertView()
                         alertView.title = "Sign in Failed!"
                         alertView.message = error_msg as String
                         alertView.delegate = self
@@ -131,7 +136,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                     }
                     
                 } else {
-                    var alertView:UIAlertView = UIAlertView()
+                    let alertView:UIAlertView = UIAlertView()
                     alertView.title = "Sign in Failed!"
                     alertView.message = "Connection Failed"
                     alertView.delegate = self
@@ -139,7 +144,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                     alertView.show()
                 }
             } else {
-                var alertView:UIAlertView = UIAlertView()
+                let alertView:UIAlertView = UIAlertView()
                 alertView.title = "Sign in Failed!"
                 alertView.message = "Connection Failure"
                 if let error = reponseError {
