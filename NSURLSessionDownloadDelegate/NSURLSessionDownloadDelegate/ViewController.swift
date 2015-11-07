@@ -25,8 +25,8 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     
     @IBAction func cargar(sender: UIButton) {
         
-        var imageUrl: NSString = "http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409235fa14adf9158d109b2de4942.jpg"
-        var getImageTask: NSURLSessionDownloadTask =
+        let imageUrl: NSString = "http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409235fa14adf9158d109b2de4942.jpg"
+        let getImageTask: NSURLSessionDownloadTask =
         session.downloadTaskWithURL(NSURL(string: imageUrl as String)!)
         getImageTask.resume()
         
@@ -36,7 +36,7 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var sessionConfig =
+        let sessionConfig =
         NSURLSessionConfiguration.defaultSessionConfiguration()
         session = NSURLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
     }
@@ -47,8 +47,8 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     }
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL){
-        println("Download finished")
-        var downloadedImage = UIImage(data: NSData(contentsOfURL: location)!)
+        print("Download finished")
+        let downloadedImage = UIImage(data: NSData(contentsOfURL: location)!)
         dispatch_async(dispatch_get_main_queue(), {() in
             self.imagen.image = downloadedImage
         })
@@ -56,7 +56,7 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64,totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64){
         dispatch_async(dispatch_get_main_queue(), {() in
-            var variable = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
+            let variable = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
             self.progreso.progress = variable
         }) }
     
