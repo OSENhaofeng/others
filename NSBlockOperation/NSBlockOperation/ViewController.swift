@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         
-        var queue = NSOperationQueue()
+        let queue = NSOperationQueue()
         
         let operation1 : NSBlockOperation = NSBlockOperation (
             block: {
@@ -48,8 +48,8 @@ class ViewController: UIViewController {
         let urls : NSMutableArray = NSMutableArray (objects:NSURL(string:"http://www.google.es")!, NSURL(string: "http://www.apple.com")!,NSURL(string: "http://carlosbutron.es")!, NSURL(string: "http://www.bing.com")!,NSURL(string: "http://www.yahoo.com")!)
         urls.addObjectsFromArray(googlewebs as [AnyObject])
         for iterator:AnyObject in urls{
-            NSData(contentsOfURL:iterator as! NSURL)
-            println("Downloaded \(iterator)")
+           /// NSData(contentsOfURL:iterator as! NSURL)
+            print("Downloaded \(iterator)")
         }
     }
     
@@ -57,10 +57,10 @@ class ViewController: UIViewController {
     
     func getWebs(){
         let languages:NSArray = ["com","ad","ae","com.af","com.ag","com.ai","am","co.ao","com.ar","as","at"]
-        var languageWebs = NSMutableArray()
+        let languageWebs = NSMutableArray()
         for(var i=0;i < languages.count; i++){
-            var webString: NSString = "http://www.google.\(languages[i])"
-            languageWebs.addObject(NSURL(fileURLWithPath: webString as String)!)
+            let webString: NSString = "http://www.google.\(languages[i])"
+            languageWebs.addObject(NSURL(fileURLWithPath: webString as String))
         }
         googlewebs = languageWebs
     }
