@@ -40,25 +40,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func loadTabla(){
         
-        var db_path = NSBundle.mainBundle().pathForResource("FilmCollection", ofType: "sqlite")
-        println(NSBundle.mainBundle())
+        let db_path = NSBundle.mainBundle().pathForResource("FilmCollection", ofType: "sqlite")
+        print(NSBundle.mainBundle())
         var db = COpaquePointer()
-        var status = sqlite3_open(db_path!, &db)
+        let status = sqlite3_open(db_path!, &db)
         if(status == SQLITE_OK){
             //bbdd open
-            println("open")
+            print("open")
         }
         else{
             //bbdd error
-            println("open error")
+            print("open error")
         }
         
-        var query_stmt = "select * from film"
+        let query_stmt = "select * from film"
         
         if(sqlite3_prepare_v2(db, query_stmt, -1, &statement, nil) == SQLITE_OK){
             data.removeAllObjects()
             while(sqlite3_step(statement) == SQLITE_ROW){
-                var Dictionary = NSMutableDictionary()
+                let Dictionary = NSMutableDictionary()
                 
                 let director = sqlite3_column_text(statement, 1)
                 let buf_director = String.fromCString(UnsafePointer<CChar>(director))
@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             sqlite3_finalize(statement)
         }
         else{
-            println("ERROR")
+            print("ERROR")
         }
     }
     
@@ -93,20 +93,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
+        let cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
         
-        var aux: AnyObject = data[indexPath.row]
-        var table_director = aux["director"]
+        let aux: AnyObject = data[indexPath.row]
+        let table_director = aux["director"]
         cell.director.text = table_director as? String
-        var aux1: AnyObject = data[indexPath.row]
-        var table_image = aux["image"]
+        //var aux1: AnyObject = data[indexPath.row]
+        let table_image = aux["image"]
         cell.myImage.image = UIImage(named:table_image as! String)
-        var aux3: AnyObject = data[indexPath.row]
-        var table_title = aux["title"]
+        let aux3: AnyObject = data[indexPath.row]
+        let table_title = aux["title"]
         cell.title.text = table_title as? String
         
-        var aux4: AnyObject = data[indexPath.row]
-        var table_year = aux3["year"]
+        //var aux4: AnyObject = data[indexPath.row]
+        let table_year = aux3["year"]
         cell.year.text = table_year as? String
         
         
