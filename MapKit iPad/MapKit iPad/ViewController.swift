@@ -30,7 +30,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func createAnotation(sender: AnyObject) {
         
-        var a = MyAnotation(c: myMap.centerCoordinate, t: "Center", st: "The map center")
+        let a = MyAnotation(c: myMap.centerCoordinate, t: "Center", st: "The map center")
         
         mapView(myMap, viewForAnnotation: a)
         
@@ -46,7 +46,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     @IBAction func deleteAnotation(sender: AnyObject) {
         
         for (var i=0; i<myMap.annotations.count; i++) {
-            myMap.removeAnnotations(set as [AnyObject])
+            myMap.removeAnnotations(set as [AnyObject] as [AnyObject])
         }
         
         
@@ -75,9 +75,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation:
-        MKAnnotation!) -> MKAnnotationView!{
-            var pinView:MKPinAnnotationView = MKPinAnnotationView(annotation:
+    func mapView(mapView: MKMapView, viewForAnnotation annotation:
+        MKAnnotation) -> MKAnnotationView?{
+            let pinView:MKPinAnnotationView = MKPinAnnotationView(annotation:
                 annotation, reuseIdentifier: "Custom")
             //purple color to anotation
             //pinView.pinColor = MKPinAnnotationColor.Purple
