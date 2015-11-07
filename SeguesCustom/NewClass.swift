@@ -20,14 +20,14 @@ class NewClass: UIStoryboardSegue {
     
     override func perform(){
         
-        var source : UIViewController = self.sourceViewController as! UIViewController
-        var destination : UIViewController = self.destinationViewController as! UIViewController
+        let source : UIViewController = self.sourceViewController 
+        let destination : UIViewController = self.destinationViewController 
         
         UIGraphicsBeginImageContext(source.view.bounds.size)
-        source.view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        source.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         
         let sourceImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        destination.view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        destination.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let destinationImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         let sourceImageView : UIImageView = UIImageView (image: sourceImage)

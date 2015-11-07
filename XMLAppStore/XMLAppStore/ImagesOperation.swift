@@ -29,7 +29,7 @@ class ImagesOperation: NSOperation, NSURLConnectionDelegate {
     var currentData:NSMutableData!
     
     override func main(){
-        var connection = NSURLConnection(request: NSURLRequest(URL: NSURL(string: app.urlImage)!), delegate: self, startImmediately: false)
+        let connection = NSURLConnection(request: NSURLRequest(URL: NSURL(string: app.urlImage)!), delegate: self, startImmediately: false)
         connection!.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         connection!.start()
         self.currentData = NSMutableData()
@@ -44,7 +44,7 @@ class ImagesOperation: NSOperation, NSURLConnectionDelegate {
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection!){
-        var image: UIImage? = UIImage(data: self.currentData)
+        let image: UIImage? = UIImage(data: self.currentData)
             if(image != nil){
                 self.app.image = image
                 self.delegate?.imageOperation(self, app: self.app)
