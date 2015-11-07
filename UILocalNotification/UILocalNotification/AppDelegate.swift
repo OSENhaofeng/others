@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:(UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge) , categories: nil))
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:([UIUserNotificationType.Sound, UIUserNotificationType.Alert, UIUserNotificationType.Badge]) , categories: nil))
         return true
     }
 
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(application: UIApplication) {
         
-        var notification = UILocalNotification()
+        let notification = UILocalNotification()
         notification.alertBody = "App closed"
         notification.alertAction = "Open"
         application.presentLocalNotificationNow(notification)

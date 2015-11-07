@@ -3,7 +3,6 @@
 //  UILocalNotification
 //
 //  Created by Carlos Butron on 08/12/14.
-//  Copyright (c) 2014 Carlos Butron.
 //
 //  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
 //  License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later
@@ -21,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var notification = UILocalNotification()
+        let notification = UILocalNotification()
         notification.fireDate = NSDate().dateByAddingTimeInterval(10)
         notification.alertBody = "Alert"
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
