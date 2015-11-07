@@ -69,15 +69,15 @@ class ViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: theMovie)
         
-        var bundle = NSBundle.mainBundle()
+        let bundle = NSBundle.mainBundle()
         //our video is 02.mov
-        var moviePath = bundle.pathForResource("02", ofType: "mov")
-        var url = NSURL(fileURLWithPath: moviePath!)
+        let moviePath = bundle.pathForResource("02", ofType: "mov")
+        let url = NSURL(fileURLWithPath: moviePath!)
         theMovie = MPMoviePlayerController(contentURL: url)
         theMovie.view.frame = CGRectMake(25.0, 20.0, 270, 270);
         theMovie.controlStyle = MPMovieControlStyle.None
         
-        var tapGesture = UITapGestureRecognizer(target: self, action: "didDetectDoubleTap:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: "didDetectDoubleTap:")
         tapGesture.numberOfTapsRequired = 2
         theMovie.view.addGestureRecognizer(tapGesture)
         
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
     }
     
     func moviePlayBackDidFinish(){
-        println("Vídeo Terminado")
+        print("Vídeo Terminado")
         buttonPlay.hidden = true
         buttonPause.hidden = true
         buttonForward.hidden = true
