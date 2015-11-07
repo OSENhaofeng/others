@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var sessionConfig: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let sessionConfig: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfig.allowsCellularAccess = false
         //only accept JSON answer
         sessionConfig.HTTPAdditionalHeaders = ["Accept":"application/json"]
@@ -44,26 +44,26 @@ class ViewController: UIViewController {
         sessionConfig.timeoutIntervalForResource = 60.0
         sessionConfig.HTTPMaximumConnectionsPerHost = 1
         //create session, assign configuration
-        var session = NSURLSession(configuration: sessionConfig)
-        session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Madrid,es")!, completionHandler: {(data, response, error) in
-            var dic:NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(0), error: nil) as? NSDictionary ?? [String:String]()
+        let session = NSURLSession(configuration: sessionConfig)
+        session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&appid=2de143494c0b295cca9337e1e96b00e0")!, completionHandler: {(data, response, error) in
+            let dic:NSDictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions(rawValue: 0))) as? NSDictionary ?? [String:String]()
             
             
             if dic.count == 0 {
                 return
             }
             
-            println(dic)
+            print(dic)
             
-            var city: NSString = (dic["name"] as! NSString)
-            var kelvin: AnyObject! = (dic["main"] as! NSDictionary) ["temp"]
-            var kelvin_min: AnyObject! = (dic["main"] as! NSDictionary) ["temp_min"]
-            var kelvin_max: AnyObject! = (dic["main"] as! NSDictionary) ["temp_max"]
-            var celsius = kelvin as! Float - 274.15 as Float
-            var celsius_min = kelvin_min as! Float - 274.15 as Float
-            var celsius_max = kelvin_max as! Float - 274.15 as Float
-            var humidity: AnyObject! = (dic ["main"] as! NSDictionary) ["humidity"]
-            var wind: AnyObject! = (dic ["wind"] as! NSDictionary) ["speed"]
+            let city: NSString = (dic["name"] as! NSString)
+            let kelvin: AnyObject! = (dic["main"] as! NSDictionary) ["temp"]
+            let kelvin_min: AnyObject! = (dic["main"] as! NSDictionary) ["temp_min"]
+            let kelvin_max: AnyObject! = (dic["main"] as! NSDictionary) ["temp_max"]
+            let celsius = kelvin as! Float - 274.15 as Float
+            let celsius_min = kelvin_min as! Float - 274.15 as Float
+            let celsius_max = kelvin_max as! Float - 274.15 as Float
+            let humidity: AnyObject! = (dic ["main"] as! NSDictionary) ["humidity"]
+            let wind: AnyObject! = (dic ["wind"] as! NSDictionary) ["speed"]
             
             
             //original thread
