@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         let path = NSBundle.mainBundle().bundlePath
         let plistName:NSString = "Property List.plist"
-        let finalPath:NSString = path.stringByAppendingPathComponent(plistName as String)
+        let finalPath:NSString = (path as NSString).stringByAppendingPathComponent(plistName as String)
         cells = NSDictionary(contentsOfFile:finalPath as String)
     }
     
