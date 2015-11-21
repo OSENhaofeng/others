@@ -44,10 +44,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func deleteAnotation(sender: AnyObject) {
-        
-        for (var i=0; i<myMap.annotations.count; i++) {
-            myMap.removeAnnotations(set as [AnyObject] as [AnyObject])
-        }
+        //new for swift 2.0
+        let annotationsToRemove = self.myMap.annotations
+        self.myMap.removeAnnotations(annotationsToRemove)
+
+// old swift 1.2
+//        for (var i=0; i<myMap.annotations.count; i++) {
+//            myMap.removeAnnotations(set as [AnyObject] as [AnyObject])
+//        }
         
         
     }

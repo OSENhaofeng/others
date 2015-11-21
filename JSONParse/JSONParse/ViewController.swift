@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             let dic:NSDictionary! = try NSJSONSerialization.JSONObjectWithData(dataJSON, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
             
             //A partir del JSON obtenemos la primera entrada
-            let top1: AnyObject = ((dic["feed"] as! NSDictionary) ["entry"]! as! NSArray) [2]
+            let top1: AnyObject = ((dic["feed"] as! NSDictionary) ["entry"]! as! NSArray) [0]
             let imgJson: AnyObject = (top1["im:image"] as! NSArray) [2]
             let url = NSURL(string: imgJson.objectForKey("label") as! String)
             let data = NSData(contentsOfURL: url!)
