@@ -23,6 +23,7 @@ The project features code-level examples for the following items:
 + QuartzCore (Animation with collision)
 + Calendar
 + Chat Peer to Peer
++ Check Connectivity
 + CollectionView
 + CoreAnimation (some examples)
 + CoreData (some examples)
