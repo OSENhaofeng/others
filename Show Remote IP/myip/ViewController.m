@@ -62,18 +62,18 @@
                 
                 
                 
-            } 
+            }
             
             
             NSLog(@"%@",externalIP);
         } else {
-            NSLog(@"Oops... g %ld, %@", 
-                  (long)[error code], 
+            NSLog(@"Oops... g %ld, %@",
+                  (long)[error code],
                   [error localizedDescription]);
         }
-    
-    
-}
+        
+        
+    }
     
     // Do any additional setup after loading the view, typically from a nib.
 }
