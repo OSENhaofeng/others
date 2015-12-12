@@ -120,11 +120,11 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell = tabla.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
-        var label: UILabel = cell.viewWithTag(101) as! UILabel
-        var app = apps.objectAtIndex(indexPath.row) as! AppInfo
+        let cell = tabla.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+        let label: UILabel = cell.viewWithTag(101) as! UILabel
+        let app = apps.objectAtIndex(indexPath.row) as! AppInfo
         label.text = app.name
-        var imageView = cell.viewWithTag(100) as! UIImageView
+        let imageView = cell.viewWithTag(100) as! UIImageView
         imageView.image = app.image
         
         return cell
@@ -132,11 +132,11 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
     
     func imageOperation(imagesOperation:ImagesOperation, app:AppInfo){
         var visibleCells = tabla.visibleCells
-        var firstIndex = tabla.indexPathForCell(visibleCells[0] )?.row
-        var lastIndex = tabla.indexPathForCell(visibleCells.last as! UITableViewCell)?.row
+        let firstIndex = tabla.indexPathForCell(visibleCells[0] )?.row
+        let lastIndex = tabla.indexPathForCell(visibleCells.last! as UITableViewCell)!.row
         if(app.index >= firstIndex && app.index <= lastIndex){
-            var cell = tabla.cellForRowAtIndexPath(NSIndexPath(forRow: app.index, inSection: 0))
-            var imageView = cell?.viewWithTag(100) as! UIImageView
+            let cell = tabla.cellForRowAtIndexPath(NSIndexPath(forRow: app.index, inSection: 0))
+            let imageView = cell?.viewWithTag(100) as! UIImageView
             imageView.image = app.image
         }
     }
