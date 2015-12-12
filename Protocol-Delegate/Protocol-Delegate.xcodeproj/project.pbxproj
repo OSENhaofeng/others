@@ -402,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Protocol-Delegate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.Protocol-Delegate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Protocol-Delegate/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.Protocol-Delegate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +488,7 @@
 				0742BAA81BEBD2DF0020F946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0742BAA91BEBD2DF0020F946 /* Build configuration list for PBXNativeTarget "Protocol-DelegateTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +497,7 @@
 				0742BAAB1BEBD2DF0020F946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0742BAAC1BEBD2DF0020F946 /* Build configuration list for PBXNativeTarget "Protocol-DelegateUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +506,7 @@
 				0742BAAE1BEBD2DF0020F946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
