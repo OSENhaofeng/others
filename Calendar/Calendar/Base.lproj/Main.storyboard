@@ -31,12 +31,6 @@
                                     <action selector="saveEvent:" destination="J3I-dB-rTc" eventType="touchUpInside" id="BBn-ZS-1NQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----------------------------" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-xL-RDn">
-                                <rect key="frame" x="66" y="188" width="188" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TEb-eo-9JZ">
                                 <rect key="frame" x="0.0" y="217" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="438232363.15517998">

@@ -29,11 +29,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleEvent: UITextField!
     
     @IBAction func saveCalendar(sender: UIButton) {
-        var date = datePicker.date
-        var name = textField.text
-        var localSource: EKSource
+//        var date = datePicker.date
+//        var name = textField.text
+//        var localSource: EKSource
 //        var calendar = EKCalendar(eventStore: eventStore)
-        var calendar = EKCalendar(forEntityType: EKEntityType.Event, eventStore: eventStore)
+        let calendar = EKCalendar(forEntityType: EKEntityType.Event, eventStore: eventStore)
         eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {(granted,error) in
             if(granted == false){
                 print("Access Denied")
@@ -43,11 +43,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 calendar.source = auxiliar[0]
                 calendar.title = self.textField.text!
                 print(calendar.title)
-                var error:NSError?
-                self.eventStore.saveCalendar(calendar, commit: true, error: &error)
+                
+//swift 1.2
+//                var error:NSError?
+//                self.eventStore.saveCalendar(calendar, commit: true, error: &error)
+                
+           
+//swift 2.1 without error
+
+                try! self.eventStore.saveCalendar(calendar, commit: true)
+
+
+//swift 2.1 with error
+//                do {
+//                    let calendarWasSaved = try self.eventStore.saveCalendar(calendar, commit: true)
+//                } catch (Your error type) {
+//                    //error handling
+//                } catch (_){}// Other errors that you dot care about will fall here. not necessary if you handled each case
+                
             }
         })
     }
+    
+    
+    
     
     @IBAction func saveEvent(sender: UIButton) {
         
@@ -56,7 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("Access Denied")
             }
             else{
-                var arrayCalendars = self.eventStore.calendarsForEntityType(EKEntityType.Event)
+                let arrayCalendars = self.eventStore.calendarsForEntityType(EKEntityType.Event)
                 var theCalendar: EKCalendar!
                 for calendario in arrayCalendars{
                     if(calendario.title == self.eventCalendario.text){
@@ -65,14 +84,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 if(theCalendar != nil){
-                    var event = EKEvent(eventStore: self.eventStore)
+                    let event = EKEvent(eventStore: self.eventStore)
                     event.title = self.titleEvent.text!
                     event.startDate = self.datePicker.date
                     event.endDate = self.datePicker.date.dateByAddingTimeInterval(3600)
                     event.calendar = theCalendar
-                    var error:NSError?
-                    if(self.eventStore.saveEvent(event, span: .ThisEvent, error: &error)){
-                        var alert = UIAlertController(title: "Calendar", message: "Event created \(event.title) in \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.Alert)
+                    //var error:NSError?
+                    //if(self.eventStore.saveEvent(event, span: .ThisEvent, error: &error)){
+                    do {
+                        try! self.eventStore.saveEvent(event, span: .ThisEvent)
+                        let alert = UIAlertController(title: "Calendar", message: "Event created \(event.title) in \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default, handler: nil))
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.presentViewController(alert, animated: true, completion: nil)
@@ -114,9 +135,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //called when users tap out of textfield
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+
     
     
 }
