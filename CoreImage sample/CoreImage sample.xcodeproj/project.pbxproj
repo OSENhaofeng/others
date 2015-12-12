@@ -15,7 +15,7 @@
 		077FC2621BB469E200425068 /* CoreImage_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FC2611BB469E200425068 /* CoreImage_sampleTests.swift */; };
 		077FC26D1BB469E200425068 /* CoreImage_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077FC26C1BB469E200425068 /* CoreImage_sampleUITests.swift */; };
 		077FC27B1BB469EE00425068 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077FC27A1BB469EE00425068 /* CoreImage.framework */; };
-		077FC27D1BB46AF500425068 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 077FC27C1BB46AF500425068 /* image.jpg */; settings = {ASSET_TAGS = (); }; };
+		077FC27D1BB46AF500425068 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 077FC27C1BB46AF500425068 /* image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -405,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CoreImage sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.CoreImage-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CoreImage sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.CoreImage-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +491,7 @@
 				077FC2731BB469E200425068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		077FC2741BB469E200425068 /* Build configuration list for PBXNativeTarget "CoreImage sampleTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +500,7 @@
 				077FC2761BB469E200425068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		077FC2771BB469E200425068 /* Build configuration list for PBXNativeTarget "CoreImage sampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +509,7 @@
 				077FC2791BB469E200425068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
