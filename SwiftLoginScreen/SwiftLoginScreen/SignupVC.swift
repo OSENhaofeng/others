@@ -49,9 +49,9 @@ class SignupVC: UIViewController {
     
     
     @IBAction func signupTapped(sender : UIButton) {
-        let username:NSString = txtUsername.text! as NSString
-        let password:NSString = txtPassword.text! as NSString
-        let confirm_password:NSString = txtConfirmPassword.text! as NSString
+        let username:NSString = (txtUsername.text)! as NSString
+        let password:NSString = (txtPassword.text)! as NSString
+        let confirm_password:NSString = (txtConfirmPassword.text)! as NSString
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             

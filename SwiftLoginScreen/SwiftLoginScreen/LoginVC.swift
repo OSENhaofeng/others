@@ -45,8 +45,8 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     */
     
     @IBAction func signinTapped(sender : UIButton) {
-        let username:NSString = txtUsername.text!
-        let password:NSString = txtPassword.text!
+        let username:NSString = (txtUsername.text)!
+        let password:NSString = (txtPassword.text)!
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
