@@ -4,7 +4,6 @@
 //
 //  Created by Carlos Butron on 02/12/14.
 //  Copyright (c) 2015 Carlos Butron. All rights reserved.
-//
 
 
 import UIKit
