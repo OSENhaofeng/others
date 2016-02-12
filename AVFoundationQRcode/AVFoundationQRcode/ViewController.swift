@@ -10,7 +10,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate {
     
     @IBOutlet var previewView: UIView!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -26,11 +26,19 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        setupCaptureSession() 
-        previewLayer.frame = previewView.bounds
-        previewView.layer.addSublayer(previewLayer)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "startRunning:", name:UIApplicationWillEnterForegroundNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopRunning:", name:UIApplicationDidEnterBackgroundNotification, object: nil)
+        setupCaptureSession()
+        if captureSession == nil {
+            let alert = UIAlertController(title: "Camera required", message: "This device has no camera. Is this an iOS Simulator?", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "Got it", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: false, completion: nil)
+        }
+        else {
+            previewLayer.frame = previewView.bounds
+            previewView.layer.addSublayer(previewLayer)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "startRunning:", name:UIApplicationWillEnterForegroundNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopRunning:", name:UIApplicationDidEnterBackgroundNotification, object: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +47,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func startRunning(){
+        if captureSession == nil {
+            return
+        }
+        
         captureSession.startRunning()
         metadataOutput.metadataObjectTypes =
             metadataOutput.availableMetadataObjectTypes
@@ -67,6 +79,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         if(videoDevice == nil){
             print("No camera on this device")
+            return
         }
         captureSession = AVCaptureSession()
         videoInput = (try! AVCaptureDeviceInput(device: videoDevice) as AVCaptureDeviceInput)
