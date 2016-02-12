@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		07767AAA1ADA86F4003EE2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767AA91ADA86F4003EE2FA /* AppDelegate.swift */; };
-		07767AAC1ADA86F4003EE2FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767AAB1ADA86F4003EE2FA /* ViewController.swift */; };
 		07767AAF1ADA86F4003EE2FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07767AAD1ADA86F4003EE2FA /* Main.storyboard */; };
 		07767AB11ADA86F4003EE2FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07767AB01ADA86F4003EE2FA /* Images.xcassets */; };
 		07767AB41ADA86F4003EE2FA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07767AB21ADA86F4003EE2FA /* LaunchScreen.xib */; };
 		07767AC01ADA86F4003EE2FA /* BasicAgendaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767ABF1ADA86F4003EE2FA /* BasicAgendaTests.swift */; };
 		07767ACA1ADA880B003EE2FA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767AC91ADA880B003EE2FA /* Contact.swift */; };
-		07767ACC1ADA8873003EE2FA /* TableListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767ACB1ADA8873003EE2FA /* TableListViewcontroller.swift */; };
-		07767ACE1ADA888D003EE2FA /* DetailViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767ACD1ADA888D003EE2FA /* DetailViewcontroller.swift */; };
+		07767ACC1ADA8873003EE2FA /* TableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767ACB1ADA8873003EE2FA /* TableListViewController.swift */; };
+		07767ACE1ADA888D003EE2FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767ACD1ADA888D003EE2FA /* DetailViewController.swift */; };
 		07767AD01ADA88A3003EE2FA /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07767ACF1ADA88A3003EE2FA /* NewContactViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 		07767AA41ADA86F4003EE2FA /* BasicAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07767AA81ADA86F4003EE2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07767AA91ADA86F4003EE2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07767AAB1ADA86F4003EE2FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07767AAE1ADA86F4003EE2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07767AB01ADA86F4003EE2FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07767AB31ADA86F4003EE2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -41,8 +39,8 @@
 		07767ABE1ADA86F4003EE2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07767ABF1ADA86F4003EE2FA /* BasicAgendaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAgendaTests.swift; sourceTree = "<group>"; };
 		07767AC91ADA880B003EE2FA /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		07767ACB1ADA8873003EE2FA /* TableListViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListViewcontroller.swift; sourceTree = "<group>"; };
-		07767ACD1ADA888D003EE2FA /* DetailViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewcontroller.swift; sourceTree = "<group>"; };
+		07767ACB1ADA8873003EE2FA /* TableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListViewController.swift; sourceTree = "<group>"; };
+		07767ACD1ADA888D003EE2FA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		07767ACF1ADA88A3003EE2FA /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,14 +84,13 @@
 			isa = PBXGroup;
 			children = (
 				07767AA91ADA86F4003EE2FA /* AppDelegate.swift */,
-				07767AAB1ADA86F4003EE2FA /* ViewController.swift */,
 				07767AC91ADA880B003EE2FA /* Contact.swift */,
 				07767AAD1ADA86F4003EE2FA /* Main.storyboard */,
 				07767AB01ADA86F4003EE2FA /* Images.xcassets */,
 				07767AB21ADA86F4003EE2FA /* LaunchScreen.xib */,
 				07767AA71ADA86F4003EE2FA /* Supporting Files */,
-				07767ACB1ADA8873003EE2FA /* TableListViewcontroller.swift */,
-				07767ACD1ADA888D003EE2FA /* DetailViewcontroller.swift */,
+				07767ACB1ADA8873003EE2FA /* TableListViewController.swift */,
+				07767ACD1ADA888D003EE2FA /* DetailViewController.swift */,
 				07767ACF1ADA88A3003EE2FA /* NewContactViewController.swift */,
 			);
 			path = BasicAgenda;
@@ -226,12 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07767ACE1ADA888D003EE2FA /* DetailViewcontroller.swift in Sources */,
+				07767ACE1ADA888D003EE2FA /* DetailViewController.swift in Sources */,
 				07767ACA1ADA880B003EE2FA /* Contact.swift in Sources */,
-				07767AAC1ADA86F4003EE2FA /* ViewController.swift in Sources */,
 				07767AAA1ADA86F4003EE2FA /* AppDelegate.swift in Sources */,
 				07767AD01ADA88A3003EE2FA /* NewContactViewController.swift in Sources */,
-				07767ACC1ADA8873003EE2FA /* TableListViewcontroller.swift in Sources */,
+				07767ACC1ADA8873003EE2FA /* TableListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
