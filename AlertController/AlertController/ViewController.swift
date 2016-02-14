@@ -14,12 +14,12 @@ class ViewController: UIViewController {
         
         let alertController = UIAlertController(title: "My Title", message: "This is an alert", preferredStyle:UIAlertControllerStyle.Alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in
             print("you have pressed the Cancel button");
         }
         alertController.addAction(cancelAction)
         
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { _ in
             print("you have pressed OK button");
         }
         alertController.addAction(OKAction)
@@ -35,12 +35,12 @@ class ViewController: UIViewController {
         
         let alertController = UIAlertController(title: "My Title", message: "This is an alert", preferredStyle:UIAlertControllerStyle.ActionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in
             print("you have pressed the Cancel button");
         }
         alertController.addAction(cancelAction)
         
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { _ in
             print("you have pressed OK button");
         }
         alertController.addAction(OKAction)
@@ -56,12 +56,12 @@ class ViewController: UIViewController {
             
             let alertController = UIAlertController(title: "My Title", message: "This is an alert", preferredStyle:UIAlertControllerStyle.Alert)
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in
         print("you have pressed the Cancel button");
             }
             alertController.addAction(cancelAction)
             
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { _ in
                 print("you have pressed OK button");
             }
             alertController.addAction(OKAction)
