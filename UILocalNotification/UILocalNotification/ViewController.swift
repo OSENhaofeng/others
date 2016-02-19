@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Note from https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html:
+        // "If your app is already in the foreground, iOS does not show the notification."
         let notification = UILocalNotification()
         notification.fireDate = NSDate().dateByAddingTimeInterval(10)
         notification.alertBody = "Alert"
