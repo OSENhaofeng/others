@@ -3,6 +3,7 @@
 //  PagedBasedApp
 //
 //  Created by Carlos Butron on 07/12/14.
+//  Copyright (c) 2014 Carlos Butron.
 //
 
 import UIKit
