@@ -3,6 +3,7 @@
 //  SpriteKit Game
 //
 //  Created by Carlos Butron on 07/11/15.
+//  Copyright © 2015 Carlos Butron. All rights reserved.
 //
 
 
