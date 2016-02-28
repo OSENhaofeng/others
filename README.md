@@ -84,7 +84,7 @@ develop - The active development branch. Pull requests should be directed to thi
 License
 ----
 
-MIT
+The MIT License (MIT)
 
 Contributing
 ----
