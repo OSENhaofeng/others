@@ -24,10 +24,9 @@ class ViewController: UIViewController {
         }
         alertController.addAction(OKAction)
         
-        
         self.presentViewController(alertController, animated: true, completion:{ () -> Void in
-                //your code here
-                })
+            //your code here
+        })
         
     }
 
@@ -45,49 +44,42 @@ class ViewController: UIViewController {
         }
         alertController.addAction(OKAction)
         
-        
         self.presentViewController(alertController, animated: true, completion:{ () -> Void in
             //your code here
-            })
+        })
         
     }
     
     @IBAction func actionAlertWithForm(sender: AnyObject) {
             
-            let alertController = UIAlertController(title: "My Title", message: "This is an alert", preferredStyle:UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "My Title", message: "This is an alert", preferredStyle:UIAlertControllerStyle.Alert)
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in
-        print("you have pressed the Cancel button");
-            }
-            alertController.addAction(cancelAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in
+            print("you have pressed the Cancel button");
+        }
+        alertController.addAction(cancelAction)
             
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { _ in
-                print("you have pressed OK button");
-            }
-            alertController.addAction(OKAction)
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { _ in
+            print("you have pressed OK button");
+        }
+        alertController.addAction(OKAction)
             
-            alertController.addTextFieldWithConfigurationHandler({(textField:
-                UITextField!) in
-                textField.placeholder = "Password"
-                textField.secureTextEntry = true
-                })
+        alertController.addTextFieldWithConfigurationHandler({(textField : UITextField!) in
+            textField.placeholder = "Password"
+            textField.secureTextEntry = true
+        })
             
-            self.presentViewController(alertController, animated: true, completion:{ () -> Void in
-                    //your code here
-                    })
-            
+        self.presentViewController(alertController, animated: true, completion:{ () -> Void in
+             //your code here
+        })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
 }
-
