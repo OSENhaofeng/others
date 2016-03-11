@@ -6,10 +6,7 @@
 //  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
 
-
 import UIKit
-
-
 
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
@@ -17,13 +14,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     @IBOutlet weak var push: UIButton!
     @IBOutlet weak var attachment: UIButton!
     
-    //AMPLIACION
     var collision: UICollisionBehavior!
-    
     
     @IBAction func gravity(sender: UIButton) {
         animator.removeAllBehaviors()
-        //gravity, push y attachment son los IBOutlets correspondientes
+        //gravity, push and attachment
         let gravity = UIGravityBehavior(items: [self.gravity,self.push,self.attachment])
         animator.addBehavior(gravity)
         
@@ -45,6 +40,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     var attachmentBehavior: UIAttachmentBehavior? = nil
+    
     @IBAction func attachment(sender: AnyObject) {
         animator.removeAllBehaviors()
         let anchorPoint = CGPointMake(self.attachment.center.x, self.attachment.center.y)
@@ -56,7 +52,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         collision = UICollisionBehavior(items: [self.push, self.gravity, self.attachment])
         collision.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collision)
-        
     }
     
     @IBAction func handleAttachment(sender: UIPanGestureRecognizer) {
@@ -65,12 +60,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         }
     }
     
-    
     var animator = UIDynamicAnimator()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         animator = UIDynamicAnimator(referenceView: self.view)
     }
     
@@ -89,11 +81,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
-    
 }
-
-
