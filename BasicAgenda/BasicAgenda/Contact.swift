@@ -6,11 +6,9 @@
 //  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
 
-
 import Foundation
 
 class Contact {
-    
     var name: String
     var surname: String
     var phone: String
@@ -21,6 +19,5 @@ class Contact {
         surname = ""
         phone = ""
         email = ""
-        
     }
 }
