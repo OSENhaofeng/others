@@ -6,9 +6,7 @@
 //  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
 
-
 import UIKit
-
 
 class TableListViewController: UITableViewController, NewContactDelegate {
     
@@ -16,7 +14,6 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         for i in 1...50 {
             let contact = Contact()
@@ -32,7 +29,6 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -55,7 +51,6 @@ class TableListViewController: UITableViewController, NewContactDelegate {
         print("Cell number: \(indexPath.row)")
         return cell
     }
-    
     
     /*
     // Override to support conditional editing of the table view.
@@ -95,18 +90,15 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     // MARK: - Navigation
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToDetailFromListado" {
             let detailViewController = segue.destinationViewController as! DetailViewController
             let cell = sender as! UITableViewCell
-            
             detailViewController.contact = contactArray[cell.tag]
         } else if segue.identifier == "goToNewContactFromListado" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let newContactViewController = navigationController.viewControllers[0] as! NewContactViewController
             newContactViewController.delegate = self
-            
         }
     }
     
@@ -115,8 +107,6 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     func newContact(contact: Contact) {
         contactArray.append(contact)
         tableView.reloadData()
-        
     }
-    
     
 }
