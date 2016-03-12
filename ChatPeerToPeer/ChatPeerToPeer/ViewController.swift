@@ -19,10 +19,8 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
         showBrowserVC()
     }
     
-    
     @IBOutlet weak var textBox: UITextView!
     @IBOutlet weak var sendText: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +39,6 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func sendMessage(){
@@ -77,13 +74,11 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
         return true
     }
     
-    
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState){
     }
     
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID){
-        let message = NSString(data: data, encoding:
-            NSUTF8StringEncoding)
+        let message = NSString(data: data, encoding: NSUTF8StringEncoding)
         dispatch_async(dispatch_get_main_queue(),
             {self.messageReception(message!, peer: peerID)})
     }
@@ -95,22 +90,20 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?){
     }
     
-    func browserViewControllerDidFinish(browserViewController:
-        MCBrowserViewController){
-            self.dismissBrowserVC()
+    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController){
+        self.dismissBrowserVC()
     }
+    
     // Notifies delegate that the user taps the cancel button.
     func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController){
         self.dismissBrowserVC()
     }
-    func showBrowserVC(){
-        self.presentViewController(self.browserVC, animated: true,
-            completion: nil)
-    }
-    func dismissBrowserVC(){
-        self.browserVC.dismissViewControllerAnimated(true, completion:
-            nil) }
     
+    func showBrowserVC(){
+        self.presentViewController(self.browserVC, animated: true, completion: nil)
+    }
+    
+    func dismissBrowserVC(){
+        self.browserVC.dismissViewControllerAnimated(true, completion: nil) }
     
 }
-
