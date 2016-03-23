@@ -11,11 +11,9 @@ import CoreImage
 
 class ViewController: UIViewController {
     
-    
     //SLIDER TO FIRST AND SECOND FILTER
     //when you do slider value change
     //then push in filter button  "sepia" or "vignette" to apply it
-    
     var sliderValue: Float = 0.0
     
     @IBOutlet weak var myImage: UIImageView!
@@ -27,7 +25,6 @@ class ViewController: UIViewController {
     @IBAction func vignette(sender: UIButton) {
         applyfilter(2);
     }
-    
     
     @IBAction func invert(sender: UIButton) {
         applyfilter(3);
@@ -46,22 +43,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func slider(sender: UISlider) {
-        
         sliderValue = sender.value
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     func applyfilter(numberFilter: Int) {
         
@@ -95,39 +86,24 @@ class ViewController: UIViewController {
         case 4:
             let filter : CIFilter = CIFilter (name: "CIPhotoEffectMono")!
             filter.setValue(inputImage, forKey: kCIInputImageKey)
-            
             let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
             let img : UIImage = UIImage (CIImage: outputImage)
             myImage.image = img
         case 5:
             let filter : CIFilter = CIFilter (name: "CIPerspectiveTransform")!
             filter.setValue(inputImage, forKey: kCIInputImageKey)
-            
             let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
             let img : UIImage = UIImage (CIImage: outputImage)
             myImage.image = img
         case 6:
             let filter : CIFilter = CIFilter (name: "CIGaussianBlur")!
             filter.setValue(inputImage, forKey: kCIInputImageKey)
-            
             let outputImage : CIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
             let img : UIImage = UIImage (CIImage: outputImage)
             myImage.image = img
         default:
             print("test")
-            
         }
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
-}
 
+}
