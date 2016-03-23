@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 import MapKit
 
-
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var myMap: MKMapView!
@@ -21,8 +20,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var finalLongitude: CLLocationDegrees!
     var distance: CLLocationDistance!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,24 +28,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        
         let tap = UITapGestureRecognizer(target: self, action: "action:")
         
         myMap.addGestureRecognizer(tap)
-        
-        
     }
     
     func action(gestureRecognizer:UIGestureRecognizer) {
         let touchPoint = gestureRecognizer.locationInView(self.myMap)
         let newCoord:CLLocationCoordinate2D = myMap.convertPoint(touchPoint, toCoordinateFromView: self.myMap)
-        
         let getLat: CLLocationDegrees = newCoord.latitude
         let getLon: CLLocationDegrees = newCoord.longitude
         
         //Convert to points to CLLocation. In this way we can measure distanceFromLocation
         let newCoord2: CLLocation = CLLocation(latitude: getLat, longitude: getLon)
-        
         let newCoord3: CLLocation = CLLocation(latitude: myLatitude, longitude: myLongitude)
         
         finalLatitude = newCoord2.coordinate.latitude
@@ -58,21 +50,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("Final Latitude: \(finalLatitude)")
         print("Final Longitude: \(finalLongitude)")
         
-        
-        
         //distance between our position and the new point created
         let distance = newCoord2.distanceFromLocation(newCoord3)
         print("Distance between two points: \(distance)")
-        
         
         let newAnnotation = MKPointAnnotation()
         newAnnotation.coordinate = newCoord
         newAnnotation.title = "My target"
         newAnnotation.subtitle = ""
         myMap.addAnnotation(newAnnotation)
-        
     }
-    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
@@ -104,7 +91,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             myLongitude = (containsPlacemark.location!.coordinate.longitude)
             myLatitude = (containsPlacemark.location!.coordinate.latitude)
             
-            
             // testing show data
             print("Locality: \(locality)")
             print("PostalCode: \(postalCode)")
@@ -119,9 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let theRegion:MKCoordinateRegion = MKCoordinateRegionMake(location, theSpan)
             
             myMap.setRegion(theRegion, animated: true)
-            
         }
-        
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -129,15 +113,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     //distance between two points
-    
     func degreesToRadians(degrees: Double) -> Double { return degrees * M_PI / 180.0 }
     func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / M_PI }
     
     func getBearingBetweenTwoPoints1(point1 : CLLocation, point2 : CLLocation) -> Double {
-        
         let lat1 = degreesToRadians(point1.coordinate.latitude)
         let lon1 = degreesToRadians(point1.coordinate.longitude)
-        
         let lat2 = degreesToRadians(point2.coordinate.latitude);
         let lon2 = degreesToRadians(point2.coordinate.longitude);
         
@@ -147,7 +128,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("Final longitude: \(point2.coordinate.longitude)")
         
         let dLon = lon2 - lon1;
-        
         let y = sin(dLon) * cos(lat2);
         let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon);
         let radiansBearing = atan2(y, x);
@@ -157,12 +137,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
-
-
-
-
-
