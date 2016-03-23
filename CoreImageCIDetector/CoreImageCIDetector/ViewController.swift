@@ -55,7 +55,6 @@ class ViewController: UIViewController {
             }
             
             //Right eye location
-            
             let rightEyeView = UIView(frame: CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.2, faceFeature.rightEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             rightEyeView.layer.cornerRadius = faceWidth*0.2
             rightEyeView.layer.borderWidth = 2
@@ -68,9 +67,7 @@ class ViewController: UIViewController {
             rightEyeView.layer.opacity = 0.5
             vistAux.addSubview(rightEyeView)
             
-            
             //Left eye location
-            
             let leftEyeView = UIView(frame: CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.2, faceFeature.leftEyePosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4))
             leftEyeView.layer.cornerRadius = faceWidth*0.2
             leftEyeView.layer.borderWidth = 2
@@ -82,10 +79,6 @@ class ViewController: UIViewController {
             }
             leftEyeView.layer.opacity = 0.5
             vistAux.addSubview(leftEyeView)
-            
-            
-            
-            
         }
         
         self.view.addSubview(vistAux)
@@ -99,9 +92,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
 }
-
