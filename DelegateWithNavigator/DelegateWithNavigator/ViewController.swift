@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
 
-
 import UIKit
 
 class ViewController: UIViewController, myDelegate {
@@ -16,7 +15,6 @@ class ViewController: UIViewController, myDelegate {
     @IBAction func mainButton(sender: UIButton) {
         
         //we got it the final instance in storyboard
-        
         let secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
         secondController.data = "Text from superclass"
         //who is it delegate
@@ -40,6 +38,4 @@ class ViewController: UIViewController, myDelegate {
         self.principalLabel.text = data as String
     }
     
-    
 }
-
