@@ -15,11 +15,9 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     
     @IBAction func calendar(sender: UIButton) {
         
-        
         store.requestAccessToEntityType(EKEntityType.Event, completion: { (granted, error) -> Void in
             if (granted) {
                 print("Access granted")
-                
                 
                 let controller = EKEventEditViewController()
                 controller.eventStore = self.store
@@ -29,9 +27,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
                 print("Access denied")
             }
         })
-        
     }
-    
     
     @IBAction func deleteEvents(sender: UIButton) {
         //get calendar
@@ -48,10 +44,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         //get related events
         let events : NSArray = self.store.eventsMatchingPredicate(predicate)
         
-        
-        
-        
-        ////loop all events in events and delete it
+        //loop all events in events and delete it
         for i in events{
             do {
                 try self.store.removeEvent(i as! EKEvent, span: .ThisEvent, commit: true)
@@ -59,9 +52,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
             }
             //println(i)
         }
-        
     }
-    
     
     @IBAction func setAlarm(sender: UIButton) {
         
@@ -79,7 +70,6 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         //get related events
         let events : NSArray = self.store.eventsMatchingPredicate(predicate)
         
-        
         //loop all events in events and add alarm to all
         for i in events{
             let eventWithAlarm = i as! EKEvent
@@ -94,22 +84,14 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    //    override func viewDidAppear(animated: Bool) {
-    //
-    //    }
-    
+
     func eventEditViewController(controller: EKEventEditViewController, didCompleteWithAction action: EKEventEditViewAction) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
 }
-
