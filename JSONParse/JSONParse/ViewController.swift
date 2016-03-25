@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var tittle: UILabel!
     @IBOutlet weak var myDescription: UITextView!
@@ -35,14 +34,10 @@ class ViewController: UIViewController {
         else{
             print("Connection failed")
         }
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func connection(connection: NSURLConnection!, didFailWithError error: NSError!){
@@ -62,10 +57,9 @@ class ViewController: UIViewController {
     func connectionDidFinishLoading(connection: NSURLConnection!){
         
         do {
-            
             let dic:NSDictionary! = try NSJSONSerialization.JSONObjectWithData(dataJSON, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
             
-            //A partir del JSON obtenemos la primera entrada
+            //get from JSON
             let top1: AnyObject = ((dic["feed"] as! NSDictionary) ["entry"]! as! NSArray) [0]
             let imgJson: AnyObject = (top1["im:image"] as! NSArray) [2]
             let url = NSURL(string: imgJson.objectForKey("label") as! String)
@@ -77,16 +71,10 @@ class ViewController: UIViewController {
             let desc = (top1["summary"] as! NSDictionary) ["label"] as! NSString
             tittle.text = tit as String
             myDescription.text = desc as String
-            
         } catch {
             // failure
             print("Fetch failed: \((error as NSError).localizedDescription)")
         }
-        
-            
-
-        
     }
     
 }
-
