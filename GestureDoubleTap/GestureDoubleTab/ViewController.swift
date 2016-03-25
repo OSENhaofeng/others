@@ -12,10 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func handleTap(sender : UIGestureRecognizer) {
@@ -30,13 +28,6 @@ class ViewController: UIViewController {
             "handleTap:")
         tapGesture.numberOfTapsRequired = 2;
         image.addGestureRecognizer(tapGesture)
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    
-    
-    
+
 }
-
-
