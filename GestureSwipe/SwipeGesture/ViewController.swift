@@ -10,12 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var image2: UIImageView!
     
-    
     override func viewDidLoad() {
-        
         
         let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
@@ -33,14 +30,10 @@ class ViewController: UIViewController {
         swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
         image2.addGestureRecognizer(swipeGestureUp)
         
-        
         super.viewDidLoad()
         
         image2.image = UIImage(named: "apple.png")
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    
     
     @IBAction func respondToSwipeGesture(send: UIGestureRecognizer) {
         
@@ -73,14 +66,8 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
 }
-
-
