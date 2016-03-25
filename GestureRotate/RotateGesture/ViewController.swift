@@ -12,33 +12,25 @@ class ViewController: UIViewController {
     
     var netRotation:CGFloat = 0
     
-    
     @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
-        let rotateGesture = UIRotationGestureRecognizer(target: self,
-            action: "rotateGesture:")
+        let rotateGesture = UIRotationGestureRecognizer(target: self, action: "rotateGesture:")
         image.addGestureRecognizer(rotateGesture)
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func rotateGesture(sender : UIRotationGestureRecognizer) {
         let rotation:CGFloat = sender.rotation
-        let transform:CGAffineTransform  =
-        CGAffineTransformMakeRotation(rotation + netRotation)
+        let transform:CGAffineTransform  = CGAffineTransformMakeRotation(rotation + netRotation)
         sender.view?.transform = transform
         if (sender.state == UIGestureRecognizerState.Ended){
             netRotation += rotation;
         }
     }
     
-    
 }
-
-
