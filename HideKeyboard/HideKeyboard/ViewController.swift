@@ -18,16 +18,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         textField1.delegate = self
         textField2.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
+    // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
     }
@@ -37,6 +35,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
          self.view.endEditing(true)
     }
 
-
 }
-
