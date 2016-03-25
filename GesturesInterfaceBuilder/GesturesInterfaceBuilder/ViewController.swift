@@ -12,51 +12,32 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     //SWIPE
     @IBAction func respondToSwipeGesture(send: UIGestureRecognizer) {
-        
         alert("Swipe")
-        
     }
-    
     
     //LONG PRESS
     @IBAction func action(gestureRecognizer:UIGestureRecognizer) {
         
         if (gestureRecognizer.state == UIGestureRecognizerState.Began){
-            
             alert("Long Press")
-            
-            
         }
-        
     }
     
-    
     func alert(myString: String){
-        
         let alertController = UIAlertController(title: "Alert", message: myString, preferredStyle: .Alert)
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
         alertController.addAction(OKAction)
         self.presentViewController(alertController, animated: true) { }
-        
     }
     
-    
 }
-
-
-
