@@ -15,7 +15,6 @@ class MasterViewController: UITableViewController {
     
     var packItems: [List] = []
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.clearsSelectionOnViewWillAppear = false
@@ -44,7 +43,6 @@ class MasterViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 //    func insertNewObject(sender: AnyObject) {
@@ -54,7 +52,6 @@ class MasterViewController: UITableViewController {
 //    }
 
     // MARK: - Segues
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -68,7 +65,6 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Table View
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -79,7 +75,6 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
-
         cell.textLabel!.text = packItems[indexPath.row].name
         return cell
     }
@@ -98,6 +93,4 @@ class MasterViewController: UITableViewController {
 //        }
 //    }
 
-
 }
-
