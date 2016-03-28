@@ -12,13 +12,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        
         let queue = NSOperationQueue()
-        
         let operation1 : NSBlockOperation = NSBlockOperation (
             block: {
                 self.getWebs()
-                
                 let operation2 : NSBlockOperation = NSBlockOperation(block: {
                     self.loadWebs()
                 })
@@ -27,14 +24,11 @@ class ViewController: UIViewController {
         queue.addOperation(operation1)
         
         super.viewDidLoad()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     func loadWebs(){
         let urls : NSMutableArray = NSMutableArray (objects:NSURL(string:"http://www.google.es")!, NSURL(string: "http://www.apple.com")!,NSURL(string: "http://carlosbutron.es")!, NSURL(string: "http://www.bing.com")!,NSURL(string: "http://www.yahoo.com")!)
@@ -56,13 +50,5 @@ class ViewController: UIViewController {
         }
         googlewebs = languageWebs
     }
-    
-    
-    
-    
-    
+  
 }
-
-
-
-
