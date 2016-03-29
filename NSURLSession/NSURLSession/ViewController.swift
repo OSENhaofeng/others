@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var temperatureCelsius: UITextField!
     @IBOutlet weak var temperatureCelsiusMax: UITextField!
@@ -21,11 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidity: UITextField!
     @IBOutlet weak var wind: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         let sessionConfig: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfig.allowsCellularAccess = false
@@ -39,7 +35,6 @@ class ViewController: UIViewController {
         let session = NSURLSession(configuration: sessionConfig)
         session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&appid=2de143494c0b295cca9337e1e96b00e0")!, completionHandler: {(data, response, error) in
             let dic:NSDictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions(rawValue: 0))) as? NSDictionary ?? [String:String]()
-            
             
             if dic.count == 0 {
                 return
@@ -57,7 +52,6 @@ class ViewController: UIViewController {
             let humidity: AnyObject! = (dic ["main"] as! NSDictionary) ["humidity"]
             let wind: AnyObject! = (dic ["wind"] as! NSDictionary) ["speed"]
             
-            
             //original thread
             dispatch_async(dispatch_get_main_queue(), { () in
                 self.city.text = "\(city)"
@@ -70,18 +64,11 @@ class ViewController: UIViewController {
                 self.humidity.text = "\(humidity)"
                 self.wind.text = "\(wind)"
             })
-            
         }).resume()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
 }
-
-
