@@ -16,16 +16,12 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     @IBOutlet weak var progreso: UIProgressView!
     
     @IBAction func cargar(sender: UIButton) {
-        
         let imageUrl: NSString = "http://c.hiphotos.baidu.com/image/pic/item/8cb1cb13495409235fa14adf9158d109b2de4942.jpg"
         let getImageTask: NSURLSessionDownloadTask =
         session.downloadTaskWithURL(NSURL(string: imageUrl as String)!)
         getImageTask.resume()
-        
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let sessionConfig =
@@ -35,7 +31,6 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL){
@@ -51,8 +46,5 @@ class ViewController: UIViewController, NSURLSessionDownloadDelegate {
             let variable = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
             self.progreso.progress = variable
         }) }
-    
-    
+        
 }
-
-
