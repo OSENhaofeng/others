@@ -17,11 +17,9 @@ import UIKit
  There is no need to actually create view controllers for each page in advance -- indeed doing so incurs unnecessary overhead. Given the data model, these methods create, configure, and return a new view controller on demand.
  */
 
-
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
     var pageData = NSArray()
-
 
     override init() {
         super.init()
@@ -51,7 +49,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
     // MARK: - Page View Controller Data Source
-
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = self.indexOfViewController(viewController as! DataViewController)
         if (index == 0) || (index == NSNotFound) {
@@ -76,4 +73,3 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
 }
-
