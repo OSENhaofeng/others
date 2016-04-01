@@ -19,5 +19,4 @@ class myObject: NSObject {
     func start() {
     delegate?.delegateMethod()
     }
-    
 }
