@@ -7,10 +7,7 @@ for element in array {
     print(element)
 }
 
-
 var array2 = [1,2,3,4,5,6,7,8,9,10];
-
-
 
 func example1(integers: NSArray) {
     
@@ -19,46 +16,30 @@ func example1(integers: NSArray) {
     for element in integers{
     number += (element as! NSNumber).integerValue
     }
-    
     print("Sum all array items: \(number)")
-    
-    
 }
 
-
 example1(array2)
-
-
-
 
 func example2() -> NSMutableArray {
     
     let array = NSMutableArray()
 
-    
     for var i = 11; i<=20; i++ {
     array.addObject(i)
-    
     }
     
     return array
-    
 }
-
 
 var array3 = example2()
 //show nsmutable array value sum
 example1(array3)
 
-
-
-
 //delete pair items from array
 func example3()  {
     
     let array = example2()
-    
-    
     
     for var i = 0; i<array.count; i++ {
         if ((array.objectAtIndex(i) as! Int % 2) == 0){
@@ -68,14 +49,10 @@ func example3()  {
     
     //print pair items from array
     example1(array)
-    
 }
 
-
 //inferred types
-
-func getClassName(obj : AnyObject) -> String
-{
+func getClassName(obj : AnyObject) -> String {
     let objectClass : AnyClass! = object_getClass(obj)
     let className = objectClass.description()
     
@@ -97,21 +74,3 @@ print(getClassName(mutableCocoaArray))
 print(getClassName(🤔))
 print(getClassName(cadena))
 print(🤔.description)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
