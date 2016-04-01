@@ -10,28 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    
     var statement = COpaquePointer()
     var data: NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         loadTabla()
     }
-    
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
-    func loadTabla(){
-        
+    func loadTabla() {
         let db_path = NSBundle.mainBundle().pathForResource("FilmCollection", ofType: "sqlite")
         print(NSBundle.mainBundle())
         var db = COpaquePointer()
@@ -68,7 +59,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 data.addObject(Dictionary)
                 //process data
-                
             }
             sqlite3_finalize(statement)
         }
@@ -77,16 +67,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
-        
         let aux: AnyObject = data[indexPath.row]
         let table_director = aux["director"]
         cell.director.text = table_director as? String
@@ -100,19 +87,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //var aux4: AnyObject = data[indexPath.row]
         let table_year = aux3["year"]
         cell.year.text = table_year as? String
-        
-        
-        
+
         return cell
-        
     }
-    
-    
-    
-    
-    
-    
+   
 }
-
-
-
