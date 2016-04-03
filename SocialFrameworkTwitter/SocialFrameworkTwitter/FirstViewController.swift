@@ -27,7 +27,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             else{
             print("Introduce a name!")
         }
-        
     }
     
     @IBAction func sendTweet(sender: UIButton) {
@@ -42,7 +41,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             print("Canceled")
             case SLComposeViewControllerResult.Done:
             print("User tweeted")
-            
             } }
             twitterController.completionHandler = completionHandler
             self.presentViewController(twitterController, animated: true, completion: nil)
@@ -53,12 +51,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         labelUserName.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
@@ -66,7 +62,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true;
     }
-    
     
     func checkUser(){
         let accountStore = ACAccountStore()
@@ -107,7 +102,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                 let url = NSURL(string: profileImageStringURL as String)
                 let data = NSData(contentsOfURL: url!)
                 self.imageViewPhoto.image = UIImage(data: data!)
-                
                 } })
                 }) }
     } else {
@@ -115,6 +109,4 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     }) }
 
-
 }
-
