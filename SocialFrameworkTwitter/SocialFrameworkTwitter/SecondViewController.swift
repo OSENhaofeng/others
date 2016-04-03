@@ -29,9 +29,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     func refreshTimeLine(){
             if(SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)){
@@ -50,7 +48,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                 let responseJSON: NSArray?
                 
                 do {
-                    
                     responseJSON = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments) as? NSArray
                     
                     self.tweetsArray = responseJSON!
@@ -59,9 +56,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                     {self.table.reloadData()})
                     
                 } catch _ {
-                    
                     print("JSON ERROR ")
-                    
                 }
 //                /*get tweets*/
 //                let jsonError:NSError?
@@ -87,8 +82,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         return self.tweetsArray.count;
     }
     
-
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("timelineCell") as! TimelineCell
         let currentTweet = self.tweetsArray.objectAtIndex(indexPath.row) as! NSDictionary
@@ -112,4 +105,3 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
 }
-
