@@ -56,7 +56,6 @@ class Game: SKScene, SKPhysicsContactDelegate {
         let moveConstant = SKAction.repeatActionForever(move)
         target.runAction(moveConstant)
         
-        
         //actual score
         score.text = "Score: \(points)";
         score.name = "Points"
@@ -107,6 +106,4 @@ class Game: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    
 }
-
