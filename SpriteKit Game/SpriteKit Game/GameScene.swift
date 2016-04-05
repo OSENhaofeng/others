@@ -6,7 +6,6 @@
 //  Copyright © 2015 Carlos Butron. All rights reserved.
 //
 
-
 import UIKit
 import SpriteKit
 
@@ -37,5 +36,3 @@ class GameScene: SKScene {
         /* Called before each frame is rendered */
     }
 }
-
-
