@@ -16,29 +16,15 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning().
     }
-    
-    /*
-    // #pragma mark - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func gotoLogin(sender : UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     @IBAction func signupTapped(sender : UIButton) {
         let username:NSString = (txtUsername.text)! as NSString
@@ -64,22 +50,16 @@ class SignupVC: UIViewController {
         } else {
             
             let post:NSString = "username=\(username)&password=\(password)&c_password=\(confirm_password)"
-            
             NSLog("PostData: %@",post);
-            
             let url:NSURL = NSURL(string: "http://carlosbutron.es/iOS/jsonsignup.php")!
-            
             let postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
-            
             let postLength:NSString = String( postData.length )
-            
             let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
             request.HTTPMethod = "POST"
             request.HTTPBody = postData
             request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
             
             var reponseError: NSError?
             var response: NSURLResponse?
@@ -94,23 +74,15 @@ class SignupVC: UIViewController {
             
             if ( urlData != nil ) {
                 let res = response as! NSHTTPURLResponse!;
-                
                 NSLog("Response code: %ld", res.statusCode);
                 
                 if (res.statusCode >= 200 && res.statusCode < 300)
                 {
                     let responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
-                    
                     NSLog("Response ==> %@", responseData);
-                    
                     var error: NSError?
-                    
                     let jsonData:NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers )) as! NSDictionary
-                    
-                    
                     let success:NSInteger = jsonData.valueForKey("success") as! NSInteger
-                    
-                    //[jsonData[@"success"] integerValue];
                     
                     NSLog("Success: %ld", success);
                     
@@ -132,9 +104,7 @@ class SignupVC: UIViewController {
                         alertView.delegate = self
                         alertView.addButtonWithTitle("OK")
                         alertView.show()
-                        
                     }
-                    
                 } else {
                     let alertView:UIAlertView = UIAlertView()
                     alertView.title = "Sign Up Failed!"
@@ -155,7 +125,6 @@ class SignupVC: UIViewController {
                 alertView.show()
             }
         }
-        
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
