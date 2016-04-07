@@ -8,24 +8,21 @@
 
 import UIKit
 
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
     //Number of rows
-    func tableView(tableView: UITableView, numberOfRowsInSection section:
-        Int) -> Int{
-            return 4 }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4 
+    }
+            
     //DetailCells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         NSIndexPath) -> UITableViewCell{
@@ -36,11 +33,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.imageView!.image = UIImage(named:"image1.png")
             return cell
     }
+    
     //Title
     func tableView(tableView: UITableView, titleForHeaderInSection section:
         Int) -> String?{
             return "Head"
     }
+    
     //Foot Subtitle
     func tableView(tableView: UITableView, titleForFooterInSection section:
         Int) -> String?{
@@ -48,4 +47,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
 }
-
