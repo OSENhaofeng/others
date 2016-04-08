@@ -34,10 +34,12 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
         listData = NSMutableData()
         print("Did receive Response")
     }
+    
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
         listData.appendData(data)
         print("Did Receive Data")
     }
+    
     func connectionDidFinishLoading(connection: NSURLConnection!){
         print("Did finish loading")
         let parser = NSXMLParser(data: listData)
@@ -50,13 +52,11 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
             imagesOperation.app = it as! AppInfo
             imagesOperation.delegate = self
             queue.addOperation(imagesOperation)
-            
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]){
@@ -68,7 +68,6 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
         }
         shouldParse = elementsToParse.containsObject(elementName)
     }
-    
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
         if(self.currentApp != nil){
@@ -92,10 +91,8 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
                 apps.addObject(currentApp)
                 currentApp = nil
             }
-            // }
         }
     }
-    
     
     func parser(parser: NSXMLParser, foundCharacters string: String)
     {
@@ -104,12 +101,9 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
         }
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return apps.count
     }
-    
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tabla.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
@@ -133,7 +127,4 @@ class ViewController: UIViewController, NSURLConnectionDelegate, NSXMLParserDele
         }
     }
     
-    
 }
-
-
