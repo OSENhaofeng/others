@@ -26,25 +26,4 @@ class DocumentPhoto: UIDocument {
         throw outError
     }
     
-//    override func loadFromContents(contents: AnyObject, ofType typeName:
-//        String, error outError: NSErrorPointer) -> Bool {
-//        if (contents.length > 0){
-//        var data = NSData(bytes: contents.bytes, length:
-//        contents.length)
-//        self.image = UIImage(data: data)
-//        }
-//        return true
-//    }
-//    override func contentsForType(typeName: String, error outError:
-//        NSErrorPointer) -> AnyObject? {
-//        if (self.image == nil){
-//        image = UIImage()
-//        }
-//        return UIImageJPEGRepresentation(self.image, 1.0)
-//    }
-    
-    
-    
-    
-    
 }
