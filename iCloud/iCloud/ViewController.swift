@@ -12,13 +12,11 @@ import CloudKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var celdas: NSMutableArray = NSMutableArray()
-    
-    
     var container = NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(nil)
     var metadataQuery : NSMetadataQuery!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+  
     @IBAction func deletePhotos(sender: UIBarButtonItem) {
         
         removeImagesFromICloud()
@@ -59,22 +57,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         print("Choose from galery 3")
         savePhotoICloud(fullImage)
     }
-    
-    
-    
-    
+
     func savePhotoICloud (image: UIImage){
         let date = NSDate()
         let df = NSDateFormatter()
         df.dateFormat = "dd_MM_yy_hh_mm_ss"
-        
         let photoName = NSString (format: "PHOTO_%@", df.stringFromDate(date))
         
         if (container != nil){
             let fileURLiCloud = container!.URLByAppendingPathComponent("Documents").URLByAppendingPathComponent(photoName as String)
             let photo = DocumentPhoto (fileURL: fileURLiCloud)
             photo.image = image
-            
             photo.saveToURL(fileURLiCloud, forSaveOperation: UIDocumentSaveOperation.ForCreating, completionHandler: { (success) -> Void
                 in
                 self.celdas.addObject(image)
@@ -83,7 +76,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             })
         }
     }
-    
     
     func removeImagesFromICloud (){
         if (container != nil){
@@ -108,9 +100,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "queryFinished:", name: NSMetadataQueryDidFinishGatheringNotification,
-                object: self.metadataQuery)
-            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "queryFinished:", name: NSMetadataQueryDidFinishGatheringNotification, object: self.metadataQuery)
             self.metadataQuery.startQuery()
         }
     }
@@ -126,7 +116,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
             let document : DocumentPhoto! = DocumentPhoto(fileURL: url)
             
-            
             document?.openWithCompletionHandler({ (success) -> Void in
                 if (success == true){
                     self.celdas.addObject(document.image)
@@ -136,7 +125,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }) }
     }
     
-    
     func queryDeleted(notification: NSNotification){
         let mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
@@ -144,10 +132,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         celdas.removeAllObjects()
         for (var i = 0; i<mq.resultCount;i++){
             let result = mq.resultAtIndex(i) as! NSMetadataItem
-           // var nombre = result.valueForAttribute(NSMetadataItemFSNameKey) as! NSString
             let url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
             let document : DocumentPhoto! = DocumentPhoto(fileURL: url)
-            
             
             let fileManager = NSFileManager()
             do {
@@ -159,40 +145,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             document?.openWithCompletionHandler({ (success) -> Void in
                 if (success == true){
-                    
                     self.collectionView.reloadData()
                 }
             }) }
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        savePhotoICloud(UIImage(named: "fondo1.jpg")!)
         loadImagesFromICloud ()
-        //        self.collectionView.reloadData()
-        //        var imagenView: UIImageView = UIImageView()
-        //        imagenView.image = UIImage(named: "imagen1.png")
-        //        self.celdas.addObject(imagenView)
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier:NSString = "CollectionCell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier as String, forIndexPath: indexPath) 
-        
-        
-        
         let imageView:UIImageView = cell.viewWithTag(1) as! UIImageView
         imageView.image = celdas.objectAtIndex(indexPath.row) as? UIImage
-        // imageView.image = UIImage(named: "imagen1.png")
-        
         
         return cell
     }
@@ -205,7 +176,4 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return celdas.count
     }
     
-    
 }
-
-
