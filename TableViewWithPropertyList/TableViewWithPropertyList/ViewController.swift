@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var cells : NSDictionary? // Global Variable
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let path = NSBundle.mainBundle().bundlePath
@@ -21,7 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cells = NSDictionary(contentsOfFile:finalPath as String)
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells!.count
     }
@@ -29,9 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
         let cell:CustomCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as! CustomCell
-        
         let myCell: AnyObject = cells!.objectForKey("cell\(indexPath.row)") as! NSDictionary
-        
         
         cell.myTitle?.text = myCell.objectForKey("title") as? String
         cell.mySubtitle?.text = myCell.objectForKey("subtitle") as? String
@@ -41,25 +37,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section:Int) -> String?  {
-        
         return "TuxMania"
     }
     
     func tableView(tableView: UITableView, titleForFooterInSection section:Int) -> String? {
-        
         return "Get all the Tux"
     }
-    
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
 }
-
-
-
