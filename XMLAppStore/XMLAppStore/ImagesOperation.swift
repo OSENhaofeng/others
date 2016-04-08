@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-
 protocol ImagesOperationDelegate{
     func imageOperation(imagesOperation:ImagesOperation, app:AppInfo)
 }
