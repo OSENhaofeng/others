@@ -10,8 +10,6 @@ import UIKit
 import MediaPlayer
 import MobileCoreServices
 
-
-
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var cutImage: UIImageView!
@@ -27,14 +25,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker.allowsEditing = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
@@ -49,7 +46,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         //save in documents
         let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last
         
-        
         let filePath = (documentsPath! as NSString).stringByAppendingPathComponent("pic.png")
         imageData.writeToFile(filePath, atomically: true)
         
@@ -59,21 +55,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<()>){
         if(error != nil){
             print("ERROR IMAGE \(error.debugDescription)")
         }
     }
-    
-    
-    
+
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
-
-
-
