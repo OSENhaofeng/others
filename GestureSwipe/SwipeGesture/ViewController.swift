@@ -14,19 +14,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
         image2.addGestureRecognizer(swipeGestureRight)
         
-        let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureDown.direction = UISwipeGestureRecognizerDirection.Down
         image2.addGestureRecognizer(swipeGestureDown)
         
-        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
         image2.addGestureRecognizer(swipeGestureLeft)
         
-        let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
         image2.addGestureRecognizer(swipeGestureUp)
         

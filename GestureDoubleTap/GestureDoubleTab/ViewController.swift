@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         } }
     override func viewDidLoad() {
         let tapGesture = UITapGestureRecognizer(target: self, action:
-            "handleTap:")
+            #selector(ViewController.handleTap(_:)))
         tapGesture.numberOfTapsRequired = 2;
         image.addGestureRecognizer(tapGesture)
     }

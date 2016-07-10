@@ -40,9 +40,9 @@ class KeyboardViewController: UIInputViewController {
             if v.isKindOfClass(UIButton) {
                 let w = v as! UIButton
                 if w.currentTitle == "Center" {
-                    w.addTarget(self, action: "centerButton:", forControlEvents: .TouchDown)
+                    w.addTarget(self, action: #selector(KeyboardViewController.centerButton(_:)), forControlEvents: .TouchDown)
                 } else {
-                    w.addTarget(self, action: "pushButton:", forControlEvents: .TouchDown)
+                    w.addTarget(self, action: #selector(KeyboardViewController.pushButton(_:)), forControlEvents: .TouchDown)
                 }
             }
         }
@@ -56,7 +56,7 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.sizeToFit()
         self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
     
-        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+        self.nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), forControlEvents: .TouchUpInside)
         
         self.view.addSubview(self.nextKeyboardButton)
     

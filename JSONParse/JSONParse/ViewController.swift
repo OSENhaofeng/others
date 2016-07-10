@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         //building NSURLRequest
         let request = NSURLRequest(URL: url!)
         //connection
+        
         let connection: NSURLConnection? = NSURLConnection(request: request, delegate: self)
         
         if (connection != nil){
@@ -34,6 +35,20 @@ class ViewController: UIViewController {
         else{
             print("Connection failed")
         }
+        
+//        let stringURL:NSString = "https://itunes.apple.com/es/rss/topfreeapplications/limit=10/json"
+//        //building NSURL
+//        let url = NSURL(string: stringURL as String)
+//        
+//        let request = NSMutableURLRequest(URL: url!)
+//        let session = NSURLSession.sharedSession()
+//        
+//        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+//            print("Response: \(response)")})
+//        
+//        task.resume()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

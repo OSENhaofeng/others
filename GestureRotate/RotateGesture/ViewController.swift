@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
-        let rotateGesture = UIRotationGestureRecognizer(target: self, action: "rotateGesture:")
+        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(ViewController.rotateGesture(_:)))
         image.addGestureRecognizer(rotateGesture)
         super.viewDidLoad()
     }

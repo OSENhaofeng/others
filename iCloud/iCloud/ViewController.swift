@@ -85,7 +85,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "queryDeleted:", name: NSMetadataQueryDidFinishGatheringNotification,
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.queryDeleted(_:)), name: NSMetadataQueryDidFinishGatheringNotification,
                 object: self.metadataQuery)
             
             self.metadataQuery.startQuery()
@@ -100,19 +100,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "queryFinished:", name: NSMetadataQueryDidFinishGatheringNotification, object: self.metadataQuery)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.queryFinished(_:)), name: NSMetadataQueryDidFinishGatheringNotification, object: self.metadataQuery)
             self.metadataQuery.startQuery()
         }
     }
     
-    func queryFinished(notification: NSNotification){
+    func queryFinished(notification: NSNotification) {
         let mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
         mq.stopQuery()
         celdas.removeAllObjects()
-        for (var i = 0; i<mq.resultCount;i++){
+        for i in 0..<mq.resultCount {
             let result = mq.resultAtIndex(i) as! NSMetadataItem
-           // var nombre = result.valueForAttribute(NSMetadataItemFSNameKey) as! NSString
+           // var name = result.valueForAttribute(NSMetadataItemFSNameKey) as! NSString
             let url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
             let document : DocumentPhoto! = DocumentPhoto(fileURL: url)
             
@@ -125,12 +125,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }) }
     }
     
-    func queryDeleted(notification: NSNotification){
+    func queryDeleted(notification: NSNotification) {
         let mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
         mq.stopQuery()
         celdas.removeAllObjects()
-        for (var i = 0; i<mq.resultCount;i++){
+        for i in 0..<mq.resultCount {
             let result = mq.resultAtIndex(i) as! NSMetadataItem
             let url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
             let document : DocumentPhoto! = DocumentPhoto(fileURL: url)

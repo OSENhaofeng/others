@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         let pinchGesture:UIPinchGestureRecognizer =
-        UIPinchGestureRecognizer(target: self, action: "pinchGesture:")
+        UIPinchGestureRecognizer(target: self, action: #selector(ViewController.pinchGesture(_:)))
         image.addGestureRecognizer(pinchGesture)
         super.viewDidLoad()
     }

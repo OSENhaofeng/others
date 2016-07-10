@@ -17,28 +17,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         //ROTATION
-        let rotateGesture = UIRotationGestureRecognizer(target: self, action: "rotateGesture:")
+        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(ViewController.rotateGesture(_:)))
         image.addGestureRecognizer(rotateGesture)
         
         //SWIPE
-        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
         image.addGestureRecognizer(swipeGestureRight)
         
-        let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureDown.direction = UISwipeGestureRecognizerDirection.Down
         image.addGestureRecognizer(swipeGestureDown)
         
-        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
         image.addGestureRecognizer(swipeGestureLeft)
         
-        let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
         swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
         image.addGestureRecognizer(swipeGestureUp)
         
         //LONG PRESS
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "action:")
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.action(_:)))
         longPressGesture.minimumPressDuration = 2.0;
         image.addGestureRecognizer(longPressGesture)
         

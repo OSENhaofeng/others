@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        let tap = UITapGestureRecognizer(target: self, action: "action:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.action(_:)))
         
         myMap.addGestureRecognizer(tap)
     }

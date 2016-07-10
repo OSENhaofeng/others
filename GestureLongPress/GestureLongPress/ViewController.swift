@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "action:")
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.action(_:)))
         longPressGesture.minimumPressDuration = 2.0;
         image.addGestureRecognizer(longPressGesture)
         
