@@ -34,8 +34,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         else {
             previewLayer.frame = previewView.bounds
             previewView.layer.addSublayer(previewLayer)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "startRunning:", name:UIApplicationWillEnterForegroundNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopRunning:", name:UIApplicationDidEnterBackgroundNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.startRunning), name:UIApplicationWillEnterForegroundNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.stopRunning), name:UIApplicationDidEnterBackgroundNotification, object: nil)
         }
     }
     

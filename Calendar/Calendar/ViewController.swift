@@ -77,7 +77,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         eventStore = EKEventStore()
         
-        let tapGestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyBoard")
+        let tapGestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyBoard))
         
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }

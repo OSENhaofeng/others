@@ -29,21 +29,21 @@ class ViewController: UIViewController {
         penguinView.animationImages = frames;
         
         //walk right
-        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: "walkRight:")
+        let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.walkRight(_:)))
         swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
         view.addGestureRecognizer(swipeGestureRight)
         
         //walk left
-        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: "walkLeft:")
+        let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.walkLeft(_:)))
         swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
         view.addGestureRecognizer(swipeGestureLeft)
         
         //jump
-        let tap = UITapGestureRecognizer(target: self, action: "jump:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.jump(_:)))
         view.addGestureRecognizer(tap)
         
         //longPress
-        let longPress = UILongPressGestureRecognizer(target: self, action: "longPress:")
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
         view.addGestureRecognizer(longPress)
     }
 
