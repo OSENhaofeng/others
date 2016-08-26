@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func actionAlertWithForm(sender: AnyObject) {
-            
+        
         let alertController = UIAlertController(title: "My Title", message: "This is an alert", preferredStyle:UIAlertControllerStyle.Alert)
             
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in
@@ -61,9 +61,19 @@ class ViewController: UIViewController {
             
         let OKAction = UIAlertAction(title: "OK", style: .Default) { _ in
             print("you have pressed OK button");
+            
+            let userName = alertController.textFields![0].text
+            let password = alertController.textFields![1].text
+            
+            self.doSomething(userName, password: password)
         }
         alertController.addAction(OKAction)
-            
+        
+        alertController.addTextFieldWithConfigurationHandler({(textField : UITextField!) in
+            textField.placeholder = "User Name"
+            textField.secureTextEntry = false
+        })
+        
         alertController.addTextFieldWithConfigurationHandler({(textField : UITextField!) in
             textField.placeholder = "Password"
             textField.secureTextEntry = true
@@ -72,6 +82,10 @@ class ViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion:{ () -> Void in
              //your code here
         })
+    }
+    
+    func doSomething(userName: String?, password: String?) {
+        print("username: \(userName ?? "")  password: \(password ?? "")")
     }
     
     override func viewDidLoad() {
