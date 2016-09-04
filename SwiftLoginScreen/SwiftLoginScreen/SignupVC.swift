@@ -19,7 +19,7 @@ class SignupVC: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning().
+        super.didReceiveMemoryWarning()
     }
     
     @IBAction func gotoLogin(sender : UIButton) {
