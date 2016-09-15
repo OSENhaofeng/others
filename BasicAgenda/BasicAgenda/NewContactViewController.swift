@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewContactDelegate {
-    func newContact(contact: Contact)
+    func newContact(_ contact: Contact)
 }
 
 class NewContactViewController: UIViewController {
@@ -21,7 +21,7 @@ class NewContactViewController: UIViewController {
     
     var delegate: NewContactDelegate?
     
-    @IBAction func savePushButton(sender: AnyObject) {
+    @IBAction func savePushButton(_ sender: AnyObject) {
         let contact = Contact()
         
         contact.name = nameTextField.text!
@@ -31,12 +31,12 @@ class NewContactViewController: UIViewController {
         
         delegate?.newContact(contact)
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
-    @IBAction func cancelPushButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelPushButton(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     
