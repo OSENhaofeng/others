@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         
         let stringURL:NSString = "https://itunes.apple.com/es/rss/topfreeapplications/limit=10/json"
         //building NSURL
-        let url = NSURL(string: stringURL as String)
+        let url = URL(string: stringURL as String)
         //building NSURLRequest
-        let request = NSURLRequest(URL: url!)
+        let request = URLRequest(url: url!)
         //connection
         
         let connection: NSURLConnection? = NSURLConnection(request: request, delegate: self)
@@ -55,30 +55,30 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func connection(connection: NSURLConnection!, didFailWithError error: NSError!){
+    func connection(_ connection: NSURLConnection!, didFailWithError error: NSError!){
         print("Error: \(error)")
     }
     
-    func connection(connection: NSURLConnection!, didReceiveResponse response: NSURLResponse!){
+    func connection(_ connection: NSURLConnection!, didReceiveResponse response: URLResponse!){
         print("Received response: \(response)")
         //restore data
         dataJSON.length = 0
     }
     
-    func connection(connection: NSURLConnection!, didReceiveData data:NSData!){
-        self.dataJSON.appendData(data)
+    func connection(_ connection: NSURLConnection!, didReceiveData data:Data!){
+        self.dataJSON.append(data)
     }
     
-    func connectionDidFinishLoading(connection: NSURLConnection!){
+    func connectionDidFinishLoading(_ connection: NSURLConnection!){
         
         do {
-            let dic:NSDictionary! = try NSJSONSerialization.JSONObjectWithData(dataJSON, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+            let dic:NSDictionary! = try JSONSerialization.jsonObject(with: dataJSON as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
             
             //get from JSON
             let top1: AnyObject = ((dic["feed"] as! NSDictionary) ["entry"]! as! NSArray) [0]
             let imgJson: AnyObject = (top1["im:image"] as! NSArray) [2]
-            let url = NSURL(string: imgJson.objectForKey("label") as! String)
-            let data = NSData(contentsOfURL: url!)
+            let url = URL(string: imgJson.object(forKey: "label") as! String)
+            let data = try? Data(contentsOf: url!)
             let img = UIImage(data: data!)
             image.image = img
             //get tittle and description

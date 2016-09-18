@@ -11,13 +11,13 @@ import UIKit
 class DocumentPhoto: UIDocument {
     var image : UIImage!
     
-    override func loadFromContents(contents: AnyObject, ofType typeName: String?) throws {
+    override func load(fromContents contents: Any, ofType typeName: String?) throws {
         
-        let data = NSData(bytes: contents.bytes, length: contents.length)
+        let data = Data(bytes: UnsafePointer<UInt8>((contents as AnyObject).bytes), count: contents.length)
         self.image = UIImage(data: data)
     }
     
-    override func contentsForType(typeName: String) throws -> AnyObject {
+    override func contents(forType typeName: String) throws -> Any {
         let outError: NSError! = NSError(domain: "Migrator", code: 0, userInfo: nil)
         
         if let value = UIImageJPEGRepresentation(self.image, 1.0) {

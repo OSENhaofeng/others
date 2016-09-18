@@ -16,11 +16,11 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         
         self.canDisplayBannerAds = true
         
-        let bannerView = ADBannerView(adType: .MediumRectangle)
-        bannerView.delegate = self
-        bannerView.center = self.view.center
-        bannerView.hidden = false
-        self.view.addSubview(bannerView)
+        let bannerView = ADBannerView(adType: .mediumRectangle)
+        bannerView?.delegate = self
+        bannerView?.center = self.view.center
+        bannerView?.isHidden = false
+        self.view.addSubview(bannerView!)
     }
     
     override func didReceiveMemoryWarning() {
