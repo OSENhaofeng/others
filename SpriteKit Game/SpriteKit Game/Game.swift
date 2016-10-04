@@ -14,68 +14,68 @@ class Game: SKScene, SKPhysicsContactDelegate {
     let score = SKLabelNode(fontNamed:"Chalkduster")
     var points = 0
     enum ColliderType: UInt32 {
-        case Player = 1
-        case Target = 2
+        case player = 1
+        case target = 2
     }
     var target:SKSpriteNode!
     var value:Float = 0.0
-    @IBAction func manejarSlider(sender:UISlider){
+    @IBAction func manejarSlider(_ sender:UISlider){
         value = sender.value
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         //define physics
         self.physicsWorld.contactDelegate = self
-        let size2 = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height)
-        self.physicsBody = SKPhysicsBody(edgeLoopFromRect:size2)
+        let size2 = CGRect(x: 0.0, y: 0.0, width: self.frame.size.width, height: self.frame.size.height)
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom:size2)
         
         //define the player
-        let player = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(50, 50))
-        player.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(50, 50))
-        player.position = CGPointMake(200,25)
+        let player = SKSpriteNode(color: UIColor.red, size: CGSize(width: 50, height: 50))
+        player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        player.position = CGPoint(x: 200,y: 25)
         player.name = "Player"
-        player.physicsBody?.categoryBitMask = ColliderType.Player.rawValue
-        player.physicsBody?.collisionBitMask = ColliderType.Target.rawValue
-        player.physicsBody?.contactTestBitMask = ColliderType.Target.rawValue
+        player.physicsBody?.categoryBitMask = ColliderType.player.rawValue
+        player.physicsBody?.collisionBitMask = ColliderType.target.rawValue
+        player.physicsBody?.contactTestBitMask = ColliderType.target.rawValue
         self.addChild(player)
         
         //define target
-        target = SKSpriteNode(color: UIColor.greenColor(), size: CGSizeMake(20, 20))
-        target.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(50, 50))
-        target.physicsBody?.dynamic = false
-        target.position = CGPointMake(200, 530)
+        target = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
+        target.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 50))
+        target.physicsBody?.isDynamic = false
+        target.position = CGPoint(x: 200, y: 530)
         target.name = "Target"
-        target.physicsBody?.categoryBitMask = ColliderType.Target.rawValue
-        target.physicsBody?.collisionBitMask = ColliderType.Player.rawValue
-        target.physicsBody?.contactTestBitMask = ColliderType.Player.rawValue
+        target.physicsBody?.categoryBitMask = ColliderType.target.rawValue
+        target.physicsBody?.collisionBitMask = ColliderType.player.rawValue
+        target.physicsBody?.contactTestBitMask = ColliderType.player.rawValue
         self.addChild(target)
         
         //to move
-        let move = SKAction.sequence([SKAction.moveTo(CGPointMake(0, 530), duration: 2.0),SKAction.moveTo(CGPointMake(320, 530), duration: 2.0)])
-        let moveConstant = SKAction.repeatActionForever(move)
-        target.runAction(moveConstant)
+        let move = SKAction.sequence([SKAction.move(to: CGPoint(x: 0, y: 530), duration: 2.0),SKAction.move(to: CGPoint(x: 320, y: 530), duration: 2.0)])
+        let moveConstant = SKAction.repeatForever(move)
+        target.run(moveConstant)
         
         //actual score
         score.text = "Score: \(points)";
         score.name = "Points"
         score.fontSize = 15;
-        score.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        score.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
         self.addChild(score)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //on touch shoot
         var operation:CGFloat = 250.0
         operation *= (CGFloat)(self.value)
-        self.childNodeWithName("Player")?.physicsBody?.applyForce(CGVectorMake (operation, 20000))
+        self.childNode(withName: "Player")?.physicsBody?.applyForce(CGVector (dx: operation, dy: 20000))
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
     
-    func didBeginContact(contact: SKPhysicsContact){
+    func didBegin(_ contact: SKPhysicsContact){
         //if bodys impact
         var firstBody:SKPhysicsBody
         var secondBody:SKPhysicsBody
@@ -90,19 +90,19 @@ class Game: SKScene, SKPhysicsContactDelegate {
         if(firstBody.categoryBitMask == 1 && secondBody.categoryBitMask == 2){
             //if impact:
             //update score (delete and add label)
-            points++
-            self.childNodeWithName("Points")?.removeFromParent()
+            points += 1
+            self.childNode(withName: "Points")?.removeFromParent()
             score.text = "Score: \(points)"
             self.addChild(score)
             //delete object
             secondBody.node?.removeFromParent()
             //wait a second and show object
-            let delay = SKAction.waitForDuration(1)
-            let generar = SKAction.runBlock({
+            let delay = SKAction.wait(forDuration: 1)
+            let generar = SKAction.run({
                 self.addChild(self.target)
             })
             let secuency = SKAction.sequence([delay,generar])
-            self.runAction(secuency)
+            self.run(secuency)
         }
     }
     
