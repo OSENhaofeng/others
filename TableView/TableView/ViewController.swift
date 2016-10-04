@@ -19,15 +19,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     //Number of rows
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4 
     }
             
     //DetailCells
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
-        NSIndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath:
+        IndexPath) -> UITableViewCell{
             let cell:UITableViewCell = UITableViewCell(style:
-                UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
+                UITableViewCellStyle.subtitle, reuseIdentifier: nil)
             cell.textLabel!.text = "Cell text"
             cell.detailTextLabel?.text = "Cell Subtitle"
             cell.imageView!.image = UIImage(named:"image1.png")
@@ -35,13 +35,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     //Title
-    func tableView(tableView: UITableView, titleForHeaderInSection section:
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section:
         Int) -> String?{
             return "Head"
     }
     
     //Foot Subtitle
-    func tableView(tableView: UITableView, titleForFooterInSection section:
+    func tableView(_ tableView: UITableView, titleForFooterInSection section:
         Int) -> String?{
             return "Foot"
     }
