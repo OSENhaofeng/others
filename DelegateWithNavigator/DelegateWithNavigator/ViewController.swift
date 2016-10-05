@@ -12,10 +12,10 @@ class ViewController: UIViewController, myDelegate {
     
     @IBOutlet weak var principalLabel: UILabel!
     
-    @IBAction func mainButton(sender: UIButton) {
+    @IBAction func mainButton(_ sender: UIButton) {
         
         //we got it the final instance in storyboard
-        let secondController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
+        let secondController: SecondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         secondController.data = "Text from superclass"
         //who is it delegate
         secondController.delegate = self
@@ -34,7 +34,7 @@ class ViewController: UIViewController, myDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func writeDateInLabel(data:NSString){
+    func writeDateInLabel(_ data:NSString){
         self.principalLabel.text = data as String
     }
     

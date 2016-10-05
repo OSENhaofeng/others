@@ -14,16 +14,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var results: NSArray! = NSArray()
     var appDel: AppDelegate!
     var context: NSManagedObjectContext!
-    var request : NSFetchRequest!
+    var request : NSFetchRequest<AnyObject>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDel = UIApplication.shared.delegate as! AppDelegate
         context = appDel.managedObjectContext
         
         //Code to add a movie
-        let movie = NSEntityDescription.insertNewObjectForEntityForName("Movie", inManagedObjectContext:  context) 
+        let movie = NSEntityDescription.insertNewObject(forEntityName: "Movie", into:  context) 
         movie.setValue("El Hobbit: Un viaje inesperado", forKey: "title")
         movie.setValue("2013", forKey: "year")
         movie.setValue("Peter Jackson", forKey: "director")
@@ -47,22 +47,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func loadTable(){
         let request = NSFetchRequest(entityName: "Movie")
         request.returnsObjectsAsFaults = false
-        results = try! context.executeFetchRequest(request)
+        results = try! context.fetch(request)
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
-        let aux = results[indexPath.row] as! NSManagedObject
-        cell.title.text = aux.valueForKey("title") as? String
-        cell.director.text = aux.valueForKey("director") as? String
-        cell.year.text = aux.valueForKey("year") as? String
-        cell.myImage.image = UIImage(named:aux.valueForKey("image") as! String)
+        let cell: MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell") as! MyTableViewCell
+        let aux = results[(indexPath as NSIndexPath).row] as! NSManagedObject
+        cell.title.text = aux.value(forKey: "title") as? String
+        cell.director.text = aux.value(forKey: "director") as? String
+        cell.year.text = aux.value(forKey: "year") as? String
+        cell.myImage.image = UIImage(named:aux.value(forKey: "image") as! String)
         
         return cell
     }

@@ -16,11 +16,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDel: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let context : NSManagedObjectContext = appDel.managedObjectContext
         
         // INSERT
-        let celda = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext:  context) 
+        let celda = NSEntityDescription.insertNewObject(forEntityName: "Cell", into:  context) 
         celda.setValue("Yoda Tux", forKey: "title")
         celda.setValue("Science Fiction", forKey: "subtitle")
         celda.setValue("yodaTux.png", forKey: "image")
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let request = NSFetchRequest (entityName: "Cell")
         request.returnsObjectsAsFaults = false
-        results = try? context.executeFetchRequest(request)
+        results = try? context.fetch(request)
             
         if (results!.count>0){
             for res in results! {
@@ -47,23 +47,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                         
-        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
-        let aux = results![indexPath.row] as! NSManagedObject
+        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: nil)
+        let aux = results![(indexPath as NSIndexPath).row] as! NSManagedObject
                         
-        cell.textLabel!.text = aux.valueForKey("title") as? String
-        cell.detailTextLabel?.text = aux.valueForKey("subtitle") as? String
-        cell.imageView!.image = UIImage(named: aux.valueForKey("image") as! String)
+        cell.textLabel!.text = aux.value(forKey: "title") as? String
+        cell.detailTextLabel?.text = aux.value(forKey: "subtitle") as? String
+        cell.imageView!.image = UIImage(named: aux.value(forKey: "image") as! String)
                         
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results!.count
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int)-> String?  {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int)-> String?  {
         return "TuxMania"
     }
     
