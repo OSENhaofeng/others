@@ -9,24 +9,24 @@ for element in array {
 
 var array2 = [1,2,3,4,5,6,7,8,9,10];
 
-func example1(integers: NSArray) {
+func example1(integers: [Int]) {
     
-    var number:NSInteger = 0
+    var number = 0
     
     for element in integers{
-    number += (element as! NSNumber).integerValue
+    number += element
     }
     print("Sum all array items: \(number)")
 }
 
-example1(array2)
+example1(integers: array2)
 
-func example2() -> NSMutableArray {
+func example2() -> [Int] {
     
-    let array = NSMutableArray()
+    var array = [Int]()
 
-    for var i = 11; i<=20; i++ {
-    array.addObject(i)
+    for i in 11...20 {
+		array.append(i)
     }
     
     return array
@@ -34,25 +34,21 @@ func example2() -> NSMutableArray {
 
 var array3 = example2()
 //show nsmutable array value sum
-example1(array3)
+example1(integers: array3)
 
 //delete pair items from array
 func example3()  {
     
-    let array = example2()
-    
-    for var i = 0; i<array.count; i++ {
-        if ((array.objectAtIndex(i) as! Int % 2) == 0){
-        array.removeObjectAtIndex(i)
-        }
-    }
-    
+    var array = example2()
+	
+	array = array.filter({$0 % 2 != 0})
+	
     //print pair items from array
-    example1(array)
+    example1(integers: array)
 }
 
 //inferred types
-func getClassName(obj : AnyObject) -> String {
+func getClassName(obj : Any) -> String {
     let objectClass : AnyClass! = object_getClass(obj)
     let className = objectClass.description()
     
@@ -67,10 +63,10 @@ var mutableCocoaArray = NSMutableArray()
 var 🤔 = 5
 var cadena = "hola"
 
-print(getClassName(swiftArray))
-print(getClassName(swiftDictionary))
-print(getClassName(cocoaArray))
-print(getClassName(mutableCocoaArray))
-print(getClassName(🤔))
-print(getClassName(cadena))
+print(getClassName(obj: swiftArray))
+print(getClassName(obj: swiftDictionary))
+print(getClassName(obj: cocoaArray))
+print(getClassName(obj: mutableCocoaArray))
+print(getClassName(obj: 🤔))
+print(getClassName(obj: cadena))
 print(🤔.description)
