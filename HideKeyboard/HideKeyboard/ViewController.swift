@@ -25,13 +25,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // called when 'return' key pressed. return NO to ignore.
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
     }
     
     //called when users tap out of textfield
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
          self.view.endEditing(true)
     }
 

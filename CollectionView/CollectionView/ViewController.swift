@@ -20,16 +20,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.didReceiveMemoryWarning()
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count * 5
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier: String = "CollectionCell"
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) 
+        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) 
         
         let imageView = cell.viewWithTag(1) as! UIImageView
-        imageView.image = items.objectAtIndex(indexPath.row%9) as? UIImage
+        imageView.image = items.object(at: (indexPath as NSIndexPath).row%9) as? UIImage
         return cell
     }
 

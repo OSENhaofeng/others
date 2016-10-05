@@ -16,7 +16,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var collision: UICollisionBehavior!
     
-    @IBAction func gravity(sender: UIButton) {
+    @IBAction func gravity(_ sender: UIButton) {
         animator.removeAllBehaviors()
         //gravity, push and attachment
         let gravity = UIGravityBehavior(items: [self.gravity,self.push,self.attachment])
@@ -27,9 +27,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         animator.addBehavior(collision)
     }
     
-    @IBAction func push(sender: AnyObject) {
+    @IBAction func push(_ sender: AnyObject) {
         animator.removeAllBehaviors()
-        let push = UIPushBehavior(items: [self.gravity,self.push,self.attachment], mode:UIPushBehaviorMode.Instantaneous)
+        let push = UIPushBehavior(items: [self.gravity,self.push,self.attachment], mode:UIPushBehaviorMode.instantaneous)
         push.magnitude = 2
         
         animator.addBehavior(push)
@@ -41,9 +41,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var attachmentBehavior: UIAttachmentBehavior? = nil
     
-    @IBAction func attachment(sender: AnyObject) {
+    @IBAction func attachment(_ sender: AnyObject) {
         animator.removeAllBehaviors()
-        let anchorPoint = CGPointMake(self.attachment.center.x, self.attachment.center.y)
+        let anchorPoint = CGPoint(x: self.attachment.center.x, y: self.attachment.center.y)
         attachmentBehavior = UIAttachmentBehavior(item: self.attachment, attachedToAnchor: anchorPoint)
         attachmentBehavior!.frequency = 0.5
         attachmentBehavior!.damping = 2
@@ -54,9 +54,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         animator.addBehavior(collision)
     }
     
-    @IBAction func handleAttachment(sender: UIPanGestureRecognizer) {
+    @IBAction func handleAttachment(_ sender: UIPanGestureRecognizer) {
         if((attachmentBehavior) != nil){
-            attachmentBehavior!.anchorPoint = sender.locationInView(self.view)
+            attachmentBehavior!.anchorPoint = sender.location(in: self.view)
         }
     }
     
@@ -66,11 +66,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         animator = UIDynamicAnimator(referenceView: self.view)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let max: CGRect = UIScreen.mainScreen().bounds
-        let snap1 = UISnapBehavior(item: self.gravity, snapToPoint: CGPointMake(max.size.width/2, max.size.height/2 - 50))
-        let snap2 = UISnapBehavior(item: self.push, snapToPoint: CGPointMake(max.size.width/2, max.size.height/2 ))
-        let snap3 = UISnapBehavior(item: self.attachment, snapToPoint: CGPointMake(max.size.width/2, max.size.height/2 + 50))
+    override func viewDidAppear(_ animated: Bool) {
+        let max: CGRect = UIScreen.main.bounds
+        let snap1 = UISnapBehavior(item: self.gravity, snapTo: CGPoint(x: max.size.width/2, y: max.size.height/2 - 50))
+        let snap2 = UISnapBehavior(item: self.push, snapTo: CGPoint(x: max.size.width/2, y: max.size.height/2 ))
+        let snap3 = UISnapBehavior(item: self.attachment, snapTo: CGPoint(x: max.size.width/2, y: max.size.height/2 + 50))
         snap1.damping = 1
         snap2.damping = 2
         snap3.damping = 4

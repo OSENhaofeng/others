@@ -12,65 +12,65 @@ import CloudKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var celdas: NSMutableArray = NSMutableArray()
-    var container = NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(nil)
+    var container = FileManager.default.url(forUbiquityContainerIdentifier: nil)
     var metadataQuery : NSMetadataQuery!
     
     @IBOutlet weak var collectionView: UICollectionView!
   
-    @IBAction func deletePhotos(sender: UIBarButtonItem) {
+    @IBAction func deletePhotos(_ sender: UIBarButtonItem) {
         
         removeImagesFromICloud()
     }
     
-    @IBAction func choosePhotos(sender: UIBarButtonItem) {
-        let action = UIAlertController (title: "Photos", message: "Select source", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        action.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+    @IBAction func choosePhotos(_ sender: UIBarButtonItem) {
+        let action = UIAlertController (title: "Photos", message: "Select source", preferredStyle: UIAlertControllerStyle.actionSheet)
+        action.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             print("Choose camera")
             self.getPhoto(true)
         }))
-        action.addAction(UIAlertAction(title: "Galery", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+        action.addAction(UIAlertAction(title: "Galery", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             print("Choose galery")
             self.getPhoto(false)
         }))
-        self.presentViewController(action, animated: true, completion: nil)
+        self.present(action, animated: true, completion: nil)
     }
     
-    func getPhoto (camera: Bool){
+    func getPhoto (_ camera: Bool){
         let picker = UIImagePickerController()
         picker.delegate = self
         if (camera){
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.sourceType = UIImagePickerControllerSourceType.camera
         }else{
-            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             print("Choose from galery 2")
         }
         picker.allowsEditing = false
-        self.presentViewController(picker, animated: true, completion: nil)
+        self.present(picker, animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: nil)
         let fullImage = (info as NSDictionary)[UIImagePickerControllerOriginalImage] as! UIImage
         print("Choose from galery 3")
         savePhotoICloud(fullImage)
     }
 
-    func savePhotoICloud (image: UIImage){
-        let date = NSDate()
-        let df = NSDateFormatter()
+    func savePhotoICloud (_ image: UIImage){
+        let date = Date()
+        let df = DateFormatter()
         df.dateFormat = "dd_MM_yy_hh_mm_ss"
-        let photoName = NSString (format: "PHOTO_%@", df.stringFromDate(date))
+        let photoName = NSString (format: "PHOTO_%@", df.string(from: date))
         
         if (container != nil){
-            let fileURLiCloud = container!.URLByAppendingPathComponent("Documents").URLByAppendingPathComponent(photoName as String)
+            let fileURLiCloud = container!.appendingPathComponent("Documents").appendingPathComponent(photoName as String)
             let photo = DocumentPhoto (fileURL: fileURLiCloud)
             photo.image = image
-            photo.saveToURL(fileURLiCloud, forSaveOperation: UIDocumentSaveOperation.ForCreating, completionHandler: { (success) -> Void
+            photo.save(to: fileURLiCloud, for: UIDocumentSaveOperation.forCreating, completionHandler: { (success) -> Void
                 in
-                self.celdas.addObject(image)
+                self.celdas.add(image)
                 print("Choose from galery 4")
                 self.collectionView.reloadData()
             })
@@ -85,10 +85,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.queryDeleted(_:)), name: NSMetadataQueryDidFinishGatheringNotification,
+            NotificationCenter.default.addObserver(self, selector: #selector(ViewController.queryDeleted(_:)), name: NSNotification.Name.NSMetadataQueryDidFinishGathering,
                 object: self.metadataQuery)
             
-            self.metadataQuery.startQuery()
+            self.metadataQuery.start()
         }
     }
     
@@ -100,50 +100,50 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             let predicate = NSPredicate(format: "%K like 'PHOTO*'", NSMetadataItemFSNameKey)
             self.metadataQuery.predicate = predicate
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.queryFinished(_:)), name: NSMetadataQueryDidFinishGatheringNotification, object: self.metadataQuery)
-            self.metadataQuery.startQuery()
+            NotificationCenter.default.addObserver(self, selector: #selector(ViewController.queryFinished(_:)), name: NSNotification.Name.NSMetadataQueryDidFinishGathering, object: self.metadataQuery)
+            self.metadataQuery.start()
         }
     }
     
-    func queryFinished(notification: NSNotification) {
+    func queryFinished(_ notification: Notification) {
         let mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
-        mq.stopQuery()
+        mq.stop()
         celdas.removeAllObjects()
         for i in 0..<mq.resultCount {
-            let result = mq.resultAtIndex(i) as! NSMetadataItem
+            let result = mq.result(at: i) as! NSMetadataItem
            // var name = result.valueForAttribute(NSMetadataItemFSNameKey) as! NSString
-            let url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
+            let url = result.value(forAttribute: NSMetadataItemURLKey) as! URL
             let document : DocumentPhoto! = DocumentPhoto(fileURL: url)
             
-            document?.openWithCompletionHandler({ (success) -> Void in
+            document?.open(completionHandler: { (success) -> Void in
                 if (success == true){
-                    self.celdas.addObject(document.image)
+                    self.celdas.add(document.image)
                     print("addobject in queryfinished")
                     self.collectionView.reloadData()
                 }
             }) }
     }
     
-    func queryDeleted(notification: NSNotification) {
+    func queryDeleted(_ notification: Notification) {
         let mq = notification.object as! NSMetadataQuery
         mq.disableUpdates()
-        mq.stopQuery()
+        mq.stop()
         celdas.removeAllObjects()
         for i in 0..<mq.resultCount {
-            let result = mq.resultAtIndex(i) as! NSMetadataItem
-            let url = result.valueForAttribute(NSMetadataItemURLKey) as! NSURL
+            let result = mq.result(at: i) as! NSMetadataItem
+            let url = result.value(forAttribute: NSMetadataItemURLKey) as! URL
             let document : DocumentPhoto! = DocumentPhoto(fileURL: url)
             
-            let fileManager = NSFileManager()
+            let fileManager = FileManager()
             do {
-                try fileManager.removeItemAtURL(document.fileURL)
+                try fileManager.removeItem(at: document.fileURL)
             } catch _ {
             }
             
             self.collectionView.reloadData()
             
-            document?.openWithCompletionHandler({ (success) -> Void in
+            document?.open(completionHandler: { (success) -> Void in
                 if (success == true){
                     self.collectionView.reloadData()
                 }
@@ -159,20 +159,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.didReceiveMemoryWarning()
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier:NSString = "CollectionCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier as String, forIndexPath: indexPath) 
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier as String, for: indexPath) 
         let imageView:UIImageView = cell.viewWithTag(1) as! UIImageView
-        imageView.image = celdas.objectAtIndex(indexPath.row) as? UIImage
+        imageView.image = celdas.object(at: (indexPath as NSIndexPath).row) as? UIImage
         
         return cell
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return celdas.count
     }
     

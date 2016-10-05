@@ -33,22 +33,22 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactArray.count
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
         
-        let contact = contactArray[indexPath.row]
+        let contact = contactArray[(indexPath as NSIndexPath).row]
         cell.textLabel!.text = contact.name + " " + contact.surname
-        cell.tag = indexPath.row
-        print("Cell number: \(indexPath.row)")
+        cell.tag = (indexPath as NSIndexPath).row
+        print("Cell number: \((indexPath as NSIndexPath).row)")
         return cell
     }
     
@@ -90,13 +90,13 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     // MARK: - Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailFromListado" {
-            let detailViewController = segue.destinationViewController as! DetailViewController
+            let detailViewController = segue.destination as! DetailViewController
             let cell = sender as! UITableViewCell
             detailViewController.contact = contactArray[cell.tag]
         } else if segue.identifier == "goToNewContactFromListado" {
-            let navigationController = segue.destinationViewController as! UINavigationController
+            let navigationController = segue.destination as! UINavigationController
             let newContactViewController = navigationController.viewControllers[0] as! NewContactViewController
             newContactViewController.delegate = self
         }
@@ -104,7 +104,7 @@ class TableListViewController: UITableViewController, NewContactDelegate {
     
     // MARK: - Delegate
     
-    func newContact(contact: Contact) {
+    func newContact(_ contact: Contact) {
         contactArray.append(contact)
         tableView.reloadData()
     }

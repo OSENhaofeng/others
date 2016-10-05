@@ -172,9 +172,11 @@
 				TargetAttributes = {
 					07767AA31ADA86F4003EE2FA = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0800;
 					};
 					07767AB81ADA86F4003EE2FA = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 07767AA31ADA86F4003EE2FA;
 					};
 				};
@@ -356,6 +358,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -368,6 +371,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -387,6 +391,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasicAgenda.app/BasicAgenda";
 			};
 			name = Debug;
@@ -403,6 +408,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasicAgenda.app/BasicAgenda";
 			};
 			name = Release;

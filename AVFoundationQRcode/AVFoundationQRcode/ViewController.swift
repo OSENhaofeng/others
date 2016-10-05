@@ -26,16 +26,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
         setupCaptureSession()
         if captureSession == nil {
-            let alert = UIAlertController(title: "Camera required", message: "This device has no camera. Is this an iOS Simulator?", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "Got it", style: UIAlertActionStyle.Default, handler: nil)
+            let alert = UIAlertController(title: "Camera required", message: "This device has no camera. Is this an iOS Simulator?", preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "Got it", style: UIAlertActionStyle.default, handler: nil)
             alert.addAction(action)
-            self.presentViewController(alert, animated: false, completion: nil)
+            self.present(alert, animated: false, completion: nil)
         }
         else {
             previewLayer.frame = previewView.bounds
             previewView.layer.addSublayer(previewLayer)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.startRunning), name:UIApplicationWillEnterForegroundNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.stopRunning), name:UIApplicationDidEnterBackgroundNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(ViewController.startRunning), name:NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(ViewController.stopRunning), name:NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         }
     }
     
@@ -58,11 +58,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         running = false
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.startRunning()
     }
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.stopRunning()
     }
@@ -72,7 +72,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         if(captureSession != nil){
             return
         }
-        videoDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         if(videoDevice == nil){
             print("No camera on this device")
@@ -89,7 +89,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         metadataOutput = AVCaptureMetadataOutput()
-        let metadataQueue = dispatch_queue_create("com.example.QRCode.metadata", nil)
+        let metadataQueue = DispatchQueue(label: "com.example.QRCode.metadata", attributes: [])
         metadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
         
         if(captureSession.canAddOutput(metadataOutput)){
@@ -97,7 +97,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         } 
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
             let elemento = metadataObjects.first as?
             AVMetadataMachineReadableCodeObject
             if(elemento != nil){

@@ -167,9 +167,11 @@
 				TargetAttributes = {
 					075FD4C81A34D5A000513A3A = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0800;
 					};
 					075FD4DD1A34D5A000513A3A = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 075FD4C81A34D5A000513A3A;
 					};
 				};
@@ -348,6 +350,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -360,6 +363,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -379,6 +383,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVFoundationQRcode.app/AVFoundationQRcode";
 			};
 			name = Debug;
@@ -395,6 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVFoundationQRcode.app/AVFoundationQRcode";
 			};
 			name = Release;

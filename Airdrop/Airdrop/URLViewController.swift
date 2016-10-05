@@ -14,14 +14,14 @@ class URLViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var webView2: UIWebView!
     
-    @IBAction func send(sender: UIButton) {
-        let url:NSURL = NSURL(string: myURL.text!)!
+    @IBAction func send(_ sender: UIButton) {
+        let url:URL = URL(string: myURL.text!)!
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.present(controller, animated: true, completion: nil)
     }
     
-    @IBAction func load(sender: UIButton) {
-        let request = NSURLRequest(URL: NSURL(string: myURL.text!)!)
+    @IBAction func load(_ sender: UIButton) {
+        let request = URLRequest(url: URL(string: myURL.text!)!)
         self.webView2.loadRequest(request)
     }
     
@@ -32,8 +32,8 @@ class URLViewController: UIViewController, UIWebViewDelegate {
         
         //1. Load web site into my web view
         
-        let myURL = NSURL(string: "http://www.swiftdeveloperblog.com");
-        let myURLRequest:NSURLRequest = NSURLRequest(URL: myURL!);
+        let myURL = URL(string: "http://www.swiftdeveloperblog.com");
+        let myURLRequest:URLRequest = URLRequest(url: myURL!);
         webView2.loadRequest(myURLRequest);
         
         

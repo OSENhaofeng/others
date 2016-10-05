@@ -261,19 +261,23 @@
 				TargetAttributes = {
 					D9411E1A1C8D91D700B752F5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					D9411E2E1C8D91D700B752F5 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = WR783762SA;
+						LastSwiftMigration = 0800;
 						TestTargetID = D9411E1A1C8D91D700B752F5;
 					};
 					D9411E391C8D91D700B752F5 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = WR783762SA;
+						LastSwiftMigration = 0800;
 						TestTargetID = D9411E1A1C8D91D700B752F5;
 					};
 					D9411E4F1C8D933100B752F5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -501,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -515,6 +520,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -526,6 +532,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomKeyboard.app/CustomKeyboard";
 			};
 			name = Debug;
@@ -538,6 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomKeyboard.app/CustomKeyboard";
 			};
 			name = Release;
@@ -549,6 +557,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboardUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CustomKeyboard;
 				USES_XCTRUNNER = YES;
 			};
@@ -561,6 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboardUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CustomKeyboard;
 				USES_XCTRUNNER = YES;
 			};
@@ -575,6 +585,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboard.SampleCustomKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -587,6 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = takeo.asai.CustomKeyboard.SampleCustomKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
