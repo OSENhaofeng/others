@@ -24,20 +24,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func pinchGesture(sender : UIPinchGestureRecognizer) {
+    @IBAction func pinchGesture(_ sender : UIPinchGestureRecognizer) {
         let factor = sender.scale
         if (factor > 1) {
             //increase zoom
-            sender.view?.transform = CGAffineTransformMakeScale(
-                lastScaleFactor + (factor-1),
-                lastScaleFactor + (factor-1));
+            sender.view?.transform = CGAffineTransform(
+                scaleX: lastScaleFactor + (factor-1),
+                y: lastScaleFactor + (factor-1));
         } else {
             //decrease zoom
-            sender.view?.transform = CGAffineTransformMakeScale(
-                lastScaleFactor * factor,
-                lastScaleFactor * factor);
+            sender.view?.transform = CGAffineTransform(
+                scaleX: lastScaleFactor * factor,
+                y: lastScaleFactor * factor);
         }
-        if (sender.state == UIGestureRecognizerState.Ended){
+        if (sender.state == UIGestureRecognizerState.ended){
             if (factor > 1) {
                 lastScaleFactor += (factor-1);
             } else {
