@@ -18,10 +18,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier=="NewClass"){
-            let myDestVC = segue.destinationViewController as! NewClassViewController
+            let myDestVC = segue.destination as! NewClassViewController
             myDestVC.labelName = "text"
         }
     }

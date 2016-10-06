@@ -10,15 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBAction func buttonAction(sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let viewController:UIViewController = storyboard.instantiateViewControllerWithIdentifier("NewViewController") 
-        self.presentViewController(viewController, animated: true, completion: nil)
+    @IBAction func buttonAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "NewViewController") 
+        self.present(viewController, animated: true, completion: nil)
     }
     
-    @IBAction func buttonAction2(sender: UIButton) {
+    @IBAction func buttonAction2(_ sender: UIButton) {
         let newController = UIViewController (nibName: "NewClass", bundle: nil)
-        self.presentViewController(newController, animated: true, completion: nil)
+        self.present(newController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
