@@ -12,24 +12,24 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var preferenceSwitch: UISwitch!
     
-    @IBAction func savePreferenceState(sender: AnyObject) {
+    @IBAction func savePreferenceState(_ sender: AnyObject) {
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if preferenceSwitch.on {
-            defaults.setBool(true, forKey: "SwitchState")
+        if preferenceSwitch.isOn {
+            defaults.set(true, forKey: "SwitchState")
         } else {
-            defaults.setBool(false, forKey: "SwitchState")
+            defaults.set(false, forKey: "SwitchState")
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if (defaults.objectForKey("SwitchState") != nil) {
-            preferenceSwitch.on = defaults.boolForKey("SwitchState")
+        if (defaults.object(forKey: "SwitchState") != nil) {
+            preferenceSwitch.isOn = defaults.bool(forKey: "SwitchState")
         }
     }
 
