@@ -15,19 +15,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
+        swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
         image2.addGestureRecognizer(swipeGestureRight)
         
         let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureDown.direction = UISwipeGestureRecognizerDirection.Down
+        swipeGestureDown.direction = UISwipeGestureRecognizerDirection.down
         image2.addGestureRecognizer(swipeGestureDown)
         
         let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
+        swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.left
         image2.addGestureRecognizer(swipeGestureLeft)
         
         let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
+        swipeGestureUp.direction = UISwipeGestureRecognizerDirection.up
         image2.addGestureRecognizer(swipeGestureUp)
         
         super.viewDidLoad()
@@ -35,21 +35,21 @@ class ViewController: UIViewController {
         image2.image = UIImage(named: "apple.png")
     }
     
-    @IBAction func respondToSwipeGesture(send: UIGestureRecognizer) {
+    @IBAction func respondToSwipeGesture(_ send: UIGestureRecognizer) {
         
         if let swipeGesture = send as? UISwipeGestureRecognizer {
             
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.Right:
+            case UISwipeGestureRecognizerDirection.right:
                 changeImage()
                 print("Swiped right")
-            case UISwipeGestureRecognizerDirection.Down:
+            case UISwipeGestureRecognizerDirection.down:
                 changeImage()
                 print("Swiped down")
-            case UISwipeGestureRecognizerDirection.Left:
+            case UISwipeGestureRecognizerDirection.left:
                 changeImage()
                 print("Swiped left")
-            case UISwipeGestureRecognizerDirection.Up:
+            case UISwipeGestureRecognizerDirection.up:
                 changeImage()
                 print("Swiped up")
             default:
