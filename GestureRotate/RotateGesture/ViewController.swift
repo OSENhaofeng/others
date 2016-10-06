@@ -24,11 +24,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func rotateGesture(sender : UIRotationGestureRecognizer) {
+    @IBAction func rotateGesture(_ sender : UIRotationGestureRecognizer) {
         let rotation:CGFloat = sender.rotation
-        let transform:CGAffineTransform  = CGAffineTransformMakeRotation(rotation + netRotation)
+        let transform:CGAffineTransform  = CGAffineTransform(rotationAngle: rotation + netRotation)
         sender.view?.transform = transform
-        if (sender.state == UIGestureRecognizerState.Ended){
+        if (sender.state == UIGestureRecognizerState.ended){
             netRotation += rotation;
         }
     }
