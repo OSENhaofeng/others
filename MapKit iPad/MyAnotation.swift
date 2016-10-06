@@ -15,10 +15,10 @@ class MyAnotation: NSObject, MKAnnotation {
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D
     func getTitle() -> NSString{
-        return self.title!
+        return self.title! as NSString
     }
     func getSubTitle() -> NSString {
-        return self.subtitle!
+        return self.subtitle! as NSString
     }
     init(c:CLLocationCoordinate2D, t:String, st: String){
         coordinate = c

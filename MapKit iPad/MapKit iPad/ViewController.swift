@@ -17,21 +17,21 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     var set = NSMutableArray()
     
-    @IBAction func createAnotation(sender: AnyObject) {
+    @IBAction func createAnotation(_ sender: AnyObject) {
         
         let a = MyAnotation(c: myMap.centerCoordinate, t: "Center", st: "The map center")
-        mapView(myMap, viewForAnnotation: a)
+        mapView(myMap, viewFor: a)
         myMap.addAnnotation(a)
-        set.addObject(a)
+        set.add(a)
     }
     
-    @IBAction func deleteAnotation(sender: AnyObject) {
+    @IBAction func deleteAnotation(_ sender: AnyObject) {
         //new for swift 2.0
         let annotationsToRemove = self.myMap.annotations
         self.myMap.removeAnnotations(annotationsToRemove)
     }
     
-    @IBAction func coordinates(sender: AnyObject) {
+    @IBAction func coordinates(_ sender: AnyObject) {
  
         latitude.text = "\(myMap.centerCoordinate.latitude)"
         longitude.text = "\(myMap.centerCoordinate.longitude)"
@@ -46,7 +46,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation:
+    func mapView(_ mapView: MKMapView, viewFor annotation:
         MKAnnotation) -> MKAnnotationView?{
             let pinView:MKPinAnnotationView = MKPinAnnotationView(annotation:
                 annotation, reuseIdentifier: "Custom")
