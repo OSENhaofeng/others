@@ -25,14 +25,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func action(gestureRecognizer:UIGestureRecognizer) {
+    @IBAction func action(_ gestureRecognizer:UIGestureRecognizer) {
         
-        if (gestureRecognizer.state == UIGestureRecognizerState.Began){
+        if (gestureRecognizer.state == UIGestureRecognizerState.began){
             
-            let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .Alert)
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+            let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
             alertController.addAction(OKAction)
-            self.presentViewController(alertController, animated: true) { }
+            self.present(alertController, animated: true) { }
         }
     }
     
