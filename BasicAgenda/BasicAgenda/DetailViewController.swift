@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         nameLabel.text = contact.name
         surnameLabel.text = contact.surname
         phoneLabel.text = contact.phone

@@ -30,12 +30,12 @@ class ViewController: UIViewController {
         
         //walk right
         let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.walkRight(_:)))
-        swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
+        swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipeGestureRight)
         
         //walk left
         let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.walkLeft(_:)))
-        swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
+        swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipeGestureLeft)
         
         //jump
@@ -51,65 +51,65 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-func walkLeft(send: UIGestureRecognizer) {
+func walkLeft(_ send: UIGestureRecognizer) {
     print("walk left");
     //CHECK IF OUT OF SCREEN
     if (penguinView.center.x < 0.0) {
-        penguinView.center = CGPointMake(view.frame.size.width, penguinView.center.y);
+        penguinView.center = CGPoint(x: view.frame.size.width, y: penguinView.center.y);
     }
     
     //FLIP AROUND FOR WALKING LEFT
-    self.penguinView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    self.penguinView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0);
     
     //START WALK ANIMATION
     penguinView.startAnimating()
     
     //MOVE THE IMAGE VIEW TO LEFT
-    UIView.animateWithDuration(0.6, animations: { () -> Void in
-        self.penguinView.center = CGPointMake(self.penguinView.center.x - 30, self.penguinView.center.y);
+    UIView.animate(withDuration: 0.6, animations: { () -> Void in
+        self.penguinView.center = CGPoint(x: self.penguinView.center.x - 30, y: self.penguinView.center.y);
     })
 }
 
-func walkRight(send: UIGestureRecognizer) {
+func walkRight(_ send: UIGestureRecognizer) {
     print("walk right");
     if (self.penguinView.center.x > self.view.frame.size.width) {
-        self.penguinView.center = CGPointMake(0, self.penguinView.center.y);
+        self.penguinView.center = CGPoint(x: 0, y: self.penguinView.center.y);
     }
             
-    self.penguinView.transform = CGAffineTransformIdentity;
+    self.penguinView.transform = CGAffineTransform.identity;
     penguinView.startAnimating()
-    UIView.animateWithDuration(0.6, animations: { () -> Void in
-        self.penguinView.center = CGPointMake(self.penguinView.center.x + 30, self.penguinView.center.y)
+    UIView.animate(withDuration: 0.6, animations: { () -> Void in
+        self.penguinView.center = CGPoint(x: self.penguinView.center.x + 30, y: self.penguinView.center.y)
     })
 }
 
-func jump(send: UIGestureRecognizer) {
+func jump(_ send: UIGestureRecognizer) {
     penguinView.startAnimating()
     
-    UIView.animateWithDuration(0.25, animations: { () -> Void in
-        self.penguinView.center = CGPointMake(self.penguinView.center.x, self.penguinView.center.y - 50)
+    UIView.animate(withDuration: 0.25, animations: { () -> Void in
+        self.penguinView.center = CGPoint(x: self.penguinView.center.x, y: self.penguinView.center.y - 50)
     }, completion: { (finished: Bool) -> Void in
         self.jumpBack()
     })
 }
     
 func jumpBack() {
-    UIView.animateWithDuration(0.25, animations: { () -> Void in
-    self.penguinView.center = CGPointMake(self.penguinView.center.x, self.penguinView.center.y + 50)
+    UIView.animate(withDuration: 0.25, animations: { () -> Void in
+    self.penguinView.center = CGPoint(x: self.penguinView.center.x, y: self.penguinView.center.y + 50)
     })
 }
 
-func longPress(send: UIGestureRecognizer) {
-    UIView.animateWithDuration(0.33, animations: { () -> Void in
+func longPress(_ send: UIGestureRecognizer) {
+    UIView.animate(withDuration: 0.33, animations: { () -> Void in
         self.dieCenter = self.penguinView.center
-        self.penguinView.center = CGPointMake(self.penguinView.center.x, self.view.frame.size.height)
+        self.penguinView.center = CGPoint(x: self.penguinView.center.x, y: self.view.frame.size.height)
     }, completion: { (finished: Bool) -> Void in
          self.longPressBack()
     })
 }
 
 func longPressBack() {
-    UIView.animateWithDuration(0.25, animations: { () -> Void in
+    UIView.animate(withDuration: 0.25, animations: { () -> Void in
         self.penguinView.center = self.dieCenter!
     })
 }

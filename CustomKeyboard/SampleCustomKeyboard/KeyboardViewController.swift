@@ -35,14 +35,14 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
 
         let viewXib = UINib(nibName: "CustomKeyboard", bundle: nil)
-        self.view = viewXib.instantiateWithOwner(self, options: nil)[0] as! UIView;
+        self.view = viewXib.instantiate(withOwner: self, options: nil)[0] as! UIView;
         for v in self.view.subviews {
-            if v.isKindOfClass(UIButton) {
+            if v.isKind(of: UIButton.self) {
                 let w = v as! UIButton
                 if w.currentTitle == "Center" {
-                    w.addTarget(self, action: #selector(KeyboardViewController.centerButton(_:)), forControlEvents: .TouchDown)
+                    w.addTarget(self, action: #selector(KeyboardViewController.centerButton(_:)), for: .touchDown)
                 } else {
-                    w.addTarget(self, action: #selector(KeyboardViewController.pushButton(_:)), forControlEvents: .TouchDown)
+                    w.addTarget(self, action: #selector(KeyboardViewController.pushButton(_:)), for: .touchDown)
                 }
             }
         }
@@ -50,18 +50,18 @@ class KeyboardViewController: UIInputViewController {
         
     
         // Perform custom UI setup here
-        self.nextKeyboardButton = UIButton(type: .System)
+        self.nextKeyboardButton = UIButton(type: .system)
     
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard?", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
+        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard?", comment: "Title for 'Next Keyboard' button"), for: UIControlState())
         self.nextKeyboardButton.sizeToFit()
         self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
     
-        self.nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), forControlEvents: .TouchUpInside)
+        self.nextKeyboardButton.addTarget(self, action: #selector(UIInputViewController.advanceToNextInputMode), for: .touchUpInside)
         
         self.view.addSubview(self.nextKeyboardButton)
     
-        let nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-        let nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        let nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
     }
 
@@ -70,21 +70,21 @@ class KeyboardViewController: UIInputViewController {
         // Dispose of any resources that can be recreated
     }
 
-    override func textWillChange(textInput: UITextInput?) {
+    override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
 
-    override func textDidChange(textInput: UITextInput?) {
+    override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
     
         var textColor: UIColor
         let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.Dark {
-            textColor = UIColor.whiteColor()
+        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
+            textColor = UIColor.white
         } else {
-            textColor = UIColor.blackColor()
+            textColor = UIColor.black
         }
-        self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
+        self.nextKeyboardButton.setTitleColor(textColor, for: UIControlState())
     }
 
 }

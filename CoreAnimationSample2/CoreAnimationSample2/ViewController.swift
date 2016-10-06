@@ -13,43 +13,43 @@ class ViewController: UIViewController {
     var position = true
     
     @IBOutlet weak var image: UIImageView!
-    @IBAction func animate(sender: UIButton) {
+    @IBAction func animate(_ sender: UIButton) {
         
         if (position){ //EXAMPLE2
         
             let animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
-            animation.toValue = NSValue(CGPoint:CGPointMake(160, 200))
+            animation.toValue = NSValue(cgPoint:CGPoint(x: 160, y: 200))
             
             //EXAMPLE2
             animation.fillMode = kCAFillModeForwards
-            animation.removedOnCompletion = false
+            animation.isRemovedOnCompletion = false
             let resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
-            resizeAnimation.toValue = NSValue(CGSize:CGSizeMake(240, 60))
+            resizeAnimation.toValue = NSValue(cgSize:CGSize(width: 240, height: 60))
             
             //EXAMPLE2
             resizeAnimation.fillMode = kCAFillModeForwards
-            resizeAnimation.removedOnCompletion = false
-            image.layer.addAnimation(animation, forKey: "position")
-            image.layer.addAnimation(resizeAnimation, forKey: "bounds.size")
+            resizeAnimation.isRemovedOnCompletion = false
+            image.layer.add(animation, forKey: "position")
+            image.layer.add(resizeAnimation, forKey: "bounds.size")
             
             position = false
         }
         else{
             
             let animation:CABasicAnimation! = CABasicAnimation(keyPath:"position")
-            animation.fromValue = NSValue(CGPoint:CGPointMake(160, 200))
+            animation.fromValue = NSValue(cgPoint:CGPoint(x: 160, y: 200))
             
             //EXAMPLE2
             animation.fillMode = kCAFillModeForwards
-            animation.removedOnCompletion = false
+            animation.isRemovedOnCompletion = false
             let resizeAnimation:CABasicAnimation = CABasicAnimation(keyPath:"bounds.size")
-            resizeAnimation.fromValue = NSValue(CGSize:CGSizeMake(240, 60))
+            resizeAnimation.fromValue = NSValue(cgSize:CGSize(width: 240, height: 60))
             
             //EXAMPLE2
             resizeAnimation.fillMode = kCAFillModeForwards
-            resizeAnimation.removedOnCompletion = false
-            image.layer.addAnimation(animation, forKey: "position")
-            image.layer.addAnimation(resizeAnimation, forKey: "bounds.size")
+            resizeAnimation.isRemovedOnCompletion = false
+            image.layer.add(animation, forKey: "position")
+            image.layer.add(resizeAnimation, forKey: "bounds.size")
             
             position = true
         }

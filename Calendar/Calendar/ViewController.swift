@@ -19,9 +19,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eventCalendario: UITextField!
     @IBOutlet weak var titleEvent: UITextField!
     
-    @IBAction func saveCalendar(sender: UIButton) {
-        let calendar = EKCalendar(forEntityType: EKEntityType.Event, eventStore: eventStore)
-        eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {(granted,error) in
+    @IBAction func saveCalendar(_ sender: UIButton) {
+        let calendar = EKCalendar(for: EKEntityType.event, eventStore: eventStore)
+        eventStore.requestAccess(to: EKEntityType.event, completion: {(granted,error) in
             if(granted == false){
                 print("Access Denied")
             } else{
@@ -35,13 +35,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    @IBAction func saveEvent(sender: UIButton) {
-        eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {(granted,error) in
+    @IBAction func saveEvent(_ sender: UIButton) {
+        eventStore.requestAccess(to: EKEntityType.event, completion: {(granted,error) in
             if(granted == false){
                 print("Access Denied")
             }
             else{
-                let arrayCalendars = self.eventStore.calendarsForEntityType(EKEntityType.Event)
+                let arrayCalendars = self.eventStore.calendars(for: EKEntityType.event)
                 var theCalendar: EKCalendar!
                 for calendario in arrayCalendars{
                     if(calendario.title == self.eventCalendario.text){
@@ -53,14 +53,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     let event = EKEvent(eventStore: self.eventStore)
                     event.title = self.titleEvent.text!
                     event.startDate = self.datePicker.date
-                    event.endDate = self.datePicker.date.dateByAddingTimeInterval(3600)
+                    event.endDate = self.datePicker.date.addingTimeInterval(3600)
                     event.calendar = theCalendar
                     do {
-                        try! self.eventStore.saveEvent(event, span: .ThisEvent)
-                        let alert = UIAlertController(title: "Calendar", message: "Event created \(event.title) in \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default, handler: nil))
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.presentViewController(alert, animated: true, completion: nil)
+                        try! self.eventStore.save(event, span: .thisEvent)
+                        let alert = UIAlertController(title: "Calendar", message: "Event created \(event.title) in \(theCalendar.title)", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.default, handler: nil))
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            self.present(alert, animated: true, completion: nil)
                         })
                     }
                 }
@@ -90,14 +90,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.textField.resignFirstResponder()
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;
     }
     
     //called when users tap out of textfield
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 

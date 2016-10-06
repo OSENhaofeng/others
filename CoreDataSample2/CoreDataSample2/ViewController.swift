@@ -16,11 +16,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var surname: UITextField!
     @IBOutlet weak var table: UITableView!
-    @IBAction func save(sender: UIButton) {
+    @IBAction func save(_ sender: UIButton) {
         
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDel: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext
-        let cell = NSEntityDescription.insertNewObjectForEntityForName("Form", inManagedObjectContext:  context) 
+        let cell = NSEntityDescription.insertNewObject(forEntityName: "Form", into:  context) 
         cell.setValue(name.text, forKey: "name")
         cell.setValue(surname.text, forKey: "surname")
         
@@ -42,29 +42,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.loadTable() //start load
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
-        let aux = results![indexPath.row] as! NSManagedObject
-        cell.textLabel!.text = aux.valueForKey("name") as? String
-        cell.detailTextLabel!.text = aux.valueForKey("surname") as? String
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = UITableViewCell(style:UITableViewCellStyle.subtitle, reuseIdentifier: nil)
+        let aux = results![(indexPath as NSIndexPath).row] as! NSManagedObject
+        cell.textLabel!.text = aux.value(forKey: "name") as? String
+        cell.detailTextLabel!.text = aux.value(forKey: "surname") as? String
         
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results!.count
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
         return "Contacts"
     }
     
     func loadTable(){
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
         let request = NSFetchRequest(entityName: "Form")
         request.returnsObjectsAsFaults = false
-        results = try? context.executeFetchRequest(request)
+        results = try? context.fetch(request)
     }
     
     override func didReceiveMemoryWarning() {
