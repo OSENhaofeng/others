@@ -22,19 +22,19 @@ class ViewController: UIViewController {
         
         //SWIPE
         let swipeGestureRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureRight.direction = UISwipeGestureRecognizerDirection.Right
+        swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
         image.addGestureRecognizer(swipeGestureRight)
         
         let swipeGestureDown = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureDown.direction = UISwipeGestureRecognizerDirection.Down
+        swipeGestureDown.direction = UISwipeGestureRecognizerDirection.down
         image.addGestureRecognizer(swipeGestureDown)
         
         let swipeGestureLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.Left
+        swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.left
         image.addGestureRecognizer(swipeGestureLeft)
         
         let swipeGestureUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondToSwipeGesture(_:)))
-        swipeGestureUp.direction = UISwipeGestureRecognizerDirection.Up
+        swipeGestureUp.direction = UISwipeGestureRecognizerDirection.up
         image.addGestureRecognizer(swipeGestureUp)
         
         //LONG PRESS
@@ -52,31 +52,31 @@ class ViewController: UIViewController {
     }
     
     //ROTATION
-    @IBAction func rotateGesture(sender : UIRotationGestureRecognizer) {
+    @IBAction func rotateGesture(_ sender : UIRotationGestureRecognizer) {
         let rotation:CGFloat = sender.rotation
         let transform:CGAffineTransform  =
-        CGAffineTransformMakeRotation(rotation + netRotation)
+        CGAffineTransform(rotationAngle: rotation + netRotation)
         sender.view?.transform = transform
-        if (sender.state == UIGestureRecognizerState.Ended){
+        if (sender.state == UIGestureRecognizerState.ended){
             netRotation += rotation;
         }
     }
     
     //SWIPE
-    @IBAction func respondToSwipeGesture(send: UIGestureRecognizer) {
+    @IBAction func respondToSwipeGesture(_ send: UIGestureRecognizer) {
         
         if let swipeGesture = send as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.Right:
+            case UISwipeGestureRecognizerDirection.right:
                 changeImage()
                 print("Swiped right")
-            case UISwipeGestureRecognizerDirection.Down:
+            case UISwipeGestureRecognizerDirection.down:
                 changeImage()
                 print("Swiped down")
-            case UISwipeGestureRecognizerDirection.Left:
+            case UISwipeGestureRecognizerDirection.left:
                 changeImage()
                 print("Swiped left")
-            case UISwipeGestureRecognizerDirection.Up:
+            case UISwipeGestureRecognizerDirection.up:
                 changeImage()
                 print("Swiped up")
             default:
@@ -86,13 +86,13 @@ class ViewController: UIViewController {
     }
     
     //LONG PRESS
-    @IBAction func action(gestureRecognizer:UIGestureRecognizer) {
+    @IBAction func action(_ gestureRecognizer:UIGestureRecognizer) {
         
-        if (gestureRecognizer.state == UIGestureRecognizerState.Began){
-            let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .Alert)
-            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+        if (gestureRecognizer.state == UIGestureRecognizerState.began){
+            let alertController = UIAlertController(title: "Alert", message: "Long Press gesture", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
             alertController.addAction(OKAction)
-            self.presentViewController(alertController, animated: true) { }
+            self.present(alertController, animated: true) { }
         }
     }
     
