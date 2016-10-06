@@ -11,23 +11,23 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
-    
+	
+	override func viewDidLoad() {
+		let tapGesture = UITapGestureRecognizer(target: self, action:
+			#selector(ViewController.handleTap(_:)))
+		tapGesture.numberOfTapsRequired = 2;
+		image.addGestureRecognizer(tapGesture)
+	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func handleTap(sender : UIGestureRecognizer) {
-        if (sender.view?.contentMode == UIViewContentMode.ScaleAspectFit){
-            sender.view?.contentMode = UIViewContentMode.Center
+    @IBAction func handleTap(_ sender : UIGestureRecognizer) {
+        if (sender.view?.contentMode == UIViewContentMode.scaleAspectFit){
+            sender.view?.contentMode = UIViewContentMode.center
+        }else{
+            sender.view?.contentMode = UIViewContentMode.scaleAspectFit
         }
-        else{
-            sender.view?.contentMode = UIViewContentMode.ScaleAspectFit
-        } }
-    override func viewDidLoad() {
-        let tapGesture = UITapGestureRecognizer(target: self, action:
-            #selector(ViewController.handleTap(_:)))
-        tapGesture.numberOfTapsRequired = 2;
-        image.addGestureRecognizer(tapGesture)
-    }
-
+	}
 }
