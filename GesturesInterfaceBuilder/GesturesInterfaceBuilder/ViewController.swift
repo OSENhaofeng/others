@@ -21,23 +21,23 @@ class ViewController: UIViewController {
     }
     
     //SWIPE
-    @IBAction func respondToSwipeGesture(send: UIGestureRecognizer) {
+    @IBAction func respondToSwipeGesture(_ send: UIGestureRecognizer) {
         alert("Swipe")
     }
     
     //LONG PRESS
-    @IBAction func action(gestureRecognizer:UIGestureRecognizer) {
+    @IBAction func action(_ gestureRecognizer:UIGestureRecognizer) {
         
-        if (gestureRecognizer.state == UIGestureRecognizerState.Began){
+        if (gestureRecognizer.state == UIGestureRecognizerState.began){
             alert("Long Press")
         }
     }
     
-    func alert(myString: String){
-        let alertController = UIAlertController(title: "Alert", message: myString, preferredStyle: .Alert)
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+    func alert(_ myString: String){
+        let alertController = UIAlertController(title: "Alert", message: myString, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
         alertController.addAction(OKAction)
-        self.presentViewController(alertController, animated: true) { }
+        self.present(alertController, animated: true) { }
     }
     
 }
