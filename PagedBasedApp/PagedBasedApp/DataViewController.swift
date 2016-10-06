@@ -21,7 +21,7 @@ class DataViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let obj: AnyObject = dataObject {
             self.dataLabel!.text = obj.description
