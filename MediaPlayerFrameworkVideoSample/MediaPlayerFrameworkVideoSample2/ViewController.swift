@@ -12,14 +12,14 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-            let destination = segue.destinationViewController as! AVPlayerViewController
-            let bundle = NSBundle.mainBundle()
+            let destination = segue.destination as! AVPlayerViewController
+            let bundle = Bundle.main
             //our video is 02.mov
-            let moviePath = bundle.pathForResource("02", ofType: "mov")
-            let url = NSURL(fileURLWithPath: moviePath!)
-            destination.player = AVPlayer(URL: url)
+            let moviePath = bundle.path(forResource: "02", ofType: "mov")
+            let url = URL(fileURLWithPath: moviePath!)
+            destination.player = AVPlayer(url: url)
     }
 
     override func viewDidLoad() {
