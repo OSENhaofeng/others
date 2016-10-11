@@ -23,18 +23,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sessionConfig: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
         sessionConfig.allowsCellularAccess = false
         //only accept JSON answer
-        sessionConfig.HTTPAdditionalHeaders = ["Accept":"application/json"]
+        sessionConfig.httpAdditionalHeaders = ["Accept":"application/json"]
         //timeouts and connections allowed
         sessionConfig.timeoutIntervalForRequest = 30.0
         sessionConfig.timeoutIntervalForResource = 60.0
-        sessionConfig.HTTPMaximumConnectionsPerHost = 1
+        sessionConfig.httpMaximumConnectionsPerHost = 1
         //create session, assign configuration
-        let session = NSURLSession(configuration: sessionConfig)
-        session.dataTaskWithURL(NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&appid=2de143494c0b295cca9337e1e96b00e0")!, completionHandler: {(data, response, error) in
-            let dic:NSDictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions(rawValue: 0))) as? NSDictionary ?? [String:String]()
+        let session = URLSession(configuration: sessionConfig)
+      
+      
+      
+        session.dataTask(with: URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&appid=ac02dc102cc17b974cd84206048d97d8")!, completionHandler: {(data, response, error) in
+            let dic:NSDictionary = ((try? JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions(rawValue: 0))) as? NSDictionary)! as NSDictionary
             
             if dic.count == 0 {
                 return
@@ -42,27 +45,27 @@ class ViewController: UIViewController {
             
             print(dic)
             
-            let city: NSString = (dic["name"] as! NSString)
-            let kelvin: AnyObject! = (dic["main"] as! NSDictionary) ["temp"]
-            let kelvin_min: AnyObject! = (dic["main"] as! NSDictionary) ["temp_min"]
-            let kelvin_max: AnyObject! = (dic["main"] as! NSDictionary) ["temp_max"]
-            let celsius = kelvin as! Float - 274.15 as Float
-            let celsius_min = kelvin_min as! Float - 274.15 as Float
-            let celsius_max = kelvin_max as! Float - 274.15 as Float
-            let humidity: AnyObject! = (dic ["main"] as! NSDictionary) ["humidity"]
-            let wind: AnyObject! = (dic ["wind"] as! NSDictionary) ["speed"]
-            
+            let city: String = (dic["name"] as! String)
+            let kelvin: Double! = ((dic["main"] as! NSDictionary) ["temp"]) as! Double
+            let kelvin_min: Double! = (dic["main"] as! NSDictionary) ["temp_min"] as! Double
+            let kelvin_max: Double! = (dic["main"] as! NSDictionary) ["temp_max"] as! Double
+            let celsius = kelvin as Double - 274.15 as Double
+            let celsius_min = kelvin_min as Double - 274.15 as Double
+            let celsius_max = kelvin_max as Double - 274.15 as Double
+            let humidity: AnyObject = (dic ["main"] as! NSDictionary) ["humidity"] as AnyObject
+            let wind: Double! = (dic ["wind"] as! NSDictionary) ["speed"] as! Double
+          
             //original thread
-            dispatch_async(dispatch_get_main_queue(), { () in
+            DispatchQueue.main.async(execute: { () in
                 self.city.text = "\(city)"
                 self.temperatureCelsius.text = "\(celsius)"
                 self.temperatureCelsiusMax.text = "\(celsius_max)"
                 self.temperatureCelsiusMin.text = "\(celsius_min)"
-                self.temperatureKelvin.text = "\(kelvin)"
-                self.temperatureKelvinMax.text = "\(kelvin_max)"
-                self.temperatureKelvinMin.text = "\(kelvin_min)"
+                self.temperatureKelvin.text = "\(kelvin!)"
+                self.temperatureKelvinMax.text = "\(kelvin_max!)"
+                self.temperatureKelvinMin.text = "\(kelvin_min!)"
                 self.humidity.text = "\(humidity)"
-                self.wind.text = "\(wind)"
+                self.wind.text = "\(wind!)"
             })
         }).resume()
     }
