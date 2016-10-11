@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateInterface:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateInterface(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
-    func updateInterface (notification: NSNotification){
+    func updateInterface (_ notification: Notification){
         myNotification.text = "Back to background with notification"
     }
     
