@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let queue = NSOperationQueue()
-        let operation1 : NSBlockOperation = NSBlockOperation (
+        let queue = OperationQueue()
+        let operation1 : BlockOperation = BlockOperation (
             block: {
                 self.getWebs()
-                let operation2 : NSBlockOperation = NSBlockOperation(block: {
+                let operation2 : BlockOperation = BlockOperation(block: {
                     self.loadWebs()
                 })
                 queue.addOperation(operation2)
@@ -31,23 +31,30 @@ class ViewController: UIViewController {
     }
     
     func loadWebs(){
-        let urls : NSMutableArray = NSMutableArray (objects:NSURL(string:"http://www.google.es")!, NSURL(string: "http://www.apple.com")!,NSURL(string: "http://carlosbutron.es")!, NSURL(string: "http://www.bing.com")!,NSURL(string: "http://www.yahoo.com")!)
-        urls.addObjectsFromArray(googlewebs as [AnyObject])
-        for iterator:AnyObject in urls{
+		var urls = [URL(string:"http://www.google.es")!,
+		            URL(string: "http://www.apple.com")!,
+		            URL(string: "http://carlosbutron.es")!,
+		            URL(string: "http://www.bing.com")!,
+		            URL(string: "http://www.yahoo.com")!]
+//        urls.addObjects(from: googlewebs as [AnyObject])
+        for url in urls{
            /// NSData(contentsOfURL:iterator as! NSURL)
-            print("Downloaded \(iterator)")
+            print("Downloaded \(url)")
         }
     }
     
-    var googlewebs:NSArray = []
+    var googlewebs = [URL]()
     
     func getWebs(){
-        let languages:NSArray = ["com","ad","ae","com.af","com.ag","com.ai","am","co.ao","com.ar","as","at"]
-        let languageWebs = NSMutableArray()
-        for(var i=0;i < languages.count; i++){
-            let webString: NSString = "http://www.google.\(languages[i])"
-            languageWebs.addObject(NSURL(fileURLWithPath: webString as String))
+        let languages = ["com","ad","ae","com.af",
+                         "com.ag","com.ai","am","co.ao",
+                         "com.ar","as","at"]
+        var languageWebs = [URL]()
+        for language in languages{
+            let webString = "http://www.google.\(language)"
+			languageWebs.append(URL(fileURLWithPath: webString))
         }
+		
         googlewebs = languageWebs
     }
   
