@@ -14,18 +14,18 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var text: UITextView!
     @IBOutlet weak var nameDirectory: UITextField!
 
-    @IBAction func createFile(sender: UIButton) {
-        let content = text.text.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        if(fileManager.createFileAtPath(documentsPath.stringByAppendingPathComponent("\(name.text).txt"), contents: content, attributes: nil)){
+    @IBAction func createFile(_ sender: UIButton) {
+        let content = text.text.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        if(fileManager.createFile(atPath: documentsPath.appendingPathComponent("\(name.text).txt"), contents: content, attributes: nil)){
             print("created")
         }
     }
     
-    @IBAction func createDirectory(sender: UIButton) {
-        let newDirectory:NSString = documentsPath.stringByAppendingPathComponent(nameDirectory.text!)
-        let fileManager = NSFileManager.defaultManager()
+    @IBAction func createDirectory(_ sender: UIButton) {
+        let newDirectory:NSString = documentsPath.appendingPathComponent(nameDirectory.text!) as NSString
+        let fileManager = FileManager.default
         
-        _ = try? fileManager.createDirectoryAtPath( newDirectory as String,
+        _ = try? fileManager.createDirectory( atPath: newDirectory as String,
             withIntermediateDirectories: true,
             attributes: nil )
         
@@ -34,8 +34,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 //        }
     }
     
-    var fileManager = NSFileManager.defaultManager()
-    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first! as NSString)
+    var fileManager = FileManager.default
+    var documentsPath = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as NSString)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +47,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
         return true;
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 

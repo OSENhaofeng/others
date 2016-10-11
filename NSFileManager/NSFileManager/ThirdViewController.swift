@@ -10,16 +10,16 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
-    var fileManager = NSFileManager.defaultManager()
-    var documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first! as String)
+    var fileManager = FileManager.default
+    var documentsPath = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as String)
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var txtBox: UITextView!
     
-    @IBAction func open(sender: UIButton) {
+    @IBAction func open(_ sender: UIButton) {
     
-        if(fileManager.fileExistsAtPath((documentsPath as NSString).stringByAppendingPathComponent("\(name.text).txt"))){
-            let contenido = NSString(data: fileManager.contentsAtPath((documentsPath as NSString).stringByAppendingPathComponent("\(name.text).txt"))!, encoding: NSUTF8StringEncoding)
+        if(fileManager.fileExists(atPath: (documentsPath as NSString).appendingPathComponent("\(name.text).txt"))){
+            let contenido = NSString(data: fileManager.contents(atPath: (documentsPath as NSString).appendingPathComponent("\(name.text).txt"))!, encoding: String.Encoding.utf8.rawValue)
             txtBox.text = contenido as! String
         }
     }

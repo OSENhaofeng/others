@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var files: NSMutableArray = []
-    var fileManager:NSFileManager!
+    var fileManager:FileManager!
     var documentsPath: String!
     var filelist:NSArray!
     
@@ -21,9 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         files = []
-        fileManager = NSFileManager.defaultManager()
-        documentsPath = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first! as String)
-        filelist = try! fileManager.contentsOfDirectoryAtPath(documentsPath)
+        fileManager = FileManager.default
+        documentsPath = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as String)
+        filelist = try! fileManager.contentsOfDirectory(atPath: documentsPath) as NSArray!
         
         print("documentspath:  \(documentsPath)")
         print(files.count)
@@ -33,29 +33,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        filelist = try! fileManager.contentsOfDirectoryAtPath(documentsPath)
+    override func viewDidAppear(_ animated: Bool) {
+        filelist = try! fileManager.contentsOfDirectory(atPath: documentsPath) as NSArray!
         files = []
         for file in filelist {
-            files.addObject(file)
+            files.add(file)
             print("file:  \(file)")
         }
         tabla.reloadData()
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return files.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier:NSString = "CollectionCell"
-        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier as String, forIndexPath: indexPath) 
+        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier as String, for: indexPath) 
 
-        cell.textLabel!.text = files.objectAtIndex(indexPath.row).description
+        cell.textLabel!.text = (files.object(at: (indexPath as NSIndexPath).row) as AnyObject).description
         
         var isDir: ObjCBool = ObjCBool(false)
-        if(fileManager.fileExistsAtPath((documentsPath as NSString).stringByAppendingPathComponent(files[indexPath.row] as! String), isDirectory: &isDir)){
-            if(isDir){
+        if(fileManager.fileExists(atPath: (documentsPath as NSString).appendingPathComponent(files[(indexPath as NSIndexPath).row] as! String), isDirectory: &isDir)){
+            if(isDir).boolValue{
                 cell.imageView!.image = UIImage(named: "dir.png")
             } else{
                 cell.imageView!.image = UIImage(named: "file.png")
