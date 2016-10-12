@@ -66,7 +66,7 @@ I plan to write further additional examples and all developers are welcome to fo
 Getting Started
 ---------------------
 
-Running in Xcode 7.2 and iOS 9.2
+Running in Xcode 8.0 and iOS 10.0
 
 
 Usage
