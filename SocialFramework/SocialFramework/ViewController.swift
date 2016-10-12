@@ -11,47 +11,47 @@ import Accounts
 
 class ViewController: UIViewController {
     
-    @IBAction func facebook(sender: UIButton) {
+    @IBAction func facebook(_ sender: UIButton) {
         
-        let url: NSURL = NSURL(string: "http://www.google.es")!
+        let url: URL = URL(string: "http://www.google.es")!
         
         let fbController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-        fbController.setInitialText("")
-        fbController.addURL(url)
+        fbController?.setInitialText("")
+        fbController?.add(url)
         
         let completionHandler = {(result:SLComposeViewControllerResult) -> () in
-            fbController.dismissViewControllerAnimated(true, completion:nil)
+            fbController?.dismiss(animated: true, completion:nil)
             switch(result){
-            case SLComposeViewControllerResult.Cancelled:
+            case SLComposeViewControllerResult.cancelled:
                 print("User canceled", terminator: "")
-            case SLComposeViewControllerResult.Done:
+            case SLComposeViewControllerResult.done:
                 print("User posted", terminator: "")
             }
         }
         
-        fbController.completionHandler = completionHandler
-        self.presentViewController(fbController, animated: true, completion:nil)
+        fbController?.completionHandler = completionHandler
+        self.present(fbController!, animated: true, completion:nil)
     }
     
-    @IBAction func twitter(sender: UIButton) {
+    @IBAction func twitter(_ sender: UIButton) {
         
         let image: UIImage = UIImage(named: "image2.png")!
         
         let twitterController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-        twitterController.setInitialText("")
-        twitterController.addImage(image)
+        twitterController?.setInitialText("")
+        twitterController?.add(image)
         
         let completionHandler = {(result:SLComposeViewControllerResult) -> () in
-            twitterController.dismissViewControllerAnimated(true, completion: nil)
+            twitterController?.dismiss(animated: true, completion: nil)
             switch(result){
-            case SLComposeViewControllerResult.Cancelled:
+            case SLComposeViewControllerResult.cancelled:
                 print("User canceled", terminator: "")
-            case SLComposeViewControllerResult.Done:
+            case SLComposeViewControllerResult.done:
                 print("User tweeted", terminator: "")
             }
         }
-        twitterController.completionHandler = completionHandler
-        self.presentViewController(twitterController, animated: true, completion: nil)
+        twitterController?.completionHandler = completionHandler
+        self.present(twitterController!, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
