@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    var statement = COpaquePointer()
+    var statement: OpaquePointer = nil
     var data: NSMutableArray = []
     
     override func viewDidLoad() {
@@ -23,9 +23,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func loadTabla() {
-        let db_path = NSBundle.mainBundle().pathForResource("FilmCollection", ofType: "sqlite")
-        print(NSBundle.mainBundle())
-        var db = COpaquePointer()
+        let db_path = Bundle.main.path(forResource: "FilmCollection", ofType: "sqlite")
+        print(Bundle.main)
+        var db: OpaquePointer = nil
         let status = sqlite3_open(db_path!, &db)
         if(status == SQLITE_OK){
             //bbdd open
@@ -44,20 +44,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let Dictionary = NSMutableDictionary()
                 
                 let director = sqlite3_column_text(statement, 1)
-                let buf_director = String.fromCString(UnsafePointer<CChar>(director))
+                let buf_director = String(cString: UnsafePointer<CChar>(director!))
                 let image = sqlite3_column_text(statement, 2)
-                let buf_image = String.fromCString(UnsafePointer<CChar>(image))
+                let buf_image = String(cString: UnsafePointer<CChar>(image!))
                 let title = sqlite3_column_text(statement, 3)
-                let buf_title = String.fromCString(UnsafePointer<CChar>(title))
+                let buf_title = String(cString: UnsafePointer<CChar>(title!))
                 let year = sqlite3_column_text(statement, 4)
-                let buf_year = String.fromCString(UnsafePointer<CChar>(year))
+                let buf_year = String(cString: UnsafePointer<CChar>(year!))
                 
-                Dictionary.setObject(buf_director!, forKey:"director")
-                Dictionary.setObject(buf_image!, forKey: "image")
-                Dictionary.setObject(buf_title!, forKey: "title")
-                Dictionary.setObject(buf_year!, forKey: "year")
+                Dictionary.setObject(buf_director, forKey:"director" as NSCopying)
+                Dictionary.setObject(buf_image, forKey: "image" as NSCopying)
+                Dictionary.setObject(buf_title, forKey: "title" as NSCopying)
+                Dictionary.setObject(buf_year, forKey: "year" as NSCopying)
                 
-                data.addObject(Dictionary)
+                data.add(Dictionary)
                 //process data
             }
             sqlite3_finalize(statement)
@@ -67,20 +67,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: MyTableViewCell = tableView.dequeueReusableCellWithIdentifier("MyTableViewCell") as! MyTableViewCell
-        let aux: AnyObject = data[indexPath.row]
+        let cell: MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell") as! MyTableViewCell
+        let aux: AnyObject = data[(indexPath as NSIndexPath).row] as AnyObject
         let table_director = aux["director"]
         cell.director.text = table_director as? String
         //var aux1: AnyObject = data[indexPath.row]
         let table_image = aux["image"]
         cell.myImage.image = UIImage(named:table_image as! String)
-        let aux3: AnyObject = data[indexPath.row]
+        let aux3: AnyObject = data[(indexPath as NSIndexPath).row] as AnyObject
         let table_title = aux["title"]
         cell.title.text = table_title as? String
         
